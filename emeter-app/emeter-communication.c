@@ -130,7 +130,7 @@ int serial_configure(int port, int mode, uint32_t bit_rate)
     {
         /* 8-bit character, no parity */
 #if defined(__MSP430_HAS_UART0__)
-        ctl0 = CHAR | SWRST;
+        ctl0 = UCPEN | UCPAR | CHAR | SWRST;
 #else
         ctl0 = 0;
 #endif
@@ -187,8 +187,10 @@ int serial_configure(int port, int mode, uint32_t bit_rate)
     #if defined(__MSP430_HAS_USCI_AB0__)  ||  defined(__MSP430_HAS_USCI_A0__)  ||  defined(__MSP430_HAS_EUSCI_A0__)
         /* Configure the port with the reset bit held high */
         UCA0CTL1 |= UCSWRST;
-        UCA0CTL0 = ctl0;
+        //UCA0CTL0 = UCPEN | UCPAR | ctl0;
+        UCA0CTL0 = 0xC0 | ctl0;
         UCA0CTL1 = ctl1;
+        UCA0CTLW1 = 0x03;
         #if defined(__MSP430_HAS_EUSCI_A0__)
         UCA0BRW = bitrate_divider;
         UCA0MCTLW = ((uint16_t) mctl << 8);
@@ -222,10 +224,10 @@ int serial_configure(int port, int mode, uint32_t bit_rate)
         TXBUF0 = 0;
     #endif
         // LI:
-        if (bit_rate == 115200)
+        if (bit_rate == 19200)
         {
-          UCA0BRW = 0x000D;
-          UCA0MCTLW = 0x00A1;
+          UCA0BRW = 0x0051;
+          UCA0MCTLW = 0xBBE1;
         }
         else //9600
         {
@@ -240,8 +242,10 @@ int serial_configure(int port, int mode, uint32_t bit_rate)
     #if defined(__MSP430_HAS_USCI_AB1__)  ||  defined(__MSP430_HAS_USCI_A1__)  ||  defined(__MSP430_HAS_EUSCI_A1__)
         /* Configure the port with the reset bit held high */
         UCA1CTL1 |= UCSWRST;
-        UCA1CTL0 = ctl0;
+        //UCA1CTL0 = UCPEN | UCPAR | ctl0;
+        UCA1CTL0 = 0xC0 | ctl0;
         UCA1CTL1 = ctl1;
+        UCA1CTLW1 = 0x03;
         #if defined(__MSP430_HAS_EUSCI_A1__)
         UCA1BRW = bitrate_divider;
         UCA1MCTLW = ((uint16_t) mctl << 8);
@@ -275,10 +279,10 @@ int serial_configure(int port, int mode, uint32_t bit_rate)
         TXBUF1 = 0;
     #endif
         // LI:
-        if (bit_rate == 115200)
+        if (bit_rate == 19200)
         {
-          UCA1BRW = 0x000D;
-          UCA1MCTLW = 0x00A1;
+          UCA0BRW = 0x0051;
+          UCA0MCTLW = 0xBBE1;
         }
         else //9600
         {

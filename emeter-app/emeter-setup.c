@@ -510,10 +510,10 @@ void system_setup(void)
     #endif
 
     #if defined(UART_0_SUPPORT)
-    serial_configure(0, 1, 115200);
+    serial_configure(0, 1, 19200);
     #endif
     #if defined(UART_1_SUPPORT)
-    serial_configure(1, 1, 115200);
+    serial_configure(1, 1, 19200);
     #endif
     #if defined(UART_2_SUPPORT)
     serial_configure(2, 1, UART_2_BAUD_RATE);
