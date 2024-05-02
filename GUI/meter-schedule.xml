@@ -1,0 +1,50 @@
+<?xml version="1.0"?>
+<!DOCTYPE emeter-schedule SYSTEM "emeter-schedule.dtd">
+<!-- Example multi-rate emeter schedule -->
+<emeter-schedule>
+  <!-- Define three schedules for weekdays, Saturdays, and Sundays/public holidays -->
+  <!-- tariff 1 is overnight and holiday cheap rate -->
+  <!-- tariff 2 is normal rate -->
+  <!-- tariff 3 is peak rate -->
+  <day-schedules>
+    <day-schedule id="1">
+      <slot start-time="00:00" tariff="1"/>
+      <slot start-time="07:30" tariff="3"/>
+      <slot start-time="12:00" tariff="2"/>
+      <slot start-time="14:00" tariff="3"/>
+      <slot start-time="19:00" tariff="2"/>
+      <slot start-time="22:30" tariff="1"/>
+    </day-schedule>
+    <day-schedule id="2">
+      <slot start-time="00:00" tariff="1"/>
+      <slot start-time="07:30" tariff="3"/>
+      <slot start-time="12:00" tariff="2"/>
+      <slot start-time="14:00" tariff="1"/>
+    </day-schedule>
+    <day-schedule id="3">
+      <slot start-time="00:00" tariff="3"/>
+    </day-schedule>
+  </day-schedules>
+  <!-- Assign the weekdays to the appropriate daily schedules -->
+  <weekday-schedule>
+    <weekday day="Sun" schedule="3"/>
+    <weekday day="Mon" schedule="1"/>
+    <weekday day="Tue" schedule="1"/>
+    <weekday day="Wed" schedule="1"/>
+    <weekday day="Thu" schedule="1"/>
+    <weekday day="Fri" schedule="1"/>
+    <weekday day="Sat" schedule="2"/>
+  </weekday-schedule>
+  <!-- Define a few public holidays, and charge them like Sunday -->
+  <holiday-schedule>
+    <holiday date="4/12/25" schedule="3"/>
+    <holiday date="4/12/26" schedule="3"/>
+    <holiday date="5/1/1" schedule="3"/>
+  </holiday-schedule>
+  <!-- Define a few charging cutoff days -->
+  <cutoff-schedule>
+    <cutoff date="4/12/12"/>
+    <cutoff date="5/1/13"/>
+    <cutoff date="5/2/11"/>
+  </cutoff-schedule>
+</emeter-schedule>

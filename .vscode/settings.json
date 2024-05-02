@@ -1,0 +1,6 @@
+{
+    "files.associations": {
+        "inttypes.h": "c",
+        "emeter-communication.h": "c"
+    }
+}
