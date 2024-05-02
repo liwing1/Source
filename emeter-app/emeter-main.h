@@ -132,7 +132,7 @@ typedef struct
       
       // Energias 200 - 225
       float energia_atv_pos; //i = 132
-      float reservado3;
+      float reservado3; //i = 136
       float energia_atv_neg;
       float energia_rtv_neg;
       float max_dem_atv;
@@ -168,7 +168,7 @@ typedef struct
       float delta_ene_apr_fase_3;
       
       // Energia/fase 1200 - 1229
-      float energia_atv_pos_fase_1; // i = 244
+      float energia_atv_pos_fase_1; // i = 264
       float energia_rtv_pos_fase_1;
       float energia_atv_neg_fase_1;
       float energia_rtv_neg_fase_1;

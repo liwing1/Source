@@ -93,18 +93,18 @@ uint16_t CalculateCRC(uint8_t *data, uint16_t length) {
   return CRC16;
 }
 
-static uint16_t* reg_to_ptr(uint16_t reg) {
+static uint8_t* reg_to_ptr(uint16_t reg) {
   if(reg <= 65)
-    return (&(mapaMemoria.addr[reg]));
+    return (&(mapaMemoria.byte[reg]));
   
-  else if(reg >= 200 && reg <= 225)
-    return (&(mapaMemoria.addr[reg - 68]));
+  else if (reg >= 200 && reg <= 225)
+    return (&(mapaMemoria.byte[2*reg - 268]));
   
   else if (reg >= 300 && reg <= 339)
-    return (&(mapaMemoria.addr[reg - 116]));
+    return (&(mapaMemoria.byte[2*reg - 416]));
   
   else if (reg >= 1200 && reg <= 1229)
-    return (&(mapaMemoria.addr[reg - 956]));
+    return (&(mapaMemoria.byte[2*reg - 2136]));
   
   else 
     return NULL;
@@ -119,7 +119,7 @@ static void process_read_inp_reg(int port, uint16_t first_reg, uint16_t n_reg)
   ports[port].tx_msg.buf.uint8[1] = 0x04;
   ports[port].tx_msg.buf.uint8[2] = n_reg * 2; //byte count
   
-  uint16_t* map_ptr = reg_to_ptr(first_reg);
+  uint8_t* map_ptr = reg_to_ptr(first_reg);
   
   if(map_ptr == NULL)
     return;
@@ -128,65 +128,14 @@ static void process_read_inp_reg(int port, uint16_t first_reg, uint16_t n_reg)
     
   uint16_t crc = CalculateCRC(ports[port].tx_msg.buf.uint8, 3 + n_reg * 2);
   
-  ports[port].tx_msg.buf.uint8[3 + n_reg * 2] = (uint8_t)(crc>>8);
-  ports[port].tx_msg.buf.uint8[4 + n_reg * 2] = (uint8_t)(crc&0x00FF);
+  ports[port].tx_msg.buf.uint8[4 + n_reg * 2] = (uint8_t)(crc>>8);
+  ports[port].tx_msg.buf.uint8[3 + n_reg * 2] = (uint8_t)(crc&0x00FF);
   
   RS485_sendBuf(port, ports[port].tx_msg.buf.uint8, 5 + n_reg * 2); // header + data
-  //RS485_sendBuf(port, (uint8_t*)&crc, 2);
-}
-
-static void dlt645_process_rx_message(int port, serial_msg_t *rx_msg, int rx_len)
-{
-  uint8_t function = rx_msg->uint8[1];
-  uint16_t first_reg, n_reg;
-  
-  switch (function)
-  {
-  // Espera 8bytes
-  case 0x02: //Read Input Status
-  case 0x03: //Read Holding Register
-    break;
-    
-  case 0x04: //Read Input Register
-    first_reg = ((uint16_t)rx_msg->uint8[2])<<8 | rx_msg->uint8[3];
-    n_reg = ((uint16_t)rx_msg->uint8[4])<<8 | rx_msg->uint8[5];
-    
-    process_read_inp_reg(port, first_reg, n_reg);
-    
-    break;
-  case 0x05: //Force Single Coil
-  case 0x06: //Preset Single Register
-    break;
-    
-  //Espera 4bytes
-  case 0x07: //Read Exception Status
-  case 0x11: //Report Slave ID
-    break;
-    
-  //Preset Multiple Register (nbytes)
-  case 0x10:
-    break;
-
-  /*Funcoes especiais*/
-  /*
-  case 0x42: //Config Address
-  case 0x71: //Read Address
-  case 0x75: //Read Partidas
-  case 0x76: //Report Slave Id Kron
-    break;
-  */
-  default: 
-    // Got invalid function
-    ports[port].rx_msg.ptr = 0;
-    ports[port].rx_frame_pending = false;
-    break;
-  }
 }
 
 /* This routine is called regularly from the main polling loop, to check for completed incoming
    DLT-645 messages, and to service them. */
-uint8_t result;
-volatile uint8_t crcx[4];
 void dlt645_service(void)
 {
   const int port = 0; //LI: UART A1
@@ -196,10 +145,9 @@ void dlt645_service(void)
     uint16_t crc = CalculateCRC(ports[port].rx_msg.buf.uint8, ports[port].rx_msg.len-2);
     
     // Verifica CRC
-    if (ports[port].rx_msg.buf.uint8[ports[port].rx_msg.len-1] == (uint8_t)(crc&0x00FF) &&
-        ports[port].rx_msg.buf.uint8[ports[port].rx_msg.len-2] == (uint8_t)(crc>>8))
+    if (ports[port].rx_msg.buf.uint8[ports[port].rx_msg.len-2] == (uint8_t)(crc&0x00FF) &&
+        ports[port].rx_msg.buf.uint8[ports[port].rx_msg.len-1] == (uint8_t)(crc>>8))
     {
-      //dlt645_process_rx_message(port, &ports[port].rx_msg.buf, ports[port].rx_msg.len);
       uint8_t function = ports[port].rx_msg.buf.uint8[1];
       uint16_t first_reg, n_reg;
       
