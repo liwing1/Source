@@ -1,0 +1,144 @@
+;******************************************************************************
+;  bin2bcd64.s43 (IAR version) - 64 bit binary to BCD conversion
+;
+;  Copyright (C) 2011 Texas Instruments Incorporated - http://www.ti.com/ 
+; 
+;  Redistribution and use in source and binary forms, with or without 
+;  modification, are permitted provided that the following conditions 
+;  are met:
+;
+;    Redistributions of source code must retain the above copyright 
+;    notice, this list of conditions and the following disclaimer.
+;
+;    Redistributions in binary form must reproduce the above copyright
+;    notice, this list of conditions and the following disclaimer in the 
+;    documentation and/or other materials provided with the   
+;    distribution.
+;
+;    Neither the name of Texas Instruments Incorporated nor the names of
+;    its contributors may be used to endorse or promote products derived
+;    from this software without specific prior written permission.
+;
+;  THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS 
+;  "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT 
+;  LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR
+;  A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT 
+;  OWNER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, 
+;  SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT 
+;  LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE,
+;  DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY
+;  THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT 
+;  (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE 
+;  OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+;
+;******************************************************************************
+
+#include "io.h"
+#include "macros.m43"
+
+#if !defined(__IAR_SYSTEMS_ASM__)  ||  !(((__TID__ >> 8) & 0x7f) == 43)
+#error This file is compatible with the IAR MSP430 assembler.
+#endif
+
+#if __VER__ < 400
+#error This file is compatible with the IAR MSP430 assembler 4.0 or later.
+#endif
+
+; Parameters
+#define bin_0       R8
+#define bin_1       R9
+#define bin_2       R10
+#define bin_3       R11
+#define bcd         R12
+
+; Temporary variables
+#define i           R5
+#define decimal_0   R13
+#define decimal_1   R14
+#define decimal_2   R15
+#define decimal_3   R7
+#define decimal_4   R6
+
+;void bin2bcd64(uint8_t bcd[10], uint64_t bin)
+    public bin2bcd64
+
+    RSEG CODE
+bin2bcd64
+#if __CORE__==__430X_CORE__
+    pushm.w #3,R7
+#else
+    push.w  R5
+    push.w  R6
+    push.w  R7
+#endif
+
+    clr.w   decimal_0
+    clr.w   decimal_1
+    clr.w   decimal_2
+    clr.w   decimal_3
+    clr.w   decimal_4
+
+    mov.w   #16,i
+bin2bcd64_1
+    rla.w   bin_3
+    dadd.w  decimal_0,decimal_0
+    dadd.w  decimal_1,decimal_1
+    dec.w   i
+    jnz     bin2bcd64_1
+
+    mov.w   #16,i
+bin2bcd64_2
+    rla.w   bin_2
+    dadd.w  decimal_0,decimal_0
+    dadd.w  decimal_1,decimal_1
+    dadd.w  decimal_2,decimal_2
+    dec.w   i
+    jnz     bin2bcd64_2
+
+    mov.w   #16,i
+bin2bcd64_3
+    rla.w   bin_1
+    dadd.w  decimal_0,decimal_0
+    dadd.w  decimal_1,decimal_1
+    dadd.w  decimal_2,decimal_2
+    dadd.w  decimal_3,decimal_3
+    dec.w   i
+    jnz     bin2bcd64_3
+
+    mov.w   #16,i
+bin2bcd64_4
+    rla.w   bin_0
+    dadd.w  decimal_0,decimal_0
+    dadd.w  decimal_1,decimal_1
+    dadd.w  decimal_2,decimal_2
+    dadd.w  decimal_3,decimal_3
+    dadd.w  decimal_4,decimal_4
+    dec.w   i
+    jnz     bin2bcd64_4
+
+    ;We need to byte swap as we store the result
+    mov.b   decimal_4,1(bcd)
+    swpb    decimal_4
+    mov.b   decimal_4,0(bcd)
+    mov.b   decimal_3,3(bcd)
+    swpb    decimal_3
+    mov.b   decimal_3,2(bcd)
+    mov.b   decimal_2,5(bcd)
+    swpb    decimal_2
+    mov.b   decimal_2,4(bcd)
+    mov.b   decimal_1,7(bcd)
+    swpb    decimal_1
+    mov.b   decimal_1,6(bcd)
+    mov.b   decimal_0,9(bcd)
+    swpb    decimal_0
+    mov.b   decimal_0,8(bcd)
+
+#if __CORE__==__430X_CORE__
+    popm.w  #3,R7
+#else
+    pop.w   R7
+    pop.w   R6
+    pop.w   R5
+#endif
+    xret
+    end

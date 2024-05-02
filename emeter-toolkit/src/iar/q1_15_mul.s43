@@ -1,0 +1,120 @@
+;******************************************************************************
+;  q1_15_mul.s43 (IAR version) - 
+;
+;  Copyright (C) 2011 Texas Instruments Incorporated - http://www.ti.com/ 
+; 
+;  Redistribution and use in source and binary forms, with or without 
+;  modification, are permitted provided that the following conditions 
+;  are met:
+;
+;    Redistributions of source code must retain the above copyright 
+;    notice, this list of conditions and the following disclaimer.
+;
+;    Redistributions in binary form must reproduce the above copyright
+;    notice, this list of conditions and the following disclaimer in the 
+;    documentation and/or other materials provided with the   
+;    distribution.
+;
+;    Neither the name of Texas Instruments Incorporated nor the names of
+;    its contributors may be used to endorse or promote products derived
+;    from this software without specific prior written permission.
+;
+;  THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS 
+;  "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT 
+;  LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR
+;  A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT 
+;  OWNER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, 
+;  SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT 
+;  LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE,
+;  DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY
+;  THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT 
+;  (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE 
+;  OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+;
+;******************************************************************************
+
+#include "io.h"
+#include "macros.m43"
+
+#if !defined(__IAR_SYSTEMS_ASM__)  ||  !(((__TID__ >> 8) & 0x7f) == 43)
+#error This file is compatible with the IAR MSP430 assembler.
+#endif
+
+#if __VER__ >= 400
+#define x               R12
+#define y               R13
+#define ret16           R12
+#else
+#define x               R12
+#define y               R14
+#define ret16           R12
+#endif
+
+;Q1.15 style 16x16=>16 multiply
+;int16_t q1_15_mul(int16_t x, int16_t y)
+    public q1_15_mul
+
+    RSEG CODE
+q1_15_mul
+#if (defined(__MSP430_HAS_MPY__)  ||  defined(__MSP430_HAS_MPY32__))  &&  !defined(__TOOLKIT_USE_SOFT_MPY__)
+    push.w  SR
+    dint
+    nop
+    mov     x,&MPYS
+    mov     y,&OP2
+    mov     &RESHI_,R13
+    mov     &RESLO_,R12
+    pop.w   SR
+    ;Shift to Q1.15 format (i.e. the top 16 bits are returned)
+    rla     R12
+    rlc     R13
+    mov     R13,ret16
+#else
+    push.w  R10
+    push.w  R15
+    mov     x,R15
+#if __VER__ >= 400
+    mov     y,R14
+#endif
+    clr     R13
+    mov     R13,x
+
+    mov     R13,R10
+    tst     R15
+    jge     booth_2
+    mov     #-1,R10
+    jmp     booth_2
+
+booth_6
+    add     R15,x
+    addc    R10,R13
+booth_1
+    rla     R15
+    rlc     R10
+booth_2
+    rra     R14
+    jc      booth_5
+    jne     booth_1
+    jmp     booth_4
+
+booth_5
+    sub     R15,x
+    subc    R10,R13
+booth_3
+    rla     R15
+    rlc     R10
+    rra     R14
+    jnc     booth_6
+    cmp     #0xFFFF,R14
+    jne     booth_3
+
+booth_4
+    ;Shift to Q1.15 format (i.e. the top 16 bits are returned)
+    rla     x
+    rlc     R13
+    mov     R13,ret16
+    pop.w   R15
+    pop.w   R10
+#endif
+    xret
+    end

@@ -1,1 +1,6 @@
-*/Debug/*
+/*/*/Debug/
+/*/*/Release/
+/*/*/settings/
+/GUI
+/.vscode
+/settings
