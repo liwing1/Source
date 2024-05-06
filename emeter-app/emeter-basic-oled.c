@@ -548,8 +548,8 @@ void update_oled(void)
     else
     {
 
-      if (oled_step == OLED_ITEM_CURRENT+1)
-              oled_step = 1;
+      if (oled_step == OLED_ITEM_SELECT_RESTART)
+              oled_step = 0;
       display_oled_item(oled_step++); 
      
 /*

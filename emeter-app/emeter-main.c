@@ -396,6 +396,20 @@ int main(int argc, char *argv[])
                     autocalibrate();
 #endif
             }
+
+            static int n_times_out_of_order = 0;
+            if (ph == 0) {
+                if (phase_state & PHASE_STATUS_OUT_OF_ORDER) {
+                    if (n_times_out_of_order++ > 256)
+                    {
+                        set_reverse_current_indicator();
+                    }
+                }
+                else {
+                    n_times_out_of_order = 0;
+                    clr_reverse_current_indicator();
+                }
+            }
 #if defined(LIMP_MODE_SUPPORT)
             metrology_limp_normal_detection();
 #endif

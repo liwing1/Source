@@ -38,15 +38,15 @@
 #define CALADC10_20V_30C                            *((unsigned int *)0x1A1E)
 #define CALADC10_20V_85C                            *((unsigned int *)0x1A20)
 
-#define DEFAULT_V_RMS_SCALE_FACTOR_A                32729
+#define DEFAULT_V_RMS_SCALE_FACTOR_A                32729 //*2.5
 #define DEFAULT_V_DC_ESTIMATE_A                     20500
 #define DEFAULT_V_AC_OFFSET_A                       9
 
-#define DEFAULT_V_RMS_SCALE_FACTOR_B                32652
+#define DEFAULT_V_RMS_SCALE_FACTOR_B                32652 //*2.5
 #define DEFAULT_V_DC_ESTIMATE_B                     20500
 #define DEFAULT_V_AC_OFFSET_B                       9
 
-#define DEFAULT_V_RMS_SCALE_FACTOR_C                32717
+#define DEFAULT_V_RMS_SCALE_FACTOR_C                32717 //*2.5
 #define DEFAULT_V_DC_ESTIMATE_C                     20500
 #define DEFAULT_V_AC_OFFSET_C                       9
 
