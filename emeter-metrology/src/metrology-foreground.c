@@ -72,8 +72,10 @@ int normal_limp;
 int16_t temperature_in_celsius;
 #endif
 
-#define CURRENT_CAL_FACTOR  (float)0.00021863334
-#define VOLTAGE_CAL_FACTOR  (float)2.55711857143
+#define CURRENT_CAL_FACTOR  (float)0.00195160774
+#define VOLTAGE_CAL_FACTOR  (float)2.616300482
+#define A_POWER_CAL_FACTOR  (float)0.5103225886
+#define R_POWER_CAL_FACTOR  (float)0.02481716457
 
 /* The main per-phase working parameter structure */
 struct metrology_data_s working_data;
@@ -256,10 +258,11 @@ static rms_voltage_t evaluate_rms_voltage(struct phase_parms_s *phase, struct ph
     /* If we multiply the 16.16 bit number by a 15 bit scaling factor we get a 31.16 bit number.
        Dropping the last 10 bits gives us a 21.6 bit number */
     x = mul48u_32_16(x, phase_cal->V_rms_scale_factor[normal_limp]) >> 10;
+    x = (rms_voltage_t)(x * VOLTAGE_CAL_FACTOR);
     #if defined(TEMPERATURE_CORRECTION_SUPPORT)
     x = mul48u_32_16(x, working_data.temperature_correction.amplitude_factor);
     #endif
-    return x; //* VOLTAGE_CAL_FACTOR;
+    return x;
 }
 #endif
 
@@ -452,7 +455,8 @@ static rms_current_t evaluate_rms_current(struct phase_parms_s *phase, struct ph
     #if defined(TEMPERATURE_CORRECTION_SUPPORT)
     x[0] = mul48u_32_16(x[0], working_data.temperature_correction.amplitude_factor);
     #endif
-    return x[0]; //* CURRENT_CAL_FACTOR;
+    x[0] = (rms_current_t)(x[0] * CURRENT_CAL_FACTOR);
+    return x[0];
 }
 #endif
 
@@ -747,6 +751,7 @@ static power_t evaluate_active_power(struct phase_parms_s *phase, struct phase_c
 #if defined(TEMPERATURE_CORRECTION_SUPPORT)
     x[0] = mul48_32_16(x[0], working_data.temperature_correction.power_factor);
 #endif
+    x[0] = (int64_t)(x[0] * A_POWER_CAL_FACTOR);
     return x[0];
 }
 
@@ -790,6 +795,7 @@ static power_t evaluate_reactive_power(struct phase_parms_s *phase, struct phase
     /* The power scaling factor has to allow for the gain of the FIR used to phase shift the voltage */
     scaling = ((uint32_t) phase_cal->current[ch].P_scale_factor*phase->metrology.current[ch].quadrature_correction.fir_gain) >> 15;
     y = mul48_32_16(x, scaling);
+    y = (int64_t) (y * R_POWER_CAL_FACTOR);
     #if defined(TEMPERATURE_CORRECTION_SUPPORT)
     y = mul48_32_16(y, working_data.temperature_correction.power_factor);
     #endif

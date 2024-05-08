@@ -269,7 +269,8 @@ static __inline__ void oled_active_power()
 
     static __inline__ void oled_rms_voltage()
     {
-        const float k = 2.55711857143;
+        // const float k = 2.55711857143;
+        const float k = 1;
         float x;
 
         /* Display RMS voltage in 0.1V or 0.01V increments */
@@ -301,8 +302,8 @@ static __inline__ void oled_active_power()
 
     static __inline__ void oled_rms_current()
     {
-        const float k = 0.00021863334;
-        //const float k = 1.942785*0.00011495 * 0.979;
+        // const float k = 0.00021863334;
+        const float k = 1;
         float x;
 
         /* Display RMS current in 1mA increments */

@@ -235,7 +235,10 @@ int main(int argc, char *argv[])
         kick_watchdog();
         
         if(Contador4096 - TempoMapaMemoria > 4096)// atualiza 1s
+        {
           updateMapaMemoria(&mapaMemoria);
+          TempoMapaMemoria = Contador4096;
+        }
 
 #if defined(IEC62056_SUPPORT)
         iec62056_service();
