@@ -90,13 +90,9 @@ extern uint32_t swell_duration[NUM_PHASES];
 extern volatile unsigned long Contador4096;
 #endif
 
-#define PHASE_REVERSED_DETECTION_SUPPORT
-#define ON_REVERSED_SELECT_POSITIVE_READING
-
-typedef struct 
-{
-  union{
-    struct{
+typedef struct {
+  union {
+    struct {
       // 0 - 65
       uint32_t num_serial;
       float tensao_tri;
@@ -112,7 +108,9 @@ typedef struct
       float corrente_linha_2;
       float corrente_linha_3;
       float freq_1;
-      float reservado2[3];
+      float freq_2;
+      float freq_3;
+      float reservado2;
       float potencia_ativa_tri;
       float potencia_ativa_1;
       float potencia_ativa_2;
@@ -132,7 +130,7 @@ typedef struct
       
       // Energias 200 - 225
       float energia_atv_pos; //i = 132
-      float reservado3; //i = 136
+      float energia_rtv_pos;
       float energia_atv_neg;
       float energia_rtv_neg;
       float max_dem_atv;
@@ -183,18 +181,26 @@ typedef struct
       float energia_apr_fas_fase_1;
       float energia_apr_fas_fase_2;
       float energia_apr_fas_fase_3;
-      
-      float energia_tri;
-      float energia[3];
-      float frequencia[3];
     } grandezas;
     
-    uint16_t addr[176];
-    uint8_t byte[352];
+    uint16_t addr[162];
+    uint8_t byte[324];
   };
-} mapaMemoria_t;
+} input_registers_t;
 
-extern mapaMemoria_t mapaMemoria;
+typedef struct {
+  union {
+    struct {
+        uint16_t baud_rate;
+    } configs;
 
-void updateMapaMemoria(mapaMemoria_t* _mapaMemoria);
+    uint16_t addr[1];
+    uint8_t byte[2];
+  };
+} holding_registers_t;
+
+extern input_registers_t input_registers;
+extern holding_registers_t holding_registers;
+
+void update_input_registers(input_registers_t* _input_registers);
 #endif

@@ -135,51 +135,46 @@ void test_battery(void)
 }
 #endif
 
-void updateMapaMemoria(mapaMemoria_t* _mapaMemoria)
+void update_input_registers(input_registers_t* _input_registers)
 {
-  _mapaMemoria->grandezas.tensao_linha_1 = rms_voltage(0);
-  _mapaMemoria->grandezas.tensao_linha_2 = rms_voltage(1);
-  _mapaMemoria->grandezas.tensao_linha_3 = rms_voltage(2);
-  _mapaMemoria->grandezas.corrente_linha_1 = rms_current(0);
-  _mapaMemoria->grandezas.corrente_linha_2 = rms_current(1);
-  _mapaMemoria->grandezas.corrente_linha_3 = rms_current(2);
-  _mapaMemoria->grandezas.potencia_ativa_tri = active_power(FAKE_PHASE_TOTAL);
-  _mapaMemoria->grandezas.potencia_ativa_1 = active_power(0);
-  _mapaMemoria->grandezas.potencia_ativa_2 = active_power(1);
-  _mapaMemoria->grandezas.potencia_ativa_3 = active_power(2);
-  _mapaMemoria->grandezas.potencia_reativa_tri = reactive_power(FAKE_PHASE_TOTAL);
-  _mapaMemoria->grandezas.potencia_reativa_1 = reactive_power(0);
-  _mapaMemoria->grandezas.potencia_reativa_2 = reactive_power(1);
-  _mapaMemoria->grandezas.potencia_reativa_3 = reactive_power(2);
-  _mapaMemoria->grandezas.potencia_aparente_tri = apparent_power(FAKE_PHASE_TOTAL);
-  _mapaMemoria->grandezas.potencia_aparente_1 = apparent_power(0);
-  _mapaMemoria->grandezas.potencia_aparente_2 = apparent_power(1);
-  _mapaMemoria->grandezas.potencia_aparente_3 = apparent_power(2);
-  _mapaMemoria->grandezas.fator_potencia_1 = power_factor(0);
-  _mapaMemoria->grandezas.fator_potencia_2 = power_factor(1);
-  _mapaMemoria->grandezas.fator_potencia_3 = power_factor(2);
-  _mapaMemoria->grandezas.frequencia[0] = mains_frequency(0);
-  _mapaMemoria->grandezas.frequencia[1] = mains_frequency(1);
-  _mapaMemoria->grandezas.frequencia[2] = mains_frequency(2);
-  _mapaMemoria->grandezas.energia_tri = (long) energy_consumed[FAKE_PHASE_TOTAL][APP_REACTIVE_ENERGY_QUADRANT_I] + (long) energy_consumed[FAKE_PHASE_TOTAL][APP_REACTIVE_ENERGY_QUADRANT_IV];
-  _mapaMemoria->grandezas.energia[0] = (long) energy_consumed[0][APP_REACTIVE_ENERGY_QUADRANT_I] + (long) energy_consumed[0][APP_REACTIVE_ENERGY_QUADRANT_IV];
-  _mapaMemoria->grandezas.energia[1] = (long) energy_consumed[1][APP_REACTIVE_ENERGY_QUADRANT_I] +(long)  energy_consumed[1][APP_REACTIVE_ENERGY_QUADRANT_IV];
-  _mapaMemoria->grandezas.energia[2] = (long) energy_consumed[2][APP_REACTIVE_ENERGY_QUADRANT_I] + (long) energy_consumed[2][APP_REACTIVE_ENERGY_QUADRANT_IV];
-  
+  _input_registers->grandezas.tensao_linha_1 = rms_voltage(0);
+  _input_registers->grandezas.tensao_linha_2 = rms_voltage(1);
+  _input_registers->grandezas.tensao_linha_3 = rms_voltage(2);
+  _input_registers->grandezas.corrente_linha_1 = rms_current(0);
+  _input_registers->grandezas.corrente_linha_2 = rms_current(1);
+  _input_registers->grandezas.corrente_linha_3 = rms_current(2);
+  _input_registers->grandezas.potencia_ativa_tri = active_power(FAKE_PHASE_TOTAL);
+  _input_registers->grandezas.potencia_ativa_1 = active_power(0);
+  _input_registers->grandezas.potencia_ativa_2 = active_power(1);
+  _input_registers->grandezas.potencia_ativa_3 = active_power(2);
+  _input_registers->grandezas.potencia_reativa_tri = reactive_power(FAKE_PHASE_TOTAL);
+  _input_registers->grandezas.potencia_reativa_1 = reactive_power(0);
+  _input_registers->grandezas.potencia_reativa_2 = reactive_power(1);
+  _input_registers->grandezas.potencia_reativa_3 = reactive_power(2);
+  _input_registers->grandezas.potencia_aparente_tri = apparent_power(FAKE_PHASE_TOTAL);
+  _input_registers->grandezas.potencia_aparente_1 = apparent_power(0);
+  _input_registers->grandezas.potencia_aparente_2 = apparent_power(1);
+  _input_registers->grandezas.potencia_aparente_3 = apparent_power(2);
+  _input_registers->grandezas.fator_potencia_1 = power_factor(0);
+  _input_registers->grandezas.fator_potencia_2 = power_factor(1);
+  _input_registers->grandezas.fator_potencia_3 = power_factor(2);
+  _input_registers->grandezas.freq_1 = mains_frequency(0);
+  _input_registers->grandezas.freq_2 = mains_frequency(1);
+  _input_registers->grandezas.freq_3 = mains_frequency(2);
+
+  _input_registers->grandezas.energia_atv_pos = energy_consumed[FAKE_PHASE_TOTAL][APP_ACTIVE_ENERGY_IMPORTED];
+  _input_registers->grandezas.energia_atv_pos_fase_1 = energy_consumed[0][APP_ACTIVE_ENERGY_IMPORTED];
+  _input_registers->grandezas.energia_atv_pos_fase_2 = energy_consumed[1][APP_ACTIVE_ENERGY_IMPORTED];
+  _input_registers->grandezas.energia_atv_pos_fase_3 = energy_consumed[2][APP_ACTIVE_ENERGY_IMPORTED];
+
+  _input_registers->grandezas.energia_rtv_pos = (long) energy_consumed[FAKE_PHASE_TOTAL][APP_REACTIVE_ENERGY_QUADRANT_I] + (long) energy_consumed[FAKE_PHASE_TOTAL][APP_REACTIVE_ENERGY_QUADRANT_IV];
+  _input_registers->grandezas.energia_rtv_pos_fase_1 = (long) energy_consumed[0][APP_REACTIVE_ENERGY_QUADRANT_I] + (long) energy_consumed[0][APP_REACTIVE_ENERGY_QUADRANT_IV];
+  _input_registers->grandezas.energia_rtv_pos_fase_1 = (long) energy_consumed[1][APP_REACTIVE_ENERGY_QUADRANT_I] +(long)  energy_consumed[1][APP_REACTIVE_ENERGY_QUADRANT_IV];
+  _input_registers->grandezas.energia_rtv_pos_fase_1 = (long) energy_consumed[2][APP_REACTIVE_ENERGY_QUADRANT_I] + (long) energy_consumed[2][APP_REACTIVE_ENERGY_QUADRANT_IV];
 }
 
-void set_reverse_current_indicator(void)
-{
-    P8OUT |= BIT6;
-}
-                                                
-void clr_reverse_current_indicator(void)
-{
-    P8OUT &=~BIT6;
-}
-                        
-
-mapaMemoria_t mapaMemoria;
+input_registers_t input_registers;
+holding_registers_t holding_registers;
 
 #if defined(__IAR_SYSTEMS_ICC__)  ||  defined(__TI_COMPILER_VERSION__)
 void main(void)
@@ -236,7 +231,7 @@ int main(int argc, char *argv[])
         
         if(Contador4096 - TempoMapaMemoria > 4096)// atualiza 1s
         {
-          updateMapaMemoria(&mapaMemoria);
+          update_input_registers(&input_registers);
           TempoMapaMemoria = Contador4096;
         }
 
@@ -398,20 +393,6 @@ int main(int argc, char *argv[])
                 if (ph == 0)
                     autocalibrate();
 #endif
-            }
-
-            static int n_times_out_of_order = 0;
-            if (ph == 0) {
-                if (phase_state & PHASE_STATUS_OUT_OF_ORDER) {
-                    if (n_times_out_of_order++ > 256)
-                    {
-                        set_reverse_current_indicator();
-                    }
-                }
-                else {
-                    n_times_out_of_order = 0;
-                    clr_reverse_current_indicator();
-                }
             }
 #if defined(LIMP_MODE_SUPPORT)
             metrology_limp_normal_detection();

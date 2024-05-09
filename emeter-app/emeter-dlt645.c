@@ -71,7 +71,6 @@
 #define NULL    (void *) 0
 #endif
 
-
 uint16_t CalculateCRC(uint8_t *data, uint16_t length) {
   uint16_t CRC16 = 0xffff;
   uint16_t poly =  0xA001;
@@ -93,36 +92,50 @@ uint16_t CalculateCRC(uint8_t *data, uint16_t length) {
   return CRC16;
 }
 
-static uint8_t* reg_to_ptr(uint16_t reg) {
-  if(reg <= 65)
-    return (&(mapaMemoria.byte[reg]));
+static uint8_t* get_ptr_from_input_register_addr(uint16_t reg_addr) 
+{
+  uint8_t byte_addr = 2 * reg_addr;
+  if(reg_addr <= 65)
+    return (&(input_registers.byte[byte_addr]));
   
-  else if (reg >= 200 && reg <= 225)
-    return (&(mapaMemoria.byte[2*reg - 268]));
+  else if (reg_addr >= 200 && reg_addr <= 225)
+    return (&(input_registers.byte[byte_addr - 268]));
   
-  else if (reg >= 300 && reg <= 339)
-    return (&(mapaMemoria.byte[2*reg - 416]));
+  else if (reg_addr >= 300 && reg_addr <= 339)
+    return (&(input_registers.byte[byte_addr - 416]));
   
-  else if (reg >= 1200 && reg <= 1229)
-    return (&(mapaMemoria.byte[2*reg - 2136]));
+  else if (reg_addr >= 1200 && reg_addr <= 1229)
+    return (&(input_registers.byte[byte_addr - 2136]));
   
   else 
     return NULL;
 }
 
-static void process_read_inp_reg(int port, uint16_t first_reg, uint16_t n_reg)
+uint8_t process_preset_single_reg(int port, uint16_t write_reg, uint16_t write_data)
+{
+  if(write_reg >= 1)
+    return 0;
+    
+  // TDTD WRITE CONFIGS ON FLASH!
+  holding_registers.addr[write_reg] = write_data;
+
+  RS485_sendBuf(port, ports[port].rx_msg.buf.uint8, 8); // header + data 
+  return 1;
+}
+
+uint8_t process_read_inp_reg(int port, uint16_t first_reg, uint16_t n_reg)
 {
   if (n_reg > 18)
-    return;
+    return 0;
   
   ports[port].tx_msg.buf.uint8[0] = 0x68;
   ports[port].tx_msg.buf.uint8[1] = 0x04;
   ports[port].tx_msg.buf.uint8[2] = n_reg * 2; //byte count
   
-  uint8_t* map_ptr = reg_to_ptr(first_reg);
+  uint8_t* map_ptr = get_ptr_from_input_register_addr(first_reg);
   
   if(map_ptr == NULL)
-    return;
+    return 0;
   
   memcpy(&(ports[port].tx_msg.buf.uint8[3]), map_ptr, n_reg * 2);
     
@@ -132,6 +145,7 @@ static void process_read_inp_reg(int port, uint16_t first_reg, uint16_t n_reg)
   ports[port].tx_msg.buf.uint8[3 + n_reg * 2] = (uint8_t)(crc&0x00FF);
   
   RS485_sendBuf(port, ports[port].tx_msg.buf.uint8, 5 + n_reg * 2); // header + data
+  return 1;
 }
 
 /* This routine is called regularly from the main polling loop, to check for completed incoming
@@ -143,13 +157,14 @@ void dlt645_service(void)
   if (ports[port].rx_frame_pending)
   {
     uint16_t crc = CalculateCRC(ports[port].rx_msg.buf.uint8, ports[port].rx_msg.len-2);
+    uint16_t first_reg, n_reg;
+    uint16_t write_reg, write_data;
     
     // Verifica CRC
     if (ports[port].rx_msg.buf.uint8[ports[port].rx_msg.len-2] == (uint8_t)(crc&0x00FF) &&
         ports[port].rx_msg.buf.uint8[ports[port].rx_msg.len-1] == (uint8_t)(crc>>8))
     {
       uint8_t function = ports[port].rx_msg.buf.uint8[1];
-      uint16_t first_reg, n_reg;
       
       switch (function)
       {
@@ -165,8 +180,15 @@ void dlt645_service(void)
         process_read_inp_reg(port, first_reg, n_reg);
         
         break;
-      case 0x05: //Force Single Coil
+        
+      case 0x05: break;//Force Single Coil
+      
       case 0x06: //Preset Single Register
+        write_reg = ((uint16_t)ports[port].rx_msg.buf.uint8[2])<<8 | ports[port].rx_msg.buf.uint8[3];
+        write_data = ((uint16_t)ports[port].rx_msg.buf.uint8[4])<<8 | ports[port].rx_msg.buf.uint8[5];
+
+        process_preset_single_reg(port, write_reg, write_data);
+        
         break;
         
       //Espera 4bytes
@@ -175,8 +197,7 @@ void dlt645_service(void)
         break;
         
       //Preset Multiple Register (nbytes)
-      case 0x10:
-        break;
+      case 0x10: break;
 
       /*Funcoes especiais*/
       /*
@@ -212,6 +233,7 @@ void dlt645_service(void)
 /* This routine is called from within UART port interrupts, so it must be kept lean and mean. */
 void dlt645_rx_byte(int port, uint8_t c)
 {
+/*
   // update timeout
   ports[port].rx_msg.inter_char_timeout = Contador4096;
 
@@ -268,4 +290,5 @@ void dlt645_rx_byte(int port, uint8_t c)
       ports[port].rx_msg.ptr = 0;
     }
   }
+*/
 }

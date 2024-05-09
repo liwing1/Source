@@ -25,7 +25,7 @@ if not "%~1" == "" goto debugFile
 
 @echo on 
 
-"C:\Program Files (x86)\IAR Systems\Embedded Workbench 8.0\common\bin\cspybat" -f "C:\Users\elias\Documents\Meter\Source\emeter-toolkit\emeter-toolkit-67641\settings\emeter-toolkit-67641.Debug.general.xcl" --backend -f "C:\Users\elias\Documents\Meter\Source\emeter-toolkit\emeter-toolkit-67641\settings\emeter-toolkit-67641.Debug.driver.xcl" 
+"C:\Program Files (x86)\IAR Systems\Embedded Workbench 8.0\common\bin\cspybat" -f "C:\Projetos\Ztec\Source\emeter-toolkit\emeter-toolkit-67641\settings\emeter-toolkit-67641.Debug.general.xcl" --backend -f "C:\Projetos\Ztec\Source\emeter-toolkit\emeter-toolkit-67641\settings\emeter-toolkit-67641.Debug.driver.xcl" 
 
 @echo off 
 goto end 
@@ -34,7 +34,7 @@ goto end
 
 @echo on 
 
-"C:\Program Files (x86)\IAR Systems\Embedded Workbench 8.0\common\bin\cspybat" -f "C:\Users\elias\Documents\Meter\Source\emeter-toolkit\emeter-toolkit-67641\settings\emeter-toolkit-67641.Debug.general.xcl" "--debug_file=%~1" --backend -f "C:\Users\elias\Documents\Meter\Source\emeter-toolkit\emeter-toolkit-67641\settings\emeter-toolkit-67641.Debug.driver.xcl" 
+"C:\Program Files (x86)\IAR Systems\Embedded Workbench 8.0\common\bin\cspybat" -f "C:\Projetos\Ztec\Source\emeter-toolkit\emeter-toolkit-67641\settings\emeter-toolkit-67641.Debug.general.xcl" "--debug_file=%~1" --backend -f "C:\Projetos\Ztec\Source\emeter-toolkit\emeter-toolkit-67641\settings\emeter-toolkit-67641.Debug.driver.xcl" 
 
 @echo off 
 :end

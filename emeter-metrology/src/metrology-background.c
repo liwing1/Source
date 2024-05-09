@@ -567,21 +567,6 @@ static __inline__ int per_sample_dsp(void)
                        term accuracy of the measurements. */
                     if (phase_dot_products->sample_count >= samples_per_second)
                         loggers |= 1;
-
-                    if(ph == 0) //ph 0 aprox 0
-                    {
-                        if( working_data.phases[1].metrology.last_V_sample < ADC_VOLT_NEG_TRESHOLD &&
-                            working_data.phases[2].metrology.last_V_sample > ADC_VOLT_POS_TRESHOLD)
-                        {
-                            // Correct order
-                            phase->status &= ~PHASE_STATUS_OUT_OF_ORDER;
-                        }
-                        else
-                        {
-                            // Out of order
-                            phase->status |= PHASE_STATUS_OUT_OF_ORDER;
-                        }
-                    }
                 }
                 /* Log the sign of the signal */
                 phase->status |= PHASE_STATUS_V_POS;

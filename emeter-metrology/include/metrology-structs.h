@@ -454,9 +454,6 @@ struct esp_phase_metrology_s
     int8_t dp_set;
 };
 
-#define PHASE_REVERSED_DETECTION_SUPPORT
-#define ON_REVERSED_SELECT_POSITIVE_READING
-
 struct phase_metrology_s
 {
     /*! \brief Voltage channel DC estimates. We need separate estimates for normal

@@ -1,9 +1,9 @@
-"C:\Users\elias\Documents\Meter\Source\emeter-toolkit\src\hal_pmm.c"
+"C:\Projetos\Ztec\Source\emeter-toolkit\src\hal_pmm.c"
 -std=c99
 -ferror-limit=0
 -fbracket-depth=512
 -I
-C:\Users\elias\Documents\Meter\Source\emeter-toolkit\emeter-toolkit-67641/../include
+C:\Projetos\Ztec\Source\emeter-toolkit\emeter-toolkit-67641/../include
 -I
 C:\Program Files (x86)\IAR Systems\Embedded Workbench 8.0\430\inc\dlib
 -I
@@ -11,7 +11,7 @@ C:\Program Files (x86)\IAR Systems\Embedded Workbench 8.0\430\inc
 -I
 C:\Program Files (x86)\IAR Systems\Embedded Workbench 8.0\430\inc\dlib\c
 -I
-C:\Users\elias\Documents\Meter\Source\emeter-toolkit\include
+C:\Projetos\Ztec\Source\emeter-toolkit\include
 -D__CHAR_BITS__=8
 -D__CHAR_MAX__=0xff
 -D__CHAR_MIN__=0
