@@ -80,4 +80,6 @@
 
 #include "metrology-flash.h"
 
+#define cfg_info        (&nv_parms.seg_a.s.cfg_data)
+      
 #endif

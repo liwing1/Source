@@ -313,6 +313,11 @@ const struct calibration_data_s calibration_defaults =
 #endif
 };
 
+const struct configuration_data_s configuration_defaults = 
+{
+    .baud_rate = DEFAULT_BAUD_RATE,
+};
+
 int16_t get_v_dc_estimate(int phx, int which)
 {
     return cal_info->phases[phx].initial_v_dc_estimate[which];

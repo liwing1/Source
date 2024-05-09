@@ -214,9 +214,7 @@ int main(int argc, char *argv[])
     serial_timer_init();
     iec62056_init();
 #endif
-
-    metrology_init();
-
+    
 #if defined(ESP_SUPPORT)
     esp_start_measurement();
 #endif

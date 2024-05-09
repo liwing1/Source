@@ -62,12 +62,12 @@
 
 /*! This defines the speed of eUSCI 0 */
 #define UART_0_SUPPORT
-#define UART_0_BAUD_RATE                            9600
+#define UART_0_BAUD_RATE                            19200
 #define UART_0_DLT645_SUPPORT
 
 /*! This defines the speed of eUSCI 1 */
 #define UART_1_SUPPORT
-#define UART_1_BAUD_RATE                            19200/3
+#define UART_1_BAUD_RATE                            9600
 #undef UART_1_DLT645_SUPPORT
 
 // Define this macro so can send active power readings to the IHD430 via CC2530

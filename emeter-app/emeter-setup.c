@@ -53,6 +53,7 @@
 #include <emeter-toolkit.h>
 #include <hal_pmm.h>
 #include <emeter-metrology.h>
+#include <emeter-metrology-internal.h>
 
 #include "emeter-app.h"
 #include "emeter-rtc.h"
@@ -510,10 +511,10 @@ void system_setup(void)
     #endif
 
     #if defined(UART_0_SUPPORT)
-    serial_configure(0, 1, 19200);
+    serial_configure(0, 1, cfg_info->baud_rate);
     #endif
     #if defined(UART_1_SUPPORT)
-    serial_configure(1, 1, 19200);
+    serial_configure(1, 1, UART_1_BAUD_RATE);
     #endif
     #if defined(UART_2_SUPPORT)
     serial_configure(2, 1, UART_2_BAUD_RATE);

@@ -1,4 +1,4 @@
-"C:\Projetos\Ztec\Source\emeter-app\emeter-communication.c"
+"c:\Projetos\Ztec\Source\emeter-app\emeter-communication.c"
 -std=c99
 -ferror-limit=0
 -fbracket-depth=512

@@ -116,10 +116,16 @@ struct nv_header_s
     int16_t calibration_status;
 };
 
+struct configuration_data_s
+{
+    uint16_t baud_rate;
+};
+
 struct nv_parms_s
 {
     struct nv_header_s header;
     struct calibration_data_s cal_data;
+    struct configuration_data_s cfg_data;
 };
 
 /*! This union overlays a segment of the info, ensuring correct

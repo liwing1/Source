@@ -441,7 +441,7 @@
                 <option>
                     <name>CCOptStrategy</name>
                     <version>0</version>
-                    <state>0</state>
+                    <state>1</state>
                 </option>
                 <option>
                     <name>CCOptLevelSlave</name>
@@ -826,7 +826,7 @@
                 </option>
                 <option>
                     <name>XclFile</name>
-                    <state>$TOOLKIT_DIR$\config\linker\lnk430f67641.xcl</state>
+                    <state>$TOOLKIT_DIR$\config\linker\lnk430f67641a.xcl</state>
                 </option>
                 <option>
                     <name>XclFileSlave</name>

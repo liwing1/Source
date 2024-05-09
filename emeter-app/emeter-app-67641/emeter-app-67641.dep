@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project>
     <fileVersion>2</fileVersion>
-    <fileChecksum>926606885</fileChecksum>
+    <fileChecksum>2241469801</fileChecksum>
     <configuration>
         <name>Debug</name>
         <outputs>
@@ -51,7 +51,7 @@
             <file>$PROJ_DIR$\..\emeter-basic-display.c</file>
             <file>$PROJ_DIR$\..\emeter-basic-oled.c</file>
             <file>$PROJ_DIR$\..\emeter-rtc-c.c</file>
-            <file>$PROJ_DIR$\Debug\Exe\emeter-app-67641.ulp</file>
+            <file>$PROJ_DIR$\..\..\emeter-metrology\include\metrology-nv-structs.h</file>
             <file>$PROJ_DIR$\..\emeter-app.h</file>
             <file>$PROJ_DIR$\..\emeter-lcd.h</file>
             <file>$TOOLKIT_DIR$\lib\dlib\dl430xllfn.h</file>
@@ -108,8 +108,24 @@
             <file>$PROJ_DIR$\..\emeter-multirate.h</file>
             <file>$TOOLKIT_DIR$\inc\dlib\c\ysizet.h</file>
             <file>$PROJ_DIR$\Debug\Obj\emeter-dlt645.r43</file>
+            <file>$PROJ_DIR$\..\..\emeter-metrology\src\metrology-calibration-defaults.c</file>
             <file>$PROJ_DIR$\..\..\emeter-metrology\src\metrology-foreground.c</file>
-            <file>$PROJ_DIR$\..\..\emeter-metrology\src\metrology-background.c</file>
+            <file>$PROJ_DIR$\..\..\emeter-metrology\include\emeter-metrology-internal.h</file>
+            <file>$PROJ_DIR$\..\..\emeter-metrology\include\metrology-decs.h</file>
+            <file>$PROJ_DIR$\..\..\emeter-toolkit\include\sigma_delta_24bit_access.h</file>
+            <file>$PROJ_DIR$\..\..\emeter-metrology\include\metrology-structs.h</file>
+            <file>$PROJ_DIR$\..\..\emeter-metrology\include\metrology-corrections.h</file>
+            <file>$PROJ_DIR$\..\..\emeter-metrology\src\metrology-setup.c</file>
+            <file>$PROJ_DIR$\..\..\emeter-toolkit\include\sar_12bit_access.h</file>
+            <file>$PROJ_DIR$\..\..\emeter-metrology\include\metrology-host.h</file>
+            <file>$PROJ_DIR$\..\..\emeter-metrology\include\metrology-interactions.h</file>
+            <file>$PROJ_DIR$\..\..\emeter-metrology\include\metrology-flash.h</file>
+            <file>$PROJ_DIR$\..\..\emeter-metrology\include\metrology-foreground.h</file>
+            <file>$PROJ_DIR$\..\..\emeter-toolkit\include\sar_10bit_access.h</file>
+            <file>$PROJ_DIR$\..\..\emeter-metrology\include\metrology-instantiate-adcs.h</file>
+            <file>$PROJ_DIR$\..\..\emeter-metrology\include\metrology-setup.h</file>
+            <file>$PROJ_DIR$\..\..\emeter-metrology\include\metrology-background.h</file>
+            <file>$PROJ_DIR$\..\..\emeter-toolkit\include\sigma_delta_16bit_access.h</file>
         </outputs>
         <file>
             <name>[ROOT_NODE]</name>
@@ -117,10 +133,6 @@
                 <tool>
                     <name>XLINK</name>
                     <file> 50 80</file>
-                </tool>
-                <tool>
-                    <name>ULP430</name>
-                    <file> 46</file>
                 </tool>
             </outputs>
         </file>
@@ -147,7 +159,7 @@
                 </tool>
                 <tool>
                     <name>BICOMP</name>
-                    <file> 56 93 92 49 55 14 68 73 67 28 100 65 101 29 3 4 1 79 98 72 63 61 26 10 89 19 30 96 27</file>
+                    <file> 56 93 92 49 55 14 68 27 67 28 100 65 101 29 3 30 4 1 79 98 72 63 61 26 10 96 19 89 73</file>
                 </tool>
             </inputs>
         </file>
@@ -170,11 +182,11 @@
             <inputs>
                 <tool>
                     <name>ICC430</name>
-                    <file> 19 56 72 55 63 49 65 92 61 1 101 28 26 29 10 79 14 93 3 68 51 98 30 89 96 73 27 47 60 48 66 42</file>
+                    <file> 19 56 72 55 63 49 65 92 61 1 101 28 26 29 10 79 14 93 3 68 51 98 30 89 96 73 27 105 113 108 112 106 46 117 107 120 111 116 115 119 109 118 114 47 60 48 66 42</file>
                 </tool>
                 <tool>
                     <name>BICOMP</name>
-                    <file> 56 73 98 3 28 66 55 29 72 93 60 63 61 14 68 89 1 79 51 47 48 42 92 49 65 101 26 10 30 96 27 19</file>
+                    <file> 92 56 114 98 28 48 72 49 10 113 107 93 47 42 65 101 26 29 96 115 1 79 51 105 60 66 55 63 61 14 3 68 30 27 108 109 106 117 111 19 89 73 46 119 118 112 120 116</file>
                 </tool>
             </inputs>
         </file>
@@ -201,7 +213,7 @@
                 </tool>
                 <tool>
                     <name>BICOMP</name>
-                    <file> 56 98 29 60 55 3 96 67 79 47 97 72 63 61 101 14 68 30 27 1 28 93 64 48 66 99 92 49 65 26 10 89 73 19</file>
+                    <file> 29 98 26 60 65 56 28 89 67 79 47 97 92 49 55 10 73 1 93 64 48 66 99 72 63 61 101 14 3 68 30 96 27 19</file>
                 </tool>
             </inputs>
         </file>
@@ -228,7 +240,7 @@
                 </tool>
                 <tool>
                     <name>BICOMP</name>
-                    <file> 66 27 28 55 14 68 67 93 56 30 4 79 98 97 72 63 61 101 29 3 96 19 92 49 65 26 10 89 73</file>
+                    <file> 56 66 29 28 92 26 67 93 49 55 89 4 79 98 97 65 10 73 19 72 63 61 101 14 3 68 30 96 27</file>
                 </tool>
             </inputs>
         </file>
@@ -309,7 +321,7 @@
                 </tool>
                 <tool>
                     <name>BICOMP</name>
-                    <file> 14 68 82 60 65 56 92 55 29 27 67 28 93 64 25 49 13 30 4 79 98 97 47 48 86 39 66 72 63 61 101 23 26 3 96 19 10 89 73</file>
+                    <file> 82 60 65 56 92 55 29 67 28 93 64 25 49 13 89 4 79 98 97 47 48 86 39 66 72 63 61 101 23 26 10 73 19 14 3 68 30 96 27</file>
                 </tool>
             </inputs>
         </file>
@@ -363,7 +375,7 @@
                 </tool>
                 <tool>
                     <name>BICOMP</name>
-                    <file> 68 10 14 89 93 48 65 56 92 78 75 16 64 53 72 49 55 26 29 3 4 67 28 79 98 47 60 42 63 61 101 73 19 30 96 27 1</file>
+                    <file> 68 10 14 96 93 48 65 56 92 78 75 16 64 53 72 49 55 26 29 3 4 67 28 79 98 47 60 42 63 61 101 30 27 19 89 73 1</file>
                 </tool>
             </inputs>
         </file>
@@ -390,7 +402,7 @@
                 </tool>
                 <tool>
                     <name>BICOMP</name>
-                    <file> 92 96 93 56 60 72 49 55 26 29 3 75 16 64 42 65 78 28 4 67 79 98 47 53 66 63 61 101 10 14 68 30 27 1 19 89 73</file>
+                    <file> 92 73 93 56 60 72 49 55 26 29 75 16 64 42 65 78 28 4 67 79 98 47 53 66 63 61 101 89 1 19 10 14 3 68 30 96 27</file>
                 </tool>
             </inputs>
         </file>
@@ -417,7 +429,7 @@
                 </tool>
                 <tool>
                     <name>BICOMP</name>
-                    <file> 89 55 60 79 28 98 56 26 29 4 93 47 72 63 61 101 10 73 19 92 49 65 14 3 68 30 96 27</file>
+                    <file> 96 92 60 79 56 3 98 49 55 29 4 28 93 47 65 14 68 30 27 19 72 63 61 101 26 10 89 73</file>
                 </tool>
             </inputs>
         </file>

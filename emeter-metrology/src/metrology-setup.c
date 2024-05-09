@@ -979,9 +979,11 @@ int metrology_init(void)
     /* There should always be a power scaling factor for the first current sensor channel of the
        first phase, whatever type of metrology is being built, and that factor should not be
        0xFFFF. */
-    if (cal_info->phases[0].current[0].P_scale_factor == 0xFFFF)
+    if (cal_info->phases[0].current[0].P_scale_factor == 0xFFFF || 
+        cal_info->baud_rate == 0xFFFF)
     {
         flash_memcpy((void *) cal_info, (const void *) &calibration_defaults, sizeof(calibration_defaults));
+        flash_memcpy((void *) cfg_info, (const void *) &configuration_defaults, sizeof(configuration_defaults));
         flash_secure();
     }
 #if defined(SAG_POWER_DOWN_SUPPORT)

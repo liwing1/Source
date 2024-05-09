@@ -231,8 +231,8 @@ int serial_configure(int port, int mode, uint32_t bit_rate)
         }
         else //9600
         {
-          UCA0BRW = 0x009C;
-          UCA0MCTLW = 0x0041;
+          UCA0BRW = 0x00A3;
+          UCA0MCTLW = 0x55D1;
         }
         UCA0IE = 0X09;
         return 0;
@@ -286,8 +286,8 @@ int serial_configure(int port, int mode, uint32_t bit_rate)
         }
         else //9600
         {
-          UCA1BRW = 0x009C;
-          UCA1MCTLW = 0x0041;
+          UCA0BRW = 0x00A3;
+          UCA0MCTLW = 0x55D1;
         }
         UCA1IE = 0X09;
         return 0;
