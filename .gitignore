@@ -17,4 +17,4 @@
 **/Obj/*.pbi  
 **/Obj/*.pbi.*  
 
-./vscode
+.vscode/
