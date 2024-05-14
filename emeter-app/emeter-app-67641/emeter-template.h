@@ -81,7 +81,7 @@
 #define custom_set_consumption(x,y)                 /**/
 
 #undef  LCD_DISPLAY_SUPPORT
-#define  OLED_DISPLAY_SUPPORT
+#define OLED_DISPLAY_SUPPORT
 
 #define USE_STARBURST
 #define USE_7SEGMENT
@@ -307,6 +307,13 @@ static const uint8_t field2_dp_icons[] = \
 
 #undef USE_WATCHDOG
 
+//TDTD
+#if 1
+
+#define custom_active_energy_pulse_start(ph) ;
+#define custom_active_energy_pulse_end(ph) ;
+
+#else 
 #define custom_active_energy_pulse_start(ph) \
 { \
   switch(ph) \
@@ -346,6 +353,8 @@ static const uint8_t field2_dp_icons[] = \
          break; \
   } \
 }
+
+#endif
 
 #define custom_reactive_energy_pulse_start(ph) \
 { \
@@ -402,11 +411,11 @@ static const uint8_t field2_dp_icons[] = \
     P3.4 = LCD segment line 39
     P3.5 = LCD segment line 38
     P3.6 = LCD segment line 37
-    P3.7 = LCD segment line 36
+    P3.7 = LCD segment line 36  - ALARME no MECALOR
  */
-#define P3DIR_INIT                                  (BIT3 | BIT2 | BIT1 | BIT0)
+#define P3DIR_INIT                                  (BIT7 | BIT3 | BIT2 | BIT1 | BIT0)
 #define P3SEL_INIT                                  (0)
-#define P3OUT_INIT                                  (BIT3 | BIT2| BIT0)
+#define P3OUT_INIT                                  (BIT7 | BIT3 | BIT2| BIT0)
 #define P3REN_INIT                                  (0)
 
 /*

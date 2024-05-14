@@ -72,10 +72,10 @@ int normal_limp;
 int16_t temperature_in_celsius;
 #endif
 
-#define CURRENT_CAL_FACTOR  (float)0.00195160774
-#define VOLTAGE_CAL_FACTOR  (float)2.616300482
-#define A_POWER_CAL_FACTOR  (float)0.5103225886
-#define R_POWER_CAL_FACTOR  (float)0.02481716457
+#define VOLTAGE_CAL_FACTOR  (float)2.69451195534
+#define CURRENT_CAL_FACTOR  (float)0.00085177562//v0.1
+#define A_POWER_CAL_FACTOR  (float)1.67724862575
+#define R_POWER_CAL_FACTOR  (float)2.32026881924
 
 /* The main per-phase working parameter structure */
 struct metrology_data_s working_data;

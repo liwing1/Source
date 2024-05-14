@@ -63,6 +63,8 @@ uint8_t info_step;
 uint8_t info_substep;
 #endif
 
+volatile int oled_step=-10;
+
 #if defined(OLED_DISPLAY_SUPPORT)  
 
 void OLED_display_startup_message(void)
@@ -269,32 +271,29 @@ static __inline__ void oled_active_power()
 
     static __inline__ void oled_rms_voltage()
     {
-        // const float k = 2.55711857143;
-        const float k = 1;
-        float x;
+        rms_voltage_t x;
 
         /* Display RMS voltage in 0.1V or 0.01V increments */
 
         Oled_titulo("Volts RMS");    
         
-        x=rms_voltage(0) *k;
+        x=rms_voltage(0);
         if (x==RMS_VOLTAGE_OVERRANGE)
             ssd1306_printText(4, 3,"A:  == OVERVOLTAGE =="); 
         else    
-            Oled_display_valor(4,3,(long)x,3,"A: "," V");
+            Oled_display_valor(4,3,x,3,"A: "," V");
 
-        x=rms_voltage(1) *k;
+        x=rms_voltage(1);
         if (x==RMS_VOLTAGE_OVERRANGE)
             ssd1306_printText(4, 5,"B:  == OVERVOLTAGE =="); 
         else    
-            Oled_display_valor(4,5,(long)x,3,"B: "," V");
+            Oled_display_valor(4,5,x,3,"B: "," V");
 
-        x=rms_voltage(2) *k;
+        x=rms_voltage(2);
         if (x==RMS_VOLTAGE_OVERRANGE)
             ssd1306_printText(4, 7,"C:  == OVERVOLTAGE =="); 
         else    
-            Oled_display_valor(4,7,(long)x,3,"C: "," V");
-
+            Oled_display_valor(4,7,x,3,"C: "," V");
     }
 #endif    
     
@@ -302,32 +301,29 @@ static __inline__ void oled_active_power()
 
     static __inline__ void oled_rms_current()
     {
-        // const float k = 0.00021863334;
-        const float k = 1;
-        float x;
+        rms_current_t x;
 
         /* Display RMS current in 1mA increments */
 
         Oled_titulo("I RMS");    
         
-        x=rms_current(0) *k;
+        x=rms_current(0);
         if (x==RMS_CURRENT_OVERRANGE)
             ssd1306_printText(4, 3,"A:  == OVERCURRENT =="); 
         else    
-            Oled_display_valor(4,3,(long)x,3,"A: "," A");
+            Oled_display_valor(4,3,x,3,"A: "," A");
 
-        x=rms_current(1) *k;
+        x=rms_voltage(1);
         if (x==RMS_CURRENT_OVERRANGE)
             ssd1306_printText(4, 5,"B:  == OVERCURRENT =="); 
         else    
-            Oled_display_valor(4,5,(long)x,3,"B: "," A");
+            Oled_display_valor(4,5,x,3,"B: "," A");
 
-        x=rms_current(2) *k;
+        x=rms_voltage(0);
         if (x==RMS_CURRENT_OVERRANGE)
             ssd1306_printText(4, 7,"C:  == OVERCURRENT =="); 
         else    
-            Oled_display_valor(4,7,(long)x,3,"C: "," A");
-
+            Oled_display_valor(4,7,x,3,"C: "," A");
     }
 #endif    
  
@@ -534,8 +530,6 @@ void display_oled_item(int item)
     }        
 }
 
-int oled_step = -10;
-
 void update_oled(void)
 {
     ssd1306_clearDisplay();
@@ -571,7 +565,6 @@ void update_oled(void)
       buffer_tx_modbus[13] = crc & 0xFF; // LSB
       buffer_tx_modbus[14] = (crc >> 8) & 0xFF; // MSB  
 */
-     // Fim do teste modbus 
     }
    
     

@@ -11,6 +11,7 @@
 
 
 
+
 // Fun��es de controle I2C
 void I2C_init();
 void I2C_start();
@@ -27,7 +28,6 @@ void main(void) {
 
     // Inicializar o display SSD1306
     SSD1306_sendCommand(SSD1306_SET_DISPLAY_ON);
-
     // Escrever seu c�digo para controlar o display SSD1306 aqui
 
     while(1) {
@@ -48,6 +48,7 @@ void i2c_init() {
     UCB0BRW = 250/2;                              // Fator de divis�o do clock SMCLK
     UCB0IE = 0; 
     UCB0CTLW0 &= ~UCSWRST;                     // Liberar e-SPI da reinicializa��o
+
 
     UCB0I2CSA=0x3C;  // UCB0I2CSA = SlaveAddress
     
@@ -71,8 +72,8 @@ void I2C_send(uint8_t byte) {
 
 void SSD1306_Init(void) {
   
-#define OLED_1306 // SSD1306 ou SSH1106
-// #undef OLED_1306 // SSD1306 ou SSH1106
+//#define OLED_1306 // SSD1306 ou SSH1106
+#undef OLED_1306 // SSD1306 ou SSH1106
   
     // SSD1306 init sequence
     ssd1306_command(SSD1306_DISPLAYOFF);                                // 0xAE
