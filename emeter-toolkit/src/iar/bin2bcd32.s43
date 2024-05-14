@@ -1,0 +1,109 @@
+;******************************************************************************
+;  bin2bcd32.s43 (IAR version) - 32 bit binary to BCD conversion
+;
+;  Copyright (C) 2011 Texas Instruments Incorporated - http://www.ti.com/ 
+; 
+;  Redistribution and use in source and binary forms, with or without 
+;  modification, are permitted provided that the following conditions 
+;  are met:
+;
+;    Redistributions of source code must retain the above copyright 
+;    notice, this list of conditions and the following disclaimer.
+;
+;    Redistributions in binary form must reproduce the above copyright
+;    notice, this list of conditions and the following disclaimer in the 
+;    documentation and/or other materials provided with the   
+;    distribution.
+;
+;    Neither the name of Texas Instruments Incorporated nor the names of
+;    its contributors may be used to endorse or promote products derived
+;    from this software without specific prior written permission.
+;
+;  THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS 
+;  "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT 
+;  LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR
+;  A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT 
+;  OWNER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, 
+;  SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT 
+;  LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE,
+;  DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY
+;  THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT 
+;  (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE 
+;  OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+;
+;******************************************************************************
+
+#include "io.h"
+#include "macros.m43"
+
+#if !defined(__IAR_SYSTEMS_ASM__)  ||  !(((__TID__ >> 8) & 0x7f) == 43)
+#error This file is compatible with the IAR MSP430 assembler.
+#endif
+
+#if __VER__ < 400
+#error This file is compatible with the IAR MSP430 assembler 4.0 or later.
+#endif
+
+; Parameters
+#define bcd         R12
+#define bin_ls      R14
+#define bin_ms      R15
+
+; Temporary variables
+#define i           R13
+#define decimal_0   R9
+#define decimal_1   R10
+#define decimal_2   R11
+
+;void bin2bcd32(uint8_t bcd[5], uint32_t bin)
+    public bin2bcd32
+
+    RSEG CODE
+bin2bcd32
+#if __CORE__==__430X_CORE__
+    pushm.w #3,R11
+#else
+    push.w  R9
+    push.w  R10
+    push.w  R11
+#endif
+
+    clr.w   decimal_0
+    clr.w   decimal_1
+    clr.w   decimal_2
+    
+    mov.w   #16,i
+bin2bcd32_1
+    rla.w   bin_ms
+    dadd.w  decimal_0,decimal_0
+    dadd.w  decimal_1,decimal_1
+    dec.w   i
+    jnz     bin2bcd32_1
+
+    mov.w   #16,i
+bin2bcd32_2
+    rla.w   bin_ls
+    dadd.w  decimal_0,decimal_0
+    dadd.w  decimal_1,decimal_1
+    dadd.w  decimal_2,decimal_2
+    dec.w   i
+    jnz     bin2bcd32_2
+    
+    ;We need to byte swap as we store the result
+    mov.b   decimal_2,0(bcd)
+    mov.b   decimal_1,2(bcd)
+    swpb    decimal_1
+    mov.b   decimal_1,1(bcd)
+    mov.b   decimal_0,4(bcd)
+    swpb    decimal_0
+    mov.b   decimal_0,3(bcd)
+
+#if __CORE__==__430X_CORE__
+    popm.w  #3,R11
+#else
+    pop.w   R11
+    pop.w   R10
+    pop.w   R9
+#endif
+    xret
+    end
