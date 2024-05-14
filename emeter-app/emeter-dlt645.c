@@ -67,6 +67,8 @@
 #include "emeter-dlt645.h"
 #include "dlt645-decs.h"
 
+#include "metrology-calibration.h"
+
 #if !defined(NULL)
 #define NULL    (void *) 0
 #endif
@@ -116,8 +118,9 @@ uint8_t process_preset_single_reg(int port, uint16_t write_reg, uint16_t write_d
   if(write_reg >= 1)
     return 0;
     
-  // TDTD WRITE CONFIGS ON FLASH!
   holding_registers.addr[write_reg] = write_data;
+
+  set_cfg_baud_rate(holding_registers.addr[write_reg]);
 
   RS485_sendBuf(port, ports[port].rx_msg.buf.uint8, 8); // header + data 
   return 1;

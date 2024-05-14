@@ -89,4 +89,4 @@
     #define DEFAULT_FREQUENCY_PHASE_FACTOR              500
     #define DEFAULT_FREQUENCY_GAIN_FACTOR               0
 
-    #define DEFAULT_BAUD_RATE                           9600
+    #define DEFAULT_BAUD_RATE                           0

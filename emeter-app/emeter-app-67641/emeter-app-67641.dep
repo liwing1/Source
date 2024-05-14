@@ -115,6 +115,7 @@
             <file>$PROJ_DIR$\..\..\emeter-toolkit\include\sigma_delta_24bit_access.h</file>
             <file>$PROJ_DIR$\..\..\emeter-metrology\include\metrology-structs.h</file>
             <file>$PROJ_DIR$\..\..\emeter-metrology\include\metrology-corrections.h</file>
+            <file>$PROJ_DIR$\..\..\emeter-metrology\src\metrology-background.c</file>
             <file>$PROJ_DIR$\..\..\emeter-metrology\src\metrology-setup.c</file>
             <file>$PROJ_DIR$\..\..\emeter-toolkit\include\sar_12bit_access.h</file>
             <file>$PROJ_DIR$\..\..\emeter-metrology\include\metrology-host.h</file>
@@ -126,6 +127,8 @@
             <file>$PROJ_DIR$\..\..\emeter-metrology\include\metrology-setup.h</file>
             <file>$PROJ_DIR$\..\..\emeter-metrology\include\metrology-background.h</file>
             <file>$PROJ_DIR$\..\..\emeter-toolkit\include\sigma_delta_16bit_access.h</file>
+            <file>$PROJ_DIR$\..\..\emeter-metrology\src\metrology-flash.c</file>
+            <file>$PROJ_DIR$\..\..\emeter-toolkit\src\iar\dc_filter24.s43</file>
         </outputs>
         <file>
             <name>[ROOT_NODE]</name>
@@ -159,7 +162,7 @@
                 </tool>
                 <tool>
                     <name>BICOMP</name>
-                    <file> 56 93 92 49 55 14 68 27 67 28 100 65 101 29 3 30 4 1 79 98 72 63 61 26 10 96 19 89 73</file>
+                    <file> 56 93 92 49 55 14 68 73 67 28 100 65 101 29 3 4 1 79 98 72 63 61 26 10 89 19 30 96 27</file>
                 </tool>
             </inputs>
         </file>
@@ -182,11 +185,11 @@
             <inputs>
                 <tool>
                     <name>ICC430</name>
-                    <file> 19 56 72 55 63 49 65 92 61 1 101 28 26 29 10 79 14 93 3 68 51 98 30 89 96 73 27 105 113 108 112 106 46 117 107 120 111 116 115 119 109 118 114 47 60 48 66 42</file>
+                    <file> 19 56 72 55 63 49 65 92 61 1 101 28 26 29 10 79 14 93 3 68 51 98 30 89 96 73 27 105 114 108 113 106 46 118 107 121 112 117 116 120 109 119 115 47 60 48 66 42</file>
                 </tool>
                 <tool>
                     <name>BICOMP</name>
-                    <file> 92 56 114 98 28 48 72 49 10 113 107 93 47 42 65 101 26 29 96 115 1 79 51 105 60 66 55 63 61 14 3 68 30 27 108 109 106 117 111 19 89 73 46 119 118 112 120 116</file>
+                    <file> 92 56 115 98 28 48 72 49 10 89 114 107 93 47 42 65 101 26 29 116 1 79 51 105 60 66 55 63 61 14 3 68 73 30 108 109 106 118 112 19 96 27 46 120 119 113 121 117</file>
                 </tool>
             </inputs>
         </file>
@@ -213,7 +216,7 @@
                 </tool>
                 <tool>
                     <name>BICOMP</name>
-                    <file> 29 98 26 60 65 56 28 89 67 79 47 97 92 49 55 10 73 1 93 64 48 66 99 72 63 61 101 14 3 68 30 96 27 19</file>
+                    <file> 56 27 98 49 55 60 92 10 73 67 79 47 97 65 26 29 28 89 1 93 64 48 66 99 72 63 61 101 14 3 68 30 96 19</file>
                 </tool>
             </inputs>
         </file>
@@ -321,7 +324,7 @@
                 </tool>
                 <tool>
                     <name>BICOMP</name>
-                    <file> 82 60 65 56 92 55 29 67 28 93 64 25 49 13 89 4 79 98 97 47 48 86 39 66 72 63 61 101 23 26 10 73 19 14 3 68 30 96 27</file>
+                    <file> 30 82 60 65 56 92 55 29 67 28 93 64 25 49 13 14 68 27 4 79 98 97 47 48 86 39 66 72 63 61 101 23 26 3 96 19 10 89 73</file>
                 </tool>
             </inputs>
         </file>
@@ -375,7 +378,7 @@
                 </tool>
                 <tool>
                     <name>BICOMP</name>
-                    <file> 68 10 14 96 93 48 65 56 92 78 75 16 64 53 72 49 55 26 29 3 4 67 28 79 98 47 60 42 63 61 101 30 27 19 89 73 1</file>
+                    <file> 68 10 14 93 48 65 56 92 78 75 16 64 53 72 49 55 26 29 3 89 4 67 28 79 98 47 60 42 63 61 101 73 19 30 96 27 1</file>
                 </tool>
             </inputs>
         </file>
@@ -402,7 +405,7 @@
                 </tool>
                 <tool>
                     <name>BICOMP</name>
-                    <file> 92 73 93 56 60 72 49 55 26 29 75 16 64 42 65 78 28 4 67 79 98 47 53 66 63 61 101 89 1 19 10 14 3 68 30 96 27</file>
+                    <file> 92 56 93 60 72 49 55 26 29 75 16 64 42 65 78 3 96 28 4 67 79 98 47 53 66 63 61 101 10 14 68 30 27 1 19 89 73</file>
                 </tool>
             </inputs>
         </file>

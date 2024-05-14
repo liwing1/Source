@@ -135,6 +135,26 @@ int serial_configure(int port, int mode, uint32_t bit_rate)
         ctl0 = 0;
 #endif
     }
+
+    switch (bit_rate)
+    {
+    case 0:
+        bit_rate = 9600;
+        break;
+    case 1:
+        bit_rate = 19200;
+        break;
+    case 2:
+        bit_rate = 38400;
+        break;
+    case 3:
+        bit_rate = 115200;
+        break;
+    default:
+        bit_rate = 9600;
+        break;
+    }
+
     /* Use ACLK for slow bit rates. Use SMCLK for higher bit rates */
     if (bit_rate <= 4800L)
     {
@@ -187,8 +207,8 @@ int serial_configure(int port, int mode, uint32_t bit_rate)
     #if defined(__MSP430_HAS_USCI_AB0__)  ||  defined(__MSP430_HAS_USCI_A0__)  ||  defined(__MSP430_HAS_EUSCI_A0__)
         /* Configure the port with the reset bit held high */
         UCA0CTL1 |= UCSWRST;
-        //UCA0CTL0 = UCPEN | UCPAR | ctl0;
-        UCA0CTL0 = 0xC0 | ctl0;
+        UCA0CTL0 = ctl0;
+        UCA0CTL0 |= 0xC0; //EVEN PARITY
         UCA0CTL1 = ctl1;
         UCA0CTLW1 = 0x03;
         #if defined(__MSP430_HAS_EUSCI_A0__)
@@ -224,15 +244,28 @@ int serial_configure(int port, int mode, uint32_t bit_rate)
         TXBUF0 = 0;
     #endif
         // LI:
-        if (bit_rate == 19200)
+        switch (bit_rate)
         {
-          UCA0BRW = 0x0051;
-          UCA0MCTLW = 0xBBE1;
-        }
-        else //9600
-        {
-          UCA0BRW = 0x00A3;
-          UCA0MCTLW = 0x55D1;
+        case 9600:
+            UCA0BRW = 0x00A3;
+            UCA0MCTLW = 0x55D1;
+            break;
+        case 19200:
+            UCA0BRW = 0x0051;
+            UCA0MCTLW = 0xBBE1;
+            break;
+        case 38400:
+            UCA0BRW = 0x0028;
+            UCA0MCTLW = 0x4AF1;
+            break;
+        case 115200:
+            UCA0BRW = 0x000D;
+            UCA0MCTLW = 0x55A1; 
+            break;
+        default:
+            UCA0BRW = 0x00A3;
+            UCA0MCTLW = 0x55D1;    
+            break;
         }
         UCA0IE = 0X09;
         return 0;
@@ -279,15 +312,28 @@ int serial_configure(int port, int mode, uint32_t bit_rate)
         TXBUF1 = 0;
     #endif
         // LI:
-        if (bit_rate == 19200)
+        switch (bit_rate)
         {
-          UCA0BRW = 0x0051;
-          UCA0MCTLW = 0xBBE1;
-        }
-        else //9600
-        {
-          UCA0BRW = 0x00A3;
-          UCA0MCTLW = 0x55D1;
+        case 9600:
+            UCA1BRW = 0x00A3;
+            UCA1MCTLW = 0x55D1;
+            break;
+        case 19200:
+            UCA1BRW = 0x0051;
+            UCA1MCTLW = 0xBBE1;
+            break;
+        case 38400:
+            UCA1BRW = 0x0028;
+            UCA1MCTLW = 0x4AF1;
+            break;
+        case 115200:
+            UCA1BRW = 0x000D;
+            UCA1MCTLW = 0x55A1; 
+            break;
+        default:
+            UCA1BRW = 0x00A3;
+            UCA1MCTLW = 0x55D1;    
+            break;
         }
         UCA1IE = 0X09;
         return 0;
