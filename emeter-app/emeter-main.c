@@ -208,6 +208,7 @@ int main(int argc, char *argv[])
         exit(2);
 #endif
      
+    clear_calibration_data();
     system_setup(); 
   
 #if defined(TRNG_PURITY_TESTS)

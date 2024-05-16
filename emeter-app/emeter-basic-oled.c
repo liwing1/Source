@@ -313,13 +313,13 @@ static __inline__ void oled_active_power()
         else    
             Oled_display_valor(4,3,x,3,"A: "," A");
 
-        x=rms_voltage(1);
+        x=rms_current(1);
         if (x==RMS_CURRENT_OVERRANGE)
             ssd1306_printText(4, 5,"B:  == OVERCURRENT =="); 
         else    
             Oled_display_valor(4,5,x,3,"B: "," A");
 
-        x=rms_voltage(0);
+        x=rms_current(2);
         if (x==RMS_CURRENT_OVERRANGE)
             ssd1306_printText(4, 7,"C:  == OVERCURRENT =="); 
         else    

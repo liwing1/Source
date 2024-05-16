@@ -50,22 +50,22 @@
 #define DEFAULT_V_DC_ESTIMATE_C                     20500
 #define DEFAULT_V_AC_OFFSET_C                       9
 
-#define DEFAULT_I_RMS_SCALE_FACTOR_A                23540
+#define DEFAULT_I_RMS_SCALE_FACTOR_A                20
 #define DEFAULT_I_DC_ESTIMATE_A                     0
 #define DEFAULT_I_AC_OFFSET_A                       29000
 
-#define DEFAULT_I_RMS_SCALE_FACTOR_B                23553
+#define DEFAULT_I_RMS_SCALE_FACTOR_B                20
 #define DEFAULT_I_DC_ESTIMATE_B                     0
 #define DEFAULT_I_AC_OFFSET_B                       29000
 
-#define DEFAULT_I_RMS_SCALE_FACTOR_C                23513
+#define DEFAULT_I_RMS_SCALE_FACTOR_C                20
 #define DEFAULT_I_DC_ESTIMATE_C                     0
 #define DEFAULT_I_AC_OFFSET_C                       29000
 
 /* The following will be assigned automatically if they are not set here */
-#define DEFAULT_P_SCALE_FACTOR_A                    24766
-#define DEFAULT_P_SCALE_FACTOR_B                    25008
-#define DEFAULT_P_SCALE_FACTOR_C                    24652
+#define DEFAULT_P_SCALE_FACTOR_A                    41538
+#define DEFAULT_P_SCALE_FACTOR_B                    41538
+#define DEFAULT_P_SCALE_FACTOR_C                    41538
 
 /* Value is phase angle in 1/256th of a sample increments. */
 #define DEFAULT_BASE_PHASE_A_CORRECTION             (-207)

@@ -72,8 +72,8 @@ void I2C_send(uint8_t byte) {
 
 void SSD1306_Init(void) {
   
-//#define OLED_1306 // SSD1306 ou SSH1106
-#undef OLED_1306 // SSD1306 ou SSH1106
+#define OLED_1306 // SSD1306 ou SSH1106
+//#undef OLED_1306 // SSD1306 ou SSH1106
   
     // SSD1306 init sequence
     ssd1306_command(SSD1306_DISPLAYOFF);                                // 0xAE

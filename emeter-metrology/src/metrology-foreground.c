@@ -73,9 +73,9 @@ int16_t temperature_in_celsius;
 #endif
 
 #define VOLTAGE_CAL_FACTOR  (float)2.69451195534
-#define CURRENT_CAL_FACTOR  (float)0.00085177562//v0.1
-#define A_POWER_CAL_FACTOR  (float)1.67724862575
-#define R_POWER_CAL_FACTOR  (float)2.32026881924
+#define CURRENT_CAL_FACTOR  (float)1//v0.1
+#define A_POWER_CAL_FACTOR  (float)1
+#define R_POWER_CAL_FACTOR  (float)1
 
 /* The main per-phase working parameter structure */
 struct metrology_data_s working_data;
