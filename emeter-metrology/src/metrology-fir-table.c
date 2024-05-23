@@ -19,7 +19,7 @@
 #error This FIR table is for 4096.00 samples per second.
 #endif
 #if MAINS_NOMINAL_FREQUENCY != 50
-//#error This FIR table is for 50.00Hz.
+#error This FIR table is for 50.00Hz.
 #endif
 #if PHASE_SHIFT_FIR_TABLE_ELEMENTS != 256
 #error This FIR table is for 256 steps per sample.

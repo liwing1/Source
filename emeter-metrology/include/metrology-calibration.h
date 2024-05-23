@@ -147,6 +147,8 @@ void set_temperature_parameters(int16_t temperature_at_calibration, int16_t temp
 
 int align_metrology_with_calibration_data(void);
 
+void set_cfg_baud_rate(uint16_t baud_rate);
+
 #if defined(__cplusplus)
 }
 #endif

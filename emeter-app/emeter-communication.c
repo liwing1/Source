@@ -130,11 +130,31 @@ int serial_configure(int port, int mode, uint32_t bit_rate)
     {
         /* 8-bit character, no parity */
 #if defined(__MSP430_HAS_UART0__)
-        ctl0 = CHAR | SWRST;
+        ctl0 = UCPEN | UCPAR | CHAR | SWRST;
 #else
         ctl0 = 0;
 #endif
     }
+
+    switch (bit_rate)
+    {
+    case 0:
+        bit_rate = 9600;
+        break;
+    case 1:
+        bit_rate = 19200;
+        break;
+    case 2:
+        bit_rate = 38400;
+        break;
+    case 3:
+        bit_rate = 115200;
+        break;
+    default:
+        bit_rate = 9600;
+        break;
+    }
+
     /* Use ACLK for slow bit rates. Use SMCLK for higher bit rates */
     if (bit_rate <= 4800L)
     {
@@ -158,7 +178,8 @@ int serial_configure(int port, int mode, uint32_t bit_rate)
         bitrate_divider = (8000000L*16L)/bit_rate;
 #else
         /* 8MHz clock */
-        bitrate_divider = (32768L*256L*16L)/bit_rate;
+        bitrate_divider = (32768L*256L*16L)/bit_rate; // -> LI: REAL = 24MHZ
+        // bitrate_divider = (32768L*768L*16L)/bit_rate;
 #endif
 #if defined(__MSP430_HAS_UART0__)
         ctl1 = SSEL1;               /* SMCLK */
@@ -187,7 +208,9 @@ int serial_configure(int port, int mode, uint32_t bit_rate)
         /* Configure the port with the reset bit held high */
         UCA0CTL1 |= UCSWRST;
         UCA0CTL0 = ctl0;
+        UCA0CTL0 |= 0xC0; //EVEN PARITY
         UCA0CTL1 = ctl1;
+        UCA0CTLW1 = 0x03;
         #if defined(__MSP430_HAS_EUSCI_A0__)
         UCA0BRW = bitrate_divider;
         UCA0MCTLW = ((uint16_t) mctl << 8);
@@ -220,8 +243,31 @@ int serial_configure(int port, int mode, uint32_t bit_rate)
         /* If you do not initially kick the Tx port the TXEPT bit is not set. */
         TXBUF0 = 0;
     #endif
-        UCA0BRW = 0x00A3;
-        UCA0MCTLW = 0x55D1; 
+        // LI:
+        switch (bit_rate)
+        {
+        case 9600:
+            UCA0BRW = 0x00A3;
+            UCA0MCTLW = 0x55D1;
+            break;
+        case 19200:
+            UCA0BRW = 0x0051;
+            UCA0MCTLW = 0xBBE1;
+            break;
+        case 38400:
+            UCA0BRW = 0x0028;
+            UCA0MCTLW = 0x4AF1;
+            break;
+        case 115200:
+            UCA0BRW = 0x000D;
+            UCA0MCTLW = 0x55A1; 
+            break;
+        default:
+            UCA0BRW = 0x00A3;
+            UCA0MCTLW = 0x55D1;    
+            break;
+        }
+        UCA0IE = 0X09;
         return 0;
 #endif
 #if defined(UART_1_SUPPORT)
@@ -229,8 +275,10 @@ int serial_configure(int port, int mode, uint32_t bit_rate)
     #if defined(__MSP430_HAS_USCI_AB1__)  ||  defined(__MSP430_HAS_USCI_A1__)  ||  defined(__MSP430_HAS_EUSCI_A1__)
         /* Configure the port with the reset bit held high */
         UCA1CTL1 |= UCSWRST;
-        UCA1CTL0 = ctl0;
+        //UCA1CTL0 = UCPEN | UCPAR | ctl0;
+        UCA1CTL0 = 0xC0 | ctl0;
         UCA1CTL1 = ctl1;
+        UCA1CTLW1 = 0x03;
         #if defined(__MSP430_HAS_EUSCI_A1__)
         UCA1BRW = bitrate_divider;
         UCA1MCTLW = ((uint16_t) mctl << 8);
@@ -263,8 +311,31 @@ int serial_configure(int port, int mode, uint32_t bit_rate)
         /* If you do not initially kick the Tx port, the TXEPT bit is not set. */
         TXBUF1 = 0;
     #endif
-        UCA1BRW = 0x00A3;
-        UCA1MCTLW = 0x55D1; 
+        // LI:
+        switch (bit_rate)
+        {
+        case 9600:
+            UCA1BRW = 0x00A3;
+            UCA1MCTLW = 0x55D1;
+            break;
+        case 19200:
+            UCA1BRW = 0x0051;
+            UCA1MCTLW = 0xBBE1;
+            break;
+        case 38400:
+            UCA1BRW = 0x0028;
+            UCA1MCTLW = 0x4AF1;
+            break;
+        case 115200:
+            UCA1BRW = 0x000D;
+            UCA1MCTLW = 0x55A1; 
+            break;
+        default:
+            UCA1BRW = 0x00A3;
+            UCA1MCTLW = 0x55D1;    
+            break;
+        }
+        UCA1IE = 0X09;
         return 0;
 #endif
 #if defined(UART_2_SUPPORT)
@@ -326,50 +397,59 @@ int serial_configure(int port, int mode, uint32_t bit_rate)
 
 void serial_write(int port, const uint8_t buf[], int len)
 {
-    P4OUT |= BIT0;
-    ports[port].tx_in_progress = true;
     ports[port].tx_msg.ptr = 0;
     ports[port].tx_msg.len = len;
     switch (port)
     {
     #if defined(UART_0_SUPPORT)
     case 0:
-        #if defined(UART_0_DMA_SUPPORT)
-        __data20_write_long((uint32_t) &DMA2SA, (uint32_t) buf);
-        __data20_write_long((uint32_t) &DMA2DA, (uint32_t) &UCA0TXBUF);
-        DMA2SZ = len;
-        /* Enable, source address incremented, single transfer. */
-        DMA2CTL = DMADT_0 | DMASRCINCR_3 | DMASRCBYTE | DMADSTBYTE | DMAEN;
-        /* Kick things, so the DMA starts rolling */
-        UC0IFG &= ~UCA0TXIFG;
-        UC0IFG |= UCA0TXIFG;
-        #elif defined(__MSP430_HAS_UART0__)
-        U0IE |= UTXIE0;
-        #elif defined(__MSP430_HAS_USCI_AB0__)
-        UC0IE |= UCA0TXIE;
-        #else
-        UCA0IE |= UCTXIE;
-        #endif
+        //#if defined(UART_0_DMA_SUPPORT)
+        //__data20_write_long((uint32_t) &DMA2SA, (uint32_t) buf);
+        //__data20_write_long((uint32_t) &DMA2DA, (uint32_t) &UCA0TXBUF);
+        //DMA2SZ = len;
+        ///* Enable, source address incremented, single transfer. */
+        //DMA2CTL = DMADT_0 | DMASRCINCR_3 | DMASRCBYTE | DMADSTBYTE | DMAEN;
+        ///* Kick things, so the DMA starts rolling */
+        //UC0IFG &= ~UCA0TXIFG;
+        //UC0IFG |= UCA0TXIFG;
+        //#elif defined(__MSP430_HAS_UART0__)
+        //U0IE |= UTXIE0;
+        //#elif defined(__MSP430_HAS_USCI_AB0__)
+        //UC0IE |= UCA0TXIE;
+        //#else
+        //UCA0IE |= UCTXIE;
+        //#endif
+        
+        for(int idx = 0; idx < len; idx++) {
+          while(!(UCA0IFG & UCTXIFG));  
+          UCA0TXBUF = buf[idx];
+        }
         break;
     #endif
     #if defined(UART_1_SUPPORT)
     case 1:
-        #if defined(UART_1_DMA_SUPPORT)
-        __data20_write_long((uint32_t) &DMA2SA, (uint32_t) buf);
-        __data20_write_long((uint32_t) &DMA2DA, (uint32_t) &UCA1TXBUF);
-        DMA2SZ = len;
+        //#if defined(UART_1_DMA_SUPPORT)
+        //__data20_write_long((uint32_t) &DMA2SA, (uint32_t) buf);
+        //__data20_write_long((uint32_t) &DMA2DA, (uint32_t) &UCA1TXBUF);
+        //DMA2SZ = len;
         /* Enable, source address incremented, single transfer. */
-        DMA2CTL = DMADT_0 | DMASRCINCR_3 | DMASRCBYTE | DMADSTBYTE | DMAEN;
+        //DMA2CTL = DMADT_0 | DMASRCINCR_3 | DMASRCBYTE | DMADSTBYTE | DMAEN;
         /* Kick things, so the DMA starts rolling */
-        UC1IFG &= ~UCA1TXIFG;
-        UC1IFG |= UCA1TXIFG;
-        #elif defined(__MSP430_HAS_UART1__)
-        U1IE |= UTXIE1;
-        #elif defined(__MSP430_HAS_USCI_AB1__)
-        UC1IE |= UCA1TXIE;
-        #else
-        UCA1IE |= UCTXIE;
-        #endif
+        //UCA1IFG &= ~UCTXIFG;
+        //UCA1IFG |= UCTXIFG;
+        //#elif defined(__MSP430_HAS_UART1__)
+        //U1IE |= UTXIE1;
+        //#elif defined(__MSP430_HAS_USCI_AB1__)
+        //UC1IE |= UCA1TXIE;
+        //#else
+        //UCA1IE |= UCTXIE;
+        //#endif
+      
+      // LI: uart new implementation
+        for(int idx = 0; idx < len; idx++) {
+          while(!(UCA1IFG & UCTXIFG));  
+          UCA1TXBUF = buf[idx];
+        }
         break;
     #endif
     #if defined(UART_2_SUPPORT)
@@ -394,6 +474,20 @@ void serial_write(int port, const uint8_t buf[], int len)
 }
 /*- End of function --------------------------------------------------------*/
 
+void RS485_sendBuf(int port, uint8_t* buf, uint16_t len){
+    ports[port].tx_in_progress = false;
+
+    P4OUT |= BIT0;
+    __delay_cycles(500);
+    
+    serial_write(port, buf, len);
+    
+    while(!(UCA0IFG & UCTXIFG));
+    
+    ports[port].tx_in_progress = true;
+
+}
+
 void uart_rx_core(int port, uint8_t rx_char)
 {
     #if defined(UART_0_IEC62056_21_SUPPORT)
@@ -406,8 +500,7 @@ void uart_rx_core(int port, uint8_t rx_char)
     #if defined(COMMON_RX_TX_BUFFER_SUPPORT)
     dlt645_rx_byte(port, rx_char);
     #else
-    if (!ports[port].tx_in_progress)
-        dlt645_rx_byte(port, rx_char);
+    dlt645_rx_byte(port, rx_char);
     #endif
 }
 /*- End of function --------------------------------------------------------*/
@@ -431,7 +524,7 @@ uint16_t uart_tx_core(int port)
         ports[port].tx_msg.ptr = 0;
         ports[port].tx_msg.len = 0;
 #endif
-        ports[port].tx_in_progress = false;
+        //ports[port].tx_in_progress = false;
         //serial_tx_complete(port);
         return 0x8000 | tx;
     }
@@ -457,10 +550,8 @@ ISR(USART0TX, USART0_tx_isr)
 
     tx = uart_tx_core(0);
     TXBUF0 = tx & 0xFF;
-    if (tx & 0x8000){
+    if (tx & 0x8000)
         U0IE &= ~UTXIE0;
-        P4OUT &=~BIT0;
-    }
 }
 /*- End of function --------------------------------------------------------*/
     #elif defined(__MSP430_HAS_USCI_AB0__)
@@ -477,10 +568,8 @@ ISR(USCIAB0TX, USCI_AB0_tx_isr)
 
     tx = uart_tx_core(0);
     UCA0TXBUF = tx & 0xFF;
-    if (tx & 0x8000){
-        U0IE &= ~UTXIE0;
-        P4OUT &=~BIT0;
-    }
+    if (tx & 0x8000)
+        UC0IE &= ~UCA0TXIE;
 }
 /*- End of function --------------------------------------------------------*/
         #endif
@@ -499,10 +588,8 @@ ISR(USCI_A0, USCI_A0_isr)
     case USCI_UART_UCTXIFG:
         tx = uart_tx_core(0);
         UCA0TXBUF = tx & 0xFF;
-        if (tx & 0x8000){
-            U0IE &= ~UTXIE0;
-            P4OUT &=~BIT0;
-        }
+        if (tx & 0x8000)
+            UCA0IE &= ~UCTXIE;
         break;
     }
 }
@@ -510,28 +597,73 @@ ISR(USCI_A0, USCI_A0_isr)
     #elif defined(__MSP430_HAS_EUSCI_A0__)
 ISR(USCI_A0, USCI_A0_isr)
 {
-    uint16_t tx;
-
     switch (__even_in_range(UCA0IV, USCI_UART_UCTXCPTIFG))
     {
     case USCI_NONE:
         break;
     case USCI_UART_UCRXIFG:
-        uart_rx_core(0, UCA0RXBUF);
+        ports[0].rx_msg.buf.uint8[ports[0].rx_msg.ptr++] = UCA0RXBUF;
+        
+        if (ports[0].rx_msg.buf.uint8[0] == 0x68)
+        {
+          while(!(UCA0IFG & UCRXIFG));
+          ports[0].rx_msg.buf.uint8[ports[0].rx_msg.ptr++] = UCA0RXBUF;
+            
+          switch (ports[0].rx_msg.buf.uint8[1])
+          {
+          // Espera 8bytes
+          case 0x02: //Read Input Status
+          case 0x03: //Read Holding Register
+          case 0x04: //Read Input Register
+          case 0x05: //Force Single Coil
+          case 0x06: //Preset Single Register
+            ports[0].rx_msg.len = 8;
+            break;
+            
+          //Espera 4bytes
+          case 0x07: //Read Exception Status
+          case 0x11: //Report Slave ID
+            ports[0].rx_msg.len = 4;
+            break;
+            
+          //Preset Multiple Register (nbytes)
+          case 0x10:
+            // Wait rx nbytes
+            if(ports[0].rx_msg.ptr < 7)
+              return;
+              
+            ports[0].rx_msg.len = ports[0].rx_msg.buf.uint8[6] + 9;
+            break;
+          
+          default: 
+            // Got invalid function
+            ports[0].rx_msg.ptr = 0;
+            return;
+          }
+          
+          while(ports[0].rx_msg.ptr < ports[0].rx_msg.len)
+          {
+            while(!(UCA0IFG & UCRXIFG));
+            ports[0].rx_msg.buf.uint8[ports[0].rx_msg.ptr++] = UCA0RXBUF;
+          }
+          
+          ports[0].rx_frame_pending = true;
+        }
+        
+        ports[0].rx_msg.ptr = 0;
+        
+        //uart_rx_core(1, UCA0RXBUF);
         break;
     case USCI_UART_UCTXIFG:
-       
-        tx = uart_tx_core(0);
-        UCA0TXBUF = tx & 0xFF;
-        if (tx & 0x8000){
-            UCA0IE &= ~UCTXIE;
-            P4OUT &=~BIT0;
-        }
-       
         break;
     case USCI_UART_UCSTTIFG:
         break;
     case USCI_UART_UCTXCPTIFG:
+        if(ports[0].tx_in_progress)
+        {
+          ports[0].tx_in_progress = false;
+          P4OUT &= ~BIT0;
+        }
         break;
     }
 }
@@ -602,20 +734,68 @@ ISR(USCI_A1, USCI_A1_isr)
     #elif defined(__MSP430_HAS_EUSCI_A1__)
 ISR(USCI_A1, USCI_A1_isr)
 {
-    uint16_t tx;
-
     switch (__even_in_range(UCA1IV, USCI_UART_UCTXCPTIFG))
     {
     case USCI_NONE:
         break;
     case USCI_UART_UCRXIFG:
-        uart_rx_core(1, UCA1RXBUF);
+        ports[1].rx_msg.buf.uint8[ports[1].rx_msg.ptr++] = UCA1RXBUF;
+        
+        if (ports[1].rx_msg.buf.uint8[0] == 0x68)
+        {
+          while(!(UCA1IFG & UCRXIFG));
+          ports[1].rx_msg.buf.uint8[ports[1].rx_msg.ptr++] = UCA1RXBUF;
+            
+          switch (ports[1].rx_msg.buf.uint8[1])
+          {
+          // Espera 8bytes
+          case 0x02: //Read Input Status
+          case 0x03: //Read Holding Register
+          case 0x04: //Read Input Register
+          case 0x05: //Force Single Coil
+          case 0x06: //Preset Single Register
+            ports[1].rx_msg.len = 8;
+            break;
+            
+          //Espera 4bytes
+          case 0x07: //Read Exception Status
+          case 0x11: //Report Slave ID
+            ports[1].rx_msg.len = 4;
+            break;
+            
+          //Preset Multiple Register (nbytes)
+          case 0x10:
+            // Wait rx nbytes
+            if(ports[1].rx_msg.ptr < 7)
+              return;
+              
+            ports[1].rx_msg.len = ports[1].rx_msg.buf.uint8[6] + 9;
+            break;
+          
+          default: 
+            // Got invalid function
+            ports[1].rx_msg.ptr = 0;
+            return;
+          }
+          
+          while(ports[1].rx_msg.ptr < ports[1].rx_msg.len)
+          {
+            while(!(UCA1IFG & UCRXIFG));
+            ports[1].rx_msg.buf.uint8[ports[1].rx_msg.ptr++] = UCA1RXBUF;
+          }
+          
+          ports[1].rx_frame_pending = true;
+        }
+        
+        ports[1].rx_msg.ptr = 0;
+        
+        //uart_rx_core(1, UCA1RXBUF);
         break;
     case USCI_UART_UCTXIFG:
-        tx = uart_tx_core(1);
-        UCA1TXBUF = tx & 0xFF;
-        if (tx & 0x8000)
-            UCA1IE &= ~UCTXIE;
+        //tx = uart_tx_core(1);
+        //UCA1TXBUF = tx & 0xFF;
+        //if (tx & 0x8000)
+        //   UCA1IE &= ~UCTXIE;
         break;
     case USCI_UART_UCSTTIFG:
         break;

@@ -87,6 +87,120 @@ extern uint16_t sag_events[NUM_PHASES];
 extern uint32_t sag_duration[NUM_PHASES]; 
 extern uint16_t swell_events[NUM_PHASES];
 extern uint32_t swell_duration[NUM_PHASES]; 
+extern volatile unsigned long Contador4096;
 #endif
 
+typedef struct {
+  union {
+    struct {
+      // 0 - 65
+      uint32_t num_serial;
+      float tensao_tri;
+      float tensao_fase_a_b;
+      float tensao_fase_b_c;
+      float tensao_fase_c_a;
+      float tensao_linha_1;
+      float tensao_linha_2;
+      float tensao_linha_3;
+      float corrente_tri;
+      float reservado1;
+      float corrente_linha_1;
+      float corrente_linha_2;
+      float corrente_linha_3;
+      float freq_1;
+      float freq_2;
+      float freq_3;
+      float reservado2;
+      float potencia_ativa_tri;
+      float potencia_ativa_1;
+      float potencia_ativa_2;
+      float potencia_ativa_3;
+      float potencia_reativa_tri;
+      float potencia_reativa_1;
+      float potencia_reativa_2;
+      float potencia_reativa_3;
+      float potencia_aparente_tri;
+      float potencia_aparente_1;
+      float potencia_aparente_2;
+      float potencia_aparente_3;
+      float fator_potencia_tri;
+      float fator_potencia_1;
+      float fator_potencia_2;
+      float fator_potencia_3;
+      
+      // Energias 200 - 225
+      float energia_atv_pos; //i = 132
+      float energia_rtv_pos;
+      float energia_atv_neg;
+      float energia_rtv_neg;
+      float max_dem_atv;
+      float dem_atv;
+      float max_dem_apr;
+      float dem_apr;
+      float max_dem_rtv;
+      float dem_rtv;
+      float max_dem_cor;
+      float dem_cor;
+      float energia_apr;
+      
+      // Delta 300 - 339
+      float delta_ene_atv_pos; //i = 184
+      float delta_ene_rtv_pos;
+      float delta_ene_atv_neg;
+      float delta_ene_rtv_neg;
+      float delta_ene_apr;
+      float delta_ene_atv_pos_fase_1;
+      float delta_ene_rtv_pos_fase_1;
+      float delta_ene_atv_neg_fase_1;
+      float delta_ene_rtv_neg_fase_1;
+      float delta_ene_atv_pos_fase_2;
+      float delta_ene_rtv_pos_fase_2;
+      float delta_ene_atv_neg_fase_2;
+      float delta_ene_rtv_neg_fase_2;
+      float delta_ene_atv_pos_fase_3;
+      float delta_ene_rtv_pos_fase_3;
+      float delta_ene_atv_neg_fase_3;
+      float delta_ene_rtv_neg_fase_3;
+      float delta_ene_apr_fase_1;
+      float delta_ene_apr_fase_2;
+      float delta_ene_apr_fase_3;
+      
+      // Energia/fase 1200 - 1229
+      float energia_atv_pos_fase_1; // i = 264
+      float energia_rtv_pos_fase_1;
+      float energia_atv_neg_fase_1;
+      float energia_rtv_neg_fase_1;
+      float energia_atv_pos_fase_2;
+      float energia_rtv_pos_fase_2;
+      float energia_atv_neg_fase_2;
+      float energia_rtv_neg_fase_2;      
+      float energia_atv_pos_fase_3;
+      float energia_rtv_pos_fase_3;
+      float energia_atv_neg_fase_3;
+      float energia_rtv_neg_fase_3;
+      float energia_apr_fas_fase_1;
+      float energia_apr_fas_fase_2;
+      float energia_apr_fas_fase_3;
+    } grandezas;
+    
+    uint16_t addr[162];
+    uint8_t byte[324];
+  };
+} input_registers_t;
+
+typedef struct {
+  union {
+    struct {
+        uint16_t baud_rate;
+    } configs;
+
+    uint16_t addr[1];
+    uint8_t byte[2];
+  };
+} holding_registers_t;
+
+extern input_registers_t input_registers;
+extern holding_registers_t holding_registers;
+
+void update_input_registers(input_registers_t* _input_registers);
 #endif

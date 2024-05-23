@@ -38,6 +38,7 @@
 #if !defined(_METROLOGY_STRUCTS_H_)
 #define _METROLOGY_STRUCTS_H_
 
+
 /* N.B.
    When built for devices using the SD16/24 converter, this software uses a sampling
    rate of 4096.0/s. For a mains supply at exactly 50Hz, each sample is

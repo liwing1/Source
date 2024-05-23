@@ -38,10 +38,8 @@
 #if !defined(_EMETER_BASIC_DISPLAY_H_)
 #define _EMETER_BASIC_DISPLAY_H_
 
-#if defined(LCD_BARGRAPH_SUPPORT)
-void bar_graph(int strength);
 #endif
 
+#if defined(LCD_DISPLAY_SUPPORT)
 void update_display(void);
-
 #endif

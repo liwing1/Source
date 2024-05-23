@@ -313,6 +313,22 @@ const struct calibration_data_s calibration_defaults =
 #endif
 };
 
+const struct configuration_data_s configuration_defaults = 
+{
+    .baud_rate = DEFAULT_BAUD_RATE,
+};
+
+void set_cfg_baud_rate(uint16_t baud_rate)
+{
+    clear_calibration_data();
+    flash_memcpy((void *) cal_info, (const void *) &calibration_defaults, sizeof(calibration_defaults));
+    flash_secure();
+
+    flash_memcpy((void*) &cfg_info->baud_rate, (const void *)&baud_rate, sizeof(uint16_t));
+    //flash_memcpy((void *) cfg_info, (const void *) &baud_rate, sizeof(configuration_defaults));
+    flash_secure();
+}
+
 int16_t get_v_dc_estimate(int phx, int which)
 {
     return cal_info->phases[phx].initial_v_dc_estimate[which];

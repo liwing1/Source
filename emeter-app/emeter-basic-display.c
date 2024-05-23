@@ -35,10 +35,13 @@
 
 #include <inttypes.h>
 #include <stdlib.h>
+#include <stdio.h>
 #include <stdbool.h>
 #if defined(__MSP430__)
 #include <msp430.h>
 #endif
+
+#include "stdarg.h"
 
 #include "emeter-template.h"
 
@@ -53,6 +56,9 @@
 #if defined(MULTI_RATE_SUPPORT)
 #include "emeter-multirate.h"
 #endif
+#include "emeter-oled.h"
+
+#if defined(LCD_DISPLAY_SUPPORT) 
 
 int key_states;
 
@@ -62,21 +68,6 @@ uint8_t info_substep;
 #endif
 
 static const char lcd_high[] = "High";
-
-#if defined(LCD_BARGRAPH_SUPPORT)
-void bar_graph(int strength)
-{
-    static const uint8_t pattern[] =
-    {
-        BARGRAPH_BRACKETS, BARGRAPH_SEG_1, BARGRAPH_SEG_2, BARGRAPH_SEG_3, BARGRAPH_SEG_4, BARGRAPH_SEG_5, BARGRAPH_SEG_6
-    };
-
-    if (strength < 7)
-        LCDMEM[BARGRAPH_DIGIT - 1] = pattern[strength] | BARGRAPH_BRACKETS;
-    else
-        LCDMEM[BARGRAPH_DIGIT - 1] = 0;
-}
-#endif
 
 enum
 {
@@ -127,22 +118,21 @@ enum
     DISPLAY_ITEM_DUMMY
 };
 
+ 
+
 void display_clear_periphery(void)
 {
     /* Clear all the symbols around the display, which we are not using */
     custom_lcd_clear_periphery();
+ 
 }
-
-void display_power_fail_message(void)
-{
-	lcd_string("bl out", 1);
-}
-
+ 
 void display_startup_message(void)
 {
-	display_clear_periphery();
+    display_clear_periphery();
     lcd_string("Start", 1);
 }
+
 
 void display_power_4v2_message(void)
 {
@@ -191,13 +181,17 @@ void display_phase_icon(int ph)
 #define display_phase_icon(x) /**/
 #endif
 
+
+
 #if defined(MAINS_FREQUENCY_SUPPORT)
+
 static __inline__ void display_mains_frequency(int ph)
 {
     frequency_t x;
 
     /* Display mains frequency in 0.1Hz or 0.01Hz increments */
     x = mains_frequency(ph);
+
     lcd_decu32(x, FREQUENCY_DISPLAY_FIELD, -FREQUENCY_FRACTIONAL_DIGITS);
     #if defined(ICON_HERTZ)
     lcd_icon(ICON_HERTZ, true);
@@ -208,12 +202,16 @@ static __inline__ void display_mains_frequency(int ph)
 #endif
 
 #if defined(VRMS_SUPPORT)
+
 static __inline__ void display_rms_voltage(int ph)
 {
     rms_voltage_t x;
 
     /* Display RMS voltage in 0.1V or 0.01V increments */
     x = rms_voltage(ph);
+    
+
+    
     if (x == RMS_VOLTAGE_OVERRANGE)
     {
         lcd_string(lcd_high, VOLTAGE_DISPLAY_FIELD);
@@ -230,16 +228,19 @@ static __inline__ void display_rms_voltage(int ph)
     #elif defined(VOLTAGE_TAG)
     lcd_string_only(VOLTAGE_TAG, DISPLAY_TYPE_FIELD, DISPLAY_TYPE_POSITION);
     #endif
+  
 }
 #endif
 
 #if defined(IRMS_SUPPORT)
+
 static __inline__ void display_rms_current(int ph)
 {
     rms_current_t x;
 
     /* Display RMS current in 1mA increments */
     x = rms_current(ph);
+    
     if (x == RMS_CURRENT_OVERRANGE)
     {
         lcd_string(lcd_high, CURRENT_DISPLAY_FIELD);
@@ -259,12 +260,14 @@ static __inline__ void display_rms_current(int ph)
 }
 #endif
 
+
 static __inline__ void display_active_power(int ph)
 {
     power_t x;
 
     /* Display per phase or total active power */
     x = active_power(ph);
+    
     if (x == POWER_OVERRANGE)
     {
         lcd_string(lcd_high, ACTIVE_POWER_DISPLAY_FIELD);
@@ -285,15 +288,18 @@ static __inline__ void display_active_power(int ph)
     #elif defined(ACTIVE_POWER_TAG)
     lcd_string_only(ACTIVE_POWER_TAG, DISPLAY_TYPE_FIELD, DISPLAY_TYPE_POSITION);
 #endif
+   
 }
 
 #if defined(REACTIVE_POWER_SUPPORT)  ||  defined(TOTAL_REACTIVE_POWER_SUPPORT)
+
 static __inline__ void display_reactive_power(int ph)
 {
     power_t x;
 
     /* Display reactive power in 0.01W increments */
     x = reactive_power(ph);
+    
     if (x == POWER_OVERRANGE)
     {
         lcd_string(lcd_high, REACTIVE_POWER_DISPLAY_FIELD);
@@ -318,12 +324,14 @@ static __inline__ void display_reactive_power(int ph)
 #endif
 
 #if defined(APPARENT_POWER_SUPPORT)  ||  defined(TOTAL_APPARENT_POWER_SUPPORT)
+
 static __inline__ void display_apparent_power(int ph)
 {
     power_t x;
 
     /* Display apparent (VA) power in 0.01W increments */
     x = apparent_power(ph);
+    
     if (x == POWER_OVERRANGE)
     {
         lcd_string(lcd_high, APPARENT_POWER_DISPLAY_FIELD);
@@ -348,11 +356,13 @@ static __inline__ void display_apparent_power(int ph)
 #endif
 
 #if defined(IRMS_SUPPORT)  &&  defined(VRMS_SUPPORT)  &&  defined(POWER_FACTOR_SUPPORT)
+
 static __inline__ void display_power_factor(int ph)
 {
     power_factor_t x;
 
     x = power_factor(ph);
+ 
     if (x < 0)
     {
         lcd_char('L', 1, 1);
@@ -375,12 +385,15 @@ static __inline__ void display_power_factor(int ph)
 #endif
 
 #if defined(ACTIVE_ENERGY_SUPPORT)  ||  defined(TOTAL_ACTIVE_ENERGY_SUPPORT)
+
+
 static __inline__ void display_imported_active_energy(int ph)
 {
     energy_t x;
 
     /* Display per phase or total imported active energy */
     x = energy_consumed[ph][APP_ACTIVE_ENERGY_IMPORTED];
+    
     #if defined(ACTIVE_ENERGY_DISPLAY_IN_KWH)
     lcd_decu64(x, ACTIVE_ENERGY_DISPLAY_FIELD, -(ENERGY_FRACTIONAL_DIGITS + 3));
     #else
@@ -401,12 +414,14 @@ static __inline__ void display_imported_active_energy(int ph)
 #endif
 
 #if defined(REACTIVE_ENERGY_SUPPORT)  ||  defined(TOTAL_REACTIVE_ENERGY_SUPPORT)
+
 static __inline__ void display_imported_reactive_energy(int ph)
 {
     energy_t x;
 
     /* Display per phase or total imported reactive energy */
     x = energy_consumed[ph][APP_REACTIVE_ENERGY_QUADRANT_I] + energy_consumed[ph][APP_REACTIVE_ENERGY_QUADRANT_IV];
+
     #if defined(REACTIVE_ENERGY_DISPLAY_IN_KVARH)
     lcd_decu64(x, REACTIVE_ENERGY_DISPLAY_FIELD, -(ENERGY_FRACTIONAL_DIGITS + 3));
     #else
@@ -429,6 +444,7 @@ static __inline__ void display_imported_reactive_energy(int ph)
 #if defined(RTC_SUPPORT)
 static __inline__ void display_date(int year, int month, int day)
 {
+  
     lcd_decu16_sub_field(year, DATE_DISPLAY_FIELD, 2, YEAR_DISPLAY_POSITION, 2);
     lcd_decu16_sub_field(month, DATE_DISPLAY_FIELD, 2, MONTH_DISPLAY_POSITION, 2);
     lcd_decu16_sub_field(day, DATE_DISPLAY_FIELD, 2, DAY_DISPLAY_POSITION, 2);
@@ -444,10 +460,12 @@ static __inline__ void display_date(int year, int month, int day)
         #if defined(ICON_DATE_COLON_2A)
     lcd_icon(ICON_DATE_COLON_2A, true);
         #endif
+
 }
 
 static __inline__ void display_time(int hour, int minute, int second)
 {
+
     lcd_decu16_sub_field(hour, TIME_DISPLAY_FIELD, 2, HOUR_DISPLAY_POSITION, 2);
     lcd_decu16_sub_field(minute, TIME_DISPLAY_FIELD, 2, MINUTE_DISPLAY_POSITION, 2);
         #if defined(ICON_TIME_COLON_1)
@@ -465,6 +483,7 @@ static __inline__ void display_time(int hour, int minute, int second)
     lcd_icon(ICON_TIME_COLON_2A, true);
             #endif
         #endif
+
 }
 
 static /*__inline__*/ void display_current_date(void)
@@ -503,10 +522,14 @@ static __inline__ void display_current_time(void)
 #if defined(TEMPERATURE_SUPPORT)
 static __inline__ void display_temperature(void)
 {
-    lcd_dec16(temperature(), TEMPERATURE_DISPLAY_FIELD, TEMPERATURE_DISPLAY_RESOLUTION);
+  
+    int x = temperature(); 
+    
+    lcd_dec16(x, TEMPERATURE_DISPLAY_FIELD, TEMPERATURE_DISPLAY_RESOLUTION);
         #if !defined(ICON_TEMPERATURE)  &&  defined(DISPLAY_TYPE_POSITION)
     lcd_char('C', TEMPERATURE_DISPLAY_FIELD, 1);
         #endif
+  
 }
 #endif
 
@@ -549,8 +572,11 @@ void display_tariff_holiday(void)
 }
 #endif
 
+
+
 void display_item(int item, int ph)
 {
+ 
     switch (item)
     {
     case DISPLAY_ITEM_ACTIVE_ENERGY:
@@ -615,6 +641,7 @@ void display_item(int item, int ph)
     }
 }
 
+
 int display_step = 0;
 int display_select = 0;
 
@@ -626,6 +653,7 @@ void update_display(void)
            header file. */
         DISPLAY_STEP_SEQUENCE
     };
+
 
     /* Deal with the next stage of the sequenced display */
     display_clear_lines();
@@ -644,15 +672,22 @@ void update_display(void)
         display_phase_icon(display_select);
         display_item(display_steps[display_step++], display_select);
     }
-    /* Now deal with things which are constantly displayed */
+
+
+
 #if defined(DEDICATED_TIME_FIELD)
-    display_current_time();
+    // colocar aqui rotina para mostrar a hora constantemente tipo : display_current_time(); // TODO
 #endif
+    
 #if defined(BATTERY_MONITOR_SUPPORT)  &&  defined(ICON_BATTERY)
     lcd_icon(ICON_BATTERY, (meter_status & STATUS_BATTERY_OK));
 #endif
+    
 #if defined(LIMP_MODE_SUPPORT)
     if (operating_mode == OPERATING_MODE_LIMP)
         lcd_char('L', 1, 1);
 #endif
+
 }
+
+#endif

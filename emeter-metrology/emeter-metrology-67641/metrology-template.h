@@ -16,7 +16,7 @@
  *    distribution.
  *
  *    Neither the name of Texas Instruments Incorporated nor the names of
- *    its contributors may be used to endorse or promote products derived
+ *    its contributors may be used to endorse or promote products derived   
  *    from this software without specific prior written permission.
  *
  *  THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS 
@@ -64,7 +64,7 @@
 /*! The nominal mains frequency, in Hz. This is used to prime the mains frequency
     measurement, and make its initial value settle quickly. It is not currently used after
     reset. */
-#define MAINS_NOMINAL_FREQUENCY                     60
+#define MAINS_NOMINAL_FREQUENCY                     50
 
 /*! This selects the nominal voltage used for sag/swell detection, and power calculations
     in limp mode, in volts */
