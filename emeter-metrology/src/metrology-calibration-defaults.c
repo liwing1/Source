@@ -320,12 +320,15 @@ const struct configuration_data_s configuration_defaults =
 
 void set_cfg_baud_rate(uint16_t baud_rate)
 {
-    clear_calibration_data();
-    flash_memcpy((void *) cal_info, (const void *) &calibration_defaults, sizeof(calibration_defaults));
-    flash_secure();
+    // clear_calibration_data();
+    // flash_memcpy((void *) cal_info, (const void *) &calibration_defaults, sizeof(calibration_defaults));
+    // flash_secure();
 
-    flash_memcpy((void*) &cfg_info->baud_rate, (const void *)&baud_rate, sizeof(uint16_t));
-    //flash_memcpy((void *) cfg_info, (const void *) &baud_rate, sizeof(configuration_defaults));
+    // flash_memcpy((void*) &cfg_info->baud_rate, (const void *)&baud_rate, sizeof(uint16_t));
+    // //flash_memcpy((void *) cfg_info, (const void *) &baud_rate, sizeof(configuration_defaults));
+    // flash_secure();
+    
+    flash_write_int16((int16_t *) &cfg_info->baud_rate, baud_rate);
     flash_secure();
 }
 

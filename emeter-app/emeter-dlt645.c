@@ -115,12 +115,40 @@ static uint8_t* get_ptr_from_input_register_addr(uint16_t reg_addr)
 
 uint8_t process_preset_single_reg(int port, uint16_t write_reg, uint16_t write_data)
 {
-  if(write_reg >= 1)
-    return 0;
-    
-  holding_registers.addr[write_reg] = write_data;
+  switch (write_reg)
+  {
+  case 0:
+    holding_registers.addr[write_reg] = write_data;
+    set_cfg_baud_rate(holding_registers.addr[write_reg]);
+  break;
 
-  set_cfg_baud_rate(holding_registers.addr[write_reg]);
+  case 1:
+    set_V_rms_scaling(0, 0, write_data);
+    set_V_rms_scaling(1, 0, write_data);
+    set_V_rms_scaling(2, 0, write_data);
+  break;
+
+  case 2:
+    set_I_rms_scaling(0, 0, write_data);
+    set_I_rms_scaling(1, 0, write_data);
+    set_I_rms_scaling(2, 0, write_data);
+  break;
+  
+  case 3:
+    set_P_scaling(0, write_data);
+    set_P_scaling(1, write_data);
+    set_P_scaling(2, write_data);
+  break;
+
+  case 4:
+    set_phase_corr(0, write_data);
+    set_phase_corr(1, write_data);
+    set_phase_corr(2, write_data);
+  break;
+
+  default:
+    break;
+  }
 
   RS485_sendBuf(port, ports[port].rx_msg.buf.uint8, 8); // header + data 
   return 1;
