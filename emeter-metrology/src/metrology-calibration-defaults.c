@@ -315,7 +315,7 @@ const struct calibration_data_s calibration_defaults =
 
 const struct configuration_data_s configuration_defaults = 
 {
-    .baud_rate = DEFAULT_BAUD_RATE,
+    .baud_rate = 9600,
 };
 
 void set_cfg_baud_rate(uint16_t baud_rate)
