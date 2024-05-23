@@ -27,7 +27,7 @@
         <State_Storage>0</State_Storage>
     </Action_Register>
     <DebugChecksum>
-        <Checksum>1185352628</Checksum>
+        <Checksum>3563707856</Checksum>
     </DebugChecksum>
     <CallStack>
         <ShowArgs>0</ShowArgs>
@@ -93,9 +93,6 @@
         <Freq>1000000</Freq>
         <FreqHi>0</FreqHi>
     </Simulator>
-    <struct_types>
-        <Fmt0>struct configuration_data_s-baud_rate	4	0</Fmt0>
-    </struct_types>
     <watch_formats>
         <Fmt0>{W}1:0x00+((column&gt;&gt;4)&amp;0x07)	4	0</Fmt0>
         <Fmt1>{W}1:0xB0+page	4	0</Fmt1>

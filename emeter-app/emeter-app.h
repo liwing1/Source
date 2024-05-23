@@ -66,10 +66,9 @@
 void system_setup(void);
 
 void display_startup_message(void);
-void OLED_display_startup_message(void);
 
 #if defined(__MSP430__)  &&  defined(USE_WATCHDOG)
-#define kick_watchdog()             WDTCTL = WDT_ARST_1000 //TODO 
+#define kick_watchdog()             WDTCTL = WDT_ARST_1000
 #else
 #define kick_watchdog()             /**/
 #endif

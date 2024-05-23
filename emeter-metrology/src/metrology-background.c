@@ -47,8 +47,6 @@
 #include <signal.h>
 #endif
 
-extern volatile unsigned long Contador4096;
-
 #include <emeter-toolkit.h>
 
 #include "emeter-metrology.h"
@@ -71,14 +69,7 @@ extern volatile unsigned long Contador4096;
 #define NEUTRAL_DELAY_SPLIT     128
 #endif
 
-#define ADC_VOLT_NEG_TRESHOLD   338
-#define ADC_VOLT_POS_TRESHOLD   344
-
 int16_t samples_per_second;
-
-int8_t DetSeqFase[3]; //TDTD
-int ContSeqFase;
-#define TEMPO_ERRO_SEQ_FASE 0.5 * 60 // 0.5*60 Hz // 0.5 segundos
 
 #if defined(TEMPERATURE_SUPPORT)
 int32_t raw_temperature_from_adc = 0;
@@ -319,7 +310,6 @@ static __inline__ int per_sample_dsp(void)
     #endif
 #endif
         ++phase_dot_products->sample_count;
-        //TDTD
 
         /* We need to save the history of the voltage signal if we are performing phase correction, and/or
            measuring the quadrature shifted power (to obtain an accurate measure of one form of the reactive power). */
@@ -329,11 +319,6 @@ static __inline__ int per_sample_dsp(void)
         {
             /* Perform bulk delay (i.e. integer sample times) of the voltage signal. */
             V_corrected = phase->metrology.V_history[(phase->metrology.V_history_index - phase->metrology.current[0].in_phase_correction.step) & V_HISTORY_MASK];
-
-          
-            // Para detector de sequencia de fases
-            if (V_corrected>0) DetSeqFase[ph]=1; else DetSeqFase[ph]=0;
-            
 #if defined(FUNDAMENTAL_POWER_SUPPORT)
             /* The dot product of the raw and the pure voltage signals allows us to precisely estimate
                the amplitude of the fundamental component of the mains voltage waveform. This is needed,
@@ -445,13 +430,9 @@ static __inline__ int per_sample_dsp(void)
 #endif
             if (V_corrected < 0)
             {
-              
-
-              
                 /* We just crossed from positive to negative */
                 /* Log the sign of the signal */
                 phase->status &= ~PHASE_STATUS_V_POS;
-
             }
             else
             {
@@ -466,35 +447,6 @@ static __inline__ int per_sample_dsp(void)
                         &&
                         phase->metrology.voltage_period.cycle_samples <= 256*SAMPLES_PER_10_SECONDS/400)
                     {
-                      
-                      //Detector de sequencia de Fases
-                      if ((ph==2)&&!(phase->status & PHASE_STATUS_V_POS)){
-
-                        if ((!DetSeqFase[0])&& DetSeqFase[1]) {
-
-                          // Ordem correta 
-                          if ((ContSeqFase--)<=0) {
-                            ContSeqFase=0;
-                            // Desarma alarme
-                            P3OUT |= BIT7;         // sinal_alarme=1, desliga transistor
-                            //P8OUT |= BIT5;       // Se quiser indicar no LED                      
-                          }
-                        }  
-                        else {
-
-                          // Ordem errada
-                          if ((ContSeqFase++)>=TEMPO_ERRO_SEQ_FASE) {
-                            ContSeqFase=TEMPO_ERRO_SEQ_FASE;
-                            // Arma alarme
-                            P3OUT &= ~BIT7;       // sinal alarme=0, liga transistor
-                            //P8OUT &= ~BIT5;     // Se quiser indicar no LED      
-                           }
-                        }  
-                      }
-
-                   
-
-                      
                         /* A mains frequency measurement procedure based on interpolating zero crossings,
                            to get a fast update rate for step changes in the mains frequency */
     #if defined(SAG_SWELL_SUPPORT)
@@ -967,7 +919,6 @@ void adc_interrupt(void)
 #endif
 {
 #if defined(__HAS_SD_ADC__)
-
     if (!ADC_VOLTAGE_PENDING(PHASE_1_VOLTAGE_ADC_CHANNEL))
     {
         /* We do not have a complete set of samples yet, but we may need to pick
@@ -1134,9 +1085,7 @@ void adc_interrupt(void)
         adc_i_buffer[NUM_PHASES] = ADC_CURRENT(NEUTRAL_CURRENT_ADC_CHANNEL);
     #endif
 #endif
-  
-    
-    Contador4096++;
+
     custom_adc_interrupt();
 
 }
@@ -1284,3 +1233,6 @@ ISR(DMA, dma_interrupt)
         break;
     }
 }
+
+
+

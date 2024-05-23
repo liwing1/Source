@@ -263,7 +263,7 @@
     <rtc/>
   </cal-defaults>
   <meter position="1">
-    <port name="com3" speed="9600"/>
+    <port name="com9" speed="9600"/>
   </meter>
   <reference-meter>
     <port name="USB0::0x0A69::0x0835::A66200101281::INSTR"/>

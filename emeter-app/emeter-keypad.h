@@ -33,6 +33,12 @@
  *
  ******************************************************************************/
 
+#if defined(IO_EXPANDER_SUPPORT)
+/* This routine supports the use of a device like the 74HC595 to expand the number of
+   output bits available on the lower pin count MSP430s. */
+void set_io_expander(int what, int which);
+#endif
+
 #if defined(KEYPAD_SUPPORT)
 int keypad_debounce(void);
 #endif 

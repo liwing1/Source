@@ -41,7 +41,6 @@
 #include "metrology-nv-structs.h"
 
 extern const struct calibration_data_s calibration_defaults;
-extern const struct configuration_data_s configuration_defaults;
 extern const struct info_mem_s nv_parms;
 
 #if defined(__MSP430__)

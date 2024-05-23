@@ -139,7 +139,7 @@ enum
     /*! This flag in a channel's status variable indicates the power (current in limp mode)
         has been declared to be unbalanced, after the anti-tamper logic has processed the
         raw indications. */
-    PHASE_STATUS_UNBALANCED = 0x2000,
+    PHASE_STATUS_UNBALANCED = 0x2000
 };
 
 /*! Metrology status values. */

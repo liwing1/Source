@@ -62,7 +62,7 @@ typedef struct
     serial_msg_t buf;
     uint8_t ptr;
     uint8_t len;
-    unsigned long inter_char_timeout;
+    uint8_t inter_char_timeout;
 } serial_msg_buf_t;
 
 struct uart_port_s
@@ -89,7 +89,6 @@ int serial_configure(int port, int mode, uint32_t bit_rate);
 
 
 void serial_write(int port, const uint8_t buf[], int len);
-void RS485_sendBuf(int port, uint8_t* buf, uint16_t len);
 
 int is_calibration_enabled(void);
 

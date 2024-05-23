@@ -38,39 +38,39 @@
 #define CALADC10_20V_30C                            *((unsigned int *)0x1A1E)
 #define CALADC10_20V_85C                            *((unsigned int *)0x1A20)
 
-#define DEFAULT_V_RMS_SCALE_FACTOR_A                32729 //*2.5
+#define DEFAULT_V_RMS_SCALE_FACTOR_A                48462
 #define DEFAULT_V_DC_ESTIMATE_A                     20500
 #define DEFAULT_V_AC_OFFSET_A                       9
 
-#define DEFAULT_V_RMS_SCALE_FACTOR_B                32652 //*2.5
+#define DEFAULT_V_RMS_SCALE_FACTOR_B                48462
 #define DEFAULT_V_DC_ESTIMATE_B                     20500
 #define DEFAULT_V_AC_OFFSET_B                       9
 
-#define DEFAULT_V_RMS_SCALE_FACTOR_C                32717 //*2.5
+#define DEFAULT_V_RMS_SCALE_FACTOR_C                48462
 #define DEFAULT_V_DC_ESTIMATE_C                     20500
 #define DEFAULT_V_AC_OFFSET_C                       9
 
-#define DEFAULT_I_RMS_SCALE_FACTOR_A                20
+#define DEFAULT_I_RMS_SCALE_FACTOR_A                19530
 #define DEFAULT_I_DC_ESTIMATE_A                     0
 #define DEFAULT_I_AC_OFFSET_A                       29000
 
-#define DEFAULT_I_RMS_SCALE_FACTOR_B                20
+#define DEFAULT_I_RMS_SCALE_FACTOR_B                19530
 #define DEFAULT_I_DC_ESTIMATE_B                     0
 #define DEFAULT_I_AC_OFFSET_B                       29000
 
-#define DEFAULT_I_RMS_SCALE_FACTOR_C                20
+#define DEFAULT_I_RMS_SCALE_FACTOR_C                19530
 #define DEFAULT_I_DC_ESTIMATE_C                     0
 #define DEFAULT_I_AC_OFFSET_C                       29000
 
 /* The following will be assigned automatically if they are not set here */
-#define DEFAULT_P_SCALE_FACTOR_A                    41538
-#define DEFAULT_P_SCALE_FACTOR_B                    41538
-#define DEFAULT_P_SCALE_FACTOR_C                    41538
+#define DEFAULT_P_SCALE_FACTOR_A                    30342
+#define DEFAULT_P_SCALE_FACTOR_B                    30342
+#define DEFAULT_P_SCALE_FACTOR_C                    30342
 
 /* Value is phase angle in 1/256th of a sample increments. */
-#define DEFAULT_BASE_PHASE_A_CORRECTION             (-207)
-#define DEFAULT_BASE_PHASE_B_CORRECTION             (-207)
-#define DEFAULT_BASE_PHASE_C_CORRECTION             (-216)
+#define DEFAULT_BASE_PHASE_A_CORRECTION             (-242)
+#define DEFAULT_BASE_PHASE_B_CORRECTION             (-242)
+#define DEFAULT_BASE_PHASE_C_CORRECTION             (-242)
 
 /*The below macros are not used in the code.  The phase and gain macros below are not applicable to the TI F67641 EVM.
   The temperature macros could be used to switch to a more accurate way of calculating temperature(assuming the proper
@@ -88,5 +88,3 @@
 
     #define DEFAULT_FREQUENCY_PHASE_FACTOR              500
     #define DEFAULT_FREQUENCY_GAIN_FACTOR               0
-
-    #define DEFAULT_BAUD_RATE                           0

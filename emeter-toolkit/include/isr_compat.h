@@ -60,19 +60,14 @@
         ADC12CTL0 |= ENC;
     }
 */
-
-    
-
 #if defined(__AQCOMPILER__)
     /* This is the Quadravox compiler */
 #define ISR(a,b) void _INTERRUPT[a##_VECTOR] b(void)
 #elif defined(__IAR_SYSTEMS_ICC__)  &&  (((__TID__ >> 8) & 0x7f) == 43)  &&  (__VER__ < 200)
     /* This is V1.xx of the IAR compiler. */
-
 #define ISR(a,b) interrupt[a##_VECTOR] void b(void)
 #elif defined(__IAR_SYSTEMS_ICC__) // &&  (((__TID__ >> 8) & 0x7f) == 43)  &&  (__VER__ < 700)
 	/* A tricky #define to stringify _Pragma parameters */
-
 #define __PRAGMA__(x) _Pragma(#x)
     /* This is V2.xx, V3.xx, V4.xx, or V5.xx of the IAR compiler. */
 #define ISR(a,b) \

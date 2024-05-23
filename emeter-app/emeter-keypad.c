@@ -61,7 +61,37 @@
 #include "emeter-basic-display.h"
 #include "emeter-keypad.h"
 
+#if defined(IO_EXPANDER_SUPPORT)
+/* This routine supports the use of a device like the 74HC595 to expand the number of
+   output bits available on the lower pin count MSP430s. */
+void set_io_expander(int what, int which)
+{
+    static uint8_t io_state = 0;
+    int i;
+    int j;
 
+    if (what < 0)
+        io_state &= ~which;
+    else if (what > 0)
+        io_state |= which;
+    else
+        io_state = which;
+    /* Pump the data into the shift register */
+    for (i = 8, j = io_state;  i > 0;  i--)
+    {
+        P1OUT &= ~BIT4;
+        if ((j & 0x80))
+            P1OUT |= BIT7;
+        else
+            P1OUT &= ~BIT7;
+        P1OUT |= BIT4;
+        j <<= 1;
+    }
+    /* Clock the data into the output register */
+    P1OUT &= ~BIT6;
+    P1OUT |= BIT6;
+}
+#endif
 
 #if defined(__MSP430__)
     #if defined(BASIC_KEYPAD_SUPPORT)
