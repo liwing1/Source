@@ -122,32 +122,27 @@ uint8_t process_preset_single_reg(int port, uint16_t write_reg, uint16_t write_d
     set_cfg_baud_rate(holding_registers.addr[write_reg]);
   break;
 
-  case 1:
-    set_V_rms_scaling(0, 0, write_data);
-    set_V_rms_scaling(1, 0, write_data);
-    set_V_rms_scaling(2, 0, write_data);
-  break;
-
-  case 2:
-    set_I_rms_scaling(0, 0, write_data);
-    set_I_rms_scaling(1, 0, write_data);
-    set_I_rms_scaling(2, 0, write_data);
-  break;
+  // CONFIG VRMS SCALE
+  case 1: set_V_rms_scaling(0, 0, write_data); break;
+  case 2: set_V_rms_scaling(1, 0, write_data); break;
+  case 3: set_V_rms_scaling(2, 0, write_data); break;
   
-  case 3:
-    set_P_scaling(0, write_data);
-    set_P_scaling(1, write_data);
-    set_P_scaling(2, write_data);
-  break;
-
-  case 4:
-    set_phase_corr(0, write_data);
-    set_phase_corr(1, write_data);
-    set_phase_corr(2, write_data);
-  break;
-
-  default:
-    break;
+  // CONFIG IRMS SCALE
+  case 4: set_I_rms_scaling(0, 0, write_data); break;
+  case 5: set_I_rms_scaling(1, 0, write_data); break;
+  case 6: set_I_rms_scaling(2, 0, write_data); break;
+  
+  // CONFIG P SCALE
+  case 7: set_P_scaling(0, write_data); break;
+  case 8: set_P_scaling(1, write_data); break;
+  case 9: set_P_scaling(2, write_data); break;
+  
+  // CONFIG PHASE
+  case 10: set_phase_corr(0, write_data); break;
+  case 11: set_phase_corr(1, write_data); break;  
+  case 12: set_phase_corr(2, write_data); break;
+  
+  default: return 0; break;
   }
 
   RS485_sendBuf(port, ports[port].rx_msg.buf.uint8, 8); // header + data 
