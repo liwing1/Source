@@ -332,6 +332,11 @@ void set_cfg_baud_rate(uint16_t baud_rate)
     flash_secure();
 }
 
+uint16_t get_cfg_baud_rate(void)
+{
+    return cfg_info->baud_rate;
+}
+
 int16_t get_v_dc_estimate(int phx, int which)
 {
     return cal_info->phases[phx].initial_v_dc_estimate[which];
@@ -675,4 +680,11 @@ int clear_calibration_data(void)
         flash_clr((int16_t *) (((int8_t *) &nv_parms) + __MSP430_INFOA_MEM_SIZE__));
 #endif
     return 0;
+}
+
+void write_calibration_data(const void* cal_data, const void* cfg_data)
+{
+  flash_memcpy((void*) cal_info, cal_data, sizeof(calibration_defaults));
+  flash_memcpy((void*) cfg_info, cfg_data, sizeof(uint16_t));
+  flash_secure();   
 }

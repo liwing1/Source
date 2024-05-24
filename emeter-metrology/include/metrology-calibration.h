@@ -38,6 +38,13 @@
 #if !defined(_METROLOGY_CALIBRATION_H_)
 #define _METROLOGY_CALIBRATION_H_
 
+#include "metrology-interactions.h"
+#include "metrology-decs.h"
+
+#define CALIBRATION_DATA_DEFAULT    calibration_defaults
+#define CONFIGURATION_DATA_DEFAULT    configuration_defaults
+
+void write_calibration_data(const void* cal_data, const void* cfg_data);
 int clear_calibration_data(void);
 
 /*! \brief Get the phase correction calibration factor for a specified phase.
@@ -148,6 +155,7 @@ void set_temperature_parameters(int16_t temperature_at_calibration, int16_t temp
 int align_metrology_with_calibration_data(void);
 
 void set_cfg_baud_rate(uint16_t baud_rate);
+uint16_t get_cfg_baud_rate(void);
 
 #if defined(__cplusplus)
 }

@@ -115,35 +115,54 @@ static uint8_t* get_ptr_from_input_register_addr(uint16_t reg_addr)
 
 uint8_t process_preset_single_reg(int port, uint16_t write_reg, uint16_t write_data)
 {
+  struct calibration_data_s temp_cal_data = CALIBRATION_DATA_DEFAULT;
+  struct configuration_data_s temp_cfg_data = CONFIGURATION_DATA_DEFAULT;
+
+  // To write new cal info, it is necessary to clear it first
+  // Copy old data
+  for (uint8_t phx = 0; phx < 3; phx++) 
+  {
+      temp_cal_data.phases[phx].V_rms_scale_factor[0] = get_V_rms_scaling(phx, 0);
+      temp_cal_data.phases[phx].current[0].I_rms_scale_factor[0] = get_I_rms_scaling(phx, 0);
+      temp_cal_data.phases[phx].current[0].P_scale_factor = get_P_scaling(0);
+      temp_cal_data.phases[phx].current[0].phase_correction = get_phase_corr(0);
+  }
+  temp_cfg_data.baud_rate = get_cfg_baud_rate();
+
+  clear_calibration_data();
+
   switch (write_reg)
   {
+    // CONFIG BAUDRRATE
   case 0:
     holding_registers.addr[write_reg] = write_data;
     set_cfg_baud_rate(holding_registers.addr[write_reg]);
   break;
 
   // CONFIG VRMS SCALE
-  case 1: set_V_rms_scaling(0, 0, write_data); break;
-  case 2: set_V_rms_scaling(1, 0, write_data); break;
-  case 3: set_V_rms_scaling(2, 0, write_data); break;
+  case 1: temp_cal_data.phases[0].V_rms_scale_factor[0] = write_data; break;
+  case 2: temp_cal_data.phases[1].V_rms_scale_factor[0] = write_data; break;
+  case 3: temp_cal_data.phases[2].V_rms_scale_factor[0] = write_data; break;
   
   // CONFIG IRMS SCALE
-  case 4: set_I_rms_scaling(0, 0, write_data); break;
-  case 5: set_I_rms_scaling(1, 0, write_data); break;
-  case 6: set_I_rms_scaling(2, 0, write_data); break;
+  case 4: temp_cal_data.phases[0].current[0].I_rms_scale_factor[0] = write_data; break;
+  case 5: temp_cal_data.phases[1].current[0].I_rms_scale_factor[0] = write_data; break;
+  case 6: temp_cal_data.phases[2].current[0].I_rms_scale_factor[0] = write_data; break;
   
   // CONFIG P SCALE
-  case 7: set_P_scaling(0, write_data); break;
-  case 8: set_P_scaling(1, write_data); break;
-  case 9: set_P_scaling(2, write_data); break;
+  case 7: temp_cal_data.phases[0].current[0].P_scale_factor = write_data; break;
+  case 8: temp_cal_data.phases[1].current[0].P_scale_factor = write_data; break;
+  case 9: temp_cal_data.phases[2].current[0].P_scale_factor = write_data; break;
   
   // CONFIG PHASE
-  case 10: set_phase_corr(0, write_data); break;
-  case 11: set_phase_corr(1, write_data); break;  
-  case 12: set_phase_corr(2, write_data); break;
+  case 10: temp_cal_data.phases[0].current[0].phase_correction = write_data; break;
+  case 11: temp_cal_data.phases[1].current[0].phase_correction = write_data; break;
+  case 12: temp_cal_data.phases[2].current[0].phase_correction = write_data; break;
   
   default: return 0; break;
   }
+  // Rewrite old data with adjust
+  write_calibration_data(&temp_cal_data, &temp_cfg_data);
 
   RS485_sendBuf(port, ports[port].rx_msg.buf.uint8, 8); // header + data 
   return 1;
