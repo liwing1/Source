@@ -474,7 +474,7 @@ void system_setup(void)
     SSD1306_Init();
     OLED_display_startup_message();
     //Oled_teste();
-    __delay_cycles(100000000);
+    //__delay_cycles(100000000);
     #endif
     
 

@@ -305,7 +305,7 @@ static const uint8_t field2_dp_icons[] = \
 #define custom_lcd_clear_line_1_tags()
 #define custom_lcd_clear_line_2_tags()
 
-#undef USE_WATCHDOG
+#define USE_WATCHDOG
 
 //TDTD
 #if 1
