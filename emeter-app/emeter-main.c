@@ -217,7 +217,6 @@ static __inline__ void update_input_registers(input_registers_t* _input_register
 }
 
 input_registers_t input_registers;
-holding_registers_t holding_registers;
 
 #if defined(__IAR_SYSTEMS_ICC__)  ||  defined(__TI_COMPILER_VERSION__)
 void main(void)

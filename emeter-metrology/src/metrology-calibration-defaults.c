@@ -691,6 +691,16 @@ int clear_calibration_data(void)
 void write_calibration_data(const void* cal_data, const void* cfg_data)
 {
   flash_memcpy((void*) cal_info, cal_data, sizeof(calibration_defaults));
-  flash_memcpy((void*) cfg_info, cfg_data, sizeof(uint16_t));
+  flash_memcpy((void*) cfg_info, cfg_data, sizeof(configuration_defaults));
   flash_secure();   
+}
+
+struct calibration_data_s const* get_cal_info(void)
+{
+    return cal_info;
+}
+
+struct configuration_data_s const* get_cfg_info(void)
+{
+    return cfg_info;
 }

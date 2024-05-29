@@ -132,22 +132,13 @@ static uint8_t* get_ptr_from_input_register_addr(uint16_t reg_addr)
     return NULL;
 }
 
-uint8_t process_preset_single_reg(int port, uint16_t write_reg, uint16_t write_data)
+void process_preset_single_reg(uint16_t write_reg, uint16_t write_data)
 {
-  struct calibration_data_s temp_cal_data = CALIBRATION_DATA_DEFAULT;
-  struct configuration_data_s temp_cfg_data = CONFIGURATION_DATA_DEFAULT;
+  struct calibration_data_s temp_cal_data;
+  struct configuration_data_s temp_cfg_data;
 
-  // To write new cal info, it is necessary to clear it first
-  // Copy old data
-  for (uint8_t phx = 0; phx < 3; phx++) 
-  {
-      temp_cal_data.phases[phx].V_rms_scale_factor[0] = get_V_rms_scaling(phx, 0);
-      temp_cal_data.phases[phx].current[0].I_rms_scale_factor[0] = get_I_rms_scaling(phx, 0);
-      temp_cal_data.phases[phx].current[0].P_scale_factor = get_P_scaling(0);
-      temp_cal_data.phases[phx].current[0].phase_correction = get_phase_corr(0);
-  }
-  temp_cfg_data.baud_rate = get_cfg_baud_rate();
-  temp_cfg_data.mb_address = get_cfg_mb_address();
+  memcpy(&temp_cal_data, (void*)get_cal_info(), sizeof(temp_cal_data));
+  memcpy(&temp_cfg_data, (void*)get_cfg_info(), sizeof(temp_cfg_data));
 
   switch (write_reg)
   {
@@ -170,15 +161,15 @@ uint8_t process_preset_single_reg(int port, uint16_t write_reg, uint16_t write_d
   case HOLD_B_PHASE: temp_cal_data.phases[1].current[0].phase_correction = write_data; break;
   case HOLD_C_PHASE: temp_cal_data.phases[2].current[0].phase_correction = write_data; break;
   
-  default: return 0; break;
+  default: return; break;
   }
   
   // Rewrite old data with adjust
   clear_calibration_data();
   write_calibration_data(&temp_cal_data, &temp_cfg_data);
 
-  RS485_sendBuf(port, ports[port].rx_msg.buf.uint8, 8); // header + data 
-  return 1;
+  RS485_sendBuf(0, ports[0].rx_msg.buf.uint8, 8); // header + data 
+  return;
 }
 
 uint8_t process_read_inp_reg(int port, uint16_t first_reg, uint16_t n_reg)
@@ -202,7 +193,7 @@ uint8_t process_read_inp_reg(int port, uint16_t first_reg, uint16_t n_reg)
   ports[port].tx_msg.buf.uint8[4 + n_reg * 2] = (uint8_t)(crc>>8);
   ports[port].tx_msg.buf.uint8[3 + n_reg * 2] = (uint8_t)(crc&0x00FF);
   
-  RS485_sendBuf(port, ports[port].tx_msg.buf.uint8, 5 + n_reg * 2); // header + data
+  RS485_sendBuf(0, ports[0].tx_msg.buf.uint8, 5 + n_reg * 2); // header + data
   return 1;
 }
 
@@ -245,7 +236,7 @@ void dlt645_service(void)
         write_reg = ((uint16_t)ports[port].rx_msg.buf.uint8[2])<<8 | ports[port].rx_msg.buf.uint8[3];
         write_data = ((uint16_t)ports[port].rx_msg.buf.uint8[4])<<8 | ports[port].rx_msg.buf.uint8[5];
 
-        process_preset_single_reg(port, write_reg, write_data);
+        process_preset_single_reg(write_reg, write_data);
         
         break;
         

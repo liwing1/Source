@@ -157,6 +157,8 @@ int align_metrology_with_calibration_data(void);
 void set_cfg_baud_rate(uint16_t baud_rate);
 uint16_t get_cfg_baud_rate(void);
 uint16_t get_cfg_mb_address(void);
+struct calibration_data_s const* get_cal_info(void);
+struct configuration_data_s const* get_cfg_info(void);
 
 #if defined(__cplusplus)
 }

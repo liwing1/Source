@@ -159,26 +159,26 @@ typedef struct {
       float energia_apr;
       
       // Delta 300 - 339
-      // float delta_ene_atv_pos; //i = 184
-      // float delta_ene_rtv_pos;
-      // float delta_ene_atv_neg;
-      // float delta_ene_rtv_neg;
-      // float delta_ene_apr;
-      // float delta_ene_atv_pos_fase_1;
-      // float delta_ene_rtv_pos_fase_1;
-      // float delta_ene_atv_neg_fase_1;
-      // float delta_ene_rtv_neg_fase_1;
-      // float delta_ene_atv_pos_fase_2;
-      // float delta_ene_rtv_pos_fase_2;
-      // float delta_ene_atv_neg_fase_2;
-      // float delta_ene_rtv_neg_fase_2;
-      // float delta_ene_atv_pos_fase_3;
-      // float delta_ene_rtv_pos_fase_3;
-      // float delta_ene_atv_neg_fase_3;
-      // float delta_ene_rtv_neg_fase_3;
-      // float delta_ene_apr_fase_1;
-      // float delta_ene_apr_fase_2;
-      // float delta_ene_apr_fase_3;
+      float delta_ene_atv_pos; //i = 184
+      float delta_ene_rtv_pos;
+      float delta_ene_atv_neg;
+      float delta_ene_rtv_neg;
+      float delta_ene_apr;
+      float delta_ene_atv_pos_fase_1;
+      float delta_ene_rtv_pos_fase_1;
+      float delta_ene_atv_neg_fase_1;
+      float delta_ene_rtv_neg_fase_1;
+      float delta_ene_atv_pos_fase_2;
+      float delta_ene_rtv_pos_fase_2;
+      float delta_ene_atv_neg_fase_2;
+      float delta_ene_rtv_neg_fase_2;
+      float delta_ene_atv_pos_fase_3;
+      float delta_ene_rtv_pos_fase_3;
+      float delta_ene_atv_neg_fase_3;
+      float delta_ene_rtv_neg_fase_3;
+      float delta_ene_apr_fase_1;
+      float delta_ene_apr_fase_2;
+      float delta_ene_apr_fase_3;
       
       // Energia/fase 1200 - 1229
       float energia_atv_pos_fase_1; // i = 264
@@ -205,20 +205,8 @@ typedef struct {
   };
 } input_registers_t;
 
-typedef struct {
-  union {
-    struct {
-        uint16_t baud_rate;
-        uint16_t mb_address;
-    } configs;
-
-    uint16_t addr[2];
-    uint8_t byte[4];
-  };
-} holding_registers_t;
 
 extern input_registers_t input_registers;
-extern holding_registers_t holding_registers;
 
 void update_input_registers(input_registers_t* _input_registers);
 #endif
