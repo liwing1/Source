@@ -119,6 +119,7 @@ struct nv_header_s
 struct configuration_data_s
 {
     uint16_t baud_rate; //0:9600 | 1:19200 | 2:57600 | 3:115200
+    uint16_t mb_address; 
 };
 
 struct nv_parms_s

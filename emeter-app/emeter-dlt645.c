@@ -73,7 +73,26 @@
 #define NULL    (void *) 0
 #endif
 
-uint16_t CalculateCRC(uint8_t *data, uint16_t length) {
+enum holding_register_address 
+{
+  HOLD_CFG_BAUD_RATE = 0,
+  HOLD_CFG_ADDRESS,
+  HOLD_V_A_SCALE,
+  HOLD_V_B_SCALE,
+  HOLD_V_C_SCALE,
+  HOLD_I_A_SCALE,
+  HOLD_I_B_SCALE,
+  HOLD_I_C_SCALE,
+  HOLD_P_A_SCALE,
+  HOLD_P_B_SCALE,
+  HOLD_P_C_SCALE,
+  HOLD_A_PHASE,
+  HOLD_B_PHASE,
+  HOLD_C_PHASE,
+};
+
+uint16_t CalculateCRC(uint8_t *data, uint16_t length) 
+{
   uint16_t CRC16 = 0xffff;
   uint16_t poly =  0xA001;
 
@@ -128,40 +147,34 @@ uint8_t process_preset_single_reg(int port, uint16_t write_reg, uint16_t write_d
       temp_cal_data.phases[phx].current[0].phase_correction = get_phase_corr(0);
   }
   temp_cfg_data.baud_rate = get_cfg_baud_rate();
-
-  clear_calibration_data();
+  temp_cfg_data.mb_address = get_cfg_mb_address();
 
   switch (write_reg)
   {
-    // CONFIG BAUDRRATE
-  case 0:
-    holding_registers.addr[write_reg] = write_data;
-    set_cfg_baud_rate(holding_registers.addr[write_reg]);
-  break;
-
-  // CONFIG VRMS SCALE
-  case 1: temp_cal_data.phases[0].V_rms_scale_factor[0] = write_data; break;
-  case 2: temp_cal_data.phases[1].V_rms_scale_factor[0] = write_data; break;
-  case 3: temp_cal_data.phases[2].V_rms_scale_factor[0] = write_data; break;
+  case HOLD_CFG_BAUD_RATE: temp_cfg_data.baud_rate = write_data; break;
+  case HOLD_CFG_ADDRESS: temp_cfg_data.mb_address = write_data; break;
   
-  // CONFIG IRMS SCALE
-  case 4: temp_cal_data.phases[0].current[0].I_rms_scale_factor[0] = write_data; break;
-  case 5: temp_cal_data.phases[1].current[0].I_rms_scale_factor[0] = write_data; break;
-  case 6: temp_cal_data.phases[2].current[0].I_rms_scale_factor[0] = write_data; break;
+  case HOLD_V_A_SCALE: temp_cal_data.phases[0].V_rms_scale_factor[0] = write_data; break;
+  case HOLD_V_B_SCALE: temp_cal_data.phases[1].V_rms_scale_factor[0] = write_data; break;
+  case HOLD_V_C_SCALE: temp_cal_data.phases[2].V_rms_scale_factor[0] = write_data; break;
   
-  // CONFIG P SCALE
-  case 7: temp_cal_data.phases[0].current[0].P_scale_factor = write_data; break;
-  case 8: temp_cal_data.phases[1].current[0].P_scale_factor = write_data; break;
-  case 9: temp_cal_data.phases[2].current[0].P_scale_factor = write_data; break;
+  case HOLD_I_A_SCALE: temp_cal_data.phases[0].current[0].I_rms_scale_factor[0] = write_data; break;
+  case HOLD_I_B_SCALE: temp_cal_data.phases[1].current[0].I_rms_scale_factor[0] = write_data; break;
+  case HOLD_I_C_SCALE: temp_cal_data.phases[2].current[0].I_rms_scale_factor[0] = write_data; break;
   
-  // CONFIG PHASE
-  case 10: temp_cal_data.phases[0].current[0].phase_correction = write_data; break;
-  case 11: temp_cal_data.phases[1].current[0].phase_correction = write_data; break;
-  case 12: temp_cal_data.phases[2].current[0].phase_correction = write_data; break;
+  case HOLD_P_A_SCALE: temp_cal_data.phases[0].current[0].P_scale_factor = write_data; break;
+  case HOLD_P_B_SCALE: temp_cal_data.phases[1].current[0].P_scale_factor = write_data; break;
+  case HOLD_P_C_SCALE: temp_cal_data.phases[2].current[0].P_scale_factor = write_data; break;
+  
+  case HOLD_A_PHASE: temp_cal_data.phases[0].current[0].phase_correction = write_data; break;
+  case HOLD_B_PHASE: temp_cal_data.phases[1].current[0].phase_correction = write_data; break;
+  case HOLD_C_PHASE: temp_cal_data.phases[2].current[0].phase_correction = write_data; break;
   
   default: return 0; break;
   }
+  
   // Rewrite old data with adjust
+  clear_calibration_data();
   write_calibration_data(&temp_cal_data, &temp_cfg_data);
 
   RS485_sendBuf(port, ports[port].rx_msg.buf.uint8, 8); // header + data 
@@ -173,7 +186,7 @@ uint8_t process_read_inp_reg(int port, uint16_t first_reg, uint16_t n_reg)
   if (n_reg > 18)
     return 0;
   
-  ports[port].tx_msg.buf.uint8[0] = 0x68;
+  ports[port].tx_msg.buf.uint8[0] = get_cfg_mb_address();
   ports[port].tx_msg.buf.uint8[1] = 0x04;
   ports[port].tx_msg.buf.uint8[2] = n_reg * 2; //byte count
   

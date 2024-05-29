@@ -90,6 +90,21 @@ extern uint32_t swell_duration[NUM_PHASES];
 extern volatile unsigned long Contador4096;
 #endif
 
+#define NOMINAL_VOLTAGE 220.0
+#define UNDER_VOLTAGE_THRESHOLD (NOMINAL_VOLTAGE * 0.90)
+#define OVER_VOLTAGE_THRESHOLD (NOMINAL_VOLTAGE * 1.10)
+#define IMBALANCE_THRESHOLD 0.02 // 2% imbalance
+
+#define PHASE_A_OVERVOLTAGE BIT0
+#define PHASE_B_OVERVOLTAGE BIT1
+#define PHASE_C_OVERVOLTAGE BIT2
+#define PHASE_A_UNDERVOLTAGE BIT3
+#define PHASE_B_UNDERVOLTAGE BIT4
+#define PHASE_C_UNDERVOLTAGE BIT5
+#define PHASE_IMBALANCE BIT6
+#define PHASE_OUT_OF_SEQ  BIT7
+
+
 typedef struct {
   union {
     struct {
@@ -144,26 +159,26 @@ typedef struct {
       float energia_apr;
       
       // Delta 300 - 339
-      float delta_ene_atv_pos; //i = 184
-      float delta_ene_rtv_pos;
-      float delta_ene_atv_neg;
-      float delta_ene_rtv_neg;
-      float delta_ene_apr;
-      float delta_ene_atv_pos_fase_1;
-      float delta_ene_rtv_pos_fase_1;
-      float delta_ene_atv_neg_fase_1;
-      float delta_ene_rtv_neg_fase_1;
-      float delta_ene_atv_pos_fase_2;
-      float delta_ene_rtv_pos_fase_2;
-      float delta_ene_atv_neg_fase_2;
-      float delta_ene_rtv_neg_fase_2;
-      float delta_ene_atv_pos_fase_3;
-      float delta_ene_rtv_pos_fase_3;
-      float delta_ene_atv_neg_fase_3;
-      float delta_ene_rtv_neg_fase_3;
-      float delta_ene_apr_fase_1;
-      float delta_ene_apr_fase_2;
-      float delta_ene_apr_fase_3;
+      // float delta_ene_atv_pos; //i = 184
+      // float delta_ene_rtv_pos;
+      // float delta_ene_atv_neg;
+      // float delta_ene_rtv_neg;
+      // float delta_ene_apr;
+      // float delta_ene_atv_pos_fase_1;
+      // float delta_ene_rtv_pos_fase_1;
+      // float delta_ene_atv_neg_fase_1;
+      // float delta_ene_rtv_neg_fase_1;
+      // float delta_ene_atv_pos_fase_2;
+      // float delta_ene_rtv_pos_fase_2;
+      // float delta_ene_atv_neg_fase_2;
+      // float delta_ene_rtv_neg_fase_2;
+      // float delta_ene_atv_pos_fase_3;
+      // float delta_ene_rtv_pos_fase_3;
+      // float delta_ene_atv_neg_fase_3;
+      // float delta_ene_rtv_neg_fase_3;
+      // float delta_ene_apr_fase_1;
+      // float delta_ene_apr_fase_2;
+      // float delta_ene_apr_fase_3;
       
       // Energia/fase 1200 - 1229
       float energia_atv_pos_fase_1; // i = 264
@@ -181,10 +196,12 @@ typedef struct {
       float energia_apr_fas_fase_1;
       float energia_apr_fas_fase_2;
       float energia_apr_fas_fase_3;
+
+      uint16_t status;
     } grandezas;
     
-    uint16_t addr[162];
-    uint8_t byte[324];
+    uint16_t addr[164];
+    uint8_t byte[328];
   };
 } input_registers_t;
 
@@ -192,10 +209,11 @@ typedef struct {
   union {
     struct {
         uint16_t baud_rate;
+        uint16_t mb_address;
     } configs;
 
-    uint16_t addr[1];
-    uint8_t byte[2];
+    uint16_t addr[2];
+    uint8_t byte[4];
   };
 } holding_registers_t;
 

@@ -156,6 +156,7 @@ int align_metrology_with_calibration_data(void);
 
 void set_cfg_baud_rate(uint16_t baud_rate);
 uint16_t get_cfg_baud_rate(void);
+uint16_t get_cfg_mb_address(void);
 
 #if defined(__cplusplus)
 }

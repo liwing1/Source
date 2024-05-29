@@ -476,8 +476,9 @@ static __inline__ int per_sample_dsp(void)
                           if ((ContSeqFase--)<=0) {
                             ContSeqFase=0;
                             // Desarma alarme
-                            P3OUT |= BIT7;         // sinal_alarme=1, desliga transistor
+                            //P3OUT |= BIT7;         // sinal_alarme=1, desliga transistor
                             //P8OUT |= BIT5;       // Se quiser indicar no LED                      
+                            phase->status &= ~PHASE_STATUS_REVERSED;
                           }
                         }  
                         else {
@@ -486,8 +487,9 @@ static __inline__ int per_sample_dsp(void)
                           if ((ContSeqFase++)>=TEMPO_ERRO_SEQ_FASE) {
                             ContSeqFase=TEMPO_ERRO_SEQ_FASE;
                             // Arma alarme
-                            P3OUT &= ~BIT7;       // sinal alarme=0, liga transistor
+                            //P3OUT &= ~BIT7;       // sinal alarme=0, liga transistor
                             //P8OUT &= ~BIT5;     // Se quiser indicar no LED      
+                            phase->status |= PHASE_STATUS_REVERSED;
                            }
                         }  
                       }

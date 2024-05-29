@@ -139,7 +139,44 @@ void test_battery(void)
 }
 #endif
 
-void update_input_registers(input_registers_t* _input_registers)
+static __inline__ void set_alarm(void)
+{
+  P3OUT &= ~BIT7;     // sinal alarme=0, liga transistor
+  P8OUT &= ~BIT5;     // Se quiser indicar no LED      
+}
+
+static __inline__ void rst_alarm(void)
+{
+  P3OUT |= BIT7;     // sinal alarme=1, desliga transistor
+  P8OUT |= BIT5;     // Se quiser indicar no LED      
+}
+
+static __inline__ uint16_t check_voltage_ranges(float v1, float v2, float v3)
+{
+  uint16_t status = 0;
+
+  // Check for undervoltage
+  if (v1 < UNDER_VOLTAGE_THRESHOLD) status |= PHASE_A_UNDERVOLTAGE;
+  if (v2 < UNDER_VOLTAGE_THRESHOLD) status |= PHASE_B_UNDERVOLTAGE;
+  if (v3 < UNDER_VOLTAGE_THRESHOLD) status |= PHASE_C_UNDERVOLTAGE;
+
+  // Check for overvoltage
+  if (v1 > UNDER_VOLTAGE_THRESHOLD) status |= PHASE_A_OVERVOLTAGE;
+  if (v2 > UNDER_VOLTAGE_THRESHOLD) status |= PHASE_A_OVERVOLTAGE;
+  if (v3 > UNDER_VOLTAGE_THRESHOLD) status |= PHASE_A_OVERVOLTAGE;
+
+  // Check for imbalance
+  double average_voltage = (v1 + v2 + v3) / 3.0;
+  double max_deviation = fmax(fabs(v1 - average_voltage), fmax(fabs(v2 - average_voltage), fabs(v3 - average_voltage)));
+
+  if ((max_deviation / average_voltage) > IMBALANCE_THRESHOLD) status |= PHASE_IMBALANCE;
+
+  if(phase_status(2) & PHASE_STATUS_REVERSED) status |= PHASE_OUT_OF_SEQ;
+
+  return status;
+}
+
+static __inline__ void update_input_registers(input_registers_t* _input_registers)
 {
   _input_registers->grandezas.tensao_linha_1 = rms_voltage(0);
   _input_registers->grandezas.tensao_linha_2 = rms_voltage(1);
@@ -173,8 +210,10 @@ void update_input_registers(input_registers_t* _input_registers)
 
   _input_registers->grandezas.energia_rtv_pos = (long) energy_consumed[FAKE_PHASE_TOTAL][APP_REACTIVE_ENERGY_QUADRANT_I] + (long) energy_consumed[FAKE_PHASE_TOTAL][APP_REACTIVE_ENERGY_QUADRANT_IV];
   _input_registers->grandezas.energia_rtv_pos_fase_1 = (long) energy_consumed[0][APP_REACTIVE_ENERGY_QUADRANT_I] + (long) energy_consumed[0][APP_REACTIVE_ENERGY_QUADRANT_IV];
-  _input_registers->grandezas.energia_rtv_pos_fase_1 = (long) energy_consumed[1][APP_REACTIVE_ENERGY_QUADRANT_I] +(long)  energy_consumed[1][APP_REACTIVE_ENERGY_QUADRANT_IV];
-  _input_registers->grandezas.energia_rtv_pos_fase_1 = (long) energy_consumed[2][APP_REACTIVE_ENERGY_QUADRANT_I] + (long) energy_consumed[2][APP_REACTIVE_ENERGY_QUADRANT_IV];
+  _input_registers->grandezas.energia_rtv_pos_fase_2 = (long) energy_consumed[1][APP_REACTIVE_ENERGY_QUADRANT_I] +(long)  energy_consumed[1][APP_REACTIVE_ENERGY_QUADRANT_IV];
+  _input_registers->grandezas.energia_rtv_pos_fase_3 = (long) energy_consumed[2][APP_REACTIVE_ENERGY_QUADRANT_I] + (long) energy_consumed[2][APP_REACTIVE_ENERGY_QUADRANT_IV];
+
+  _input_registers->grandezas.status = check_voltage_ranges(rms_voltage(0), rms_voltage(1), rms_voltage(2));
 }
 
 input_registers_t input_registers;
@@ -236,6 +275,13 @@ int main(int argc, char *argv[])
         if(Contador4096 - TempoMapaMemoria > 4096)// atualiza 1s
         {
           update_input_registers(&input_registers);
+
+          if(input_registers.grandezas.status != 0) {
+            set_alarm();
+          } else {
+            rst_alarm();
+          }
+
           TempoMapaMemoria = Contador4096;
         }
 

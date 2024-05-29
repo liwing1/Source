@@ -604,7 +604,7 @@ ISR(USCI_A0, USCI_A0_isr)
     case USCI_UART_UCRXIFG:
         ports[0].rx_msg.buf.uint8[ports[0].rx_msg.ptr++] = UCA0RXBUF;
         
-        if (ports[0].rx_msg.buf.uint8[0] == 0x68)
+        if (ports[0].rx_msg.buf.uint8[0] == get_cfg_mb_address())
         {
           while(!(UCA0IFG & UCRXIFG));
           ports[0].rx_msg.buf.uint8[ports[0].rx_msg.ptr++] = UCA0RXBUF;
@@ -741,7 +741,7 @@ ISR(USCI_A1, USCI_A1_isr)
     case USCI_UART_UCRXIFG:
         ports[1].rx_msg.buf.uint8[ports[1].rx_msg.ptr++] = UCA1RXBUF;
         
-        if (ports[1].rx_msg.buf.uint8[0] == 0x68)
+        if (ports[1].rx_msg.buf.uint8[0] == get_cfg_mb_address())
         {
           while(!(UCA1IFG & UCRXIFG));
           ports[1].rx_msg.buf.uint8[ports[1].rx_msg.ptr++] = UCA1RXBUF;
