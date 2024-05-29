@@ -127,6 +127,9 @@ static uint8_t* get_ptr_from_input_register_addr(uint16_t reg_addr)
   
   else if (reg_addr >= 1200 && reg_addr <= 1229)
     return (&(input_registers.byte[byte_addr - 2136]));
+
+  else if (reg_addr == 3900)
+    return ((uint8_t*)&(input_registers.grandezas.status));
   
   else 
     return NULL;
