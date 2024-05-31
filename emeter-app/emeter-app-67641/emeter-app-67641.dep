@@ -5,167 +5,221 @@
     <configuration>
         <name>Debug</name>
         <outputs>
-            <file>$PROJ_DIR$\..\emeter-basic-display.c</file>
-            <file>$PROJ_DIR$\..\emeter-basic-oled.h</file>
-            <file>$PROJ_DIR$\..\emeter-keypad.c</file>
-            <file>$PROJ_DIR$\..\emeter-basic-oled.c</file>
-            <file>$PROJ_DIR$\..\emeter-dlt645.c</file>
-            <file>$PROJ_DIR$\..\emeter-lcd.c</file>
-            <file>$PROJ_DIR$\..\emeter-communication.c</file>
-            <file>$PROJ_DIR$\Debug\Obj\emeter-basic-oled.pbi</file>
-            <file>$TOOLKIT_DIR$\inc\dlib\c\DLib_Defaults.h</file>
-            <file>$TOOLKIT_DIR$\inc\dlib\c\stdint.h</file>
-            <file>$TOOLKIT_DIR$\inc\dlib\c\DLib_Product.h</file>
-            <file>$PROJ_DIR$\Debug\Obj\emeter-setup.__cstat.et</file>
-            <file>$PROJ_DIR$\..\..\emeter-metrology\include\metrology-readings.h</file>
-            <file>$PROJ_DIR$\..\..\emeter-metrology\include\metrology-interactions.h</file>
-            <file>$TOOLKIT_DIR$\inc\msp430.h</file>
-            <file>$PROJ_DIR$\..\emeter-dlt645.h</file>
-            <file>$PROJ_DIR$\Debug\Obj\emeter-setup.r43</file>
-            <file>$TOOLKIT_DIR$\lib\dlib\dl430xllfn.r43</file>
-            <file>$PROJ_DIR$\..\emeter-autocal.h</file>
-            <file>$PROJ_DIR$\Debug\Obj\emeter-dlt645.pbi</file>
-            <file>$PROJ_DIR$\emeter-template.h</file>
-            <file>$TOOLKIT_DIR$\inc\dlib\c\ysizet.h</file>
-            <file>$PROJ_DIR$\..\..\emeter-metrology\emeter-metrology-67641\metrology-template.h</file>
-            <file>$PROJ_DIR$\..\..\emeter-metrology\include\metrology-foreground.h</file>
-            <file>$TOOLKIT_DIR$\inc\dlib\c\xencoding_limits.h</file>
-            <file>$PROJ_DIR$\..\..\emeter-metrology\include\metrology-host.h</file>
-            <file>$TOOLKIT_DIR$\inc\dlib\c\xtgmath.h</file>
-            <file>$PROJ_DIR$\..\oled-font.h</file>
-            <file>$TOOLKIT_DIR$\inc\dlib\c\stdio.h</file>
-            <file>$TOOLKIT_DIR$\inc\dlib\c\ymath.h</file>
             <file>$PROJ_DIR$\Debug\List\emeter-app-67641.map</file>
-            <file>$PROJ_DIR$\Debug\Obj\emeter-basic-display.r43</file>
             <file>$PROJ_DIR$\Debug\Obj\emeter-lcd.r43</file>
+            <file>$PROJ_DIR$\Debug\Obj\emeter-setup.pbi</file>
+            <file>$TOOLKIT_DIR$\config\linker\lnk430f67641a.xcl</file>
+            <file>$PROJ_DIR$\..\..\emeter-metrology\include\metrology-instantiate-adcs.h</file>
+            <file>$PROJ_DIR$\Debug\Obj\emeter-rtc-c.pbi</file>
+            <file>$TOOLKIT_DIR$\inc\dlib\c\xtgmath.h</file>
+            <file>$PROJ_DIR$\Debug\Obj\emeter-basic-display.r43</file>
             <file>$TOOLKIT_DIR$\inc\intrinsics.h</file>
             <file>$PROJ_DIR$\Debug\Exe\emeter-app-67641.d43</file>
-            <file>$PROJ_DIR$\Debug\Obj\emeter-setup.pbi</file>
-            <file>$TOOLKIT_DIR$\lib\dlib\dl430xllfn.h</file>
-            <file>$PROJ_DIR$\Debug\Obj\emeter-lcd.pbi</file>
-            <file>$PROJ_DIR$\Debug\Obj\emeter-communication.__cstat.et</file>
-            <file>$PROJ_DIR$\..\emeter-keypad.h</file>
-            <file>$PROJ_DIR$\..\..\emeter-metrology\src\metrology-calibration-defaults.c</file>
-            <file>$PROJ_DIR$\..\..\emeter-metrology\include\metrology-instantiate-adcs.h</file>
-            <file>$PROJ_DIR$\..\emeter-basic-display.h</file>
-            <file>$PROJ_DIR$\Debug\Obj\emeter-rtc-c.pbi</file>
-            <file>$PROJ_DIR$\..\..\emeter-metrology\include\metrology-flash.h</file>
-            <file>$PROJ_DIR$\Debug\Obj\emeter-oled.r43</file>
-            <file>$TOOLKIT_DIR$\config\linker\lnk430f67641a.xcl</file>
             <file>$PROJ_DIR$\..\..\emeter-metrology\src\metrology-readings.c</file>
             <file>$PROJ_DIR$\Debug\Obj\emeter-rtc-c.__cstat.et</file>
-            <file>$PROJ_DIR$\..\..\emeter-metrology\src\metrology-flash.c</file>
+            <file>$PROJ_DIR$\..\..\emeter-metrology\include\metrology-host.h</file>
+            <file>$PROJ_DIR$\Debug\Obj\emeter-lcd.pbi</file>
+            <file>$PROJ_DIR$\..\emeter-keypad.h</file>
+            <file>$PROJ_DIR$\..\emeter-basic-display.h</file>
+            <file>$TOOLKIT_DIR$\inc\dlib\c\stdio.h</file>
+            <file>$PROJ_DIR$\Debug\Obj\emeter-oled.r43</file>
+            <file>$TOOLKIT_DIR$\inc\dlib\c\ymath.h</file>
+            <file>$PROJ_DIR$\Debug\Obj\emeter-dlt645.pbi</file>
             <file>$PROJ_DIR$\..\..\emeter-metrology\include\metrology-calibration.h</file>
+            <file>$PROJ_DIR$\..\..\emeter-metrology\include\metrology-foreground.h</file>
+            <file>$TOOLKIT_DIR$\inc\dlib\c\ysizet.h</file>
+            <file>$TOOLKIT_DIR$\inc\dlib\c\xencoding_limits.h</file>
+            <file>$TOOLKIT_DIR$\lib\dlib\dl430xllfn.h</file>
+            <file>$PROJ_DIR$\..\..\emeter-metrology\emeter-metrology-67641\metrology-template.h</file>
+            <file>$PROJ_DIR$\emeter-template.h</file>
+            <file>$PROJ_DIR$\..\oled-font.h</file>
+            <file>$PROJ_DIR$\Debug\Obj\emeter-communication.__cstat.et</file>
+            <file>$PROJ_DIR$\..\..\emeter-metrology\src\metrology-calibration-defaults.c</file>
+            <file>$PROJ_DIR$\..\..\emeter-metrology\include\metrology-flash.h</file>
+            <file>$TOOLKIT_DIR$\lib\dlib\dl430xllfn.r43</file>
+            <file>$PROJ_DIR$\..\emeter-autocal.h</file>
+            <file>$TOOLKIT_DIR$\inc\msp430.h</file>
+            <file>$PROJ_DIR$\..\emeter-dlt645.c</file>
+            <file>$PROJ_DIR$\..\emeter-main.c</file>
+            <file>$PROJ_DIR$\..\emeter-multirate.c</file>
+            <file>$PROJ_DIR$\..\emeter-oled.h</file>
+            <file>$PROJ_DIR$\..\emeter-communication.c</file>
+            <file>$PROJ_DIR$\..\emeter-keypad.c</file>
+            <file>$PROJ_DIR$\..\emeter-basic-oled.c</file>
+            <file>$PROJ_DIR$\..\emeter-setup.c</file>
+            <file>$PROJ_DIR$\..\emeter-oled.c</file>
+            <file>$PROJ_DIR$\Debug\Obj\emeter-basic-oled.pbi</file>
+            <file>$TOOLKIT_DIR$\inc\dlib\c\stdint.h</file>
+            <file>$TOOLKIT_DIR$\inc\dlib\c\DLib_Product.h</file>
+            <file>$PROJ_DIR$\..\emeter-basic-oled.h</file>
+            <file>$PROJ_DIR$\..\emeter-lcd.c</file>
+            <file>$TOOLKIT_DIR$\inc\dlib\c\DLib_Defaults.h</file>
+            <file>$PROJ_DIR$\..\emeter-rtc-c.c</file>
+            <file>$PROJ_DIR$\..\..\emeter-metrology\include\metrology-readings.h</file>
+            <file>$PROJ_DIR$\Debug\Obj\emeter-setup.__cstat.et</file>
+            <file>$PROJ_DIR$\..\..\emeter-metrology\include\metrology-interactions.h</file>
+            <file>$PROJ_DIR$\..\..\emeter-metrology\emeter-metrology-67641\Debug\Exe\emeter-metrology-67641.r43</file>
+            <file>$PROJ_DIR$\..\emeter-basic-display.c</file>
+            <file>$PROJ_DIR$\..\emeter-dlt645.h</file>
+            <file>$PROJ_DIR$\Debug\Obj\emeter-setup.r43</file>
             <file>$PROJ_DIR$\..\..\emeter-metrology\include\metrology-setup.h</file>
             <file>$TOOLKIT_DIR$\inc\in430.h</file>
-            <file>$PROJ_DIR$\Debug\Obj\emeter-basic-oled.__cstat.et</file>
-            <file>$PROJ_DIR$\..\..\emeter-toolkit\include\sar_12bit_access.h</file>
-            <file>$PROJ_DIR$\..\emeter-communication.h</file>
-            <file>$PROJ_DIR$\..\emeter-lcd.h</file>
-            <file>$PROJ_DIR$\..\..\emeter-metrology\include\metrology-background.h</file>
-            <file>$PROJ_DIR$\..\..\emeter-metrology\include\emeter-metrology.h</file>
-            <file>$TOOLKIT_DIR$\inc\msp430f67641a.h</file>
-            <file>$PROJ_DIR$\..\..\emeter-toolkit\include\isr_compat.h</file>
-            <file>$PROJ_DIR$\..\emeter-oled.h</file>
-            <file>$TOOLKIT_DIR$\inc\dlib\c\yvals.h</file>
-            <file>$PROJ_DIR$\..\..\emeter-metrology\emeter-metrology-67641\Debug\Exe\emeter-metrology-67641.r43</file>
-            <file>$PROJ_DIR$\..\..\emeter-toolkit\include\sigma_delta_24bit_access.h</file>
-            <file>$PROJ_DIR$\..\..\emeter-metrology\include\metrology-decs.h</file>
-            <file>$PROJ_DIR$\Debug\Obj\emeter-multirate.pbi</file>
-            <file>$PROJ_DIR$\..\..\emeter-toolkit\include\sigma_delta_16bit_access.h</file>
-            <file>$PROJ_DIR$\..\emeter-multirate.c</file>
-            <file>$PROJ_DIR$\..\..\emeter-toolkit\include\lcd-starburst-segments.h</file>
-            <file>$PROJ_DIR$\Debug\Obj\emeter-communication.pbi</file>
-            <file>$PROJ_DIR$\..\emeter-main.c</file>
-            <file>$PROJ_DIR$\Debug\Obj\emeter-oled.__cstat.et</file>
-            <file>$TOOLKIT_DIR$\inc\dlib\c\ystdio.h</file>
-            <file>$PROJ_DIR$\Debug\Obj\emeter-basic-display.pbi</file>
-            <file>$TOOLKIT_DIR$\inc\dlib\c\string.h</file>
-            <file>$PROJ_DIR$\..\emeter-oled.c</file>
-            <file>$PROJ_DIR$\..\emeter-setup.c</file>
-            <file>$PROJ_DIR$\..\..\emeter-toolkit\include\hal_pmm.h</file>
-            <file>$TOOLKIT_DIR$\inc\dlib\c\math.h</file>
-            <file>$PROJ_DIR$\..\dlt645-decs.h</file>
-            <file>$PROJ_DIR$\Debug\Obj\emeter-multirate.__cstat.et</file>
-            <file>$PROJ_DIR$\..\..\emeter-metrology\include\emeter-metrology-internal.h</file>
-            <file>$PROJ_DIR$\..\emeter-rtc-c.c</file>
-            <file>$PROJ_DIR$\Debug\Obj\emeter-lcd.__cstat.et</file>
-            <file>$PROJ_DIR$\..\..\emeter-toolkit\include\iar\extra_peripheral_definitions.h</file>
-            <file>$PROJ_DIR$\..\..\emeter-metrology\emeter-metrology-67641\metrology-calibration-template.h</file>
-            <file>$PROJ_DIR$\Debug\Obj\emeter-dlt645.__cstat.et</file>
-            <file>$PROJ_DIR$\Debug\Obj\emeter-keypad.pbi</file>
-            <file>$PROJ_DIR$\Debug\Obj\emeter-main.r43</file>
-            <file>$TOOLKIT_DIR$\config\linker\multiplier32.xcl</file>
-            <file>$PROJ_DIR$\Debug\Obj\emeter-oled.pbi</file>
-            <file>$PROJ_DIR$\..\emeter-multirate.h</file>
-            <file>$PROJ_DIR$\..\..\emeter-metrology\include\metrology-types.h</file>
-            <file>$PROJ_DIR$\Debug\Obj\emeter-basic-display.__cstat.et</file>
-            <file>$PROJ_DIR$\ti_lcd.h</file>
+            <file>$TOOLKIT_DIR$\inc\dlib\c\stdbool.h</file>
             <file>$PROJ_DIR$\..\..\emeter-metrology\include\metrology-structs.h</file>
-            <file>$PROJ_DIR$\..\..\emeter-toolkit\include\lcd-7segment-segments.h</file>
-            <file>$PROJ_DIR$\..\..\emeter-toolkit\include\emeter-toolkit.h</file>
-            <file>$PROJ_DIR$\..\emeter-main.h</file>
-            <file>$TOOLKIT_DIR$\inc\dlib\c\inttypes.h</file>
+            <file>$PROJ_DIR$\..\emeter-multirate.h</file>
             <file>$PROJ_DIR$\Debug\Obj\emeter-keypad.__cstat.et</file>
-            <file>$PROJ_DIR$\Debug\Obj\emeter-app-67641.pbd</file>
             <file>$PROJ_DIR$\Debug\Obj\emeter-main.__cstat.et</file>
             <file>$PROJ_DIR$\..\..\emeter-metrology\include\metrology-corrections.h</file>
-            <file>$PROJ_DIR$\..\..\emeter-toolkit\include\sar_10bit_access.h</file>
-            <file>$TOOLKIT_DIR$\inc\dlib\c\DLib_Threads.h</file>
-            <file>$PROJ_DIR$\Debug\Exe\emeter-app-67641.ulp</file>
-            <file>$PROJ_DIR$\Debug\Obj\emeter-rtc-c.r43</file>
-            <file>$TOOLKIT_DIR$\inc\dlib\c\stdbool.h</file>
-            <file>$PROJ_DIR$\..\..\emeter-metrology\include\metrology-nv-structs.h</file>
-            <file>$PROJ_DIR$\..\emeter-app.h</file>
             <file>$TOOLKIT_DIR$\inc\dlib\c\ycheck.h</file>
-            <file>$PROJ_DIR$\Debug\Obj\emeter-main.pbi</file>
+            <file>$PROJ_DIR$\..\emeter-main.h</file>
+            <file>$PROJ_DIR$\..\..\emeter-metrology\include\metrology-types.h</file>
             <file>$PROJ_DIR$\..\emeter-rtc.h</file>
             <file>$PROJ_DIR$\Debug\Obj\emeter-dlt645.r43</file>
             <file>$PROJ_DIR$\Debug\Obj\emeter-basic-oled.r43</file>
-            <file>$TOOLKIT_DIR$\inc\dlib\c\stdlib.h</file>
             <file>$PROJ_DIR$\Debug\Obj\emeter-keypad.r43</file>
-            <file>$PROJ_DIR$\Debug\Obj\emeter-multirate.r43</file>
-            <file>$PROJ_DIR$\Debug\Obj\emeter-communication.r43</file>
             <file>$TOOLKIT_DIR$\inc\dlib\c\stdarg.h</file>
             <file>$PROJ_DIR$\..\..\emeter-metrology\src\metrology-background.c</file>
+            <file>$PROJ_DIR$\Debug\Exe\emeter-app-67641.ulp</file>
+            <file>$TOOLKIT_DIR$\inc\dlib\c\inttypes.h</file>
+            <file>$PROJ_DIR$\Debug\Obj\emeter-oled.pbi</file>
+            <file>$PROJ_DIR$\Debug\Obj\emeter-basic-display.__cstat.et</file>
+            <file>$PROJ_DIR$\Debug\Obj\emeter-app-67641.pbd</file>
+            <file>$TOOLKIT_DIR$\inc\dlib\c\stdlib.h</file>
+            <file>$PROJ_DIR$\ti_lcd.h</file>
+            <file>$PROJ_DIR$\..\..\emeter-toolkit\include\emeter-toolkit.h</file>
+            <file>$PROJ_DIR$\..\..\emeter-toolkit\include\lcd-7segment-segments.h</file>
+            <file>$PROJ_DIR$\Debug\Obj\emeter-rtc-c.r43</file>
+            <file>$PROJ_DIR$\..\emeter-app.h</file>
+            <file>$PROJ_DIR$\Debug\Obj\emeter-main.pbi</file>
+            <file>$PROJ_DIR$\..\..\emeter-toolkit\include\sar_10bit_access.h</file>
+            <file>$PROJ_DIR$\Debug\Obj\emeter-multirate.r43</file>
+            <file>$PROJ_DIR$\Debug\Obj\emeter-communication.r43</file>
+            <file>$PROJ_DIR$\..\..\emeter-metrology\include\metrology-nv-structs.h</file>
+            <file>$TOOLKIT_DIR$\inc\dlib\c\DLib_Threads.h</file>
+            <file>$PROJ_DIR$\..\..\emeter-metrology\include\metrology-background.h</file>
+            <file>$TOOLKIT_DIR$\inc\msp430f67641a.h</file>
+            <file>$PROJ_DIR$\Debug\Obj\emeter-oled.__cstat.et</file>
+            <file>$PROJ_DIR$\..\..\emeter-metrology\include\emeter-metrology-internal.h</file>
+            <file>$PROJ_DIR$\..\..\emeter-toolkit\include\iar\extra_peripheral_definitions.h</file>
+            <file>$PROJ_DIR$\..\..\emeter-metrology\emeter-metrology-67641\metrology-calibration-template.h</file>
+            <file>$TOOLKIT_DIR$\inc\dlib\c\yvals.h</file>
+            <file>$PROJ_DIR$\Debug\Obj\emeter-keypad.pbi</file>
+            <file>$TOOLKIT_DIR$\inc\dlib\c\string.h</file>
+            <file>$PROJ_DIR$\..\..\emeter-toolkit\include\hal_pmm.h</file>
+            <file>$PROJ_DIR$\Debug\Obj\emeter-multirate.__cstat.et</file>
+            <file>$PROJ_DIR$\..\emeter-lcd.h</file>
+            <file>$PROJ_DIR$\..\..\emeter-toolkit\include\lcd-starburst-segments.h</file>
+            <file>$PROJ_DIR$\..\..\emeter-metrology\include\metrology-decs.h</file>
+            <file>$PROJ_DIR$\..\..\emeter-toolkit\include\sigma_delta_16bit_access.h</file>
+            <file>$TOOLKIT_DIR$\inc\dlib\c\math.h</file>
+            <file>$PROJ_DIR$\Debug\Obj\emeter-lcd.__cstat.et</file>
+            <file>$PROJ_DIR$\Debug\Obj\emeter-dlt645.__cstat.et</file>
+            <file>$PROJ_DIR$\..\dlt645-decs.h</file>
+            <file>$PROJ_DIR$\Debug\Obj\emeter-main.r43</file>
+            <file>$TOOLKIT_DIR$\config\linker\multiplier32.xcl</file>
+            <file>$PROJ_DIR$\Debug\Obj\emeter-communication.pbi</file>
+            <file>$PROJ_DIR$\..\emeter-communication.h</file>
+            <file>$PROJ_DIR$\..\..\emeter-toolkit\include\sigma_delta_24bit_access.h</file>
+            <file>$PROJ_DIR$\Debug\Obj\emeter-basic-oled.__cstat.et</file>
+            <file>$PROJ_DIR$\..\..\emeter-toolkit\include\isr_compat.h</file>
+            <file>$PROJ_DIR$\Debug\Obj\emeter-multirate.pbi</file>
+            <file>$PROJ_DIR$\..\..\emeter-metrology\include\emeter-metrology.h</file>
+            <file>$TOOLKIT_DIR$\inc\dlib\c\ystdio.h</file>
+            <file>$PROJ_DIR$\Debug\Obj\emeter-basic-display.pbi</file>
+            <file>$PROJ_DIR$\..\..\emeter-toolkit\include\sar_12bit_access.h</file>
         </outputs>
         <file>
-            <name>$PROJ_DIR$\..\emeter-basic-display.c</name>
+            <name>[ROOT_NODE]</name>
+            <outputs>
+                <tool>
+                    <name>XLINK</name>
+                    <file> 9 0</file>
+                </tool>
+                <tool>
+                    <name>ULP430</name>
+                    <file> 74</file>
+                </tool>
+            </outputs>
+        </file>
+        <file>
+            <name>$PROJ_DIR$\Debug\Exe\emeter-app-67641.d43</name>
+            <outputs>
+                <tool>
+                    <name>XLINK</name>
+                    <file> 0</file>
+                </tool>
+            </outputs>
+            <inputs>
+                <tool>
+                    <name>XLINK</name>
+                    <file> 3 111 7 70 88 69 71 1 110 53 87 17 83 56 31</file>
+                </tool>
+            </inputs>
+        </file>
+        <file>
+            <name>$PROJ_DIR$\..\emeter-dlt645.c</name>
             <outputs>
                 <tool>
                     <name>ICC430</name>
-                    <file> 31</file>
+                    <file> 69</file>
                 </tool>
                 <tool>
                     <name>BICOMP</name>
-                    <file> 74</file>
+                    <file> 19</file>
                 </tool>
                 <tool>
                     <name>__cstat</name>
-                    <file> 94</file>
+                    <file> 108</file>
                 </tool>
             </outputs>
             <inputs>
                 <tool>
                     <name>ICC430</name>
-                    <file> 100 112 9 62 8 36 10 24 106 117 21 28 73 109 14 59 52 33 121 20 95 98 60 85 58 22 86 93 12 50 13 65 110 41 64 67 54 105 99 111 56 114 42 61 75</file>
+                    <file> 75 65 44 97 48 24 45 23 90 99 22 59 33 92 58 8 26 80 81 116 95 118 25 96 67 50 20 52 104 89 4 114 105 121 86 66 84 102 68 113 55 109</file>
                 </tool>
                 <tool>
                     <name>BICOMP</name>
-                    <file> 33 95 98 67 56 10 112 24 73 28 121 99 42 9 36 62 59 52 14 86 65 117 109 20 58 111 114 61 8 106 21 12 110 105 100 60 85 22 93 50 13 41 64 54 75</file>
+                    <file> 20 118 97 65 33 68 58 25 52 4 59 26 84 55 44 48 90 22 80 114 99 81 66 102 113 109 23 24 45 92 8 116 95 67 121 75 96 50 104 89 105 86</file>
                 </tool>
             </inputs>
         </file>
         <file>
-            <name>$PROJ_DIR$\..\emeter-keypad.c</name>
+            <name>$PROJ_DIR$\..\emeter-main.c</name>
             <outputs>
                 <tool>
                     <name>ICC430</name>
-                    <file> 118</file>
+                    <file> 110</file>
                 </tool>
                 <tool>
                     <name>BICOMP</name>
-                    <file> 88</file>
+                    <file> 85</file>
+                </tool>
+                <tool>
+                    <name>__cstat</name>
+                    <file> 63</file>
+                </tool>
+            </outputs>
+            <inputs>
+                <tool>
+                    <name>ICC430</name>
+                    <file> 75 65 44 97 48 24 45 23 90 79 22 59 106 18 6 33 92 58 8 26 80 81 116 95 118 25 96 67 50 20 52 104 89 4 114 105 121 86 55 66 84 68 102 14 32 46 113</file>
+                </tool>
+                <tool>
+                    <name>BICOMP</name>
+                    <file> 45 97 118 65 23 58 32 106 84 113 121 59 33 26 55 102 46 24 18 8 116 67 79 81 66 68 14 44 48 90 22 6 92 95 25 20 52 4 114 75 80 96 50 104 89 105 86</file>
+                </tool>
+            </inputs>
+        </file>
+        <file>
+            <name>$PROJ_DIR$\..\emeter-multirate.c</name>
+            <outputs>
+                <tool>
+                    <name>ICC430</name>
+                    <file> 87</file>
+                </tool>
+                <tool>
+                    <name>BICOMP</name>
+                    <file> 117</file>
                 </tool>
                 <tool>
                     <name>__cstat</name>
@@ -175,92 +229,11 @@
             <inputs>
                 <tool>
                     <name>ICC430</name>
-                    <file> 100 112 9 62 8 36 10 24 106 117 21 14 59 52 33 20 95 98 60 85 58 22 86 93 12 50 13 65 110 41 64 67 54 105 111 114 56 42 39</file>
+                    <file> 75 65 44 97 48 24 45 23 90 79 22 59 99 33 92 58 8 26 80 81 116 95 118 25 96 67 50 20 52 104 89 4 114 105 121 86 61</file>
                 </tool>
                 <tool>
                     <name>BICOMP</name>
-                    <file> 52 58 112 59 85 14 42 62 22 54 20 114 9 8 106 21 33 60 93 117 98 111 56 39 24 36 10 95 86 50 13 41 64 100 12 65 110 67 105</file>
-                </tool>
-            </inputs>
-        </file>
-        <file>
-            <name>$PROJ_DIR$\..\emeter-basic-oled.c</name>
-            <outputs>
-                <tool>
-                    <name>ICC430</name>
-                    <file> 116</file>
-                </tool>
-                <tool>
-                    <name>BICOMP</name>
-                    <file> 7</file>
-                </tool>
-                <tool>
-                    <name>__cstat</name>
-                    <file> 53</file>
-                </tool>
-            </outputs>
-            <inputs>
-                <tool>
-                    <name>ICC430</name>
-                    <file> 100 112 9 62 8 36 10 24 106 117 21 28 73 109 14 59 52 33 121 20 95 98 60 85 58 22 86 93 12 50 13 65 110 41 64 67 54 105 99 111 114 42 61 75 55</file>
-                </tool>
-                <tool>
-                    <name>BICOMP</name>
-                    <file> 112 98 54 114 62 28 121 99 61 8 106 21 52 60 93 14 117 109 20 58 111 42 55 9 24 36 10 73 59 85 22 50 13 41 64 75 100 33 95 86 12 65 110 67 105</file>
-                </tool>
-            </inputs>
-        </file>
-        <file>
-            <name>$PROJ_DIR$\..\emeter-dlt645.c</name>
-            <outputs>
-                <tool>
-                    <name>ICC430</name>
-                    <file> 115</file>
-                </tool>
-                <tool>
-                    <name>BICOMP</name>
-                    <file> 19</file>
-                </tool>
-                <tool>
-                    <name>__cstat</name>
-                    <file> 87</file>
-                </tool>
-            </outputs>
-            <inputs>
-                <tool>
-                    <name>ICC430</name>
-                    <file> 100 112 9 62 8 36 10 24 106 75 21 109 14 59 52 33 20 95 98 60 85 58 22 86 93 12 50 13 65 110 41 64 67 54 105 99 111 56 114 55 15 80</file>
-                </tool>
-                <tool>
-                    <name>BICOMP</name>
-                    <file> 50 112 33 58 24 62 60 114 36 22 13 41 109 20 111 15 10 59 52 85 64 75 14 98 99 56 55 80 9 8 106 21 95 93 54 100 86 12 65 110 67 105</file>
-                </tool>
-            </inputs>
-        </file>
-        <file>
-            <name>$PROJ_DIR$\..\emeter-lcd.c</name>
-            <outputs>
-                <tool>
-                    <name>ICC430</name>
-                    <file> 32</file>
-                </tool>
-                <tool>
-                    <name>BICOMP</name>
-                    <file> 37</file>
-                </tool>
-                <tool>
-                    <name>__cstat</name>
-                    <file> 84</file>
-                </tool>
-            </outputs>
-            <inputs>
-                <tool>
-                    <name>ICC430</name>
-                    <file> 100 112 9 62 8 36 10 24 106 117 21 109 14 59 52 33 20 95 98 60 85 111 56 97 69</file>
-                </tool>
-                <tool>
-                    <name>BICOMP</name>
-                    <file> 62 9 56 8 106 21 112 14 52 85 109 98 97 117 20 111 69 24 36 10 59 33 60 100 95</file>
+                    <file> 114 65 81 23 20 24 97 80 59 33 61 45 22 58 25 4 79 99 26 118 44 48 90 92 8 116 95 67 52 121 75 96 50 104 89 105 86</file>
                 </tool>
             </inputs>
         </file>
@@ -269,134 +242,79 @@
             <outputs>
                 <tool>
                     <name>ICC430</name>
-                    <file> 120</file>
+                    <file> 88</file>
                 </tool>
                 <tool>
                     <name>BICOMP</name>
+                    <file> 112</file>
+                </tool>
+                <tool>
+                    <name>__cstat</name>
+                    <file> 28</file>
+                </tool>
+            </outputs>
+            <inputs>
+                <tool>
+                    <name>ICC430</name>
+                    <file> 75 65 44 97 48 24 45 23 90 79 22 59 33 92 58 8 26 80 81 116 95 118 25 96 67 50 20 52 104 89 4 114 105 121 86 113 55</file>
+                </tool>
+                <tool>
+                    <name>BICOMP</name>
+                    <file> 113 65 33 97 80 20 114 59 81 44 48 90 22 58 25 4 79 26 118 55 23 24 45 92 8 116 95 67 52 121 75 96 50 104 89 105 86</file>
+                </tool>
+            </inputs>
+        </file>
+        <file>
+            <name>$PROJ_DIR$\..\emeter-keypad.c</name>
+            <outputs>
+                <tool>
+                    <name>ICC430</name>
+                    <file> 71</file>
+                </tool>
+                <tool>
+                    <name>BICOMP</name>
+                    <file> 98</file>
+                </tool>
+                <tool>
+                    <name>__cstat</name>
+                    <file> 62</file>
+                </tool>
+            </outputs>
+            <inputs>
+                <tool>
+                    <name>ICC430</name>
+                    <file> 75 65 44 97 48 24 45 23 90 79 22 33 92 58 8 26 80 81 116 95 118 25 96 67 50 20 52 104 89 4 114 105 121 86 84 68 102 15 14</file>
+                </tool>
+                <tool>
+                    <name>BICOMP</name>
+                    <file> 58 118 65 92 95 33 15 97 25 121 26 68 44 48 90 22 8 116 67 79 81 84 102 14 23 24 45 80 96 20 52 4 114 75 50 104 89 105 86</file>
+                </tool>
+            </inputs>
+        </file>
+        <file>
+            <name>$PROJ_DIR$\..\emeter-basic-oled.c</name>
+            <outputs>
+                <tool>
+                    <name>ICC430</name>
                     <file> 70</file>
                 </tool>
                 <tool>
-                    <name>__cstat</name>
-                    <file> 38</file>
-                </tool>
-            </outputs>
-            <inputs>
-                <tool>
-                    <name>ICC430</name>
-                    <file> 100 112 9 62 8 36 10 24 106 117 21 109 14 59 52 33 20 95 98 60 85 58 22 86 93 12 50 13 65 110 41 64 67 54 105 55 15</file>
-                </tool>
-                <tool>
                     <name>BICOMP</name>
-                    <file> 55 112 14 62 95 50 64 109 98 9 8 106 21 52 22 41 117 20 58 15 24 36 10 59 33 60 85 93 13 54 100 86 12 65 110 67 105</file>
-                </tool>
-            </inputs>
-        </file>
-        <file>
-            <name>[ROOT_NODE]</name>
-            <outputs>
-                <tool>
-                    <name>ULP430</name>
-                    <file> 107</file>
-                </tool>
-                <tool>
-                    <name>XLINK</name>
-                    <file> 34 30</file>
-                </tool>
-            </outputs>
-        </file>
-        <file>
-            <name>$PROJ_DIR$\Debug\Exe\emeter-app-67641.d43</name>
-            <outputs>
-                <tool>
-                    <name>XLINK</name>
-                    <file> 30</file>
-                </tool>
-            </outputs>
-            <inputs>
-                <tool>
-                    <name>XLINK</name>
-                    <file> 46 90 31 116 120 115 118 32 89 63 119 45 108 16 17</file>
-                </tool>
-            </inputs>
-        </file>
-        <file>
-            <name>$PROJ_DIR$\..\emeter-multirate.c</name>
-            <outputs>
-                <tool>
-                    <name>ICC430</name>
-                    <file> 119</file>
-                </tool>
-                <tool>
-                    <name>BICOMP</name>
-                    <file> 66</file>
+                    <file> 43</file>
                 </tool>
                 <tool>
                     <name>__cstat</name>
-                    <file> 81</file>
+                    <file> 115</file>
                 </tool>
             </outputs>
             <inputs>
                 <tool>
                     <name>ICC430</name>
-                    <file> 100 112 9 62 8 36 10 24 106 117 21 109 75 14 59 52 33 20 95 98 60 85 58 22 86 93 12 50 13 65 110 41 64 67 54 105 92</file>
+                    <file> 75 65 44 97 48 24 45 23 90 79 22 16 119 59 33 92 58 8 72 26 80 81 116 95 118 25 96 67 50 20 52 104 89 4 114 105 121 86 66 84 68 15 37 99 113</file>
                 </tool>
                 <tool>
                     <name>BICOMP</name>
-                    <file> 64 112 98 24 50 36 62 95 109 14 92 10 21 52 22 41 117 75 20 58 9 8 106 59 33 60 85 93 13 54 100 86 12 65 110 67 105</file>
-                </tool>
-            </inputs>
-        </file>
-        <file>
-            <name>$PROJ_DIR$\..\emeter-main.c</name>
-            <outputs>
-                <tool>
-                    <name>ICC430</name>
-                    <file> 89</file>
-                </tool>
-                <tool>
-                    <name>BICOMP</name>
-                    <file> 113</file>
-                </tool>
-                <tool>
-                    <name>__cstat</name>
-                    <file> 103</file>
-                </tool>
-            </outputs>
-            <inputs>
-                <tool>
-                    <name>ICC430</name>
-                    <file> 100 112 9 62 8 36 10 24 106 117 21 109 79 29 26 14 59 52 33 20 95 98 60 85 58 22 86 93 12 50 13 65 110 41 64 67 54 105 15 99 111 114 56 39 18 1 55</file>
-                </tool>
-                <tool>
-                    <name>BICOMP</name>
-                    <file> 10 62 58 112 24 52 18 79 111 55 54 109 14 20 15 56 1 36 29 33 60 93 117 98 99 114 39 9 8 106 21 26 59 85 22 50 13 41 64 100 95 86 12 65 110 67 105</file>
-                </tool>
-            </inputs>
-        </file>
-        <file>
-            <name>$PROJ_DIR$\..\emeter-oled.c</name>
-            <outputs>
-                <tool>
-                    <name>ICC430</name>
-                    <file> 45</file>
-                </tool>
-                <tool>
-                    <name>BICOMP</name>
-                    <file> 91</file>
-                </tool>
-                <tool>
-                    <name>__cstat</name>
-                    <file> 72</file>
-                </tool>
-            </outputs>
-            <inputs>
-                <tool>
-                    <name>ICC430</name>
-                    <file> 100 112 9 62 8 36 10 24 106 14 59 52 33 28 21 73 61 75 27</file>
-                </tool>
-                <tool>
-                    <name>BICOMP</name>
-                    <file> 14 61 62 8 106 52 112 28 27 9 73 75 100 24 36 10 59 33 21</file>
+                    <file> 65 81 121 68 97 16 72 66 37 48 90 22 58 116 67 33 79 59 26 118 84 15 113 44 23 24 45 119 92 95 25 20 52 4 114 99 75 8 80 96 50 104 89 105 86</file>
                 </tool>
             </inputs>
         </file>
@@ -405,11 +323,92 @@
             <outputs>
                 <tool>
                     <name>ICC430</name>
-                    <file> 16</file>
+                    <file> 56</file>
                 </tool>
                 <tool>
                     <name>BICOMP</name>
-                    <file> 35</file>
+                    <file> 2</file>
+                </tool>
+                <tool>
+                    <name>__cstat</name>
+                    <file> 51</file>
+                </tool>
+            </outputs>
+            <inputs>
+                <tool>
+                    <name>ICC430</name>
+                    <file> 75 65 44 97 48 24 45 23 90 99 22 33 92 58 8 26 80 81 116 95 100 118 25 96 67 50 20 52 104 89 4 114 105 121 86 94 60 12 21 91 64 57 30 84 68 102 113 37</file>
+                </tool>
+                <tool>
+                    <name>BICOMP</name>
+                    <file> 23 65 118 89 33 102 44 24 8 116 67 81 84 37 45 22 92 58 95 121 96 57 12 99 26 100 94 68 113 97 48 90 80 25 20 52 4 114 91 75 50 104 105 86 60 21 64 30</file>
+                </tool>
+            </inputs>
+        </file>
+        <file>
+            <name>$PROJ_DIR$\..\emeter-oled.c</name>
+            <outputs>
+                <tool>
+                    <name>ICC430</name>
+                    <file> 17</file>
+                </tool>
+                <tool>
+                    <name>BICOMP</name>
+                    <file> 76</file>
+                </tool>
+                <tool>
+                    <name>__cstat</name>
+                    <file> 93</file>
+                </tool>
+            </outputs>
+            <inputs>
+                <tool>
+                    <name>ICC430</name>
+                    <file> 75 65 44 97 48 24 45 23 90 33 92 58 8 16 22 119 37 99 27</file>
+                </tool>
+                <tool>
+                    <name>BICOMP</name>
+                    <file> 33 37 97 48 90 58 65 16 27 44 119 99 75 23 24 45 92 8 22</file>
+                </tool>
+            </inputs>
+        </file>
+        <file>
+            <name>$PROJ_DIR$\..\emeter-lcd.c</name>
+            <outputs>
+                <tool>
+                    <name>ICC430</name>
+                    <file> 1</file>
+                </tool>
+                <tool>
+                    <name>BICOMP</name>
+                    <file> 13</file>
+                </tool>
+                <tool>
+                    <name>__cstat</name>
+                    <file> 107</file>
+                </tool>
+            </outputs>
+            <inputs>
+                <tool>
+                    <name>ICC430</name>
+                    <file> 75 65 44 97 48 24 45 23 90 79 22 59 33 92 58 8 26 80 81 116 95 84 102 82 103</file>
+                </tool>
+                <tool>
+                    <name>BICOMP</name>
+                    <file> 97 44 102 48 90 22 65 33 58 95 59 81 82 79 26 84 103 23 24 45 92 8 116 75 80</file>
+                </tool>
+            </inputs>
+        </file>
+        <file>
+            <name>$PROJ_DIR$\..\emeter-rtc-c.c</name>
+            <outputs>
+                <tool>
+                    <name>ICC430</name>
+                    <file> 83</file>
+                </tool>
+                <tool>
+                    <name>BICOMP</name>
+                    <file> 5</file>
                 </tool>
                 <tool>
                     <name>__cstat</name>
@@ -419,38 +418,38 @@
             <inputs>
                 <tool>
                     <name>ICC430</name>
-                    <file> 100 112 9 62 8 36 10 24 106 75 21 14 59 52 33 20 95 98 60 85 78 58 22 86 93 12 50 13 65 110 41 64 67 54 105 82 96 25 23 57 104 51 44 111 114 56 55 61</file>
+                    <file> 75 65 44 97 48 24 45 23 90 79 22 33 92 58 8 26 80 81 116 95 118 25 96 67 50 20 52 104 89 4 114 105 121 86 84 68</file>
                 </tool>
                 <tool>
                     <name>BICOMP</name>
-                    <file> 24 112 58 110 14 56 9 36 33 60 93 98 111 61 10 21 59 52 85 54 86 51 25 75 20 78 82 114 55 62 8 106 95 22 50 13 41 64 57 100 12 65 67 105 96 23 104 44</file>
+                    <file> 65 68 24 97 58 26 23 33 20 118 45 80 25 121 79 81 84 44 48 90 22 92 8 116 95 67 52 4 114 75 96 50 104 89 105 86</file>
                 </tool>
             </inputs>
         </file>
         <file>
-            <name>$PROJ_DIR$\..\emeter-rtc-c.c</name>
+            <name>$PROJ_DIR$\..\emeter-basic-display.c</name>
             <outputs>
                 <tool>
                     <name>ICC430</name>
-                    <file> 108</file>
+                    <file> 7</file>
                 </tool>
                 <tool>
                     <name>BICOMP</name>
-                    <file> 43</file>
+                    <file> 120</file>
                 </tool>
                 <tool>
                     <name>__cstat</name>
-                    <file> 48</file>
+                    <file> 77</file>
                 </tool>
             </outputs>
             <inputs>
                 <tool>
                     <name>ICC430</name>
-                    <file> 100 112 9 62 8 36 10 24 106 117 21 14 59 52 33 20 95 98 60 85 58 22 86 93 12 50 13 65 110 41 64 67 54 105 111 114</file>
+                    <file> 75 65 44 97 48 24 45 23 90 79 22 16 119 59 33 92 58 8 72 26 80 81 116 95 118 25 96 67 50 20 52 104 89 4 114 105 121 86 66 84 102 68 15 37 99</file>
                 </tool>
                 <tool>
                     <name>BICOMP</name>
-                    <file> 112 114 36 62 52 20 24 14 50 58 10 95 22 54 117 98 111 9 8 106 21 59 33 60 85 93 13 41 64 100 86 12 65 110 67 105</file>
+                    <file> 8 80 81 105 102 45 65 23 119 16 72 66 15 44 24 97 92 58 33 96 104 79 59 26 118 84 68 37 48 90 22 50 89 86 75 116 95 25 67 20 52 4 114 121 99</file>
                 </tool>
             </inputs>
         </file>
@@ -458,68 +457,149 @@
     <configuration>
         <name>Release</name>
         <outputs>
-            <file>$PROJ_DIR$\..\emeter-basic-display.c</file>
-            <file>$PROJ_DIR$\..\emeter-keypad.c</file>
-            <file>$PROJ_DIR$\..\emeter-basic-oled.c</file>
-            <file>$PROJ_DIR$\..\emeter-dlt645.c</file>
-            <file>$PROJ_DIR$\..\emeter-lcd.c</file>
-            <file>$PROJ_DIR$\..\emeter-communication.c</file>
-            <file>$TOOLKIT_DIR$\inc\msp430.h</file>
-            <file>$PROJ_DIR$\..\emeter-autocal.h</file>
-            <file>$PROJ_DIR$\..\oled-font.h</file>
             <file>$TOOLKIT_DIR$\inc\intrinsics.h</file>
             <file>$PROJ_DIR$\..\emeter-keypad.h</file>
             <file>$PROJ_DIR$\..\emeter-basic-display.h</file>
-            <file>$TOOLKIT_DIR$\inc\clib\string.h</file>
-            <file>$PROJ_DIR$\Release\Obj\emeter-rtc-c.pbi</file>
-            <file>$PROJ_DIR$\Release\Obj\emeter-main.pbi</file>
-            <file>$TOOLKIT_DIR$\inc\clib\stdio.h</file>
-            <file>$TOOLKIT_DIR$\inc\clib\stdarg.h</file>
-            <file>$PROJ_DIR$\Release\Obj\emeter-basic-oled.pbi</file>
+            <file>$PROJ_DIR$\..\oled-font.h</file>
+            <file>$PROJ_DIR$\..\emeter-autocal.h</file>
+            <file>$TOOLKIT_DIR$\inc\msp430.h</file>
+            <file>$PROJ_DIR$\..\emeter-dlt645.c</file>
+            <file>$PROJ_DIR$\..\emeter-main.c</file>
+            <file>$PROJ_DIR$\..\emeter-multirate.c</file>
+            <file>$PROJ_DIR$\..\emeter-oled.h</file>
+            <file>$PROJ_DIR$\..\emeter-communication.c</file>
+            <file>$PROJ_DIR$\..\emeter-keypad.c</file>
+            <file>$PROJ_DIR$\..\emeter-basic-oled.c</file>
+            <file>$PROJ_DIR$\..\emeter-setup.c</file>
+            <file>$PROJ_DIR$\..\emeter-oled.c</file>
+            <file>$PROJ_DIR$\..\emeter-lcd.c</file>
+            <file>$PROJ_DIR$\..\emeter-rtc-c.c</file>
+            <file>$PROJ_DIR$\..\emeter-basic-display.c</file>
             <file>$TOOLKIT_DIR$\inc\in430.h</file>
-            <file>$PROJ_DIR$\Release\Obj\emeter-basic-display.pbi</file>
-            <file>$PROJ_DIR$\..\emeter-communication.h</file>
+            <file>$PROJ_DIR$\..\emeter-main.h</file>
+            <file>$PROJ_DIR$\..\emeter-rtc.h</file>
+            <file>$PROJ_DIR$\..\emeter-app.h</file>
             <file>$PROJ_DIR$\..\emeter-lcd.h</file>
-            <file>$PROJ_DIR$\Release\Obj\emeter-multirate.pbi</file>
+            <file>$PROJ_DIR$\..\emeter-communication.h</file>
+            <file>$PROJ_DIR$\Release\Obj\emeter-rtc-c.pbi</file>
+            <file>$TOOLKIT_DIR$\inc\clib\stdbool.h</file>
+            <file>$TOOLKIT_DIR$\inc\clib\string.h</file>
+            <file>$PROJ_DIR$\Release\Exe\emeter-app-67641.txt</file>
+            <file>$TOOLKIT_DIR$\inc\clib\stdlib.h</file>
+            <file>$TOOLKIT_DIR$\inc\clib\stdarg.h</file>
             <file>$PROJ_DIR$\Release\Obj\emeter-oled.pbi</file>
+            <file>$PROJ_DIR$\Release\Obj\emeter-main.pbi</file>
             <file>$TOOLKIT_DIR$\inc\msp430f149.h</file>
+            <file>$PROJ_DIR$\Release\Obj\emeter-keypad.pbi</file>
+            <file>$PROJ_DIR$\Release\Obj\emeter-multirate.pbi</file>
+            <file>$PROJ_DIR$\Release\Obj\emeter-communication.pbi</file>
+            <file>$PROJ_DIR$\Release\Obj\emeter-dlt645.pbi</file>
             <file>$TOOLKIT_DIR$\inc\clib\math.h</file>
+            <file>$PROJ_DIR$\Release\Obj\emeter-basic-display.pbi</file>
+            <file>$TOOLKIT_DIR$\inc\clib\stdio.h</file>
+            <file>$PROJ_DIR$\Release\Obj\emeter-basic-oled.pbi</file>
             <file>$PROJ_DIR$\Release\Obj\emeter-setup.pbi</file>
             <file>$PROJ_DIR$\Release\Obj\emeter-lcd.pbi</file>
-            <file>$TOOLKIT_DIR$\inc\clib\stdbool.h</file>
-            <file>$TOOLKIT_DIR$\inc\clib\stdlib.h</file>
-            <file>$PROJ_DIR$\Release\Obj\emeter-keypad.pbi</file>
-            <file>$PROJ_DIR$\Release\Obj\emeter-communication.pbi</file>
             <file>$TOOLKIT_DIR$\inc\clib\sysmac.h</file>
-            <file>$PROJ_DIR$\Release\Obj\emeter-dlt645.pbi</file>
-            <file>$PROJ_DIR$\Release\Exe\emeter-app-67641.txt</file>
-            <file>$PROJ_DIR$\..\emeter-oled.h</file>
-            <file>$PROJ_DIR$\..\emeter-multirate.c</file>
-            <file>$PROJ_DIR$\..\emeter-main.c</file>
-            <file>$PROJ_DIR$\..\emeter-oled.c</file>
-            <file>$PROJ_DIR$\..\emeter-setup.c</file>
-            <file>$PROJ_DIR$\..\emeter-rtc-c.c</file>
-            <file>$PROJ_DIR$\..\emeter-main.h</file>
-            <file>$PROJ_DIR$\..\emeter-app.h</file>
-            <file>$PROJ_DIR$\..\emeter-rtc.h</file>
         </outputs>
         <file>
-            <name>$PROJ_DIR$\..\emeter-basic-display.c</name>
+            <name>[ROOT_NODE]</name>
+            <outputs>
+                <tool>
+                    <name>XLINK</name>
+                    <file> 27</file>
+                </tool>
+            </outputs>
+        </file>
+        <file>
+            <name>$PROJ_DIR$\..\emeter-dlt645.c</name>
             <outputs>
                 <tool>
                     <name>BICOMP</name>
-                    <file> 19</file>
+                    <file> 36</file>
+                </tool>
+            </outputs>
+        </file>
+        <file>
+            <name>$PROJ_DIR$\..\emeter-main.c</name>
+            <outputs>
+                <tool>
+                    <name>BICOMP</name>
+                    <file> 31</file>
                 </tool>
             </outputs>
             <inputs>
                 <tool>
                     <name>BICOMP</name>
-                    <file> 41 16 11 18 15 21 32 24 29 28 42 43 35 6 12 9</file>
+                    <file> 21 4 29 25 37 22 43 28 39 19 20 1</file>
                 </tool>
             </inputs>
         </file>
         <file>
+            <name>$PROJ_DIR$\..\emeter-multirate.c</name>
+            <outputs>
+                <tool>
+                    <name>BICOMP</name>
+                    <file> 34</file>
+                </tool>
+            </outputs>
+        </file>
+        <file>
+            <name>$PROJ_DIR$\..\emeter-communication.c</name>
+            <outputs>
+                <tool>
+                    <name>BICOMP</name>
+                    <file> 35</file>
+                </tool>
+            </outputs>
+        </file>
+        <file>
             <name>$PROJ_DIR$\..\emeter-keypad.c</name>
+            <outputs>
+                <tool>
+                    <name>BICOMP</name>
+                    <file> 33</file>
+                </tool>
+            </outputs>
+            <inputs>
+                <tool>
+                    <name>BICOMP</name>
+                    <file> 2 39 20 28 21 22 1 43 29</file>
+                </tool>
+            </inputs>
+        </file>
+        <file>
+            <name>$PROJ_DIR$\..\emeter-basic-oled.c</name>
+            <outputs>
+                <tool>
+                    <name>BICOMP</name>
+                    <file> 40</file>
+                </tool>
+            </outputs>
+            <inputs>
+                <tool>
+                    <name>BICOMP</name>
+                    <file> 26 19 29 9 43 39 20 28 25 21 2 23 5 18 0 32</file>
+                </tool>
+            </inputs>
+        </file>
+        <file>
+            <name>$PROJ_DIR$\..\emeter-setup.c</name>
+            <outputs>
+                <tool>
+                    <name>BICOMP</name>
+                    <file> 41</file>
+                </tool>
+            </outputs>
+            <inputs>
+                <tool>
+                    <name>BICOMP</name>
+                    <file> 21 0 9 18 39 22 43 26 28 20 23 29 32 5</file>
+                </tool>
+            </inputs>
+        </file>
+        <file>
+            <name>$PROJ_DIR$\..\emeter-oled.c</name>
             <outputs>
                 <tool>
                     <name>BICOMP</name>
@@ -529,123 +609,42 @@
             <inputs>
                 <tool>
                     <name>BICOMP</name>
-                    <file> 11 15 43 29 42 21 10 32 16</file>
+                    <file> 29 32 9 43 39 3 18 5 26 0</file>
                 </tool>
             </inputs>
-        </file>
-        <file>
-            <name>$PROJ_DIR$\..\emeter-basic-oled.c</name>
-            <outputs>
-                <tool>
-                    <name>BICOMP</name>
-                    <file> 17</file>
-                </tool>
-            </outputs>
-            <inputs>
-                <tool>
-                    <name>BICOMP</name>
-                    <file> 12 41 16 35 32 15 43 29 28 42 11 20 6 18 9 24</file>
-                </tool>
-            </inputs>
-        </file>
-        <file>
-            <name>$PROJ_DIR$\..\emeter-dlt645.c</name>
-            <outputs>
-                <tool>
-                    <name>BICOMP</name>
-                    <file> 33</file>
-                </tool>
-            </outputs>
         </file>
         <file>
             <name>$PROJ_DIR$\..\emeter-lcd.c</name>
             <outputs>
                 <tool>
                     <name>BICOMP</name>
-                    <file> 27</file>
+                    <file> 42</file>
                 </tool>
             </outputs>
-        </file>
-        <file>
-            <name>$PROJ_DIR$\..\emeter-communication.c</name>
-            <outputs>
-                <tool>
-                    <name>BICOMP</name>
-                    <file> 31</file>
-                </tool>
-            </outputs>
-        </file>
-        <file>
-            <name>[ROOT_NODE]</name>
-            <outputs>
-                <tool>
-                    <name>XLINK</name>
-                    <file> 34</file>
-                </tool>
-            </outputs>
-        </file>
-        <file>
-            <name>$PROJ_DIR$\..\emeter-multirate.c</name>
-            <outputs>
-                <tool>
-                    <name>BICOMP</name>
-                    <file> 22</file>
-                </tool>
-            </outputs>
-        </file>
-        <file>
-            <name>$PROJ_DIR$\..\emeter-main.c</name>
-            <outputs>
-                <tool>
-                    <name>BICOMP</name>
-                    <file> 14</file>
-                </tool>
-            </outputs>
-            <inputs>
-                <tool>
-                    <name>BICOMP</name>
-                    <file> 42 7 16 28 25 21 32 29 15 41 43 10</file>
-                </tool>
-            </inputs>
-        </file>
-        <file>
-            <name>$PROJ_DIR$\..\emeter-oled.c</name>
-            <outputs>
-                <tool>
-                    <name>BICOMP</name>
-                    <file> 23</file>
-                </tool>
-            </outputs>
-            <inputs>
-                <tool>
-                    <name>BICOMP</name>
-                    <file> 16 24 35 32 15 8 18 6 12 9</file>
-                </tool>
-            </inputs>
-        </file>
-        <file>
-            <name>$PROJ_DIR$\..\emeter-setup.c</name>
-            <outputs>
-                <tool>
-                    <name>BICOMP</name>
-                    <file> 26</file>
-                </tool>
-            </outputs>
-            <inputs>
-                <tool>
-                    <name>BICOMP</name>
-                    <file> 42 9 35 18 15 21 32 12 29 43 20 16 24 6</file>
-                </tool>
-            </inputs>
         </file>
         <file>
             <name>$PROJ_DIR$\..\emeter-rtc-c.c</name>
             <outputs>
                 <tool>
                     <name>BICOMP</name>
-                    <file> 13</file>
+                    <file> 24</file>
                 </tool>
             </outputs>
+        </file>
+        <file>
+            <name>$PROJ_DIR$\..\emeter-basic-display.c</name>
+            <outputs>
+                <tool>
+                    <name>BICOMP</name>
+                    <file> 38</file>
+                </tool>
+            </outputs>
+            <inputs>
+                <tool>
+                    <name>BICOMP</name>
+                    <file> 19 29 2 18 39 22 43 32 28 25 21 20 9 5 26 0</file>
+                </tool>
+            </inputs>
         </file>
         <forcedrebuild>
             <name>[MULTI_TOOL]</name>

@@ -91,6 +91,12 @@ enum holding_register_address
   HOLD_C_PHASE,
 };
 
+enum coils
+{
+  COIL_RST_DEFAULT_CAL_CFG = 0,
+  COIL_RST_DEVICE,
+};
+
 uint16_t CalculateCRC(uint8_t *data, uint16_t length) 
 {
   uint16_t CRC16 = 0xffff;
@@ -133,6 +139,23 @@ static uint8_t* get_ptr_from_input_register_addr(uint16_t reg_addr)
   
   else 
     return NULL;
+}
+
+void process_force_single_coil(uint16_t command)
+{
+  switch (command)
+  {
+  case COIL_RST_DEFAULT_CAL_CFG:
+    clear_calibration_data(); 
+    write_calibration_data(CALIBRATION_DATA_DEFAULT, CONFIGURATION_DATA_DEFAULT);
+  break;
+
+  case COIL_RST_DEVICE:
+    while(1); // Lock device until WDT trigger
+  break;
+  
+  default: break;
+  }
 }
 
 void process_preset_single_reg(uint16_t write_reg, uint16_t write_data)
@@ -233,7 +256,11 @@ void dlt645_service(void)
         
         break;
         
-      case 0x05: break;//Force Single Coil
+      case 0x05: 
+        write_reg = ((uint16_t)ports[port].rx_msg.buf.uint8[2])<<8 | ports[port].rx_msg.buf.uint8[3];
+        process_force_single_coil(write_reg);
+
+        break;//Force Single Coil
       
       case 0x06: //Preset Single Register
         write_reg = ((uint16_t)ports[port].rx_msg.buf.uint8[2])<<8 | ports[port].rx_msg.buf.uint8[3];

@@ -41,8 +41,8 @@
 #include "metrology-interactions.h"
 #include "metrology-decs.h"
 
-#define CALIBRATION_DATA_DEFAULT    calibration_defaults
-#define CONFIGURATION_DATA_DEFAULT    configuration_defaults
+#define CALIBRATION_DATA_DEFAULT      &calibration_defaults
+#define CONFIGURATION_DATA_DEFAULT    &configuration_defaults
 
 void write_calibration_data(const void* cal_data, const void* cfg_data);
 int clear_calibration_data(void);
