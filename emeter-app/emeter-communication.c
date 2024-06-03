@@ -208,7 +208,7 @@ int serial_configure(int port, int mode, uint32_t bit_rate)
         /* Configure the port with the reset bit held high */
         UCA0CTL1 |= UCSWRST;
         UCA0CTL0 = ctl0;
-        UCA0CTL0 |= 0xC0; //EVEN PARITY
+        //UCA0CTL0 |= 0xC0; //EVEN PARITY
         UCA0CTL1 = ctl1;
         UCA0CTLW1 = 0x03;
         #if defined(__MSP430_HAS_EUSCI_A0__)
@@ -276,7 +276,8 @@ int serial_configure(int port, int mode, uint32_t bit_rate)
         /* Configure the port with the reset bit held high */
         UCA1CTL1 |= UCSWRST;
         //UCA1CTL0 = UCPEN | UCPAR | ctl0;
-        UCA1CTL0 = 0xC0 | ctl0;
+        UCA1CTL0 = ctl0;
+        //UCA1CTL0 |= 0xC0; //EVEN PARITY
         UCA1CTL1 = ctl1;
         UCA1CTLW1 = 0x03;
         #if defined(__MSP430_HAS_EUSCI_A1__)

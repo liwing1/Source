@@ -207,6 +207,4 @@ typedef struct {
 
 
 extern input_registers_t input_registers;
-
-void update_input_registers(input_registers_t* _input_registers);
 #endif

@@ -246,6 +246,7 @@ void dlt645_service(void)
       // Espera 8bytes
       case 0x02: //Read Input Status
       case 0x03: //Read Holding Register
+        
         break;
         
       case 0x04: //Read Input Register
