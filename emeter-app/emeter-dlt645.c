@@ -119,6 +119,31 @@ uint16_t CalculateCRC(uint8_t *data, uint16_t length)
   return CRC16;
 }
 
+void update_holding_registers(void)
+{
+  const struct calibration_data_s* temp_cal_data = get_cal_info();
+  const struct configuration_data_s* temp_cfg_data = get_cfg_info();
+  
+  holding_registers.configs.baud_rate = get_cfg_baud_rate();
+  holding_registers.configs.modbus_addr = get_cfg_mb_address();
+  
+  holding_registers.configs.v_a_scale = temp_cal_data->phases[0].V_rms_scale_factor[0];
+  holding_registers.configs.v_b_scale = temp_cal_data->phases[1].V_rms_scale_factor[0];
+  holding_registers.configs.v_c_scale = temp_cal_data->phases[2].V_rms_scale_factor[0];
+  
+  holding_registers.configs.i_a_scale = temp_cal_data->phases[0].current[0].I_rms_scale_factor[0];
+  holding_registers.configs.i_b_scale = temp_cal_data->phases[1].current[0].I_rms_scale_factor[0];
+  holding_registers.configs.i_c_scale = temp_cal_data->phases[2].current[0].I_rms_scale_factor[0];
+  
+  holding_registers.configs.p_a_scale = temp_cal_data->phases[0].current[0].P_scale_factor;
+  holding_registers.configs.p_b_scale = temp_cal_data->phases[1].current[0].P_scale_factor;
+  holding_registers.configs.p_c_scale = temp_cal_data->phases[2].current[0].P_scale_factor;
+  
+  holding_registers.configs.a_phase  = temp_cal_data->phases[0].current[0].phase_correction;
+  holding_registers.configs.b_phase  = temp_cal_data->phases[1].current[0].phase_correction;
+  holding_registers.configs.c_phase  = temp_cal_data->phases[2].current[0].phase_correction;
+}
+
 static uint8_t* get_ptr_from_input_register_addr(uint16_t reg_addr) 
 {
   uint8_t byte_addr = 2 * reg_addr;
@@ -198,6 +223,31 @@ void process_preset_single_reg(uint16_t write_reg, uint16_t write_data)
   return;
 }
 
+uint8_t process_read_hold_reg(int port, uint16_t first_reg, uint16_t n_reg)
+{
+  if (n_reg > 18)
+    return 0;
+  
+  ports[port].tx_msg.buf.uint8[0] = get_cfg_mb_address();
+  ports[port].tx_msg.buf.uint8[1] = 0x03;
+  ports[port].tx_msg.buf.uint8[2] = n_reg * 2; //byte count
+  
+  uint16_t* map_ptr = &holding_registers.addr[first_reg];
+  
+  if(map_ptr == NULL)
+    return 0;
+  
+  memcpy(&(ports[port].tx_msg.buf.uint8[3]), map_ptr, n_reg * 2);
+    
+  uint16_t crc = CalculateCRC(ports[port].tx_msg.buf.uint8, 3 + n_reg * 2);
+  
+  ports[port].tx_msg.buf.uint8[4 + n_reg * 2] = (uint8_t)(crc>>8);
+  ports[port].tx_msg.buf.uint8[3 + n_reg * 2] = (uint8_t)(crc&0x00FF);
+  
+  RS485_sendBuf(0, ports[0].tx_msg.buf.uint8, 5 + n_reg * 2); // header + data
+  return 1;
+}
+
 uint8_t process_read_inp_reg(int port, uint16_t first_reg, uint16_t n_reg)
 {
   if (n_reg > 18)
@@ -245,8 +295,13 @@ void dlt645_service(void)
       {
       // Espera 8bytes
       case 0x02: //Read Input Status
-      case 0x03: //Read Holding Register
+        break;
         
+      case 0x03: //Read Holding Register
+        first_reg = ((uint16_t)ports[port].rx_msg.buf.uint8[2])<<8 | ports[port].rx_msg.buf.uint8[3];
+        n_reg = ((uint16_t)ports[port].rx_msg.buf.uint8[4])<<8 | ports[port].rx_msg.buf.uint8[5];
+        
+        process_read_hold_reg(port, first_reg, n_reg);
         break;
         
       case 0x04: //Read Input Register
@@ -257,17 +312,19 @@ void dlt645_service(void)
         
         break;
         
-      case 0x05: 
+      case 0x05:  //Force Single Coil
         write_reg = ((uint16_t)ports[port].rx_msg.buf.uint8[2])<<8 | ports[port].rx_msg.buf.uint8[3];
         process_force_single_coil(write_reg);
+        update_holding_registers();
 
-        break;//Force Single Coil
+        break;
       
       case 0x06: //Preset Single Register
         write_reg = ((uint16_t)ports[port].rx_msg.buf.uint8[2])<<8 | ports[port].rx_msg.buf.uint8[3];
         write_data = ((uint16_t)ports[port].rx_msg.buf.uint8[4])<<8 | ports[port].rx_msg.buf.uint8[5];
 
         process_preset_single_reg(write_reg, write_data);
+        update_holding_registers();
         
         break;
         

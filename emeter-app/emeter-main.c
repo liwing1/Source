@@ -122,6 +122,7 @@ unsigned long int TempoDisplayOled=0;
 extern volatile int oled_step;
 unsigned long TempoMapaMemoria=0;
 input_registers_t input_registers;
+holding_registers_t holding_registers;
 
 static __inline__ int32_t abs32(int32_t x)
 {
@@ -247,6 +248,7 @@ int main(int argc, char *argv[])
      
     //clear_calibration_data();
     system_setup(); 
+    update_holding_registers();
   
 #if defined(TRNG_PURITY_TESTS)
     fips_init();
