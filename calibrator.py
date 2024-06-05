@@ -177,7 +177,7 @@ def get_input_measure(cli,addr,reg):
     
     return rr.registers
 
-if __name__ == "__main__":
+def main():
     """Run sync client."""
     # activate debugging
     pymodbus_apply_logging_config("DEBUG")
@@ -229,9 +229,9 @@ if __name__ == "__main__":
 
             janela['SCALE'].update(value=eventos)
             measure = get_input_measure(client,int(valores['SLAVE_ADDR']),register_dict[nome_param][0])
-            val_lido = registers_to_float(measure)
-
-            janela['VAL_LIDO'].update(value=val_lido)
+            if measure != None:
+                val_lido = registers_to_float(measure)
+                janela['VAL_LIDO'].update(value=val_lido)
         
         if 'Defasagem' in eventos:
             nome_param = eventos
@@ -246,21 +246,22 @@ if __name__ == "__main__":
             reg_rtv = get_input_measure(client,int(valores['SLAVE_ADDR']),register_dict[nome_param][1][0])
             reg_apa = get_input_measure(client,int(valores['SLAVE_ADDR']),register_dict[nome_param][2][0])
             reg_fpo = get_input_measure(client,int(valores['SLAVE_ADDR']),register_dict[nome_param][2][1])
-
-            pot_atv = registers_to_float(reg_atv)
-            pot_rtv = registers_to_float(reg_rtv)
-            pot_apa = registers_to_float(reg_apa)
-            fp = registers_to_float(reg_fpo)
-
             param = get_hold_param(client,int(valores['SLAVE_ADDR']),register_dict[nome_param][1][1])
-            defasagem = unsigned_to_signed_16bit(register_to_int(param))
-            defasagem_us = (defasagem << 3) / 8.338608
-            janela['VAL_LIDO_DEF'].update(value=defasagem_us)
 
-            janela['VAL_LIDO_ATV'].update(value=pot_atv)
-            janela['VAL_LIDO_RTV'].update(value=pot_rtv)
-            janela['VAL_LIDO_APA'].update(value=pot_apa)
-            janela['VAL_LIDO_FP'].update(value=fp)
+            if reg_atv != None and reg_rtv != None and reg_apa != None and reg_fpo != None and param != None:
+                pot_atv = registers_to_float(reg_atv)
+                pot_rtv = registers_to_float(reg_rtv)
+                pot_apa = registers_to_float(reg_apa)
+                fp = registers_to_float(reg_fpo)
+
+                defasagem = unsigned_to_signed_16bit(register_to_int(param))
+                defasagem_us = (defasagem << 3) / 8.338608
+                janela['VAL_LIDO_DEF'].update(value=defasagem_us)
+
+                janela['VAL_LIDO_ATV'].update(value=pot_atv)
+                janela['VAL_LIDO_RTV'].update(value=pot_rtv)
+                janela['VAL_LIDO_APA'].update(value=pot_apa)
+                janela['VAL_LIDO_FP'].update(value=fp)
 
         if 'BACK' in eventos:
             janela['-COL2-'].update(visible=True)
@@ -278,32 +279,34 @@ if __name__ == "__main__":
                 reg_rtv = get_input_measure(client,int(valores['SLAVE_ADDR']),register_dict[nome_param][1][0])
                 reg_apa = get_input_measure(client,int(valores['SLAVE_ADDR']),register_dict[nome_param][2][0])
                 reg_fpo = get_input_measure(client,int(valores['SLAVE_ADDR']),register_dict[nome_param][2][1])
-
-                pot_atv = registers_to_float(reg_atv)
-                pot_rtv = registers_to_float(reg_rtv)
-                pot_apa = registers_to_float(reg_apa)
-                fp = registers_to_float(reg_fpo)
-
                 param = get_hold_param(client,int(valores['SLAVE_ADDR']),register_dict[nome_param][1][1])
-                defasagem = unsigned_to_signed_16bit(register_to_int(param))
-                defasagem_us = (defasagem << 3) / 8.338608
-                janela['VAL_LIDO_DEF'].update(value=defasagem_us)
 
-                janela['VAL_LIDO_ATV'].update(value=pot_atv)
-                janela['VAL_LIDO_RTV'].update(value=pot_rtv)
-                janela['VAL_LIDO_APA'].update(value=pot_apa)
-                janela['VAL_LIDO_FP'].update(value=fp)
+                if reg_atv != None and reg_rtv != None and reg_apa != None and reg_fpo != None and param != None:
+                    pot_atv = registers_to_float(reg_atv)
+                    pot_rtv = registers_to_float(reg_rtv)
+                    pot_apa = registers_to_float(reg_apa)
+                    fp = registers_to_float(reg_fpo)
+
+                    defasagem = unsigned_to_signed_16bit(register_to_int(param))
+                    defasagem_us = (defasagem << 3) / 8.338608
+                    janela['VAL_LIDO_DEF'].update(value=defasagem_us)
+
+                    janela['VAL_LIDO_ATV'].update(value=pot_atv)
+                    janela['VAL_LIDO_RTV'].update(value=pot_rtv)
+                    janela['VAL_LIDO_APA'].update(value=pot_apa)
+                    janela['VAL_LIDO_FP'].update(value=fp)
                 
         if eventos == 'SEND_SCALE':
             param = get_hold_param(client,int(valores['SLAVE_ADDR']),register_dict[nome_param][1])
-            scale = register_to_int(param)
-            des_val = valores['VAL_IDEAL']
-            if val_lido != 0:
-                Fc = scale * (float(des_val)/val_lido)
-                # new_scale = int(Fc).to_bytes(2, 'little')
-                # new_scale = register_to_int(new_scale)
-                print(f'antigo {scale} novo {Fc}')
-                set_hold_param(client,int(valores['SLAVE_ADDR']),register_dict[nome_param][1],int(Fc))
+            if(param != None):
+                scale = register_to_int(param)
+                des_val = valores['VAL_IDEAL']
+                if val_lido != 0:
+                    Fc = scale * (float(des_val)/val_lido)
+                    # new_scale = int(Fc).to_bytes(2, 'little')
+                    # new_scale = register_to_int(new_scale)
+                    print(f'antigo {scale} novo {Fc}')
+                    set_hold_param(client,int(valores['SLAVE_ADDR']),register_dict[nome_param][1],int(Fc))
 
         if eventos == 'SEND_PHASE':
             nova_fase = float(valores['NOVA_FASE'])
@@ -313,3 +316,7 @@ if __name__ == "__main__":
     print("close connection")
     client.close()
     janela.close()
+
+main()
+
+a = input('entrada')
