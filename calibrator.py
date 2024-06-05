@@ -31,6 +31,9 @@ register_dict = {
     "Corrente A": [20,5],
     "Corrente B": [22,6],
     "Corrente C": [24,7],
+    "Potência Ativa A": [36,8],
+    "Potência Ativa B": [38,9],
+    "Potência Ativa C": [40,10],
     "Defasagem A": [
         [36,8],  # Potenc Ativa, Scala Ativa
         [44,11], # Potenc Reati, Defasagem
@@ -57,26 +60,27 @@ layout_connect = [
 
 layout_main = [
     [sg.Text('CALIBRATOR')],
-    [sg.Button('Tensão A'),sg.Button('Corrente A'),sg.Button('Defasagem A'),sg.Button('Potência A')],
-    [sg.Button('Tensão B'),sg.Button('Corrente B'),sg.Button('Defasagem B'),sg.Button('Potência B')],
-    [sg.Button('Tensão C'),sg.Button('Corrente C'),sg.Button('Defasagem C'),sg.Button('Potência C')],
+    [sg.Button('Tensão A'),sg.Button('Corrente A'),sg.Button('Defasagem A'),sg.Button('Potência Ativa A')],
+    [sg.Button('Tensão B'),sg.Button('Corrente B'),sg.Button('Defasagem B'),sg.Button('Potência Ativa B')],
+    [sg.Button('Tensão C'),sg.Button('Corrente C'),sg.Button('Defasagem C'),sg.Button('Potência Ativa C')],
     # [sg.Text('Senha'), sg.Input(key='senha',password_char='*')],
 ]
 
 layout_scale = [
-    [sg.Text("",key='SCALE',justification='c')],
-    [sg.Text('Valor Lido'),sg.Text("",key='VAL_LIDO'),sg.Button('Atualizar',key='UPDATE1')],
+    [sg.Text("",key='SCALE',justification='c'),sg.Button('Atualizar',key='UPDATE1')],
+    [sg.Text('Valor Lido'),sg.Text("",key='VAL_LIDO')],
     [sg.Text('Valor Ideal'),sg.Input(key='VAL_IDEAL'),sg.Button('Enviar',key='SEND_SCALE')],
     [sg.Button('Voltar',key='BACK1')]
 ]
 
 layout_phase = [
-    [sg.Text("",key='PHASE',justification='c')],
-    [sg.Text('Potencia Ativa'),sg.Text("",key='VAL_LIDO_ATV'),sg.Button('Atualizar',key='UPDATE2')],
+    [sg.Text("",key='PHASE',justification='c'),sg.Button('Atualizar',key='UPDATE2')],
+    [sg.Text('Potencia Ativa'),sg.Text("",key='VAL_LIDO_ATV')],
     [sg.Text('Potencia Reativa'),sg.Text("",key='VAL_LIDO_RTV')],
     [sg.Text('Potencia Aparente'),sg.Text("",key='VAL_LIDO_APA')],
     [sg.Text('Fator de Potência'),sg.Text("",key='VAL_LIDO_FP')],
-    [sg.Text('Valor Ideal'),sg.Input(key='VAL_IDEAL'),sg.Button('Enviar',key='SEND_PHASE')],
+    [sg.Text('Defasagem atual'),sg.Text("",key='VAL_LIDO_DEF')],
+    [sg.Text('Nova defasagem'),sg.Input(key='NOVA_FASE'),sg.Button('Enviar',key='SEND_PHASE')],
     [sg.Button('Voltar',key='BACK2')]
 ]
 
@@ -88,6 +92,26 @@ layout = [
     sg.Column(layout_phase,key='-COL4-',visible=False)
     ]
 ]
+
+def unsigned_to_signed_16bit(n):
+    # Ensure n is within 16-bit unsigned integer range
+    n = n & 0xFFFF
+    # Check if the sign bit (15th bit) is set
+    if n & 0x8000:
+        # If sign bit is set, convert to negative value
+        return n - 0x10000
+    else:
+        # If sign bit is not set, return n as is
+        return n
+
+def signed_to_unsigned_16bit(n):
+    # Ensure n is within 16-bit signed integer range
+    n = n & 0xFFFF
+    # If n is negative, convert it to unsigned 16-bit
+    if n < 0:
+        return n + 0x10000
+    else:
+        return n
 
 def registers_to_float(reg_list):
     reg_list = (reg_list[0]<<16 | reg_list[1])
@@ -228,6 +252,11 @@ if __name__ == "__main__":
             pot_apa = registers_to_float(reg_apa)
             fp = registers_to_float(reg_fpo)
 
+            param = get_hold_param(client,int(valores['SLAVE_ADDR']),register_dict[nome_param][1][1])
+            defasagem = unsigned_to_signed_16bit(register_to_int(param))
+            defasagem_us = (defasagem << 3) / 8.338608
+            janela['VAL_LIDO_DEF'].update(value=defasagem_us)
+
             janela['VAL_LIDO_ATV'].update(value=pot_atv)
             janela['VAL_LIDO_RTV'].update(value=pot_rtv)
             janela['VAL_LIDO_APA'].update(value=pot_apa)
@@ -255,6 +284,11 @@ if __name__ == "__main__":
                 pot_apa = registers_to_float(reg_apa)
                 fp = registers_to_float(reg_fpo)
 
+                param = get_hold_param(client,int(valores['SLAVE_ADDR']),register_dict[nome_param][1][1])
+                defasagem = unsigned_to_signed_16bit(register_to_int(param))
+                defasagem_us = (defasagem << 3) / 8.338608
+                janela['VAL_LIDO_DEF'].update(value=defasagem_us)
+
                 janela['VAL_LIDO_ATV'].update(value=pot_atv)
                 janela['VAL_LIDO_RTV'].update(value=pot_rtv)
                 janela['VAL_LIDO_APA'].update(value=pot_apa)
@@ -272,9 +306,9 @@ if __name__ == "__main__":
                 set_hold_param(client,int(valores['SLAVE_ADDR']),register_dict[nome_param][1],int(Fc))
 
         if eventos == 'SEND_PHASE':
-            param = get_hold_param(client,int(valores['SLAVE_ADDR']),register_dict[nome_param][1][1])
-            defasagem = int(register_to_int(param) * 8.338608) >> 3
-            print(defasagem)
+            nova_fase = float(valores['NOVA_FASE'])
+            nova_fase_bytes = signed_to_unsigned_16bit(int(nova_fase * 8.338606) >> 3)
+            set_hold_param(client,int(valores['SLAVE_ADDR']),register_dict[nome_param][1][1],int(nova_fase_bytes))
     
     print("close connection")
     client.close()
