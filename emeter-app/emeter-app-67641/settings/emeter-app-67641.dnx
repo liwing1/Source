@@ -27,7 +27,7 @@
         <State_Storage>0</State_Storage>
     </Action_Register>
     <DebugChecksum>
-        <Checksum>2364341193</Checksum>
+        <Checksum>3261240593</Checksum>
     </DebugChecksum>
     <CallStack>
         <ShowArgs>0</ShowArgs>
@@ -118,8 +118,7 @@
         <Fmt17>{W}1:crc	4	0</Fmt17>
     </watch_formats>
     <Breakpoints>
-        <Bp0>_ "STD_CODE" "{$PROJ_DIR$\..\emeter-dlt645.c}.171.3" 1 0 0 0 "" 0 ""</Bp0>
-        <Count>1</Count>
+        <Count>0</Count>
     </Breakpoints>
     <FET>
         <Clock_mode>46</Clock_mode>
