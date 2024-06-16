@@ -264,9 +264,11 @@ void system_setup(void)
     #endif
     #if defined(P2DIR_INIT)
     P2DIR = P2DIR_INIT;
+    P2DIR |= BIT3;
     #endif
     #if defined(P2SEL_INIT)
     P2SEL = P2SEL_INIT;
+    P2SEL |= BIT2;
     #endif
     #if defined(P2SEL0_INIT)
     P2SEL0 = P2SEL0_INIT;

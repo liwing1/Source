@@ -345,7 +345,9 @@ int serial_configure(int port, int mode, uint32_t bit_rate)
         /* Configure the port with the reset bit held high */
         UCA2CTL1 |= UCSWRST;
         UCA2CTL0 = ctl0;
+        //UCA2CTL0 |= 0xC0; //EVEN PARITY
         UCA2CTL1 = ctl1;
+        UCA2CTLW1 = 0x03;
         #if defined(__MSP430_HAS_EUSCI_A2__)
         UCA2BRW = bitrate_divider;
         UCA2MCTLW = ((uint16_t) mctl << 8);
@@ -363,6 +365,30 @@ int serial_configure(int port, int mode, uint32_t bit_rate)
         UCA2IE |= UCRXIE;
         #endif
     #endif
+        switch (bit_rate)
+        {
+        case 9600:
+            UCA2BRW = 0x00A3;
+            UCA2MCTLW = 0x55D1;
+            break;
+        case 19200:
+            UCA2BRW = 0x0051;
+            UCA2MCTLW = 0xBBE1;
+            break;
+        case 38400:
+            UCA2BRW = 0x0028;
+            UCA2MCTLW = 0x4AF1;
+            break;
+        case 115200:
+            UCA2BRW = 0x000D;
+            UCA2MCTLW = 0x55A1; 
+            break;
+        default:
+            UCA2BRW = 0x00A3;
+            UCA2MCTLW = 0x55D1;    
+            break;
+        }
+        UCA2IE = 0X09;
         return 0;
 #endif
 #if defined(UART_3_SUPPORT)
@@ -395,6 +421,11 @@ int serial_configure(int port, int mode, uint32_t bit_rate)
     return -1;
 }
 /*- End of function --------------------------------------------------------*/
+
+void serial_read(int port)
+{
+    
+}
 
 void serial_write(int port, const uint8_t buf[], int len)
 {
@@ -455,11 +486,15 @@ void serial_write(int port, const uint8_t buf[], int len)
     #endif
     #if defined(UART_2_SUPPORT)
     case 2:
-        #if defined(__MSP430_HAS_USCI_AB2__)
-        UC2IE |= UCA2TXIE;
-        #else
-        UCA2IE |= UCTXIE;
-        #endif
+        // #if defined(__MSP430_HAS_USCI_AB2__)
+        // UC2IE |= UCA2TXIE;
+        // #else
+        // UCA2IE |= UCTXIE;
+        // #endif
+        for(int idx = 0; idx < len; idx++) {
+          while(!(UCA2IFG & UCTXIFG));  
+          UCA2TXBUF = buf[idx];
+        }
         break;
     #endif
     #if defined(UART_3_SUPPORT)
@@ -478,12 +513,24 @@ void serial_write(int port, const uint8_t buf[], int len)
 void RS485_sendBuf(int port, uint8_t* buf, uint16_t len){
     ports[port].tx_in_progress = false;
 
-    P4OUT |= BIT0;
+    if(port == 0) P4OUT |= BIT0;
+    else if(port == 2) P4OUT |= BIT1;
     __delay_cycles(500);
     
     serial_write(port, buf, len);
     
-    while(!(UCA0IFG & UCTXIFG));
+    switch (port) 
+    {
+    case 0:
+      while(!(UCA0IFG & UCTXIFG));
+      break;
+    case 1:
+      while(!(UCA1IFG & UCTXIFG));
+      break;
+    case 2:
+      while(!(UCA2IFG & UCTXIFG));
+      break;
+    }
     
     ports[port].tx_in_progress = true;
 
@@ -857,24 +904,73 @@ ISR(USCI_A2, USCI_A2_isr)
     #elif defined(__MSP430_HAS_EUSCI_A2__)
 ISR(USCI_A2, USCI_A2_isr)
 {
-    uint16_t tx;
-
     switch (__even_in_range(UCA2IV, USCI_UART_UCTXCPTIFG))
     {
     case USCI_NONE:
         break;
     case USCI_UART_UCRXIFG:
-        uart_rx_core(2, UCA2RXBUF);
+        ports[2].rx_msg.buf.uint8[ports[2].rx_msg.ptr++] = UCA2RXBUF;
+        
+        if (ports[2].rx_msg.buf.uint8[0] == get_cfg_mb_address())
+        {
+          while(!(UCA2IFG & UCRXIFG));
+          ports[2].rx_msg.buf.uint8[ports[2].rx_msg.ptr++] = UCA2RXBUF;
+            
+          switch (ports[2].rx_msg.buf.uint8[1])
+          {
+          // Espera 8bytes
+          case 0x02: //Read Input Status
+          case 0x03: //Read Holding Register
+          case 0x04: //Read Input Register
+          case 0x05: //Force Single Coil
+          case 0x06: //Preset Single Register
+            ports[2].rx_msg.len = 8;
+            break;
+            
+          //Espera 4bytes
+          case 0x07: //Read Exception Status
+          case 0x11: //Report Slave ID
+            ports[2].rx_msg.len = 4;
+            break;
+            
+          //Preset Multiple Register (nbytes)
+          case 0x10:
+            // Wait rx nbytes
+            if(ports[2].rx_msg.ptr < 7)
+              return;
+              
+            ports[2].rx_msg.len = ports[2].rx_msg.buf.uint8[6] + 9;
+            break;
+          
+          default: 
+            // Got invalid function
+            ports[2].rx_msg.ptr = 0;
+            return;
+          }
+          
+          while(ports[2].rx_msg.ptr < ports[2].rx_msg.len)
+          {
+            while(!(UCA2IFG & UCRXIFG));
+            ports[2].rx_msg.buf.uint8[ports[2].rx_msg.ptr++] = UCA2RXBUF;
+          }
+          
+          ports[2].rx_frame_pending = true;
+        }
+        
+        ports[2].rx_msg.ptr = 0;
+        
+        //uart_rx_core(1, UCA2RXBUF);
         break;
     case USCI_UART_UCTXIFG:
-        tx = uart_tx_core(2);
-        UCA2TXBUF = tx & 0xFF;
-        if (tx & 0x8000)
-            UCA2IE &= ~UCTXIE;
         break;
     case USCI_UART_UCSTTIFG:
         break;
     case USCI_UART_UCTXCPTIFG:
+        if(ports[2].tx_in_progress)
+        {
+          ports[2].tx_in_progress = false;
+          P4OUT &= ~BIT1;
+        }
         break;
     }
 }

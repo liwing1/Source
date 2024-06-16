@@ -200,7 +200,7 @@ def main():
             client = ModbusClient.ModbusSerialClient(
                 valores['PORTA_SERIAL'],
                 framer=Framer.RTU,
-                # timeout=10,
+                timeout=2,
                 # retries=3,
                 # retry_on_empty=False,
                 # strict=True,
@@ -271,8 +271,9 @@ def main():
         if 'UPDATE' in eventos:
             if 'Tensão' in nome_param or 'Corrente' in nome_param or 'Potência' in nome_param:
                 measure = get_input_measure(client,int(valores['SLAVE_ADDR']),register_dict[nome_param][0])
-                val_lido = registers_to_float(measure)
-                janela['VAL_LIDO'].update(value=val_lido)
+                if measure != None:
+                    val_lido = registers_to_float(measure)
+                    janela['VAL_LIDO'].update(value=val_lido)
 
             if 'Defasagem' in nome_param:
                 reg_atv = get_input_measure(client,int(valores['SLAVE_ADDR']),register_dict[nome_param][0][0])

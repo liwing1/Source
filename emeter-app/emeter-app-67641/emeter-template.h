@@ -70,8 +70,13 @@
 #define UART_1_BAUD_RATE                            9600
 #undef UART_1_DLT645_SUPPORT
 
+/*! This defines the speed of eUSCI 2 */
+#define UART_2_SUPPORT
+#define UART_2_BAUD_RATE                            9600
+#undef UART_2_DLT645_SUPPORT
+
 // Define this macro so can send active power readings to the IHD430 via CC2530
-#define IHD430_SUPPORT
+#undef IHD430_SUPPORT
 
 
 
@@ -399,7 +404,7 @@ static const uint8_t field2_dp_icons[] = \
  */
 
 #define P2DIR_INIT                                  (BIT3)
-#define P2SEL_INIT                                  (BIT3 | BIT2| BIT1 | BIT0)
+#define P2SEL_INIT                                  (BIT2| BIT1 | BIT0)
 #define P2OUT_INIT                                  (0) //(BIT1 | BIT0)
 #define P2REN_INIT                                  (0) //(BIT1 | BIT0)
 
@@ -428,7 +433,7 @@ static const uint8_t field2_dp_icons[] = \
     P4.6 = LCD segment line 29
     P4.7 = LCD segment line 28
  */
-#define P4DIR_INIT                                  (BIT0)
+#define P4DIR_INIT                                  (BIT0|BIT1)
 #define P4SEL_INIT                                  (0)
 #define P4OUT_INIT                                  (0)
 #define P4REN_INIT                                  (0)

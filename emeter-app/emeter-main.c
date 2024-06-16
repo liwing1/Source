@@ -928,7 +928,7 @@ int is_calibration_enabled(void)
                  TIMER1_A1_VECTOR, \
                  TIMER1_A0_VECTOR, \
                  /*DMA_VECTOR, */ \
-                 USCI_A2_VECTOR, \
+                 /* USCI_A2_VECTOR, */ \
                  /* USCI_A1_VECTOR, */ \
                  TIMER0_A1_VECTOR, \
                  /* TIMER0_A0_VECTOR, */ \
