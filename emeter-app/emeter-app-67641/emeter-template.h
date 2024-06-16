@@ -404,7 +404,7 @@ static const uint8_t field2_dp_icons[] = \
  */
 
 #define P2DIR_INIT                                  (BIT3)
-#define P2SEL_INIT                                  (BIT2| BIT1 | BIT0)
+#define P2SEL_INIT                                  (BIT3 | BIT2| BIT1 | BIT0)
 #define P2OUT_INIT                                  (0) //(BIT1 | BIT0)
 #define P2REN_INIT                                  (0) //(BIT1 | BIT0)
 

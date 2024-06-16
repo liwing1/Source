@@ -27,7 +27,7 @@
         <State_Storage>0</State_Storage>
     </Action_Register>
     <DebugChecksum>
-        <Checksum>1373183571</Checksum>
+        <Checksum>1262696366</Checksum>
     </DebugChecksum>
     <CallStack>
         <ShowArgs>0</ShowArgs>
@@ -131,9 +131,7 @@
         <LogFile>_ ""</LogFile>
     </TermIOLog>
     <Breakpoints>
-        <Bp0>_ "STD_CODE" "{$PROJ_DIR$\..\emeter-communication.c}.698.11" 1 0 0 0 "" 0 ""</Bp0>
-        <Bp1>_ "STD_CODE" "{$PROJ_DIR$\..\emeter-communication.c}.653.9" 1 0 0 0 "" 0 ""</Bp1>
-        <Count>2</Count>
+        <Count>0</Count>
     </Breakpoints>
     <FET>
         <Clock_mode>46</Clock_mode>

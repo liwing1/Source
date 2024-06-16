@@ -319,5 +319,3 @@ def main():
     janela.close()
 
 main()
-
-a = input('entrada')
