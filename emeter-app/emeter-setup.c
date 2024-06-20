@@ -516,13 +516,13 @@ void system_setup(void)
     serial_configure(0, 1, cfg_info->baud_rate);
     #endif
     #if defined(UART_1_SUPPORT)
-    serial_configure(1, 1, UART_1_BAUD_RATE);
+    serial_configure(1, 1, cfg_info->baud_rate);
     #endif
     #if defined(UART_2_SUPPORT)
-    serial_configure(2, 1, UART_2_BAUD_RATE);
+    serial_configure(2, 1, cfg_info->baud_rate);
     #endif
     #if defined(UART_3_SUPPORT)
-    serial_configure(3, 1, UART_3_BAUD_RATE);
+    serial_configure(3, 1, cfg_info->baud_rate);
     #endif
     
     #if defined(IHD430_SUPPORT)

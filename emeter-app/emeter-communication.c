@@ -533,7 +533,6 @@ void RS485_sendBuf(int port, uint8_t* buf, uint16_t len){
     }
     
     ports[port].tx_in_progress = true;
-
 }
 
 void uart_rx_core(int port, uint8_t rx_char)

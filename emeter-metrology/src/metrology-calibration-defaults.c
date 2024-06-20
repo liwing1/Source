@@ -315,7 +315,7 @@ const struct calibration_data_s calibration_defaults =
 
 const struct configuration_data_s configuration_defaults = 
 {
-    .baud_rate = 2,
+    .baud_rate = 0,
     .mb_address = 0x68
 };
 

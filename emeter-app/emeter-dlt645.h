@@ -44,9 +44,9 @@ void dlt645_rx_byte(int port, uint8_t c);
 
 void dlt645_service(void);
 
-void process_preset_single_reg(int port, uint16_t write_reg, uint16_t write_data);
-uint8_t process_read_inp_reg(int port, uint16_t first_reg, uint16_t n_reg);
-uint8_t process_read_hold_reg(int port, uint16_t first_reg, uint16_t n_reg);
+// void process_preset_single_reg(int* port, uint16_t* word1, uint16_t* word2);
+// void process_read_inp_reg(int* port, uint16_t* word1, uint16_t* word2);
+// void process_read_hold_reg(int* port, uint16_t* word1, uint16_t* word2);
 void update_holding_registers(void);
 
 #endif

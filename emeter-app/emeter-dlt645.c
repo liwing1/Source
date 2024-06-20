@@ -73,6 +73,10 @@
 #define NULL    (void *) 0
 #endif
 
+uint16_t word1;
+uint16_t word2;
+int port = 0;
+
 enum holding_register_address 
 {
   HOLD_CFG_BAUD_RATE = 0,
@@ -166,9 +170,10 @@ static uint8_t* get_ptr_from_input_register_addr(uint16_t reg_addr)
     return NULL;
 }
 
-void process_force_single_coil(uint16_t command)
+void process_force_single_coil(void)
 {
-  switch (command)
+  word1 = (uint16_t)ports[port].rx_msg.buf.uint8[2];
+  switch (word1)
   {
   case COIL_RST_DEFAULT_CAL_CFG:
     clear_calibration_data(); 
@@ -183,34 +188,37 @@ void process_force_single_coil(uint16_t command)
   }
 }
 
-void process_preset_single_reg(int port, uint16_t write_reg, uint16_t write_data)
+void process_preset_single_reg(void)
 {
+  word1 = ((uint16_t)ports[port].rx_msg.buf.uint8[2])<<8 | ports[port].rx_msg.buf.uint8[3];
+  word2 = ((uint16_t)ports[port].rx_msg.buf.uint8[4])<<8 | ports[port].rx_msg.buf.uint8[5];
+
   struct calibration_data_s temp_cal_data;
   struct configuration_data_s temp_cfg_data;
 
   memcpy(&temp_cal_data, (void*)get_cal_info(), sizeof(temp_cal_data));
   memcpy(&temp_cfg_data, (void*)get_cfg_info(), sizeof(temp_cfg_data));
 
-  switch (write_reg)
+  switch (word1)
   {
-  case HOLD_CFG_BAUD_RATE: temp_cfg_data.baud_rate = write_data; break;
-  case HOLD_CFG_ADDRESS: temp_cfg_data.mb_address = write_data; break;
+  case HOLD_CFG_BAUD_RATE: temp_cfg_data.baud_rate = word2; break;
+  case HOLD_CFG_ADDRESS: temp_cfg_data.mb_address = word2; break;
   
-  case HOLD_V_A_SCALE: temp_cal_data.phases[0].V_rms_scale_factor[0] = write_data; break;
-  case HOLD_V_B_SCALE: temp_cal_data.phases[1].V_rms_scale_factor[0] = write_data; break;
-  case HOLD_V_C_SCALE: temp_cal_data.phases[2].V_rms_scale_factor[0] = write_data; break;
+  case HOLD_V_A_SCALE: temp_cal_data.phases[0].V_rms_scale_factor[0] = word2; break;
+  case HOLD_V_B_SCALE: temp_cal_data.phases[1].V_rms_scale_factor[0] = word2; break;
+  case HOLD_V_C_SCALE: temp_cal_data.phases[2].V_rms_scale_factor[0] = word2; break;
   
-  case HOLD_I_A_SCALE: temp_cal_data.phases[0].current[0].I_rms_scale_factor[0] = write_data; break;
-  case HOLD_I_B_SCALE: temp_cal_data.phases[1].current[0].I_rms_scale_factor[0] = write_data; break;
-  case HOLD_I_C_SCALE: temp_cal_data.phases[2].current[0].I_rms_scale_factor[0] = write_data; break;
+  case HOLD_I_A_SCALE: temp_cal_data.phases[0].current[0].I_rms_scale_factor[0] = word2; break;
+  case HOLD_I_B_SCALE: temp_cal_data.phases[1].current[0].I_rms_scale_factor[0] = word2; break;
+  case HOLD_I_C_SCALE: temp_cal_data.phases[2].current[0].I_rms_scale_factor[0] = word2; break;
   
-  case HOLD_P_A_SCALE: temp_cal_data.phases[0].current[0].P_scale_factor = write_data; break;
-  case HOLD_P_B_SCALE: temp_cal_data.phases[1].current[0].P_scale_factor = write_data; break;
-  case HOLD_P_C_SCALE: temp_cal_data.phases[2].current[0].P_scale_factor = write_data; break;
+  case HOLD_P_A_SCALE: temp_cal_data.phases[0].current[0].P_scale_factor = word2; break;
+  case HOLD_P_B_SCALE: temp_cal_data.phases[1].current[0].P_scale_factor = word2; break;
+  case HOLD_P_C_SCALE: temp_cal_data.phases[2].current[0].P_scale_factor = word2; break;
   
-  case HOLD_A_PHASE: temp_cal_data.phases[0].current[0].phase_correction = write_data; break;
-  case HOLD_B_PHASE: temp_cal_data.phases[1].current[0].phase_correction = write_data; break;
-  case HOLD_C_PHASE: temp_cal_data.phases[2].current[0].phase_correction = write_data; break;
+  case HOLD_A_PHASE: temp_cal_data.phases[0].current[0].phase_correction = word2; break;
+  case HOLD_B_PHASE: temp_cal_data.phases[1].current[0].phase_correction = word2; break;
+  case HOLD_C_PHASE: temp_cal_data.phases[2].current[0].phase_correction = word2; break;
   
   default: return; break;
   }
@@ -223,151 +231,138 @@ void process_preset_single_reg(int port, uint16_t write_reg, uint16_t write_data
   return;
 }
 
-uint8_t process_read_hold_reg(int port, uint16_t first_reg, uint16_t n_reg)
+void process_read_hold_reg(void)
 {
-  if (n_reg > 18)
-    return 0;
+  word1 = ((uint16_t)ports[port].rx_msg.buf.uint8[2])<<8 | ports[port].rx_msg.buf.uint8[3];
+  word2 = ((uint16_t)ports[port].rx_msg.buf.uint8[4])<<8 | ports[port].rx_msg.buf.uint8[5];
+
+  if (word2 > 18)
+    return;
   
   ports[port].tx_msg.buf.uint8[0] = get_cfg_mb_address();
   ports[port].tx_msg.buf.uint8[1] = 0x03;
-  ports[port].tx_msg.buf.uint8[2] = n_reg * 2; //byte count
+  ports[port].tx_msg.buf.uint8[2] = word2 * 2; //byte count
   
-  uint16_t* map_ptr = &holding_registers.addr[first_reg];
+  uint16_t* map_ptr = &holding_registers.addr[word1];
   
   if(map_ptr == NULL)
-    return 0;
+    return;
   
-  memcpy(&(ports[port].tx_msg.buf.uint8[3]), map_ptr, n_reg * 2);
+  memcpy(&(ports[port].tx_msg.buf.uint8[3]), map_ptr, word2 * 2);
     
-  uint16_t crc = CalculateCRC(ports[port].tx_msg.buf.uint8, 3 + n_reg * 2);
+  uint16_t crc = CalculateCRC(ports[port].tx_msg.buf.uint8, 3 + word2 * 2);
   
-  ports[port].tx_msg.buf.uint8[4 + n_reg * 2] = (uint8_t)(crc>>8);
-  ports[port].tx_msg.buf.uint8[3 + n_reg * 2] = (uint8_t)(crc&0x00FF);
+  ports[port].tx_msg.buf.uint8[4 + word2 * 2] = (uint8_t)(crc>>8);
+  ports[port].tx_msg.buf.uint8[3 + word2 * 2] = (uint8_t)(crc&0x00FF);
   
-  RS485_sendBuf(port, ports[port].tx_msg.buf.uint8, 5 + n_reg * 2); // header + data
-  return 1;
+  RS485_sendBuf(port, ports[port].tx_msg.buf.uint8, 5 + word2 * 2); // header + data
+  return;
 }
 
-uint8_t process_read_inp_reg(int port, uint16_t first_reg, uint16_t n_reg)
+void process_read_inp_reg(void)
 {
-  if (n_reg > 18)
-    return 0;
+  word1 = ((uint16_t)ports[port].rx_msg.buf.uint8[2])<<8 | ports[port].rx_msg.buf.uint8[3];
+  word2 = ((uint16_t)ports[port].rx_msg.buf.uint8[4])<<8 | ports[port].rx_msg.buf.uint8[5];
+  if (word2 > 18)
+    return;
   
   ports[port].tx_msg.buf.uint8[0] = get_cfg_mb_address();
   ports[port].tx_msg.buf.uint8[1] = 0x04;
-  ports[port].tx_msg.buf.uint8[2] = n_reg * 2; //byte count
+  ports[port].tx_msg.buf.uint8[2] = word2 * 2; //byte count
   
-  uint8_t* map_ptr = get_ptr_from_input_register_addr(first_reg);
+  uint8_t* map_ptr = get_ptr_from_input_register_addr(word1);
   
   if(map_ptr == NULL)
-    return 0;
+    return;
   
-  memcpy(&(ports[port].tx_msg.buf.uint8[3]), map_ptr, n_reg * 2);
+  memcpy(&(ports[port].tx_msg.buf.uint8[3]), map_ptr, word2 * 2);
     
-  uint16_t crc = CalculateCRC(ports[port].tx_msg.buf.uint8, 3 + n_reg * 2);
+  uint16_t crc = CalculateCRC(ports[port].tx_msg.buf.uint8, 3 + word2 * 2);
   
-  ports[port].tx_msg.buf.uint8[4 + n_reg * 2] = (uint8_t)(crc>>8);
-  ports[port].tx_msg.buf.uint8[3 + n_reg * 2] = (uint8_t)(crc&0x00FF);
+  ports[port].tx_msg.buf.uint8[4 + word2 * 2] = (uint8_t)(crc>>8);
+  ports[port].tx_msg.buf.uint8[3 + word2 * 2] = (uint8_t)(crc&0x00FF);
   
-  RS485_sendBuf(port, ports[port].tx_msg.buf.uint8, 5 + n_reg * 2); // header + data
-  return 1;
+  RS485_sendBuf(port, ports[port].tx_msg.buf.uint8, 5 + word2 * 2); // header + data
+  return;
 }
 
 /* This routine is called regularly from the main polling loop, to check for completed incoming
    DLT-645 messages, and to service them. */
 void dlt645_service(void)
-{ 
-  for(int port = 0; port < 3; port++)
+{   
+  if (ports[port].rx_frame_pending)
   {
-    if (ports[port].rx_frame_pending)
-    {
-      uint16_t crc = CalculateCRC(ports[port].rx_msg.buf.uint8, ports[port].rx_msg.len-2);
-      uint16_t first_reg, n_reg;
-      uint16_t write_reg, write_data;
-      
-      // Verifica CRC
-      if (ports[port].rx_msg.buf.uint8[ports[port].rx_msg.len-2] == (uint8_t)(crc&0x00FF) &&
-          ports[port].rx_msg.buf.uint8[ports[port].rx_msg.len-1] == (uint8_t)(crc>>8))
-      {
-        uint8_t function = ports[port].rx_msg.buf.uint8[1];
-        
-        switch (function)
-        {
-        // Espera 8bytes
-        case 0x02: //Read Input Status
-          break;
-          
-        case 0x03: //Read Holding Register
-          first_reg = ((uint16_t)ports[port].rx_msg.buf.uint8[2])<<8 | ports[port].rx_msg.buf.uint8[3];
-          n_reg = ((uint16_t)ports[port].rx_msg.buf.uint8[4])<<8 | ports[port].rx_msg.buf.uint8[5];
-          
-          process_read_hold_reg(port, first_reg, n_reg);
-          break;
-          
-        case 0x04: //Read Input Register
-          first_reg = ((uint16_t)ports[port].rx_msg.buf.uint8[2])<<8 | ports[port].rx_msg.buf.uint8[3];
-          n_reg = ((uint16_t)ports[port].rx_msg.buf.uint8[4])<<8 | ports[port].rx_msg.buf.uint8[5];
-          
-          process_read_inp_reg(port, first_reg, n_reg);
-          
-          break;
-          
-        case 0x05:  //Force Single Coil
-          write_reg = ((uint16_t)ports[port].rx_msg.buf.uint8[2])<<8 | ports[port].rx_msg.buf.uint8[3];
-          process_force_single_coil(write_reg);
-          update_holding_registers();
-
-          break;
-        
-        case 0x06: //Preset Single Register
-          write_reg = ((uint16_t)ports[port].rx_msg.buf.uint8[2])<<8 | ports[port].rx_msg.buf.uint8[3];
-          write_data = ((uint16_t)ports[port].rx_msg.buf.uint8[4])<<8 | ports[port].rx_msg.buf.uint8[5];
-
-          process_preset_single_reg(port, write_reg, write_data);
-          update_holding_registers();
-          
-          break;
-          
-        //Espera 4bytes
-        case 0x07: //Read Exception Status
-        case 0x11: //Report Slave ID
-          break;
-          
-        //Preset Multiple Register (nbytes)
-        case 0x10: break;
-
-        /*Funcoes especiais*/
-        /*
-        case 0x42: //Config Address
-        case 0x71: //Read Address
-        case 0x75: //Read Partidas
-        case 0x76: //Report Slave Id Kron
-          break;
-        */
-        default: 
-          // Got invalid function
-          ports[port].rx_msg.ptr = 0;
-          ports[port].rx_msg.len = 0;
-          ports[port].rx_frame_pending = false;
-          break;
-        }
-      }
-      ports[port].rx_frame_pending = false;
-    }
+    uint16_t crc = CalculateCRC(ports[port].rx_msg.buf.uint8, ports[port].rx_msg.len-2);
     
-    // Manage timeout
-    if (Contador4096 - ports[port].rx_msg.inter_char_timeout > 10000)
+    // Verifica CRC
+    if (ports[port].rx_msg.buf.uint8[ports[port].rx_msg.len-2] == (uint8_t)(crc&0x00FF) &&
+        ports[port].rx_msg.buf.uint8[ports[port].rx_msg.len-1] == (uint8_t)(crc>>8))
     {
-      ports[port].rx_msg.inter_char_timeout = Contador4096;
-      
-      if (ports[port].rx_msg.ptr != 0 || ports[port].rx_msg.buf.uint8[0] != 0)
+      switch (ports[port].rx_msg.buf.uint8[1])
       {
-        //memset(ports[port].rx_msg.buf.uint8, 0, ports[port].rx_msg.ptr);
-        memset(ports[port].rx_msg.buf.uint8, 0, ports[port].rx_msg.len);
+      // Espera 8bytes
+      case 0x02: //Read Input Status
+        break;
+        
+      case 0x03: //Read Holding Register
+        process_read_hold_reg();
+        break;
+        
+      case 0x04: //Read Input Register
+        process_read_inp_reg();
+        break;
+        
+      case 0x05:  //Force Single Coil
+        process_force_single_coil();
+        update_holding_registers();
+        break;
+      
+      case 0x06: //Preset Single Register
+        process_preset_single_reg();
+        update_holding_registers();
+        break;
+        
+      //Espera 4bytes
+      case 0x07: //Read Exception Status
+      case 0x11: //Report Slave ID
+        break;
+        
+      //Preset Multiple Register (nbytes)
+      case 0x10: break;
+
+      /*Funcoes especiais*/
+      /*
+      case 0x42: //Config Address
+      case 0x71: //Read Address
+      case 0x75: //Read Partidas
+      case 0x76: //Report Slave Id Kron
+        break;
+      */
+      default: 
+        // Got invalid function
         ports[port].rx_msg.ptr = 0;
+        ports[port].rx_msg.len = 0;
+        ports[port].rx_frame_pending = false;
+        break;
       }
+    }
+    ports[port].rx_frame_pending = false;
+  }
+  
+  // Manage timeout
+  if (Contador4096 - ports[port].rx_msg.inter_char_timeout > 10000)
+  {
+    ports[port].rx_msg.inter_char_timeout = Contador4096;
+    
+    if (ports[port].rx_msg.ptr != 0 || ports[port].rx_msg.buf.uint8[0] != 0)
+    {
+      //memset(ports[port].rx_msg.buf.uint8, 0, ports[port].rx_msg.ptr);
+      memset(ports[port].rx_msg.buf.uint8, 0, ports[port].rx_msg.len);
+      ports[port].rx_msg.ptr = 0;
     }
   }
+  
+  if(port++ == 2) port = 0;
 }
 
 /* This routine is called from within UART port interrupts, so it must be kept lean and mean. */
