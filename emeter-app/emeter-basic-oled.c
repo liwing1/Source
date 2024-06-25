@@ -130,19 +130,19 @@ static __inline__ void oled_active_power()
     
     x=active_power(0)/f;
     if (x==POWER_OVERRANGE)
-        ssd1306_printText(3, 5,"A:  == POWER_OVERRANGE =="); 
+        ssd1306_printText_peq(3, 5,"A: =POWER_OVERRANGE="); 
     else    
         Oled_display_valor(3,5,x,3,"A:   ",final);
 
     x=active_power(1)/f;
     if (x==POWER_OVERRANGE)
-        ssd1306_printText(3, 6,"B:  == POWER_OVERRANGE =="); 
+        ssd1306_printText_peq(3, 6,"B: =POWER_OVERRANGE="); 
     else    
         Oled_display_valor(3,6,x,3,"B:   ",final);
 
     x=active_power(2)/f;
     if (x==POWER_OVERRANGE)
-        ssd1306_printText(3, 7,"C:  == POWER_OVERRANGE =="); 
+        ssd1306_printText_peq(3, 7,"C: =POWER_OVERRANGE="); 
     else    
         Oled_display_valor(3,7,x,3,"C:   ",final);    
     
@@ -164,19 +164,19 @@ static __inline__ void oled_active_power()
 
         x=reactive_power(0);
         if (x==POWER_OVERRANGE)
-            ssd1306_printText(3, 5,"A:  == POWER_OVERRANGE =="); 
+            ssd1306_printText_peq(3, 5,"A: =POWER_OVERRANGE="); 
         else    
             Oled_display_valor(3,5,x,3,"A:   "," W");
 
         x=reactive_power(1);
         if (x==POWER_OVERRANGE)
-            ssd1306_printText(3, 6,"B:  == POWER_OVERRANGE =="); 
+            ssd1306_printText_peq(3, 6,"B: =POWER_OVERRANGE="); 
         else    
             Oled_display_valor(3,6,x,3,"B:   "," W");
 
         x=reactive_power(2);
         if (x==POWER_OVERRANGE)
-            ssd1306_printText(3, 7,"C:  == POWER_OVERRANGE =="); 
+            ssd1306_printText_peq(3, 7,"C: =POWER_OVERRANGE="); 
         else    
             Oled_display_valor(3,7,x,3,"C:   "," W");    
     }
@@ -205,19 +205,19 @@ static __inline__ void oled_active_power()
 
         x=apparent_power(0)/f;
         if (x==POWER_OVERRANGE)
-            ssd1306_printText(3, 5,"A:  == POWER_OVERRANGE =="); 
+            ssd1306_printText_peq(3, 5,"A: =POWER_OVERRANGE="); 
         else    
             Oled_display_valor(3,5,x,3,"A:   ",final);
 
         x=apparent_power(1)/f;
         if (x==POWER_OVERRANGE)
-            ssd1306_printText(3, 6,"B:  == POWER_OVERRANGE =="); 
+            ssd1306_printText_peq(3, 6,"B: =POWER_OVERRANGE="); 
         else    
             Oled_display_valor(3,6,x,3,"B:   ",final);
 
         x=apparent_power(2)/f;
         if (x==POWER_OVERRANGE)
-            ssd1306_printText(3, 7,"C:  == POWER_OVERRANGE =="); 
+            ssd1306_printText_peq(3, 7,"C: =POWER_OVERRANGE="); 
         else    
             Oled_display_valor(3,7,x,3,"C:   ",final); 
 
@@ -279,19 +279,19 @@ static __inline__ void oled_active_power()
         
         x=rms_voltage(0);
         if (x==RMS_VOLTAGE_OVERRANGE)
-            ssd1306_printText(4, 3,"A:  == OVERVOLTAGE =="); 
+            ssd1306_printText_peq(4, 3,"A: =OVERVOLT=");
         else    
             Oled_display_valor(4,3,x,3,"A: "," V");
 
         x=rms_voltage(1);
         if (x==RMS_VOLTAGE_OVERRANGE)
-            ssd1306_printText(4, 5,"B:  == OVERVOLTAGE =="); 
+            ssd1306_printText_peq(4, 5,"B: =OVERVOLT="); 
         else    
             Oled_display_valor(4,5,x,3,"B: "," V");
 
         x=rms_voltage(2);
         if (x==RMS_VOLTAGE_OVERRANGE)
-            ssd1306_printText(4, 7,"C:  == OVERVOLTAGE =="); 
+            ssd1306_printText_peq(4, 7,"C: =OVERVOLT="); 
         else    
             Oled_display_valor(4,7,x,3,"C: "," V");
     }
@@ -309,19 +309,19 @@ static __inline__ void oled_active_power()
         
         x=rms_current(0);
         if (x==RMS_CURRENT_OVERRANGE)
-            ssd1306_printText(4, 3,"A:  == OVERCURRENT =="); 
+            ssd1306_printText_peq(4, 3,"A:  =OVERCURRENT="); 
         else    
             Oled_display_valor(4,3,x,3,"A: "," A");
 
         x=rms_current(1);
         if (x==RMS_CURRENT_OVERRANGE)
-            ssd1306_printText(4, 5,"B:  == OVERCURRENT =="); 
+            ssd1306_printText_peq(4, 5,"B:  =OVERCURRENT="); 
         else    
             Oled_display_valor(4,5,x,3,"B: "," A");
 
         x=rms_current(2);
         if (x==RMS_CURRENT_OVERRANGE)
-            ssd1306_printText(4, 7,"C:  == OVERCURRENT =="); 
+            ssd1306_printText_peq(4, 7,"C:  =OVERCURRENT="); 
         else    
             Oled_display_valor(4,7,x,3,"C: "," A");
     }
