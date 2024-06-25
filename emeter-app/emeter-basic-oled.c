@@ -112,7 +112,7 @@ static __inline__ void oled_active_power()
     int f;
     char* final;
 
-    Oled_titulo("Active Power"); 
+    Oled_titulo("Potencia Ativa"); 
     
    
     #if defined(ACTIVE_POWER_DISPLAY_IN_KW)
@@ -158,27 +158,27 @@ static __inline__ void oled_active_power()
         /* Display reactive power in 0.01W increments */
 
         power_t x;
-        Oled_titulo(" Reactive Power");  
+        Oled_titulo("Potencia Reativa");  
 
-        Oled_display_valor(1,3,reactive_power(FAKE_PHASE_TOTAL),3,"Total: "," W");    
+        Oled_display_valor(1,3,reactive_power(FAKE_PHASE_TOTAL),3,"Total: "," Var");    
 
         x=reactive_power(0);
         if (x==POWER_OVERRANGE)
             ssd1306_printText_peq(3, 5,"A: =POWER_OVERRANGE="); 
         else    
-            Oled_display_valor(3,5,x,3,"A:   "," W");
+            Oled_display_valor(3,5,x,3,"A:   "," VAr");
 
         x=reactive_power(1);
         if (x==POWER_OVERRANGE)
             ssd1306_printText_peq(3, 6,"B: =POWER_OVERRANGE="); 
         else    
-            Oled_display_valor(3,6,x,3,"B:   "," W");
+            Oled_display_valor(3,6,x,3,"B:   "," VAr");
 
         x=reactive_power(2);
         if (x==POWER_OVERRANGE)
             ssd1306_printText_peq(3, 7,"C: =POWER_OVERRANGE="); 
         else    
-            Oled_display_valor(3,7,x,3,"C:   "," W");    
+            Oled_display_valor(3,7,x,3,"C:   "," VAr");    
     }
 #endif
 
@@ -193,13 +193,13 @@ static __inline__ void oled_active_power()
 
         #if defined(ACTIVE_POWER_DISPLAY_IN_KW) 
             f=1000;
-            final= " KW"; 
+            final= " KVA"; 
         #else
             f=1;
-            final = " W";
+            final = " VA";
         #endif    
 
-        Oled_titulo("Apparent Power");  
+        Oled_titulo("Potencia Aparente");  
 
         Oled_display_valor(1,3,apparent_power(FAKE_PHASE_TOTAL),3,"Total: ",final);    
 
@@ -233,7 +233,7 @@ static __inline__ void oled_active_power()
 
         // TODO Verificar sinal
 
-        Oled_titulo("Power Factor");
+        Oled_titulo("Fator de Potencia");
 
         x=power_factor(0);
         if (x<0) {
@@ -275,7 +275,7 @@ static __inline__ void oled_active_power()
 
         /* Display RMS voltage in 0.1V or 0.01V increments */
 
-        Oled_titulo("Volts RMS");    
+        Oled_titulo("Tensao RMS");    
         
         x=rms_voltage(0);
         if (x==RMS_VOLTAGE_OVERRANGE)
@@ -305,7 +305,7 @@ static __inline__ void oled_active_power()
 
         /* Display RMS current in 1mA increments */
 
-        Oled_titulo("I RMS");    
+        Oled_titulo("Corrente RMS");    
         
         x=rms_current(0);
         if (x==RMS_CURRENT_OVERRANGE)
@@ -335,7 +335,7 @@ static __inline__ void oled_mains_frequency()
 
         /* Display mains frequency in 0.1Hz or 0.01Hz increments */
 
-        Oled_titulo("FREQUENCIA"); 
+        Oled_titulo("Frequencia"); 
             
         Oled_display_valor(4,3,mains_frequency(0),2,"A:  "," Hz");
         Oled_display_valor(4,5,mains_frequency(1),2,"B:  "," Hz");
@@ -359,7 +359,7 @@ static __inline__ void oled_imported_active_energy()
             final = " Wh";
         #endif    
 
-        Oled_titulo("Active Energy"); 
+        Oled_titulo("Energia Ativa"); 
        
         long x=(long) energy_consumed[FAKE_PHASE_TOTAL][APP_ACTIVE_ENERGY_IMPORTED];
         Oled_display_valor(0,3,x/f,3,"Total: ",final); 
@@ -398,13 +398,13 @@ static __inline__ void oled_imported_reactive_energy()
 
     #if defined(ACTIVE_POWER_DISPLAY_IN_KW)
         f=1000;
-        final= " KW"; 
+        final= " KVArh"; 
     #else
         f=1;
-        final = " W";
+        final = " VArh";
     #endif    
 
-    Oled_titulo("Reactive Energy");  
+    Oled_titulo("Energia Reativa");  
 
     x = (long) energy_consumed[FAKE_PHASE_TOTAL][APP_REACTIVE_ENERGY_QUADRANT_I] + (long) energy_consumed[FAKE_PHASE_TOTAL][APP_REACTIVE_ENERGY_QUADRANT_IV];
     x/=f;
@@ -546,25 +546,6 @@ void update_oled(void)
       if (oled_step == OLED_ITEM_SELECT_RESTART)
               oled_step = 0;
       display_oled_item(oled_step++); 
-     
-/*
-      // Teste de TX modbus
-
-      uint8_t *buffer_tx_modbus;
-      buffer_tx_modbus = ports[1].tx_msg.buf.uint8;
-      
-      buffer_tx_modbus[0] = 1; // Endere?o do escravo
-      buffer_tx_modbus[1] = 0x03; // N?mero do comando
-      buffer_tx_modbus[2] = 10; // N?mero de bytes a seguir
-
-      // Simula 10 valores de dados
-      for (int i = 0; i < 10; i++) {
-          buffer_tx_modbus[3 + i] = i; // Dados simulados
-      }
-      uint16_t crc = CalculateCRC(buffer_tx_modbus, 13);
-      buffer_tx_modbus[13] = crc & 0xFF; // LSB
-      buffer_tx_modbus[14] = (crc >> 8) & 0xFF; // MSB  
-*/
     }
    
     
