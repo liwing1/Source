@@ -283,6 +283,14 @@ int main(int argc, char *argv[])
           }
 
           TempoMapaMemoria = Contador4096;
+
+          if((P1IN & BIT6) == 0) // Botao pressionado
+          {
+            ENDSTOP_HITS_FOR_OVERLOAD = (ENDSTOP_HITS_FOR_OVERLOAD == 20 ? 127:20);
+            P8OUT &=~BIT6; // Liga LED3
+          } else {
+            P8OUT |= BIT6; // Desliiga LED3
+          }
         }
 
 #if defined(IEC62056_SUPPORT)

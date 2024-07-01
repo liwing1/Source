@@ -27,7 +27,7 @@
         <State_Storage>0</State_Storage>
     </Action_Register>
     <DebugChecksum>
-        <Checksum>3612549490</Checksum>
+        <Checksum>3325221798</Checksum>
     </DebugChecksum>
     <CallStack>
         <ShowArgs>0</ShowArgs>
@@ -96,6 +96,7 @@
     <struct_types>
         <Fmt0>struct configs_t-modbus_addr	4	0</Fmt0>
         <Fmt1>struct configuration_data_s-mb_address	4	0</Fmt1>
+        <Fmt2>struct phase_metrology_s-V_endstops	3	0</Fmt2>
     </struct_types>
     <array_types>
         <Fmt0>uint16_t [41]	4	0</Fmt0>
