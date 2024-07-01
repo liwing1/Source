@@ -494,7 +494,7 @@ int main(int argc, char *argv[])
         else if ((Contador4096-TempoDisplayOled) > TEMPO_OLED_NORMAL) {
             update_oled();
             TempoDisplayOled=Contador4096; // Reseta timer
-       }
+        }
         break;
     case ESPERA_PRIMEIRA_SOLTURA: // Botao pressionado => Pare
         if ((P1IN&BIT7)!=0) {
@@ -510,6 +510,10 @@ int main(int argc, char *argv[])
             TempoDisplayOled=Contador4096; // Reseta timer
             TempoBotao=Contador4096; // Reseta timer 
             ModoDisplay=ESPERA_TECLA_SOLTAR;
+        }
+        else if ((Contador4096-TempoDisplayOled) > TEMPO_OLED_NORMAL) {
+            update_oled_measures();
+            TempoDisplayOled=Contador4096; // Reseta timer
         }
         break;
     case ESPERA_TECLA_SOLTAR:

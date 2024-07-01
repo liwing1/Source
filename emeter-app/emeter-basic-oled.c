@@ -542,10 +542,10 @@ void update_oled(void)
     }
     else
     {
-
+      oled_step++;
       if (oled_step == OLED_ITEM_SELECT_RESTART)
               oled_step = 0;
-      display_oled_item(oled_step++); 
+      display_oled_item(oled_step); 
     }
    
     
@@ -555,7 +555,14 @@ void update_oled(void)
     #endif
 }
 
-
+void update_oled_measures(void)
+{
+  if (oled_step <= 0)
+    return;
+  
+  ssd1306_clearDisplay();
+  display_oled_item(oled_step); 
+}
 
 #endif
 

@@ -43,5 +43,6 @@
 
 void update_oled(void);
 void OLED_display_startup_message(void);
+void update_oled_measures(void);
 
 #endif
