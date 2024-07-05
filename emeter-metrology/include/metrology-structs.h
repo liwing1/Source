@@ -133,7 +133,7 @@
 /*! The following is the number of times an ADC may hit the endstops before
     it is declared to be truly overloaded. A very low value makes the meter
     less tolerant of noise spikes. A large value tends to ignore real overload. */
-#define ENDSTOP_HITS_FOR_OVERLOAD                   20
+// #define ENDSTOP_HITS_FOR_OVERLOAD                   20
 
 /* The current channel is always zero unless we are building single phase metrology
    for anti-tamper applications. */

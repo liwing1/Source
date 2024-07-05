@@ -153,4 +153,6 @@ typedef int32_t current_dc_estimate_t[1];
 /*! We use 16 bit unsigned integers for most calibration factors */
 typedef uint16_t calibration_scaling_factor_t;
 
+extern int ENDSTOP_HITS_FOR_OVERLOAD;
+
 #endif

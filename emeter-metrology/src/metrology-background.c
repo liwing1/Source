@@ -48,6 +48,7 @@
 #endif
 
 extern volatile unsigned long Contador4096;
+extern int ENDSTOP_HITS_FOR_OVERLOAD = 20;
 
 #include <emeter-toolkit.h>
 
