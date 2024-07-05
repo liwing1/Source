@@ -163,9 +163,9 @@ static __inline__ uint16_t check_voltage_ranges(void)
   if (v3 < UNDER_VOLTAGE_THRESHOLD) status |= PHASE_C_UNDERVOLTAGE;
 
   // Check for overvoltage
-  if (v1 > UNDER_VOLTAGE_THRESHOLD) status |= PHASE_A_OVERVOLTAGE;
-  if (v2 > UNDER_VOLTAGE_THRESHOLD) status |= PHASE_A_OVERVOLTAGE;
-  if (v3 > UNDER_VOLTAGE_THRESHOLD) status |= PHASE_A_OVERVOLTAGE;
+  if (v1 > OVER_VOLTAGE_THRESHOLD) status |= PHASE_A_OVERVOLTAGE;
+  if (v2 > OVER_VOLTAGE_THRESHOLD) status |= PHASE_A_OVERVOLTAGE;
+  if (v3 > OVER_VOLTAGE_THRESHOLD) status |= PHASE_A_OVERVOLTAGE;
 
   // Check for imbalance
   double average_voltage = (v1 + v2 + v3) / 3.0;
