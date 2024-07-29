@@ -150,7 +150,7 @@ void update_holding_registers(void)
 
 static uint8_t* get_ptr_from_input_register_addr(uint16_t reg_addr) 
 {
-  uint8_t byte_addr = 2 * reg_addr;
+  uint16_t byte_addr = 2 * reg_addr;
   if(reg_addr <= 65)
     return (&(input_registers.byte[byte_addr]));
   
@@ -160,8 +160,8 @@ static uint8_t* get_ptr_from_input_register_addr(uint16_t reg_addr)
   else if (reg_addr >= 300 && reg_addr <= 339)
     return (&(input_registers.byte[byte_addr - 416]));
   
-  else if (reg_addr >= 1200 && reg_addr <= 1229)
-    return (&(input_registers.byte[byte_addr - 2136]));
+  else if (reg_addr >= 1224 && reg_addr <= 1235)
+    return (&(input_registers.byte[byte_addr - 2184]));
 
   else if (reg_addr == 3900)
     return ((uint8_t*)&(input_registers.grandezas.status));
