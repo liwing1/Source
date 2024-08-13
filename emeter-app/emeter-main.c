@@ -210,10 +210,10 @@ static __inline__ void update_input_registers(void)
   input_registers.grandezas.energia_atv_pos_fase_2 = energy_consumed[1][APP_ACTIVE_ENERGY_IMPORTED];
   input_registers.grandezas.energia_atv_pos_fase_3 = energy_consumed[2][APP_ACTIVE_ENERGY_IMPORTED];
 
-  input_registers.grandezas.energia_rtv_pos = (long) energy_consumed[FAKE_PHASE_TOTAL][APP_REACTIVE_ENERGY_QUADRANT_I] + (long) energy_consumed[FAKE_PHASE_TOTAL][APP_REACTIVE_ENERGY_QUADRANT_IV];
-  input_registers.grandezas.energia_rtv_pos_fase_1 = (long) energy_consumed[0][APP_REACTIVE_ENERGY_QUADRANT_I] + (long) energy_consumed[0][APP_REACTIVE_ENERGY_QUADRANT_IV];
-  input_registers.grandezas.energia_rtv_pos_fase_2 = (long) energy_consumed[1][APP_REACTIVE_ENERGY_QUADRANT_I] +(long)  energy_consumed[1][APP_REACTIVE_ENERGY_QUADRANT_IV];
-  input_registers.grandezas.energia_rtv_pos_fase_3 = (long) energy_consumed[2][APP_REACTIVE_ENERGY_QUADRANT_I] + (long) energy_consumed[2][APP_REACTIVE_ENERGY_QUADRANT_IV];
+  input_registers.grandezas.energia_rtv_pos = energy_consumed[FAKE_PHASE_TOTAL][APP_REACTIVE_ENERGY_QUADRANT_I] + energy_consumed[FAKE_PHASE_TOTAL][APP_REACTIVE_ENERGY_QUADRANT_IV];
+  input_registers.grandezas.energia_rtv_pos_fase_1 = energy_consumed[0][APP_REACTIVE_ENERGY_QUADRANT_I] + energy_consumed[0][APP_REACTIVE_ENERGY_QUADRANT_IV];
+  input_registers.grandezas.energia_rtv_pos_fase_2 = energy_consumed[1][APP_REACTIVE_ENERGY_QUADRANT_I] + energy_consumed[1][APP_REACTIVE_ENERGY_QUADRANT_IV];
+  input_registers.grandezas.energia_rtv_pos_fase_3 = energy_consumed[2][APP_REACTIVE_ENERGY_QUADRANT_I] + energy_consumed[2][APP_REACTIVE_ENERGY_QUADRANT_IV];
 
   input_registers.grandezas.status = check_voltage_ranges();
 }

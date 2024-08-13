@@ -5,133 +5,236 @@
     <configuration>
         <name>Debug</name>
         <outputs>
-            <file>$PROJ_DIR$\..\src\iar\dc_filter16.s43</file>
-            <file>$PROJ_DIR$\..\src\dds.c</file>
-            <file>$PROJ_DIR$\..\src\iar\mul48u_32_16.s43</file>
-            <file>$PROJ_DIR$\..\src\iar\sqac48_16.s43</file>
-            <file>$TOOLKIT_DIR$\inc\dlib\c\DLib_Product.h</file>
-            <file>$PROJ_DIR$\Debug\Obj\mac48.r43</file>
-            <file>$PROJ_DIR$\..\src\iar\isqrt32.s43</file>
-            <file>$PROJ_DIR$\..\src\iar\q1_15_mul.s43</file>
-            <file>$TOOLKIT_DIR$\inc\dlib\c\inttypes.h</file>
-            <file>$PROJ_DIR$\Debug\Obj\imul16.r43</file>
-            <file>$PROJ_DIR$\Debug\Obj\div48.r43</file>
-            <file>$PROJ_DIR$\..\src\iar\accum48.s43</file>
+            <file>$PROJ_DIR$\Debug\Obj\div48.__cstat.et</file>
+            <file>$TOOLKIT_DIR$\inc\dlib\c\xencoding_limits.h</file>
+            <file>$PROJ_DIR$\Debug\Obj\div_sh48.r43</file>
+            <file>$PROJ_DIR$\Debug\Obj\isqrt32i.r43</file>
+            <file>$TOOLKIT_DIR$\inc\dlib\c\stdlib.h</file>
             <file>$PROJ_DIR$\..\src\iar\dc_filter24.s43</file>
-            <file>$PROJ_DIR$\..\src\isqrt32i.c</file>
-            <file>$PROJ_DIR$\..\src\iar\bin2bcd64.s43</file>
             <file>$PROJ_DIR$\..\src\div48.c</file>
-            <file>$PROJ_DIR$\..\src\div_sh48.c</file>
-            <file>$PROJ_DIR$\..\src\iar\imul16.s43</file>
-            <file>$PROJ_DIR$\..\src\iar\mac64_16_24.s43</file>
-            <file>$PROJ_DIR$\..\src\iar\bin2bcd32.s43</file>
-            <file>$PROJ_DIR$\..\src\iar\isqrt16.s43</file>
-            <file>$PROJ_DIR$\..\src\iar\mul48_32_16.s43</file>
-            <file>$PROJ_DIR$\..\src\iar\shift48.s43</file>
-            <file>$PROJ_DIR$\..\src\iar\mac48.s43</file>
-            <file>$PROJ_DIR$\..\src\iar\bin2bcd16.s43</file>
             <file>$PROJ_DIR$\..\src\hal_pmm.c</file>
             <file>$PROJ_DIR$\..\src\iar\imul16u.s43</file>
-            <file>$PROJ_DIR$\..\src\iar\isqrt64.s43</file>
-            <file>$PROJ_DIR$\..\src\isqrt64i.c</file>
-            <file>$PROJ_DIR$\..\src\iar\q1_15_mulr.s43</file>
-            <file>$PROJ_DIR$\..\src\iar\sqac64_24.s43</file>
-            <file>$PROJ_DIR$\Debug\Obj\sqac64_24.r43</file>
-            <file>$PROJ_DIR$\Debug\Obj\isqrt32.r43</file>
-            <file>$PROJ_DIR$\..\include\hal_pmm.h</file>
-            <file>$PROJ_DIR$\Debug\Obj\isqrt64i.__cstat.et</file>
-            <file>$PROJ_DIR$\Debug\Obj\div_sh48.r43</file>
-            <file>$PROJ_DIR$\Debug\Obj\hal_pmm.r43</file>
-            <file>$TOOLKIT_DIR$\inc\dlib\c\DLib_Threads.h</file>
-            <file>$TOOLKIT_DIR$\inc\macros.m43</file>
-            <file>$TOOLKIT_DIR$\inc\msp430.h</file>
-            <file>$PROJ_DIR$\..\include\iar\extra_peripheral_definitions.h</file>
-            <file>$PROJ_DIR$\Debug\Obj\isqrt64.r43</file>
-            <file>$TOOLKIT_DIR$\inc\dlib\c\yvals.h</file>
-            <file>$TOOLKIT_DIR$\inc\dlib\c\ysizet.h</file>
-            <file>$PROJ_DIR$\Debug\Obj\mac64_16_24.r43</file>
-            <file>$TOOLKIT_DIR$\inc\dlib\c\ycheck.h</file>
-            <file>$PROJ_DIR$\Debug\Obj\shift48.r43</file>
-            <file>$PROJ_DIR$\Debug\Obj\q1_15_mulr.r43</file>
-            <file>$PROJ_DIR$\Debug\Obj\mul48_32_16.r43</file>
-            <file>$PROJ_DIR$\Debug\Exe\emeter-toolkit-67641.r43</file>
-            <file>$PROJ_DIR$\..\include\io.h</file>
-            <file>$PROJ_DIR$\..\include\isr_compat.h</file>
-            <file>$PROJ_DIR$\Debug\Obj\dds.__cstat.et</file>
-            <file>$TOOLKIT_DIR$\lib\dlib\dl430xllfn.h</file>
-            <file>$PROJ_DIR$\Debug\Obj\isqrt16.r43</file>
-            <file>$TOOLKIT_DIR$\inc\in430.h</file>
-            <file>$PROJ_DIR$\Debug\Obj\imul16u.r43</file>
-            <file>$PROJ_DIR$\Debug\Obj\bin2bcd64.r43</file>
-            <file>$PROJ_DIR$\Debug\Obj\bin2bcd16.r43</file>
-            <file>$PROJ_DIR$\Debug\Obj\q1_15_mul.r43</file>
-            <file>$PROJ_DIR$\Debug\Obj\mul48u_32_16.r43</file>
-            <file>$PROJ_DIR$\Debug\Obj\bin2bcd32.r43</file>
-            <file>$PROJ_DIR$\Debug\Obj\div_sh48.__cstat.et</file>
-            <file>$TOOLKIT_DIR$\inc\intrinsics.h</file>
-            <file>$TOOLKIT_DIR$\inc\dlib\c\stdint.h</file>
-            <file>$PROJ_DIR$\Debug\Obj\hal_pmm.__cstat.et</file>
-            <file>$PROJ_DIR$\Debug\Obj\accum48.r43</file>
-            <file>$TOOLKIT_DIR$\inc\dlib\c\xencoding_limits.h</file>
-            <file>$TOOLKIT_DIR$\inc\msp430f67641.h</file>
-            <file>$PROJ_DIR$\Debug\Obj\isqrt32i.__cstat.et</file>
+            <file>$PROJ_DIR$\..\src\iar\bin2bcd16.s43</file>
+            <file>$PROJ_DIR$\..\src\iar\dc_filter16.s43</file>
+            <file>$PROJ_DIR$\..\src\div_sh48.c</file>
+            <file>$PROJ_DIR$\..\src\iar\bin2bcd64.s43</file>
+            <file>$PROJ_DIR$\..\src\iar\imul16.s43</file>
+            <file>$PROJ_DIR$\..\src\iar\isqrt16.s43</file>
+            <file>$PROJ_DIR$\..\src\dds.c</file>
+            <file>$PROJ_DIR$\..\src\iar\isqrt32.s43</file>
+            <file>$PROJ_DIR$\..\src\iar\bin2bcd32.s43</file>
+            <file>$PROJ_DIR$\..\src\iar\accum48.s43</file>
             <file>$PROJ_DIR$\Debug\Obj\dc_filter16.r43</file>
-            <file>$TOOLKIT_DIR$\inc\dlib\c\DLib_Defaults.h</file>
             <file>$PROJ_DIR$\Debug\Obj\dc_filter24.r43</file>
-            <file>$PROJ_DIR$\Debug\Obj\sqac48_16.r43</file>
-            <file>$PROJ_DIR$\Debug\Obj\isqrt64i.r43</file>
-            <file>$PROJ_DIR$\..\include\emeter-toolkit.h</file>
-            <file>$PROJ_DIR$\Debug\Obj\isqrt32i.r43</file>
             <file>$TOOLKIT_DIR$\inc\cfi.m43</file>
-            <file>$TOOLKIT_DIR$\inc\dlib\c\stdlib.h</file>
+            <file>$PROJ_DIR$\Debug\Obj\hal_pmm.r43</file>
+            <file>$PROJ_DIR$\Debug\Obj\isqrt64.r43</file>
+            <file>$PROJ_DIR$\Debug\Obj\isqrt32.r43</file>
+            <file>$PROJ_DIR$\Debug\Obj\mac48.r43</file>
+            <file>$TOOLKIT_DIR$\inc\intrinsics.h</file>
+            <file>$TOOLKIT_DIR$\inc\dlib\c\yvals.h</file>
+            <file>$PROJ_DIR$\..\src\isqrt64i.c</file>
+            <file>$PROJ_DIR$\..\src\iar\q1_15_mul.s43</file>
+            <file>$PROJ_DIR$\..\include\hal_pmm.h</file>
+            <file>$PROJ_DIR$\..\src\iar\sqac64_24.s43</file>
+            <file>$TOOLKIT_DIR$\inc\dlib\c\inttypes.h</file>
+            <file>$PROJ_DIR$\..\src\isqrt32i.c</file>
+            <file>$PROJ_DIR$\Debug\Exe\emeter-toolkit-67641.ulp</file>
+            <file>$PROJ_DIR$\..\src\iar\mul48u_32_16.s43</file>
+            <file>$PROJ_DIR$\..\src\iar\mac48.s43</file>
+            <file>$PROJ_DIR$\..\src\iar\shift48.s43</file>
+            <file>$PROJ_DIR$\Debug\Obj\mul48_32_16.r43</file>
+            <file>$PROJ_DIR$\..\include\iar\extra_peripheral_definitions.h</file>
+            <file>$PROJ_DIR$\Debug\Obj\sqac64_24.r43</file>
+            <file>$PROJ_DIR$\..\src\iar\isqrt64.s43</file>
+            <file>$PROJ_DIR$\..\src\iar\mul48_32_16.s43</file>
+            <file>$PROJ_DIR$\..\src\iar\q1_15_mulr.s43</file>
+            <file>$PROJ_DIR$\Debug\Obj\mul48u_32_16.r43</file>
+            <file>$PROJ_DIR$\Debug\Obj\sqac48_16.r43</file>
+            <file>$PROJ_DIR$\Debug\Obj\div_sh48.__cstat.et</file>
+            <file>$PROJ_DIR$\..\src\iar\mac64_16_24.s43</file>
+            <file>$PROJ_DIR$\Debug\Obj\isqrt32i.__cstat.et</file>
+            <file>$PROJ_DIR$\Debug\Obj\bin2bcd16.r43</file>
+            <file>$PROJ_DIR$\..\src\iar\sqac48_16.s43</file>
+            <file>$TOOLKIT_DIR$\inc\macros.m43</file>
+            <file>$PROJ_DIR$\Debug\Obj\q1_15_mulr.r43</file>
+            <file>$TOOLKIT_DIR$\lib\dlib\dl430xllfn.h</file>
+            <file>$PROJ_DIR$\Debug\Obj\q1_15_mul.r43</file>
+            <file>$TOOLKIT_DIR$\inc\dlib\c\stdint.h</file>
+            <file>$PROJ_DIR$\Debug\Obj\isqrt16.r43</file>
+            <file>$PROJ_DIR$\Debug\Obj\shift48.r43</file>
+            <file>$TOOLKIT_DIR$\inc\dlib\c\ycheck.h</file>
+            <file>$PROJ_DIR$\Debug\Obj\div48.r43</file>
+            <file>$PROJ_DIR$\Debug\Obj\imul16.r43</file>
+            <file>$PROJ_DIR$\..\include\io.h</file>
+            <file>$PROJ_DIR$\Debug\Obj\mac64_16_24.r43</file>
+            <file>$PROJ_DIR$\Debug\Obj\bin2bcd32.r43</file>
+            <file>$PROJ_DIR$\..\include\isr_compat.h</file>
+            <file>$PROJ_DIR$\Debug\Obj\imul16u.r43</file>
+            <file>$PROJ_DIR$\Debug\Obj\accum48.r43</file>
+            <file>$PROJ_DIR$\Debug\Obj\bin2bcd64.r43</file>
+            <file>$TOOLKIT_DIR$\inc\msp430.h</file>
+            <file>$TOOLKIT_DIR$\inc\dlib\c\DLib_Threads.h</file>
+            <file>$PROJ_DIR$\Debug\Obj\dds.__cstat.et</file>
+            <file>$TOOLKIT_DIR$\inc\msp430f67641.h</file>
+            <file>$PROJ_DIR$\..\include\emeter-toolkit.h</file>
             <file>$PROJ_DIR$\Debug\Obj\dds.r43</file>
-            <file>$PROJ_DIR$\Debug\Obj\div48.__cstat.et</file>
+            <file>$TOOLKIT_DIR$\inc\dlib\c\DLib_Defaults.h</file>
+            <file>$TOOLKIT_DIR$\inc\dlib\c\ysizet.h</file>
+            <file>$PROJ_DIR$\Debug\Exe\emeter-toolkit-67641.r43</file>
+            <file>$PROJ_DIR$\Debug\Obj\isqrt64i.r43</file>
+            <file>$PROJ_DIR$\Debug\Obj\hal_pmm.__cstat.et</file>
+            <file>$TOOLKIT_DIR$\inc\dlib\c\DLib_Product.h</file>
+            <file>$PROJ_DIR$\Debug\Obj\isqrt64i.__cstat.et</file>
+            <file>$TOOLKIT_DIR$\inc\in430.h</file>
         </outputs>
         <file>
             <name>[ROOT_NODE]</name>
             <outputs>
                 <tool>
                     <name>XAR</name>
+                    <file> 76</file>
+                </tool>
+                <tool>
+                    <name>ULP430</name>
+                    <file> 34</file>
+                </tool>
+            </outputs>
+        </file>
+        <file>
+            <name>$PROJ_DIR$\..\src\iar\dc_filter24.s43</name>
+            <outputs>
+                <tool>
+                    <name>A430</name>
+                    <file> 20</file>
+                </tool>
+            </outputs>
+            <inputs>
+                <tool>
+                    <name>A430</name>
+                    <file> 61 71 51 21</file>
+                </tool>
+            </inputs>
+        </file>
+        <file>
+            <name>$PROJ_DIR$\..\src\div48.c</name>
+            <outputs>
+                <tool>
+                    <name>__cstat</name>
+                    <file> 0</file>
+                </tool>
+                <tool>
+                    <name>ICC430</name>
+                    <file> 59</file>
+                </tool>
+            </outputs>
+            <inputs>
+                <tool>
+                    <name>ICC430</name>
+                    <file> 32 58 55 27 74 53 79 1 69 68 71 81 26 72 64 39</file>
+                </tool>
+            </inputs>
+        </file>
+        <file>
+            <name>$PROJ_DIR$\..\src\hal_pmm.c</name>
+            <outputs>
+                <tool>
+                    <name>__cstat</name>
+                    <file> 78</file>
+                </tool>
+                <tool>
+                    <name>ICC430</name>
+                    <file> 22</file>
+                </tool>
+            </outputs>
+            <inputs>
+                <tool>
+                    <name>ICC430</name>
+                    <file> 32 58 55 27 74 53 79 1 69 4 75 68 71 81 26 30</file>
+                </tool>
+            </inputs>
+        </file>
+        <file>
+            <name>$PROJ_DIR$\..\src\iar\imul16u.s43</name>
+            <outputs>
+                <tool>
+                    <name>A430</name>
+                    <file> 65</file>
+                </tool>
+            </outputs>
+            <inputs>
+                <tool>
+                    <name>A430</name>
+                    <file> 61 71 51 21</file>
+                </tool>
+            </inputs>
+        </file>
+        <file>
+            <name>$PROJ_DIR$\..\src\iar\bin2bcd16.s43</name>
+            <outputs>
+                <tool>
+                    <name>A430</name>
                     <file> 49</file>
                 </tool>
             </outputs>
+            <inputs>
+                <tool>
+                    <name>A430</name>
+                    <file> 61 71 51 21</file>
+                </tool>
+            </inputs>
         </file>
         <file>
             <name>$PROJ_DIR$\..\src\iar\dc_filter16.s43</name>
             <outputs>
                 <tool>
                     <name>A430</name>
-                    <file> 70</file>
+                    <file> 19</file>
                 </tool>
             </outputs>
             <inputs>
                 <tool>
                     <name>A430</name>
-                    <file> 50 68 38 77</file>
+                    <file> 61 71 51 21</file>
                 </tool>
             </inputs>
         </file>
         <file>
-            <name>$PROJ_DIR$\..\src\dds.c</name>
+            <name>$PROJ_DIR$\..\src\div_sh48.c</name>
             <outputs>
                 <tool>
-                    <name>ICC430</name>
-                    <file> 79</file>
+                    <name>__cstat</name>
+                    <file> 46</file>
                 </tool>
                 <tool>
-                    <name>__cstat</name>
-                    <file> 52</file>
+                    <name>ICC430</name>
+                    <file> 2</file>
                 </tool>
             </outputs>
             <inputs>
                 <tool>
                     <name>ICC430</name>
-                    <file> 8 45 64 42 71 53 4 67 37 39 68 55 63 75 51 40</file>
+                    <file> 32 58 55 27 74 53 79 1 69 68 71 81 26 72 64 39</file>
                 </tool>
             </inputs>
         </file>
         <file>
-            <name>$PROJ_DIR$\..\src\iar\mul48u_32_16.s43</name>
+            <name>$PROJ_DIR$\..\src\iar\bin2bcd64.s43</name>
+            <outputs>
+                <tool>
+                    <name>A430</name>
+                    <file> 67</file>
+                </tool>
+            </outputs>
+            <inputs>
+                <tool>
+                    <name>A430</name>
+                    <file> 61 71 51 21</file>
+                </tool>
+            </inputs>
+        </file>
+        <file>
+            <name>$PROJ_DIR$\..\src\iar\imul16.s43</name>
             <outputs>
                 <tool>
                     <name>A430</name>
@@ -141,22 +244,41 @@
             <inputs>
                 <tool>
                     <name>A430</name>
-                    <file> 50 68 38 77</file>
+                    <file> 61 71 51 21</file>
                 </tool>
             </inputs>
         </file>
         <file>
-            <name>$PROJ_DIR$\..\src\iar\sqac48_16.s43</name>
+            <name>$PROJ_DIR$\..\src\iar\isqrt16.s43</name>
             <outputs>
                 <tool>
                     <name>A430</name>
-                    <file> 73</file>
+                    <file> 56</file>
                 </tool>
             </outputs>
             <inputs>
                 <tool>
                     <name>A430</name>
-                    <file> 50 68 38 77</file>
+                    <file> 61 71 51 21</file>
+                </tool>
+            </inputs>
+        </file>
+        <file>
+            <name>$PROJ_DIR$\..\src\dds.c</name>
+            <outputs>
+                <tool>
+                    <name>__cstat</name>
+                    <file> 70</file>
+                </tool>
+                <tool>
+                    <name>ICC430</name>
+                    <file> 73</file>
+                </tool>
+            </outputs>
+            <inputs>
+                <tool>
+                    <name>ICC430</name>
+                    <file> 32 58 55 27 74 53 79 1 69 68 71 81 26 72 64 39</file>
                 </tool>
             </inputs>
         </file>
@@ -165,28 +287,28 @@
             <outputs>
                 <tool>
                     <name>A430</name>
-                    <file> 32</file>
+                    <file> 24</file>
                 </tool>
             </outputs>
             <inputs>
                 <tool>
                     <name>A430</name>
-                    <file> 50 68 38 77</file>
+                    <file> 61 71 51 21</file>
                 </tool>
             </inputs>
         </file>
         <file>
-            <name>$PROJ_DIR$\..\src\iar\q1_15_mul.s43</name>
+            <name>$PROJ_DIR$\..\src\iar\bin2bcd32.s43</name>
             <outputs>
                 <tool>
                     <name>A430</name>
-                    <file> 59</file>
+                    <file> 63</file>
                 </tool>
             </outputs>
             <inputs>
                 <tool>
                     <name>A430</name>
-                    <file> 50 68 38 77</file>
+                    <file> 61 71 51 21</file>
                 </tool>
             </inputs>
         </file>
@@ -201,144 +323,31 @@
             <inputs>
                 <tool>
                     <name>A430</name>
-                    <file> 50 68 38 77</file>
+                    <file> 61 71 51 21</file>
                 </tool>
             </inputs>
         </file>
         <file>
-            <name>$PROJ_DIR$\..\src\iar\dc_filter24.s43</name>
+            <name>$PROJ_DIR$\..\src\isqrt64i.c</name>
             <outputs>
-                <tool>
-                    <name>A430</name>
-                    <file> 72</file>
-                </tool>
-            </outputs>
-            <inputs>
-                <tool>
-                    <name>A430</name>
-                    <file> 50 68 38 77</file>
-                </tool>
-            </inputs>
-        </file>
-        <file>
-            <name>$PROJ_DIR$\..\src\isqrt32i.c</name>
-            <outputs>
-                <tool>
-                    <name>ICC430</name>
-                    <file> 76</file>
-                </tool>
-                <tool>
-                    <name>__cstat</name>
-                    <file> 69</file>
-                </tool>
-            </outputs>
-            <inputs>
-                <tool>
-                    <name>ICC430</name>
-                    <file> 8 45 64 42 71 53 4 67 37 75 39 68 55 63 51 40</file>
-                </tool>
-            </inputs>
-        </file>
-        <file>
-            <name>$PROJ_DIR$\..\src\iar\bin2bcd64.s43</name>
-            <outputs>
-                <tool>
-                    <name>A430</name>
-                    <file> 57</file>
-                </tool>
-            </outputs>
-            <inputs>
-                <tool>
-                    <name>A430</name>
-                    <file> 50 68 38 77</file>
-                </tool>
-            </inputs>
-        </file>
-        <file>
-            <name>$PROJ_DIR$\..\src\div48.c</name>
-            <outputs>
-                <tool>
-                    <name>ICC430</name>
-                    <file> 10</file>
-                </tool>
                 <tool>
                     <name>__cstat</name>
                     <file> 80</file>
                 </tool>
-            </outputs>
-            <inputs>
                 <tool>
                     <name>ICC430</name>
-                    <file> 8 45 64 42 71 53 4 67 37 39 68 55 63 75 51 40</file>
-                </tool>
-            </inputs>
-        </file>
-        <file>
-            <name>$PROJ_DIR$\..\src\div_sh48.c</name>
-            <outputs>
-                <tool>
-                    <name>ICC430</name>
-                    <file> 35</file>
-                </tool>
-                <tool>
-                    <name>__cstat</name>
-                    <file> 62</file>
+                    <file> 77</file>
                 </tool>
             </outputs>
             <inputs>
                 <tool>
                     <name>ICC430</name>
-                    <file> 8 45 64 42 71 53 4 67 37 39 68 55 63 75 51 40</file>
+                    <file> 32 58 55 27 74 53 79 1 69 72 68 71 81 26 64 39</file>
                 </tool>
             </inputs>
         </file>
         <file>
-            <name>$PROJ_DIR$\..\src\iar\imul16.s43</name>
-            <outputs>
-                <tool>
-                    <name>A430</name>
-                    <file> 9</file>
-                </tool>
-            </outputs>
-            <inputs>
-                <tool>
-                    <name>A430</name>
-                    <file> 50 68 38 77</file>
-                </tool>
-            </inputs>
-        </file>
-        <file>
-            <name>$PROJ_DIR$\..\src\iar\mac64_16_24.s43</name>
-            <outputs>
-                <tool>
-                    <name>A430</name>
-                    <file> 44</file>
-                </tool>
-            </outputs>
-            <inputs>
-                <tool>
-                    <name>A430</name>
-                    <file> 50 68 38 77</file>
-                </tool>
-            </inputs>
-        </file>
-        <file>
-            <name>$PROJ_DIR$\..\src\iar\bin2bcd32.s43</name>
-            <outputs>
-                <tool>
-                    <name>A430</name>
-                    <file> 61</file>
-                </tool>
-            </outputs>
-            <inputs>
-                <tool>
-                    <name>A430</name>
-                    <file> 50 68 38 77</file>
-                </tool>
-            </inputs>
-        </file>
-        <file>
-            <name>$PROJ_DIR$\..\src\iar\isqrt16.s43</name>
+            <name>$PROJ_DIR$\..\src\iar\q1_15_mul.s43</name>
             <outputs>
                 <tool>
                     <name>A430</name>
@@ -348,150 +357,7 @@
             <inputs>
                 <tool>
                     <name>A430</name>
-                    <file> 50 68 38 77</file>
-                </tool>
-            </inputs>
-        </file>
-        <file>
-            <name>$PROJ_DIR$\..\src\iar\mul48_32_16.s43</name>
-            <outputs>
-                <tool>
-                    <name>A430</name>
-                    <file> 48</file>
-                </tool>
-            </outputs>
-            <inputs>
-                <tool>
-                    <name>A430</name>
-                    <file> 50 68 38 77</file>
-                </tool>
-            </inputs>
-        </file>
-        <file>
-            <name>$PROJ_DIR$\..\src\iar\shift48.s43</name>
-            <outputs>
-                <tool>
-                    <name>A430</name>
-                    <file> 46</file>
-                </tool>
-            </outputs>
-            <inputs>
-                <tool>
-                    <name>A430</name>
-                    <file> 50 68 38 77</file>
-                </tool>
-            </inputs>
-        </file>
-        <file>
-            <name>$PROJ_DIR$\..\src\iar\mac48.s43</name>
-            <outputs>
-                <tool>
-                    <name>A430</name>
-                    <file> 5</file>
-                </tool>
-            </outputs>
-            <inputs>
-                <tool>
-                    <name>A430</name>
-                    <file> 50 68 38 77</file>
-                </tool>
-            </inputs>
-        </file>
-        <file>
-            <name>$PROJ_DIR$\..\src\iar\bin2bcd16.s43</name>
-            <outputs>
-                <tool>
-                    <name>A430</name>
-                    <file> 58</file>
-                </tool>
-            </outputs>
-            <inputs>
-                <tool>
-                    <name>A430</name>
-                    <file> 50 68 38 77</file>
-                </tool>
-            </inputs>
-        </file>
-        <file>
-            <name>$PROJ_DIR$\..\src\hal_pmm.c</name>
-            <outputs>
-                <tool>
-                    <name>ICC430</name>
-                    <file> 36</file>
-                </tool>
-                <tool>
-                    <name>__cstat</name>
-                    <file> 65</file>
-                </tool>
-            </outputs>
-            <inputs>
-                <tool>
-                    <name>ICC430</name>
-                    <file> 8 45 64 42 71 53 4 67 37 78 43 39 68 55 63 33</file>
-                </tool>
-            </inputs>
-        </file>
-        <file>
-            <name>$PROJ_DIR$\..\src\iar\imul16u.s43</name>
-            <outputs>
-                <tool>
-                    <name>A430</name>
-                    <file> 56</file>
-                </tool>
-            </outputs>
-            <inputs>
-                <tool>
-                    <name>A430</name>
-                    <file> 50 68 38 77</file>
-                </tool>
-            </inputs>
-        </file>
-        <file>
-            <name>$PROJ_DIR$\..\src\iar\isqrt64.s43</name>
-            <outputs>
-                <tool>
-                    <name>A430</name>
-                    <file> 41</file>
-                </tool>
-            </outputs>
-            <inputs>
-                <tool>
-                    <name>A430</name>
-                    <file> 50 68 38 77</file>
-                </tool>
-            </inputs>
-        </file>
-        <file>
-            <name>$PROJ_DIR$\..\src\isqrt64i.c</name>
-            <outputs>
-                <tool>
-                    <name>ICC430</name>
-                    <file> 74</file>
-                </tool>
-                <tool>
-                    <name>__cstat</name>
-                    <file> 34</file>
-                </tool>
-            </outputs>
-            <inputs>
-                <tool>
-                    <name>ICC430</name>
-                    <file> 8 45 64 42 71 53 4 67 37 75 39 68 55 63 51 40</file>
-                </tool>
-            </inputs>
-        </file>
-        <file>
-            <name>$PROJ_DIR$\..\src\iar\q1_15_mulr.s43</name>
-            <outputs>
-                <tool>
-                    <name>A430</name>
-                    <file> 47</file>
-                </tool>
-            </outputs>
-            <inputs>
-                <tool>
-                    <name>A430</name>
-                    <file> 50 68 38 77</file>
+                    <file> 61 71 51 21</file>
                 </tool>
             </inputs>
         </file>
@@ -500,13 +366,152 @@
             <outputs>
                 <tool>
                     <name>A430</name>
-                    <file> 31</file>
+                    <file> 40</file>
                 </tool>
             </outputs>
             <inputs>
                 <tool>
                     <name>A430</name>
-                    <file> 50 68 38 77</file>
+                    <file> 61 71 51 21</file>
+                </tool>
+            </inputs>
+        </file>
+        <file>
+            <name>$PROJ_DIR$\..\src\isqrt32i.c</name>
+            <outputs>
+                <tool>
+                    <name>__cstat</name>
+                    <file> 48</file>
+                </tool>
+                <tool>
+                    <name>ICC430</name>
+                    <file> 3</file>
+                </tool>
+            </outputs>
+            <inputs>
+                <tool>
+                    <name>ICC430</name>
+                    <file> 32 58 55 27 74 53 79 1 69 72 68 71 81 26 64 39</file>
+                </tool>
+            </inputs>
+        </file>
+        <file>
+            <name>$PROJ_DIR$\..\src\iar\mul48u_32_16.s43</name>
+            <outputs>
+                <tool>
+                    <name>A430</name>
+                    <file> 44</file>
+                </tool>
+            </outputs>
+            <inputs>
+                <tool>
+                    <name>A430</name>
+                    <file> 61 71 51 21</file>
+                </tool>
+            </inputs>
+        </file>
+        <file>
+            <name>$PROJ_DIR$\..\src\iar\mac48.s43</name>
+            <outputs>
+                <tool>
+                    <name>A430</name>
+                    <file> 25</file>
+                </tool>
+            </outputs>
+            <inputs>
+                <tool>
+                    <name>A430</name>
+                    <file> 61 71 51 21</file>
+                </tool>
+            </inputs>
+        </file>
+        <file>
+            <name>$PROJ_DIR$\..\src\iar\shift48.s43</name>
+            <outputs>
+                <tool>
+                    <name>A430</name>
+                    <file> 57</file>
+                </tool>
+            </outputs>
+            <inputs>
+                <tool>
+                    <name>A430</name>
+                    <file> 61 71 51 21</file>
+                </tool>
+            </inputs>
+        </file>
+        <file>
+            <name>$PROJ_DIR$\..\src\iar\isqrt64.s43</name>
+            <outputs>
+                <tool>
+                    <name>A430</name>
+                    <file> 23</file>
+                </tool>
+            </outputs>
+            <inputs>
+                <tool>
+                    <name>A430</name>
+                    <file> 61 71 51 21</file>
+                </tool>
+            </inputs>
+        </file>
+        <file>
+            <name>$PROJ_DIR$\..\src\iar\mul48_32_16.s43</name>
+            <outputs>
+                <tool>
+                    <name>A430</name>
+                    <file> 38</file>
+                </tool>
+            </outputs>
+            <inputs>
+                <tool>
+                    <name>A430</name>
+                    <file> 61 71 51 21</file>
+                </tool>
+            </inputs>
+        </file>
+        <file>
+            <name>$PROJ_DIR$\..\src\iar\q1_15_mulr.s43</name>
+            <outputs>
+                <tool>
+                    <name>A430</name>
+                    <file> 52</file>
+                </tool>
+            </outputs>
+            <inputs>
+                <tool>
+                    <name>A430</name>
+                    <file> 61 71 51 21</file>
+                </tool>
+            </inputs>
+        </file>
+        <file>
+            <name>$PROJ_DIR$\..\src\iar\mac64_16_24.s43</name>
+            <outputs>
+                <tool>
+                    <name>A430</name>
+                    <file> 62</file>
+                </tool>
+            </outputs>
+            <inputs>
+                <tool>
+                    <name>A430</name>
+                    <file> 61 71 51 21</file>
+                </tool>
+            </inputs>
+        </file>
+        <file>
+            <name>$PROJ_DIR$\..\src\iar\sqac48_16.s43</name>
+            <outputs>
+                <tool>
+                    <name>A430</name>
+                    <file> 45</file>
+                </tool>
+            </outputs>
+            <inputs>
+                <tool>
+                    <name>A430</name>
+                    <file> 61 71 51 21</file>
                 </tool>
             </inputs>
         </file>
@@ -515,7 +520,7 @@
             <inputs>
                 <tool>
                     <name>XAR</name>
-                    <file> 66 58 61 57 70 72 79 10 35 36 9 56 54 32 76 41 74 5 44 48 60 59 47 46 73 31</file>
+                    <file> 66 49 63 67 19 20 73 59 2 22 60 65 56 24 3 23 77 25 62 38 44 54 52 57 45 40</file>
                 </tool>
             </inputs>
         </file>
@@ -523,74 +528,133 @@
     <configuration>
         <name>Release</name>
         <outputs>
-            <file>$PROJ_DIR$\..\src\iar\dc_filter16.s43</file>
-            <file>$PROJ_DIR$\..\src\dds.c</file>
-            <file>$PROJ_DIR$\..\src\iar\mul48u_32_16.s43</file>
-            <file>$PROJ_DIR$\..\src\iar\sqac48_16.s43</file>
-            <file>$PROJ_DIR$\..\src\iar\isqrt32.s43</file>
-            <file>$PROJ_DIR$\..\src\iar\q1_15_mul.s43</file>
-            <file>$PROJ_DIR$\..\src\iar\accum48.s43</file>
+            <file>$PROJ_DIR$\Release\Obj\mac48.r43</file>
+            <file>$PROJ_DIR$\Release\Obj\div48.pbi</file>
+            <file>$TOOLKIT_DIR$\inc\clib\sysmac.h</file>
+            <file>$TOOLKIT_DIR$\inc\clib\stdlib.h</file>
+            <file>$PROJ_DIR$\Release\Obj\sqac64_24.r43</file>
+            <file>$PROJ_DIR$\Release\Obj\dds.pbi</file>
+            <file>$PROJ_DIR$\Release\Obj\bin2bcd64.r43</file>
+            <file>$PROJ_DIR$\Release\Obj\isqrt64i.pbi</file>
+            <file>$PROJ_DIR$\Release\Obj\dds.__cstat.et</file>
+            <file>$PROJ_DIR$\Release\Obj\sqac48_16.r43</file>
+            <file>$PROJ_DIR$\Release\Obj\div48.__cstat.et</file>
+            <file>$PROJ_DIR$\Release\Obj\q1_15_mulr.r43</file>
+            <file>$PROJ_DIR$\Release\Obj\mul48_32_16.r43</file>
+            <file>$PROJ_DIR$\Release\Obj\q1_15_mul.r43</file>
+            <file>$PROJ_DIR$\Release\Obj\mac64_16_24.r43</file>
+            <file>$PROJ_DIR$\Release\Obj\isqrt32i.pbi</file>
+            <file>$PROJ_DIR$\Release\Obj\imul16.r43</file>
+            <file>$PROJ_DIR$\Release\Obj\isqrt32.r43</file>
+            <file>$PROJ_DIR$\Release\Obj\dc_filter16.r43</file>
+            <file>$PROJ_DIR$\Release\Obj\isqrt64i.__cstat.et</file>
+            <file>$PROJ_DIR$\Release\Obj\hal_pmm.pbi</file>
+            <file>$PROJ_DIR$\Release\Obj\isqrt32i.__cstat.et</file>
+            <file>$PROJ_DIR$\Release\Obj\bin2bcd16.r43</file>
+            <file>$PROJ_DIR$\Release\Obj\isqrt16.r43</file>
+            <file>$PROJ_DIR$\Release\Obj\bin2bcd32.r43</file>
+            <file>$PROJ_DIR$\Release\Obj\div_sh48.__cstat.et</file>
+            <file>$PROJ_DIR$\Release\Obj\dc_filter24.r43</file>
+            <file>$PROJ_DIR$\Release\Obj\div_sh48.pbi</file>
+            <file>$PROJ_DIR$\Release\Obj\mul48u_32_16.r43</file>
+            <file>$PROJ_DIR$\Release\Obj\imul16u.r43</file>
+            <file>$PROJ_DIR$\Release\Obj\accum48.r43</file>
+            <file>$PROJ_DIR$\Release\Obj\shift48.r43</file>
+            <file>$PROJ_DIR$\Release\Exe\emeter-toolkit-67641.txt</file>
+            <file>$PROJ_DIR$\Release\Obj\hal_pmm.__cstat.et</file>
+            <file>$PROJ_DIR$\Release\Obj\isqrt64.r43</file>
             <file>$PROJ_DIR$\..\src\iar\dc_filter24.s43</file>
-            <file>$PROJ_DIR$\..\src\isqrt32i.c</file>
-            <file>$PROJ_DIR$\..\src\iar\bin2bcd64.s43</file>
             <file>$PROJ_DIR$\..\src\div48.c</file>
-            <file>$PROJ_DIR$\..\src\div_sh48.c</file>
-            <file>$PROJ_DIR$\..\src\iar\imul16.s43</file>
-            <file>$PROJ_DIR$\..\src\iar\mac64_16_24.s43</file>
-            <file>$PROJ_DIR$\..\src\iar\bin2bcd32.s43</file>
-            <file>$PROJ_DIR$\..\src\iar\isqrt16.s43</file>
-            <file>$PROJ_DIR$\..\src\iar\mul48_32_16.s43</file>
-            <file>$PROJ_DIR$\..\src\iar\shift48.s43</file>
-            <file>$PROJ_DIR$\..\src\iar\mac48.s43</file>
-            <file>$PROJ_DIR$\..\src\iar\bin2bcd16.s43</file>
             <file>$PROJ_DIR$\..\src\hal_pmm.c</file>
             <file>$PROJ_DIR$\..\src\iar\imul16u.s43</file>
-            <file>$PROJ_DIR$\..\src\iar\isqrt64.s43</file>
+            <file>$PROJ_DIR$\..\src\iar\bin2bcd16.s43</file>
+            <file>$PROJ_DIR$\..\src\iar\dc_filter16.s43</file>
+            <file>$PROJ_DIR$\..\src\div_sh48.c</file>
+            <file>$PROJ_DIR$\..\src\iar\bin2bcd64.s43</file>
+            <file>$PROJ_DIR$\..\src\iar\imul16.s43</file>
+            <file>$PROJ_DIR$\..\src\iar\isqrt16.s43</file>
+            <file>$PROJ_DIR$\..\src\dds.c</file>
+            <file>$PROJ_DIR$\..\src\iar\isqrt32.s43</file>
+            <file>$PROJ_DIR$\..\src\iar\bin2bcd32.s43</file>
+            <file>$PROJ_DIR$\..\src\iar\accum48.s43</file>
             <file>$PROJ_DIR$\..\src\isqrt64i.c</file>
-            <file>$PROJ_DIR$\..\src\iar\q1_15_mulr.s43</file>
+            <file>$PROJ_DIR$\..\src\iar\q1_15_mul.s43</file>
             <file>$PROJ_DIR$\..\src\iar\sqac64_24.s43</file>
-            <file>$PROJ_DIR$\Release\Obj\div_sh48.pbi</file>
-            <file>$PROJ_DIR$\Release\Obj\imul16u.r43</file>
-            <file>$PROJ_DIR$\Release\Obj\isqrt16.r43</file>
-            <file>$PROJ_DIR$\Release\Obj\dc_filter24.r43</file>
-            <file>$PROJ_DIR$\Release\Obj\accum48.r43</file>
-            <file>$PROJ_DIR$\Release\Obj\isqrt32i.__cstat.et</file>
-            <file>$PROJ_DIR$\Release\Obj\div_sh48.__cstat.et</file>
-            <file>$TOOLKIT_DIR$\inc\clib\sysmac.h</file>
-            <file>$PROJ_DIR$\Release\Obj\q1_15_mul.r43</file>
-            <file>$PROJ_DIR$\Release\Obj\bin2bcd16.r43</file>
-            <file>$PROJ_DIR$\Release\Obj\isqrt64.r43</file>
-            <file>$PROJ_DIR$\Release\Obj\mul48u_32_16.r43</file>
-            <file>$PROJ_DIR$\Release\Exe\emeter-toolkit-67641.txt</file>
-            <file>$PROJ_DIR$\Release\Obj\isqrt32i.pbi</file>
-            <file>$PROJ_DIR$\Release\Obj\isqrt64i.pbi</file>
-            <file>$PROJ_DIR$\Release\Obj\mac48.r43</file>
-            <file>$PROJ_DIR$\Release\Obj\bin2bcd64.r43</file>
-            <file>$PROJ_DIR$\Release\Obj\mac64_16_24.r43</file>
-            <file>$PROJ_DIR$\Release\Obj\div48.__cstat.et</file>
-            <file>$PROJ_DIR$\Release\Obj\dc_filter16.r43</file>
-            <file>$PROJ_DIR$\Release\Obj\q1_15_mulr.r43</file>
-            <file>$TOOLKIT_DIR$\inc\clib\stdlib.h</file>
-            <file>$PROJ_DIR$\Release\Obj\dds.__cstat.et</file>
-            <file>$PROJ_DIR$\Release\Obj\shift48.r43</file>
-            <file>$PROJ_DIR$\Release\Obj\isqrt32.r43</file>
-            <file>$PROJ_DIR$\Release\Obj\imul16.r43</file>
-            <file>$PROJ_DIR$\Release\Obj\sqac48_16.r43</file>
-            <file>$PROJ_DIR$\Release\Obj\div48.pbi</file>
-            <file>$PROJ_DIR$\Release\Obj\bin2bcd32.r43</file>
-            <file>$PROJ_DIR$\Release\Obj\sqac64_24.r43</file>
-            <file>$PROJ_DIR$\Release\Obj\hal_pmm.pbi</file>
-            <file>$PROJ_DIR$\Release\Obj\dds.pbi</file>
-            <file>$PROJ_DIR$\Release\Obj\mul48_32_16.r43</file>
-            <file>$PROJ_DIR$\Release\Obj\isqrt64i.__cstat.et</file>
-            <file>$PROJ_DIR$\Release\Obj\hal_pmm.__cstat.et</file>
+            <file>$PROJ_DIR$\..\src\isqrt32i.c</file>
+            <file>$PROJ_DIR$\..\src\iar\mul48u_32_16.s43</file>
+            <file>$PROJ_DIR$\..\src\iar\mac48.s43</file>
+            <file>$PROJ_DIR$\..\src\iar\shift48.s43</file>
+            <file>$PROJ_DIR$\..\src\iar\isqrt64.s43</file>
+            <file>$PROJ_DIR$\..\src\iar\mul48_32_16.s43</file>
+            <file>$PROJ_DIR$\..\src\iar\q1_15_mulr.s43</file>
+            <file>$PROJ_DIR$\..\src\iar\mac64_16_24.s43</file>
+            <file>$PROJ_DIR$\..\src\iar\sqac48_16.s43</file>
         </outputs>
         <file>
             <name>[ROOT_NODE]</name>
             <outputs>
                 <tool>
                     <name>XLINK</name>
-                    <file> 38</file>
+                    <file> 32</file>
+                </tool>
+            </outputs>
+        </file>
+        <file>
+            <name>$PROJ_DIR$\..\src\iar\dc_filter24.s43</name>
+            <outputs>
+                <tool>
+                    <name>A430</name>
+                    <file> 26</file>
+                </tool>
+            </outputs>
+        </file>
+        <file>
+            <name>$PROJ_DIR$\..\src\div48.c</name>
+            <outputs>
+                <tool>
+                    <name>__cstat</name>
+                    <file> 10</file>
+                </tool>
+                <tool>
+                    <name>BICOMP</name>
+                    <file> 1</file>
+                </tool>
+            </outputs>
+        </file>
+        <file>
+            <name>$PROJ_DIR$\..\src\hal_pmm.c</name>
+            <outputs>
+                <tool>
+                    <name>__cstat</name>
+                    <file> 33</file>
+                </tool>
+                <tool>
+                    <name>BICOMP</name>
+                    <file> 20</file>
+                </tool>
+            </outputs>
+            <inputs>
+                <tool>
+                    <name>BICOMP</name>
+                    <file> 3 2</file>
+                </tool>
+            </inputs>
+        </file>
+        <file>
+            <name>$PROJ_DIR$\..\src\iar\imul16u.s43</name>
+            <outputs>
+                <tool>
+                    <name>A430</name>
+                    <file> 29</file>
+                </tool>
+            </outputs>
+        </file>
+        <file>
+            <name>$PROJ_DIR$\..\src\iar\bin2bcd16.s43</name>
+            <outputs>
+                <tool>
+                    <name>A430</name>
+                    <file> 22</file>
                 </tool>
             </outputs>
         </file>
@@ -599,7 +663,47 @@
             <outputs>
                 <tool>
                     <name>A430</name>
-                    <file> 45</file>
+                    <file> 18</file>
+                </tool>
+            </outputs>
+        </file>
+        <file>
+            <name>$PROJ_DIR$\..\src\div_sh48.c</name>
+            <outputs>
+                <tool>
+                    <name>__cstat</name>
+                    <file> 25</file>
+                </tool>
+                <tool>
+                    <name>BICOMP</name>
+                    <file> 27</file>
+                </tool>
+            </outputs>
+        </file>
+        <file>
+            <name>$PROJ_DIR$\..\src\iar\bin2bcd64.s43</name>
+            <outputs>
+                <tool>
+                    <name>A430</name>
+                    <file> 6</file>
+                </tool>
+            </outputs>
+        </file>
+        <file>
+            <name>$PROJ_DIR$\..\src\iar\imul16.s43</name>
+            <outputs>
+                <tool>
+                    <name>A430</name>
+                    <file> 16</file>
+                </tool>
+            </outputs>
+        </file>
+        <file>
+            <name>$PROJ_DIR$\..\src\iar\isqrt16.s43</name>
+            <outputs>
+                <tool>
+                    <name>A430</name>
+                    <file> 23</file>
                 </tool>
             </outputs>
         </file>
@@ -607,30 +711,12 @@
             <name>$PROJ_DIR$\..\src\dds.c</name>
             <outputs>
                 <tool>
-                    <name>BICOMP</name>
-                    <file> 57</file>
-                </tool>
-                <tool>
                     <name>__cstat</name>
-                    <file> 48</file>
+                    <file> 8</file>
                 </tool>
-            </outputs>
-        </file>
-        <file>
-            <name>$PROJ_DIR$\..\src\iar\mul48u_32_16.s43</name>
-            <outputs>
                 <tool>
-                    <name>A430</name>
-                    <file> 37</file>
-                </tool>
-            </outputs>
-        </file>
-        <file>
-            <name>$PROJ_DIR$\..\src\iar\sqac48_16.s43</name>
-            <outputs>
-                <tool>
-                    <name>A430</name>
-                    <file> 52</file>
+                    <name>BICOMP</name>
+                    <file> 5</file>
                 </tool>
             </outputs>
         </file>
@@ -639,16 +725,16 @@
             <outputs>
                 <tool>
                     <name>A430</name>
-                    <file> 50</file>
+                    <file> 17</file>
                 </tool>
             </outputs>
         </file>
         <file>
-            <name>$PROJ_DIR$\..\src\iar\q1_15_mul.s43</name>
+            <name>$PROJ_DIR$\..\src\iar\bin2bcd32.s43</name>
             <outputs>
                 <tool>
                     <name>A430</name>
-                    <file> 34</file>
+                    <file> 24</file>
                 </tool>
             </outputs>
         </file>
@@ -662,190 +748,24 @@
             </outputs>
         </file>
         <file>
-            <name>$PROJ_DIR$\..\src\iar\dc_filter24.s43</name>
-            <outputs>
-                <tool>
-                    <name>A430</name>
-                    <file> 29</file>
-                </tool>
-            </outputs>
-        </file>
-        <file>
-            <name>$PROJ_DIR$\..\src\isqrt32i.c</name>
-            <outputs>
-                <tool>
-                    <name>BICOMP</name>
-                    <file> 39</file>
-                </tool>
-                <tool>
-                    <name>__cstat</name>
-                    <file> 31</file>
-                </tool>
-            </outputs>
-        </file>
-        <file>
-            <name>$PROJ_DIR$\..\src\iar\bin2bcd64.s43</name>
-            <outputs>
-                <tool>
-                    <name>A430</name>
-                    <file> 42</file>
-                </tool>
-            </outputs>
-        </file>
-        <file>
-            <name>$PROJ_DIR$\..\src\div48.c</name>
-            <outputs>
-                <tool>
-                    <name>BICOMP</name>
-                    <file> 53</file>
-                </tool>
-                <tool>
-                    <name>__cstat</name>
-                    <file> 44</file>
-                </tool>
-            </outputs>
-        </file>
-        <file>
-            <name>$PROJ_DIR$\..\src\div_sh48.c</name>
-            <outputs>
-                <tool>
-                    <name>BICOMP</name>
-                    <file> 26</file>
-                </tool>
-                <tool>
-                    <name>__cstat</name>
-                    <file> 32</file>
-                </tool>
-            </outputs>
-        </file>
-        <file>
-            <name>$PROJ_DIR$\..\src\iar\imul16.s43</name>
-            <outputs>
-                <tool>
-                    <name>A430</name>
-                    <file> 51</file>
-                </tool>
-            </outputs>
-        </file>
-        <file>
-            <name>$PROJ_DIR$\..\src\iar\mac64_16_24.s43</name>
-            <outputs>
-                <tool>
-                    <name>A430</name>
-                    <file> 43</file>
-                </tool>
-            </outputs>
-        </file>
-        <file>
-            <name>$PROJ_DIR$\..\src\iar\bin2bcd32.s43</name>
-            <outputs>
-                <tool>
-                    <name>A430</name>
-                    <file> 54</file>
-                </tool>
-            </outputs>
-        </file>
-        <file>
-            <name>$PROJ_DIR$\..\src\iar\isqrt16.s43</name>
-            <outputs>
-                <tool>
-                    <name>A430</name>
-                    <file> 28</file>
-                </tool>
-            </outputs>
-        </file>
-        <file>
-            <name>$PROJ_DIR$\..\src\iar\mul48_32_16.s43</name>
-            <outputs>
-                <tool>
-                    <name>A430</name>
-                    <file> 58</file>
-                </tool>
-            </outputs>
-        </file>
-        <file>
-            <name>$PROJ_DIR$\..\src\iar\shift48.s43</name>
-            <outputs>
-                <tool>
-                    <name>A430</name>
-                    <file> 49</file>
-                </tool>
-            </outputs>
-        </file>
-        <file>
-            <name>$PROJ_DIR$\..\src\iar\mac48.s43</name>
-            <outputs>
-                <tool>
-                    <name>A430</name>
-                    <file> 41</file>
-                </tool>
-            </outputs>
-        </file>
-        <file>
-            <name>$PROJ_DIR$\..\src\iar\bin2bcd16.s43</name>
-            <outputs>
-                <tool>
-                    <name>A430</name>
-                    <file> 35</file>
-                </tool>
-            </outputs>
-        </file>
-        <file>
-            <name>$PROJ_DIR$\..\src\hal_pmm.c</name>
-            <outputs>
-                <tool>
-                    <name>BICOMP</name>
-                    <file> 56</file>
-                </tool>
-                <tool>
-                    <name>__cstat</name>
-                    <file> 60</file>
-                </tool>
-            </outputs>
-            <inputs>
-                <tool>
-                    <name>BICOMP</name>
-                    <file> 47 33</file>
-                </tool>
-            </inputs>
-        </file>
-        <file>
-            <name>$PROJ_DIR$\..\src\iar\imul16u.s43</name>
-            <outputs>
-                <tool>
-                    <name>A430</name>
-                    <file> 27</file>
-                </tool>
-            </outputs>
-        </file>
-        <file>
-            <name>$PROJ_DIR$\..\src\iar\isqrt64.s43</name>
-            <outputs>
-                <tool>
-                    <name>A430</name>
-                    <file> 36</file>
-                </tool>
-            </outputs>
-        </file>
-        <file>
             <name>$PROJ_DIR$\..\src\isqrt64i.c</name>
             <outputs>
                 <tool>
-                    <name>BICOMP</name>
-                    <file> 40</file>
+                    <name>__cstat</name>
+                    <file> 19</file>
                 </tool>
                 <tool>
-                    <name>__cstat</name>
-                    <file> 59</file>
+                    <name>BICOMP</name>
+                    <file> 7</file>
                 </tool>
             </outputs>
         </file>
         <file>
-            <name>$PROJ_DIR$\..\src\iar\q1_15_mulr.s43</name>
+            <name>$PROJ_DIR$\..\src\iar\q1_15_mul.s43</name>
             <outputs>
                 <tool>
                     <name>A430</name>
-                    <file> 46</file>
+                    <file> 13</file>
                 </tool>
             </outputs>
         </file>
@@ -854,7 +774,92 @@
             <outputs>
                 <tool>
                     <name>A430</name>
-                    <file> 55</file>
+                    <file> 4</file>
+                </tool>
+            </outputs>
+        </file>
+        <file>
+            <name>$PROJ_DIR$\..\src\isqrt32i.c</name>
+            <outputs>
+                <tool>
+                    <name>__cstat</name>
+                    <file> 21</file>
+                </tool>
+                <tool>
+                    <name>BICOMP</name>
+                    <file> 15</file>
+                </tool>
+            </outputs>
+        </file>
+        <file>
+            <name>$PROJ_DIR$\..\src\iar\mul48u_32_16.s43</name>
+            <outputs>
+                <tool>
+                    <name>A430</name>
+                    <file> 28</file>
+                </tool>
+            </outputs>
+        </file>
+        <file>
+            <name>$PROJ_DIR$\..\src\iar\mac48.s43</name>
+            <outputs>
+                <tool>
+                    <name>A430</name>
+                    <file> 0</file>
+                </tool>
+            </outputs>
+        </file>
+        <file>
+            <name>$PROJ_DIR$\..\src\iar\shift48.s43</name>
+            <outputs>
+                <tool>
+                    <name>A430</name>
+                    <file> 31</file>
+                </tool>
+            </outputs>
+        </file>
+        <file>
+            <name>$PROJ_DIR$\..\src\iar\isqrt64.s43</name>
+            <outputs>
+                <tool>
+                    <name>A430</name>
+                    <file> 34</file>
+                </tool>
+            </outputs>
+        </file>
+        <file>
+            <name>$PROJ_DIR$\..\src\iar\mul48_32_16.s43</name>
+            <outputs>
+                <tool>
+                    <name>A430</name>
+                    <file> 12</file>
+                </tool>
+            </outputs>
+        </file>
+        <file>
+            <name>$PROJ_DIR$\..\src\iar\q1_15_mulr.s43</name>
+            <outputs>
+                <tool>
+                    <name>A430</name>
+                    <file> 11</file>
+                </tool>
+            </outputs>
+        </file>
+        <file>
+            <name>$PROJ_DIR$\..\src\iar\mac64_16_24.s43</name>
+            <outputs>
+                <tool>
+                    <name>A430</name>
+                    <file> 14</file>
+                </tool>
+            </outputs>
+        </file>
+        <file>
+            <name>$PROJ_DIR$\..\src\iar\sqac48_16.s43</name>
+            <outputs>
+                <tool>
+                    <name>A430</name>
+                    <file> 9</file>
                 </tool>
             </outputs>
         </file>

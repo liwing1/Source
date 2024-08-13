@@ -5,191 +5,96 @@
     <configuration>
         <name>Debug</name>
         <outputs>
-            <file>$PROJ_DIR$\..\..\emeter-toolkit\include\isr_compat.h</file>
-            <file>$PROJ_DIR$\..\..\emeter-toolkit\include\sigma_delta_16bit_access.h</file>
-            <file>$PROJ_DIR$\Debug\Obj\metrology-corrections.__cstat.et</file>
-            <file>$TOOLKIT_DIR$\inc\dlib\c\DLib_Threads.h</file>
-            <file>$PROJ_DIR$\..\..\emeter-toolkit\include\iar\extra_peripheral_definitions.h</file>
-            <file>$PROJ_DIR$\Debug\Obj\metrology-background.__cstat.et</file>
-            <file>$PROJ_DIR$\Debug\Obj\metrology-calibration-defaults.r43</file>
-            <file>$PROJ_DIR$\..\..\emeter-toolkit\include\sar_12bit_access.h</file>
-            <file>$PROJ_DIR$\Debug\Obj\metrology-setup.__cstat.et</file>
-            <file>$PROJ_DIR$\..\include\metrology-foreground.h</file>
-            <file>$PROJ_DIR$\..\include\metrology-corrections.h</file>
-            <file>$PROJ_DIR$\..\include\metrology-readings.h</file>
-            <file>$PROJ_DIR$\..\include\emeter-metrology.h</file>
-            <file>$TOOLKIT_DIR$\inc\msp430f67641.h</file>
-            <file>$TOOLKIT_DIR$\inc\dlib\c\ysizet.h</file>
-            <file>$PROJ_DIR$\..\include\metrology-flash.h</file>
-            <file>$TOOLKIT_DIR$\inc\dlib\c\math.h</file>
-            <file>$TOOLKIT_DIR$\inc\intrinsics.h</file>
-            <file>$TOOLKIT_DIR$\inc\dlib\c\signal.h</file>
-            <file>$TOOLKIT_DIR$\inc\in430.h</file>
-            <file>$TOOLKIT_DIR$\inc\dlib\c\DLib_Product.h</file>
-            <file>$PROJ_DIR$\..\include\metrology-host.h</file>
-            <file>$PROJ_DIR$\..\include\metrology-interactions.h</file>
-            <file>$PROJ_DIR$\Debug\Obj\metrology-readings.r43</file>
-            <file>$PROJ_DIR$\Debug\Obj\metrology-setup.r43</file>
-            <file>$PROJ_DIR$\Debug\Obj\metrology-flash.r43</file>
-            <file>$TOOLKIT_DIR$\inc\dlib\c\xencoding_limits.h</file>
-            <file>$PROJ_DIR$\..\..\emeter-toolkit\include\sar_10bit_access.h</file>
-            <file>$PROJ_DIR$\Debug\Obj\metrology-flash.__cstat.et</file>
-            <file>$PROJ_DIR$\..\include\emeter-metrology-internal.h</file>
-            <file>$PROJ_DIR$\..\include\metrology-instantiate-adcs.h</file>
-            <file>$PROJ_DIR$\Debug\Obj\metrology-corrections.r43</file>
             <file>$PROJ_DIR$\..\src\metrology-fir-table.c</file>
-            <file>$PROJ_DIR$\..\src\metrology-flash.c</file>
-            <file>$PROJ_DIR$\..\src\metrology-corrections.c</file>
-            <file>$PROJ_DIR$\..\src\metrology-foreground.c</file>
+            <file>$PROJ_DIR$\..\src\metrology-background.c</file>
             <file>$PROJ_DIR$\..\src\metrology-readings.c</file>
             <file>$PROJ_DIR$\..\src\metrology-setup.c</file>
-            <file>$TOOLKIT_DIR$\lib\dlib\dl430xllfn.h</file>
-            <file>$TOOLKIT_DIR$\inc\dlib\c\stdlib.h</file>
-            <file>$PROJ_DIR$\..\src\metrology-background.c</file>
-            <file>$PROJ_DIR$\..\..\emeter-toolkit\emeter-toolkit-67641\Debug\Exe\emeter-toolkit-67641.r43</file>
-            <file>$PROJ_DIR$\..\src\metrology-calibration-defaults.c</file>
-            <file>$PROJ_DIR$\..\..\emeter-toolkit\include\emeter-toolkit.h</file>
-            <file>$TOOLKIT_DIR$\inc\dlib\c\string.h</file>
-            <file>$PROJ_DIR$\..\include\metrology-structs.h</file>
-            <file>$TOOLKIT_DIR$\inc\dlib\c\xtgmath.h</file>
-            <file>$PROJ_DIR$\..\include\metrology-setup.h</file>
-            <file>$PROJ_DIR$\..\..\emeter-toolkit\include\msp430_info_mem.h</file>
-            <file>$PROJ_DIR$\Debug\Exe\emeter-metrology-67641.r43</file>
-            <file>$PROJ_DIR$\Debug\Obj\metrology-background.r43</file>
-            <file>$PROJ_DIR$\metrology-template.h</file>
-            <file>$TOOLKIT_DIR$\inc\dlib\c\ycheck.h</file>
-            <file>$PROJ_DIR$\..\include\metrology-background.h</file>
-            <file>$PROJ_DIR$\Debug\Obj\metrology-fir-table.r43</file>
-            <file>$TOOLKIT_DIR$\inc\dlib\c\inttypes.h</file>
-            <file>$PROJ_DIR$\Debug\Obj\metrology-foreground.__cstat.et</file>
-            <file>$TOOLKIT_DIR$\inc\dlib\c\stdint.h</file>
-            <file>$PROJ_DIR$\..\include\metrology-nv-structs.h</file>
-            <file>$PROJ_DIR$\Debug\Obj\metrology-fir-table.__cstat.et</file>
-            <file>$TOOLKIT_DIR$\inc\msp430.h</file>
             <file>$PROJ_DIR$\metrology-calibration-template.h</file>
-            <file>$TOOLKIT_DIR$\inc\dlib\c\yvals.h</file>
-            <file>$PROJ_DIR$\..\include\metrology-calibration.h</file>
-            <file>$PROJ_DIR$\Debug\Obj\metrology-calibration-defaults.__cstat.et</file>
-            <file>$PROJ_DIR$\..\include\metrology-decs.h</file>
-            <file>$PROJ_DIR$\..\..\emeter-toolkit\include\sigma_delta_24bit_access.h</file>
-            <file>$PROJ_DIR$\Debug\Obj\metrology-foreground.r43</file>
-            <file>$TOOLKIT_DIR$\inc\dlib\c\DLib_Defaults.h</file>
-            <file>$TOOLKIT_DIR$\inc\dlib\c\ymath.h</file>
-            <file>$PROJ_DIR$\Debug\Obj\metrology-readings.__cstat.et</file>
+            <file>$PROJ_DIR$\Debug\Obj\metrology-calibration-defaults.r43</file>
+            <file>$PROJ_DIR$\..\..\emeter-toolkit\include\sar_10bit_access.h</file>
             <file>$TOOLKIT_DIR$\inc\dlib\c\stdbool.h</file>
+            <file>$PROJ_DIR$\..\include\metrology-readings.h</file>
+            <file>$PROJ_DIR$\..\include\metrology-decs.h</file>
+            <file>$PROJ_DIR$\Debug\Obj\metrology-setup.r43</file>
+            <file>$PROJ_DIR$\..\..\emeter-toolkit\emeter-toolkit-67641\Debug\Exe\emeter-toolkit-67641.r43</file>
+            <file>$PROJ_DIR$\..\src\metrology-corrections.c</file>
+            <file>$PROJ_DIR$\..\include\metrology-calibration.h</file>
+            <file>$PROJ_DIR$\..\include\metrology-instantiate-adcs.h</file>
+            <file>$PROJ_DIR$\Debug\Obj\metrology-setup.__cstat.et</file>
+            <file>$PROJ_DIR$\Debug\Obj\metrology-fir-table.__cstat.et</file>
+            <file>$PROJ_DIR$\Debug\Obj\metrology-readings.r43</file>
+            <file>$TOOLKIT_DIR$\inc\intrinsics.h</file>
+            <file>$PROJ_DIR$\..\include\metrology-host.h</file>
+            <file>$TOOLKIT_DIR$\inc\dlib\c\string.h</file>
+            <file>$PROJ_DIR$\..\src\metrology-calibration-defaults.c</file>
+            <file>$PROJ_DIR$\..\include\emeter-metrology.h</file>
+            <file>$PROJ_DIR$\..\src\metrology-flash.c</file>
+            <file>$PROJ_DIR$\..\src\metrology-foreground.c</file>
+            <file>$TOOLKIT_DIR$\inc\dlib\c\ysizet.h</file>
+            <file>$PROJ_DIR$\..\include\metrology-background.h</file>
+            <file>$TOOLKIT_DIR$\inc\dlib\c\stdlib.h</file>
             <file>$PROJ_DIR$\..\include\metrology-types.h</file>
+            <file>$PROJ_DIR$\Debug\Obj\metrology-foreground.r43</file>
+            <file>$TOOLKIT_DIR$\inc\dlib\c\ymath.h</file>
+            <file>$TOOLKIT_DIR$\inc\dlib\c\xtgmath.h</file>
+            <file>$TOOLKIT_DIR$\inc\in430.h</file>
+            <file>$PROJ_DIR$\..\..\emeter-toolkit\include\sar_12bit_access.h</file>
+            <file>$PROJ_DIR$\Debug\Obj\metrology-corrections.__cstat.et</file>
+            <file>$PROJ_DIR$\..\..\emeter-toolkit\include\sigma_delta_16bit_access.h</file>
+            <file>$TOOLKIT_DIR$\inc\dlib\c\stdint.h</file>
+            <file>$TOOLKIT_DIR$\inc\msp430f67641.h</file>
+            <file>$TOOLKIT_DIR$\inc\dlib\c\signal.h</file>
+            <file>$PROJ_DIR$\..\include\metrology-interactions.h</file>
+            <file>$PROJ_DIR$\Debug\Obj\metrology-corrections.r43</file>
+            <file>$PROJ_DIR$\..\..\emeter-toolkit\include\isr_compat.h</file>
+            <file>$PROJ_DIR$\Debug\Obj\metrology-readings.__cstat.et</file>
+            <file>$PROJ_DIR$\..\include\metrology-foreground.h</file>
+            <file>$PROJ_DIR$\..\include\metrology-corrections.h</file>
+            <file>$TOOLKIT_DIR$\inc\dlib\c\DLib_Defaults.h</file>
+            <file>$PROJ_DIR$\Debug\Exe\emeter-metrology-67641.r43</file>
+            <file>$PROJ_DIR$\..\include\emeter-metrology-internal.h</file>
+            <file>$PROJ_DIR$\Debug\Obj\metrology-flash.r43</file>
+            <file>$TOOLKIT_DIR$\inc\dlib\c\xencoding_limits.h</file>
+            <file>$PROJ_DIR$\..\include\metrology-setup.h</file>
+            <file>$PROJ_DIR$\Debug\Obj\metrology-background.__cstat.et</file>
+            <file>$TOOLKIT_DIR$\inc\dlib\c\math.h</file>
+            <file>$PROJ_DIR$\metrology-template.h</file>
+            <file>$PROJ_DIR$\..\include\metrology-structs.h</file>
+            <file>$PROJ_DIR$\..\..\emeter-toolkit\include\iar\extra_peripheral_definitions.h</file>
+            <file>$TOOLKIT_DIR$\inc\dlib\c\ycheck.h</file>
+            <file>$TOOLKIT_DIR$\inc\dlib\c\DLib_Product.h</file>
+            <file>$PROJ_DIR$\..\include\metrology-flash.h</file>
+            <file>$PROJ_DIR$\Debug\Obj\metrology-calibration-defaults.__cstat.et</file>
+            <file>$TOOLKIT_DIR$\lib\dlib\dl430xllfn.h</file>
+            <file>$PROJ_DIR$\Debug\Obj\metrology-flash.__cstat.et</file>
+            <file>$PROJ_DIR$\Debug\Obj\metrology-foreground.__cstat.et</file>
+            <file>$TOOLKIT_DIR$\inc\dlib\c\inttypes.h</file>
+            <file>$PROJ_DIR$\..\..\emeter-toolkit\include\sigma_delta_24bit_access.h</file>
+            <file>$TOOLKIT_DIR$\inc\dlib\c\DLib_Threads.h</file>
+            <file>$TOOLKIT_DIR$\inc\msp430.h</file>
+            <file>$PROJ_DIR$\..\..\emeter-toolkit\include\emeter-toolkit.h</file>
+            <file>$PROJ_DIR$\Debug\Obj\metrology-fir-table.r43</file>
+            <file>$TOOLKIT_DIR$\inc\dlib\c\yvals.h</file>
+            <file>$PROJ_DIR$\..\include\metrology-nv-structs.h</file>
+            <file>$PROJ_DIR$\..\..\emeter-toolkit\include\msp430_info_mem.h</file>
+            <file>$PROJ_DIR$\Debug\Obj\metrology-background.r43</file>
         </outputs>
         <file>
             <name>$PROJ_DIR$\..\src\metrology-fir-table.c</name>
             <outputs>
                 <tool>
-                    <name>ICC430</name>
-                    <file> 54</file>
+                    <name>__cstat</name>
+                    <file> 16</file>
                 </tool>
                 <tool>
-                    <name>__cstat</name>
-                    <file> 59</file>
+                    <name>ICC430</name>
+                    <file> 68</file>
                 </tool>
             </outputs>
             <inputs>
                 <tool>
                     <name>ICC430</name>
-                    <file> 55 52 57 62 68 38 20 26 3 43 60 13 19 17 0 4 12 51 61 72 11 63 22 65 58 30 66 1 7 27 29 45 21 9 53 10 47 15</file>
-                </tool>
-            </inputs>
-        </file>
-        <file>
-            <name>$PROJ_DIR$\..\src\metrology-flash.c</name>
-            <outputs>
-                <tool>
-                    <name>ICC430</name>
-                    <file> 25</file>
-                </tool>
-                <tool>
-                    <name>__cstat</name>
-                    <file> 28</file>
-                </tool>
-            </outputs>
-            <inputs>
-                <tool>
-                    <name>ICC430</name>
-                    <file> 18 52 62 68 38 20 26 3 55 57 60 13 19 17 43 0 4 15</file>
-                </tool>
-            </inputs>
-        </file>
-        <file>
-            <name>$PROJ_DIR$\..\src\metrology-corrections.c</name>
-            <outputs>
-                <tool>
-                    <name>ICC430</name>
-                    <file> 31</file>
-                </tool>
-                <tool>
-                    <name>__cstat</name>
-                    <file> 2</file>
-                </tool>
-            </outputs>
-            <inputs>
-                <tool>
-                    <name>ICC430</name>
-                    <file> 55 52 57 62 68 38 20 26 3 60 13 19 17 43 0 4 12 51 61 72 11 63 22 65 58 30 66 1 7 27 29 45 21 9 53 10 47 15</file>
-                </tool>
-            </inputs>
-        </file>
-        <file>
-            <name>$PROJ_DIR$\..\src\metrology-foreground.c</name>
-            <outputs>
-                <tool>
-                    <name>ICC430</name>
-                    <file> 67</file>
-                </tool>
-                <tool>
-                    <name>__cstat</name>
-                    <file> 56</file>
-                </tool>
-            </outputs>
-            <inputs>
-                <tool>
-                    <name>ICC430</name>
-                    <file> 55 52 57 62 68 38 20 26 3 39 14 71 44 43 60 13 19 17 0 4 12 51 61 72 11 63 22 65 58 30 66 1 7 27 29 45 21 9 53 10 47 15</file>
-                </tool>
-            </inputs>
-        </file>
-        <file>
-            <name>$PROJ_DIR$\..\src\metrology-readings.c</name>
-            <outputs>
-                <tool>
-                    <name>ICC430</name>
-                    <file> 23</file>
-                </tool>
-                <tool>
-                    <name>__cstat</name>
-                    <file> 70</file>
-                </tool>
-            </outputs>
-            <inputs>
-                <tool>
-                    <name>ICC430</name>
-                    <file> 55 52 57 62 68 38 20 26 3 39 14 60 13 19 17 43 0 4 12 51 61 72 11 63 22 65 58 30 66 1 7 27 29 45 21 9 53 10 47 15</file>
-                </tool>
-            </inputs>
-        </file>
-        <file>
-            <name>$PROJ_DIR$\..\src\metrology-setup.c</name>
-            <outputs>
-                <tool>
-                    <name>ICC430</name>
-                    <file> 24</file>
-                </tool>
-                <tool>
-                    <name>__cstat</name>
-                    <file> 8</file>
-                </tool>
-            </outputs>
-            <inputs>
-                <tool>
-                    <name>ICC430</name>
-                    <file> 55 52 57 62 68 38 20 26 3 39 14 16 69 46 43 60 13 19 17 0 4 12 51 61 72 11 63 22 65 58 30 66 1 7 27 29 45 21 9 53 10 47 15</file>
+                    <file> 63 56 36 69 45 60 57 49 65 67 66 37 32 18 41 55 22 53 4 28 8 13 39 9 70 14 64 35 33 6 47 54 19 43 26 44 50 58</file>
                 </tool>
             </inputs>
         </file>
@@ -197,18 +102,75 @@
             <name>$PROJ_DIR$\..\src\metrology-background.c</name>
             <outputs>
                 <tool>
-                    <name>ICC430</name>
-                    <file> 50</file>
+                    <name>__cstat</name>
+                    <file> 51</file>
                 </tool>
                 <tool>
-                    <name>__cstat</name>
-                    <file> 5</file>
+                    <name>ICC430</name>
+                    <file> 72</file>
                 </tool>
             </outputs>
             <inputs>
                 <tool>
                     <name>ICC430</name>
-                    <file> 55 52 57 62 68 38 20 26 3 39 14 71 43 60 13 19 17 0 4 12 51 61 72 11 63 22 65 58 30 66 1 7 27 29 45 21 9 53 10 47 15</file>
+                    <file> 63 56 36 69 45 60 57 49 65 27 25 7 67 66 37 32 18 41 55 22 53 4 28 8 13 39 9 70 14 64 35 33 6 47 54 19 43 26 44 50 58</file>
+                </tool>
+            </inputs>
+        </file>
+        <file>
+            <name>$PROJ_DIR$\..\src\metrology-readings.c</name>
+            <outputs>
+                <tool>
+                    <name>__cstat</name>
+                    <file> 42</file>
+                </tool>
+                <tool>
+                    <name>ICC430</name>
+                    <file> 17</file>
+                </tool>
+            </outputs>
+            <inputs>
+                <tool>
+                    <name>ICC430</name>
+                    <file> 63 56 36 69 45 60 57 49 65 27 25 66 37 32 18 67 41 55 22 53 4 28 8 13 39 9 70 14 64 35 33 6 47 54 19 43 26 44 50 58</file>
+                </tool>
+            </inputs>
+        </file>
+        <file>
+            <name>$PROJ_DIR$\..\src\metrology-setup.c</name>
+            <outputs>
+                <tool>
+                    <name>__cstat</name>
+                    <file> 15</file>
+                </tool>
+                <tool>
+                    <name>ICC430</name>
+                    <file> 10</file>
+                </tool>
+            </outputs>
+            <inputs>
+                <tool>
+                    <name>ICC430</name>
+                    <file> 63 56 36 69 45 60 57 49 65 27 25 52 30 31 67 66 37 32 18 41 55 22 53 4 28 8 13 39 9 70 14 64 35 33 6 47 54 19 43 26 44 50 58</file>
+                </tool>
+            </inputs>
+        </file>
+        <file>
+            <name>$PROJ_DIR$\..\src\metrology-corrections.c</name>
+            <outputs>
+                <tool>
+                    <name>__cstat</name>
+                    <file> 34</file>
+                </tool>
+                <tool>
+                    <name>ICC430</name>
+                    <file> 40</file>
+                </tool>
+            </outputs>
+            <inputs>
+                <tool>
+                    <name>ICC430</name>
+                    <file> 63 56 36 69 45 60 57 49 65 66 37 32 18 67 41 55 22 53 4 28 8 13 39 9 70 14 64 35 33 6 47 54 19 43 26 44 50 58</file>
                 </tool>
             </inputs>
         </file>
@@ -216,18 +178,56 @@
             <name>$PROJ_DIR$\..\src\metrology-calibration-defaults.c</name>
             <outputs>
                 <tool>
-                    <name>ICC430</name>
-                    <file> 6</file>
+                    <name>__cstat</name>
+                    <file> 59</file>
                 </tool>
                 <tool>
-                    <name>__cstat</name>
-                    <file> 64</file>
+                    <name>ICC430</name>
+                    <file> 5</file>
                 </tool>
             </outputs>
             <inputs>
                 <tool>
                     <name>ICC430</name>
-                    <file> 55 52 57 62 68 38 20 26 3 44 14 60 13 19 17 48 43 0 4 12 51 61 72 11 63 22 65 58 30 66 1 7 27 29 45 21 9 53 10 47 15</file>
+                    <file> 63 56 36 69 45 60 57 49 65 20 25 66 37 32 18 71 67 41 55 22 53 4 28 8 13 39 9 70 14 64 35 33 6 47 54 19 43 26 44 50 58</file>
+                </tool>
+            </inputs>
+        </file>
+        <file>
+            <name>$PROJ_DIR$\..\src\metrology-flash.c</name>
+            <outputs>
+                <tool>
+                    <name>__cstat</name>
+                    <file> 61</file>
+                </tool>
+                <tool>
+                    <name>ICC430</name>
+                    <file> 48</file>
+                </tool>
+            </outputs>
+            <inputs>
+                <tool>
+                    <name>ICC430</name>
+                    <file> 38 56 69 45 60 57 49 65 63 36 66 37 32 18 67 41 55 58</file>
+                </tool>
+            </inputs>
+        </file>
+        <file>
+            <name>$PROJ_DIR$\..\src\metrology-foreground.c</name>
+            <outputs>
+                <tool>
+                    <name>__cstat</name>
+                    <file> 62</file>
+                </tool>
+                <tool>
+                    <name>ICC430</name>
+                    <file> 29</file>
+                </tool>
+            </outputs>
+            <inputs>
+                <tool>
+                    <name>ICC430</name>
+                    <file> 63 56 36 69 45 60 57 49 65 27 25 7 20 67 66 37 32 18 41 55 22 53 4 28 8 13 39 9 70 14 64 35 33 6 47 54 19 43 26 44 50 58</file>
                 </tool>
             </inputs>
         </file>
@@ -236,7 +236,7 @@
             <outputs>
                 <tool>
                     <name>XAR</name>
-                    <file> 49</file>
+                    <file> 46</file>
                 </tool>
             </outputs>
         </file>
@@ -245,7 +245,7 @@
             <inputs>
                 <tool>
                     <name>XAR</name>
-                    <file> 41 50 6 31 54 25 67 23 24</file>
+                    <file> 11 72 5 40 68 48 29 17 10</file>
                 </tool>
             </inputs>
         </file>
