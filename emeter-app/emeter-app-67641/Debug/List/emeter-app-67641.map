@@ -2,7 +2,7 @@
 #                                                                              #
 #      IAR Universal Linker V6.5.1.95                                          #
 #                                                                              #
-#           Link time     =  13/Aug/2024  11:14:35                             #
+#           Link time     =  09/Sep/2024  10:35:19                             #
 #           Target CPU    =  MSP430                                            #
 #           List file     =  C:\Projetos\Ztec\Source\emeter-app\emeter-app-676 #
 #                            41\Debug\List\emeter-app-67641.map                #
@@ -11,7 +11,7 @@
 #                            Format: ubrof10                                   #
 #                            UBROF version 10.0.6                              #
 #                            Using library modules for C-SPY (-rt)             #
-#           Command line  =  -f C:\Users\liwka\AppData\Local\Temp\EW8BC6.tmp   #
+#           Command line  =  -f C:\Users\liwka\AppData\Local\Temp\EW2B57.tmp   #
 #                            (C:\Projetos\Ztec\Source\emeter-app\emeter-app-67 #
 #                            641\Debug\Obj\emeter-basic-display.r43            #
 #                            C:\Projetos\Ztec\Source\emeter-app\emeter-app-676 #
@@ -182,317 +182,317 @@ DATA20_I
            oled_step               1C00            main (emeter-main)
     -------------------------------------------------------------------------
 <CODE> 1 (was CODE)
-  Relative segment, address: 8B80 - 8BBB (0x3c bytes), align: 1
+  Relative segment, address: 8B42 - 8B7D (0x3c bytes), align: 1
   Segment part 55.
            ENTRY                   ADDRESS         REF BY
            =====                   =======         ======
            OLED_display_startup_message
-                                   8B80            system_setup (emeter-setup)
+                                   8B42            system_setup (emeter-setup)
                calls direct
     -------------------------------------------------------------------------
 <CODE> 1 (was CODE)
-  Relative segment, address: 7D88 - 7E17 (0x90 bytes), align: 1
+  Relative segment, address: 7D7C - 7E0B (0x90 bytes), align: 1
   Segment part 56.            Intra module refs:   update_oled
                                                    update_oled_measures
            LOCAL                   ADDRESS         
            =====                   =======         
-           oled_date_temp          7D88 
+           oled_date_temp          7D7C 
                calls direct
     -------------------------------------------------------------------------
 <CODE> 1 (was CODE)
-  Relative segment, address: 7B38 - 7B3D (0x6 bytes), align: 1
+  Relative segment, address: 7B2C - 7B31 (0x6 bytes), align: 1
   Segment part 80.            Intra module refs:   oled_rms_current
                                                    oled_rms_voltage
            LOCAL                   ADDRESS         
            =====                   =======         
-           ?Subroutine7            7B38 
+           ?Subroutine7            7B2C 
     -------------------------------------------------------------------------
 <CODE> 1 (was CODE)
-  Relative segment, address: 7B3E - 7B41 (0x4 bytes), align: 1
+  Relative segment, address: 7B32 - 7B35 (0x4 bytes), align: 1
   Segment part 81.            Intra module refs:   oled_rms_current
                                                    oled_rms_voltage
            LOCAL                   ADDRESS         
            =====                   =======         
-           ?Subroutine6            7B3E 
+           ?Subroutine6            7B32 
     -------------------------------------------------------------------------
 <CODE> 1 (was CODE)
-  Relative segment, address: 7B42 - 7B47 (0x6 bytes), align: 1
+  Relative segment, address: 7B36 - 7B3B (0x6 bytes), align: 1
   Segment part 82.            Intra module refs:   ?Subroutine4
                                                    ?Subroutine6
            LOCAL                   ADDRESS         
            =====                   =======         
-           ?Subroutine25           7B42 
+           ?Subroutine25           7B36 
     -------------------------------------------------------------------------
 <CODE> 1 (was CODE)
-  Relative segment, address: 7B48 - 7BA1 (0x5a bytes), align: 1
+  Relative segment, address: 7B3C - 7B95 (0x5a bytes), align: 1
   Segment part 83.            Intra module refs:   update_oled
                                                    update_oled_measures
            LOCAL                   ADDRESS         
            =====                   =======         
-           oled_mains_frequency    7B48 
+           oled_mains_frequency    7B3C 
                calls direct
     -------------------------------------------------------------------------
 <CODE> 1 (was CODE)
-  Relative segment, address: 7BA2 - 7BAB (0xa bytes), align: 1
+  Relative segment, address: 7B96 - 7B9F (0xa bytes), align: 1
   Segment part 84.            Intra module refs:   oled_date_temp
                                                    oled_mains_frequency
            LOCAL                   ADDRESS         
            =====                   =======         
-           ?Subroutine8            7BA2 
+           ?Subroutine8            7B96 
     -------------------------------------------------------------------------
 <CODE> 1 (was CODE)
-  Relative segment, address: 7BAC - 7BAF (0x4 bytes), align: 1
+  Relative segment, address: 7BA0 - 7BA3 (0x4 bytes), align: 1
   Segment part 85.            Intra module refs:   oled_mains_frequency
                                                    oled_power_factor
            LOCAL                   ADDRESS         
            =====                   =======         
-           ?Subroutine5            7BAC 
+           ?Subroutine5            7BA0 
     -------------------------------------------------------------------------
 <CODE> 1 (was CODE)
-  Relative segment, address: 7BB0 - 7BB3 (0x4 bytes), align: 1
+  Relative segment, address: 7BA4 - 7BA7 (0x4 bytes), align: 1
   Segment part 86.            Intra module refs:   ?Subroutine5
                                                    ?Subroutine7
            LOCAL                   ADDRESS         
            =====                   =======         
-           ?Subroutine21           7BB0 
+           ?Subroutine21           7BA4 
     -------------------------------------------------------------------------
 <CODE> 1 (was CODE)
-  Relative segment, address: 7BB4 - 7BB9 (0x6 bytes), align: 1
+  Relative segment, address: 7BA8 - 7BAD (0x6 bytes), align: 1
   Segment part 87.            Intra module refs:   ?Subroutine21
                                                    ?Subroutine25
                                                    Segment part 71
                                                    oled_mains_frequency
     -------------------------------------------------------------------------
 <CODE> 1 (was CODE)
-  Relative segment, address: 7BBA - 7BC5 (0xc bytes), align: 1
+  Relative segment, address: 7BAE - 7BB9 (0xc bytes), align: 1
   Segment part 88.            Intra module refs:   ?Subroutine4
                                                    ?Subroutine5
                                                    ?Subroutine8
                                                    oled_power_factor
            LOCAL                   ADDRESS         
            =====                   =======         
-           ?Subroutine20           7BBA 
+           ?Subroutine20           7BAE 
     -------------------------------------------------------------------------
 <CODE> 1 (was CODE)
-  Relative segment, address: 7BC6 - 7BCD (0x8 bytes), align: 1
+  Relative segment, address: 7BBA - 7BC1 (0x8 bytes), align: 1
   Segment part 89.            Intra module refs:   oled_mains_frequency
                                                    oled_power_factor
            LOCAL                   ADDRESS         
            =====                   =======         
-           ?Subroutine4            7BC6 
+           ?Subroutine4            7BBA 
     -------------------------------------------------------------------------
 <CODE> 1 (was CODE)
-  Relative segment, address: 63EA - 63FF (0x16 bytes), align: 1
+  Relative segment, address: 63DE - 63F3 (0x16 bytes), align: 1
   Segment part 57.            Intra module refs:   update_oled
                                                    update_oled_measures
            LOCAL                   ADDRESS         
            =====                   =======         
-           oled_active_power       63EA 
+           oled_active_power       63DE 
                calls direct
     -------------------------------------------------------------------------
 <CODE> 1 (was CODE)
-  Relative segment, address: 6400 - 649F (0xa0 bytes), align: 1
+  Relative segment, address: 63F4 - 6493 (0xa0 bytes), align: 1
   Segment part 58.            Intra module refs:   oled_active_power
                                                    oled_apparent_power
            LOCAL                   ADDRESS         
            =====                   =======         
-           ?Subroutine1            6400 
+           ?Subroutine1            63F4 
     -------------------------------------------------------------------------
 <CODE> 1 (was CODE)
-  Relative segment, address: 64A0 - 6561 (0xc2 bytes), align: 1
+  Relative segment, address: 6494 - 6555 (0xc2 bytes), align: 1
   Segment part 59.            Intra module refs:   update_oled
                                                    update_oled_measures
            LOCAL                   ADDRESS         
            =====                   =======         
-           oled_reactive_power     64A0 
+           oled_reactive_power     6494 
                calls direct
     -------------------------------------------------------------------------
 <CODE> 1 (was CODE)
-  Relative segment, address: 6562 - 656F (0xe bytes), align: 1
+  Relative segment, address: 6556 - 6563 (0xe bytes), align: 1
   Segment part 60.            Intra module refs:   oled_active_power
                                                    oled_apparent_power
                                                    oled_reactive_power
            LOCAL                   ADDRESS         
            =====                   =======         
-           ?Subroutine16           6562 
+           ?Subroutine16           6556 
     -------------------------------------------------------------------------
 <CODE> 1 (was CODE)
-  Relative segment, address: 6570 - 6577 (0x8 bytes), align: 1
+  Relative segment, address: 6564 - 656B (0x8 bytes), align: 1
   Segment part 61.            Intra module refs:   ?Subroutine1
                                                    oled_reactive_power
            LOCAL                   ADDRESS         
            =====                   =======         
-           ?Subroutine15           6570 
+           ?Subroutine15           6564 
     -------------------------------------------------------------------------
 <CODE> 1 (was CODE)
-  Relative segment, address: 6578 - 657D (0x6 bytes), align: 1
+  Relative segment, address: 656C - 6571 (0x6 bytes), align: 1
   Segment part 62.            Intra module refs:   ?Subroutine10
                                                    ?Subroutine12
                                                    ?Subroutine15
            LOCAL                   ADDRESS         
            =====                   =======         
-           ?Subroutine23           6578 
+           ?Subroutine23           656C 
     -------------------------------------------------------------------------
 <CODE> 1 (was CODE)
-  Relative segment, address: 657E - 6587 (0xa bytes), align: 1
+  Relative segment, address: 6572 - 657B (0xa bytes), align: 1
   Segment part 63.            Intra module refs:   ?Subroutine1
                                                    oled_reactive_power
            LOCAL                   ADDRESS         
            =====                   =======         
-           ?Subroutine14           657E 
+           ?Subroutine14           6572 
     -------------------------------------------------------------------------
 <CODE> 1 (was CODE)
-  Relative segment, address: 6588 - 6593 (0xc bytes), align: 1
+  Relative segment, address: 657C - 6587 (0xc bytes), align: 1
   Segment part 64.            Intra module refs:   ?Subroutine1
                                                    oled_reactive_power
            LOCAL                   ADDRESS         
            =====                   =======         
-           ?Subroutine12           6588 
+           ?Subroutine12           657C 
     -------------------------------------------------------------------------
 <CODE> 1 (was CODE)
-  Relative segment, address: 6594 - 659F (0xc bytes), align: 1
+  Relative segment, address: 6588 - 6593 (0xc bytes), align: 1
   Segment part 65.            Intra module refs:   ?Subroutine1
                                                    oled_reactive_power
            LOCAL                   ADDRESS         
            =====                   =======         
-           ?Subroutine10           6594 
+           ?Subroutine10           6588 
     -------------------------------------------------------------------------
 <CODE> 1 (was CODE)
-  Relative segment, address: 65A0 - 65B9 (0x1a bytes), align: 1
+  Relative segment, address: 6594 - 65AD (0x1a bytes), align: 1
   Segment part 66.            Intra module refs:   update_oled
                                                    update_oled_measures
            LOCAL                   ADDRESS         
            =====                   =======         
-           oled_apparent_power     65A0 
+           oled_apparent_power     6594 
                calls direct
     -------------------------------------------------------------------------
 <CODE> 1 (was CODE)
-  Relative segment, address: 6768 - 67C1 (0x5a bytes), align: 1
+  Relative segment, address: 675C - 67B5 (0x5a bytes), align: 1
   Segment part 67.            Intra module refs:   update_oled
                                                    update_oled_measures
            LOCAL                   ADDRESS         
            =====                   =======         
-           oled_power_factor       6768 
+           oled_power_factor       675C 
                calls direct
     -------------------------------------------------------------------------
 <CODE> 1 (was CODE)
-  Relative segment, address: 67C2 - 67D5 (0x14 bytes), align: 1
+  Relative segment, address: 67B6 - 67C9 (0x14 bytes), align: 1
   Segment part 68.            Intra module refs:   oled_power_factor
            LOCAL                   ADDRESS         
            =====                   =======         
-           ?Subroutine17           67C2 
+           ?Subroutine17           67B6 
     -------------------------------------------------------------------------
 <CODE> 1 (was CODE)
-  Relative segment, address: 67D6 - 6851 (0x7c bytes), align: 1
+  Relative segment, address: 67CA - 6845 (0x7c bytes), align: 1
   Segment part 69.            Intra module refs:   update_oled
                                                    update_oled_measures
            LOCAL                   ADDRESS         
            =====                   =======         
-           oled_rms_voltage        67D6 
+           oled_rms_voltage        67CA 
                calls direct
     -------------------------------------------------------------------------
 <CODE> 1 (was CODE)
-  Relative segment, address: 6852 - 685F (0xe bytes), align: 1
+  Relative segment, address: 6846 - 6853 (0xe bytes), align: 1
   Segment part 70.            Intra module refs:   oled_rms_current
                                                    oled_rms_voltage
            LOCAL                   ADDRESS         
            =====                   =======         
-           ?Subroutine2            6852 
+           ?Subroutine2            6846 
     -------------------------------------------------------------------------
 <CODE> 1 (was CODE)
-  Relative segment, address: 6860 - 686D (0xe bytes), align: 1
+  Relative segment, address: 6854 - 6861 (0xe bytes), align: 1
   Segment part 71.            Intra module refs:   ?Subroutine2
                                                    oled_power_factor
     -------------------------------------------------------------------------
 <CODE> 1 (was CODE)
-  Relative segment, address: 686E - 6871 (0x4 bytes), align: 1
+  Relative segment, address: 6862 - 6865 (0x4 bytes), align: 1
   Segment part 72.            Intra module refs:   oled_rms_voltage
            LOCAL                   ADDRESS         
            =====                   =======         
-           ?Subroutine18           686E 
+           ?Subroutine18           6862 
     -------------------------------------------------------------------------
 <CODE> 1 (was CODE)
-  Relative segment, address: 6872 - 6877 (0x6 bytes), align: 1
+  Relative segment, address: 6866 - 686B (0x6 bytes), align: 1
   Segment part 73.            Intra module refs:   ?Subroutine18
                                                    ?Subroutine19
            LOCAL                   ADDRESS         
            =====                   =======         
-           ?Subroutine22           6872 
+           ?Subroutine22           6866 
     -------------------------------------------------------------------------
 <CODE> 1 (was CODE)
-  Relative segment, address: 6878 - 6881 (0xa bytes), align: 1
+  Relative segment, address: 686C - 6875 (0xa bytes), align: 1
   Segment part 74.            Intra module refs:   oled_rms_current
                                                    oled_rms_voltage
            LOCAL                   ADDRESS         
            =====                   =======         
-           ?Subroutine0            6878 
+           ?Subroutine0            686C 
     -------------------------------------------------------------------------
 <CODE> 1 (was CODE)
-  Relative segment, address: 6882 - 6901 (0x80 bytes), align: 1
+  Relative segment, address: 6876 - 68F5 (0x80 bytes), align: 1
   Segment part 75.            Intra module refs:   update_oled
                                                    update_oled_measures
            LOCAL                   ADDRESS         
            =====                   =======         
-           oled_rms_current        6882 
+           oled_rms_current        6876 
                calls direct
     -------------------------------------------------------------------------
 <CODE> 1 (was CODE)
-  Relative segment, address: 6902 - 6909 (0x8 bytes), align: 1
+  Relative segment, address: 68F6 - 68FD (0x8 bytes), align: 1
   Segment part 76.            Intra module refs:   oled_rms_current
            LOCAL                   ADDRESS         
            =====                   =======         
-           ?Subroutine19           6902 
+           ?Subroutine19           68F6 
     -------------------------------------------------------------------------
 <CODE> 1 (was CODE)
-  Relative segment, address: 94D4 - 94D7 (0x4 bytes), align: 1
+  Relative segment, address: 94E4 - 94E7 (0x4 bytes), align: 1
   Segment part 77.            Intra module refs:   oled_rms_current
                                                    oled_rms_voltage
            LOCAL                   ADDRESS         
            =====                   =======         
-           ?Subroutine11           94D4 
+           ?Subroutine11           94E4 
     -------------------------------------------------------------------------
 <CODE> 1 (was CODE)
-  Relative segment, address: 94D8 - 94DD (0x6 bytes), align: 1
+  Relative segment, address: 94E8 - 94ED (0x6 bytes), align: 1
   Segment part 78.            Intra module refs:   ?Subroutine11
                                                    ?Subroutine9
            LOCAL                   ADDRESS         
            =====                   =======         
-           ?Subroutine24           94D8 
+           ?Subroutine24           94E8 
     -------------------------------------------------------------------------
 <CODE> 1 (was CODE)
-  Relative segment, address: 94DE - 94E5 (0x8 bytes), align: 1
+  Relative segment, address: 94EE - 94F5 (0x8 bytes), align: 1
   Segment part 79.            Intra module refs:   oled_rms_current
                                                    oled_rms_voltage
            LOCAL                   ADDRESS         
            =====                   =======         
-           ?Subroutine9            94DE 
+           ?Subroutine9            94EE 
     -------------------------------------------------------------------------
 <CODE> 1 (was CODE)
-  Relative segment, address: 6E6A - 6EE5 (0x7c bytes), align: 1
+  Relative segment, address: 6D22 - 6D9D (0x7c bytes), align: 1
   Segment part 90.            Intra module refs:   update_oled
                                                    update_oled_measures
            LOCAL                   ADDRESS         
            =====                   =======         
            oled_imported_active_energy
-                                   6E6A 
+                                   6D22 
                calls direct
     -------------------------------------------------------------------------
 <CODE> 1 (was CODE)
-  Relative segment, address: 6EE6 - 6EF5 (0x10 bytes), align: 1
+  Relative segment, address: 6D9E - 6DAD (0x10 bytes), align: 1
   Segment part 91.            Intra module refs:   oled_imported_active_energy
                                                    oled_imported_reactive_energy
            LOCAL                   ADDRESS         
            =====                   =======         
-           ?Subroutine3            6EE6 
+           ?Subroutine3            6D9E 
     -------------------------------------------------------------------------
 <CODE> 1 (was CODE)
-  Relative segment, address: 6EF6 - 6FA5 (0xb0 bytes), align: 1
+  Relative segment, address: 6DAE - 6E5D (0xb0 bytes), align: 1
   Segment part 92.            Intra module refs:   update_oled
                                                    update_oled_measures
            LOCAL                   ADDRESS         
            =====                   =======         
            oled_imported_reactive_energy
-                                   6EF6 
+                                   6DAE 
                calls direct
     -------------------------------------------------------------------------
 <CODE> 1 (was CODE)
@@ -504,243 +504,243 @@ DATA20_I
            ?Subroutine13           95B8 
     -------------------------------------------------------------------------
 <CODE> 1 (was CODE)
-  Relative segment, address: 77D6 - 7895 (0xc0 bytes), align: 1
+  Relative segment, address: 77CA - 7889 (0xc0 bytes), align: 1
   Segment part 95.
            ENTRY                   ADDRESS         REF BY
            =====                   =======         ======
-           update_oled             77D6            main (emeter-main)
+           update_oled             77CA            main (emeter-main)
                calls direct
     -------------------------------------------------------------------------
 <CODE> 1 (was CODE)
-  Relative segment, address: 839E - 8401 (0x64 bytes), align: 1
+  Relative segment, address: 839C - 83FF (0x64 bytes), align: 1
   Segment part 96.
            ENTRY                   ADDRESS         REF BY
            =====                   =======         ======
-           update_oled_measures    839E            main (emeter-main)
+           update_oled_measures    839C            main (emeter-main)
                calls direct
     -------------------------------------------------------------------------
 DATA20_ID
-  Relative segment, address: A01C - A01D (0x2 bytes), align: 1
+  Relative segment, address: A022 - A023 (0x2 bytes), align: 1
   Segment part 54.            Intra module refs:   oled_step
     -------------------------------------------------------------------------
 DATA20_C
-  Relative segment, address: 9B9E - 9BA3 (0x6 bytes), align: 0
+  Relative segment, address: 9BA4 - 9BA9 (0x6 bytes), align: 0
   Segment part 2.             Intra module refs:   OLED_display_startup_message
     -------------------------------------------------------------------------
 DATA20_C
-  Relative segment, address: 9BA4 - 9BB6 (0x13 bytes), align: 0
+  Relative segment, address: 9BAA - 9BBC (0x13 bytes), align: 0
   Segment part 3.             Intra module refs:   OLED_display_startup_message
     -------------------------------------------------------------------------
 DATA20_C
-  Relative segment, address: 9BB7 - 9BC7 (0x11 bytes), align: 0
+  Relative segment, address: 9BBD - 9BCD (0x11 bytes), align: 0
   Segment part 4.             Intra module refs:   OLED_display_startup_message
     -------------------------------------------------------------------------
 DATA20_C
-  Relative segment, address: 9BC8 - 9BD9 (0x12 bytes), align: 0
+  Relative segment, address: 9BCE - 9BDF (0x12 bytes), align: 0
   Segment part 5.             Intra module refs:   OLED_display_startup_message
     -------------------------------------------------------------------------
 DATA20_C
-  Relative segment, address: 9BDA - 9BE8 (0xf bytes), align: 0
+  Relative segment, address: 9BE0 - 9BEE (0xf bytes), align: 0
   Segment part 6.             Intra module refs:   oled_date_temp
     -------------------------------------------------------------------------
 DATA20_C
-  Relative segment, address: 9BE9 - 9BF9 (0x11 bytes), align: 0
+  Relative segment, address: 9BEF - 9BFF (0x11 bytes), align: 0
   Segment part 7.             Intra module refs:   oled_date_temp
     -------------------------------------------------------------------------
 DATA20_C
-  Relative segment, address: 9BFA - 9C08 (0xf bytes), align: 0
+  Relative segment, address: 9C00 - 9C0E (0xf bytes), align: 0
   Segment part 8.             Intra module refs:   oled_date_temp
     -------------------------------------------------------------------------
 DATA20_C
-  Relative segment, address: 9C09 - 9C09 (0x1 bytes), align: 0
+  Relative segment, address: 9C0F - 9C0F (0x1 bytes), align: 0
   Segment part 9.             Intra module refs:   oled_date_temp
     -------------------------------------------------------------------------
 DATA20_C
-  Relative segment, address: 9C0A - 9C18 (0xf bytes), align: 0
+  Relative segment, address: 9C10 - 9C1E (0xf bytes), align: 0
   Segment part 10.            Intra module refs:   oled_date_temp
     -------------------------------------------------------------------------
 DATA20_C
-  Relative segment, address: 9C19 - 9C27 (0xf bytes), align: 0
+  Relative segment, address: 9C1F - 9C2D (0xf bytes), align: 0
   Segment part 11.            Intra module refs:   oled_active_power
     -------------------------------------------------------------------------
 DATA20_C
-  Relative segment, address: 9C28 - 9C2A (0x3 bytes), align: 0
+  Relative segment, address: 9C2E - 9C30 (0x3 bytes), align: 0
   Segment part 12.            Intra module refs:   oled_active_power
     -------------------------------------------------------------------------
 DATA20_C
-  Relative segment, address: 9C2B - 9C32 (0x8 bytes), align: 0
+  Relative segment, address: 9C31 - 9C38 (0x8 bytes), align: 0
   Segment part 13.            Intra module refs:   ?Subroutine1
                                                    oled_imported_active_energy
                                                    oled_reactive_power
     -------------------------------------------------------------------------
 DATA20_C
-  Relative segment, address: 9C33 - 9C47 (0x15 bytes), align: 0
+  Relative segment, address: 9C39 - 9C4D (0x15 bytes), align: 0
   Segment part 14.            Intra module refs:   ?Subroutine10
     -------------------------------------------------------------------------
 DATA20_C
-  Relative segment, address: 9C48 - 9C4D (0x6 bytes), align: 0
+  Relative segment, address: 9C4E - 9C53 (0x6 bytes), align: 0
   Segment part 15.            Intra module refs:   ?Subroutine1
                                                    oled_imported_reactive_energy
                                                    oled_reactive_power
     -------------------------------------------------------------------------
 DATA20_C
-  Relative segment, address: 9C4E - 9C62 (0x15 bytes), align: 0
+  Relative segment, address: 9C54 - 9C68 (0x15 bytes), align: 0
   Segment part 16.            Intra module refs:   ?Subroutine15
     -------------------------------------------------------------------------
 DATA20_C
-  Relative segment, address: 9C63 - 9C68 (0x6 bytes), align: 0
+  Relative segment, address: 9C69 - 9C6E (0x6 bytes), align: 0
   Segment part 17.            Intra module refs:   ?Subroutine1
                                                    oled_imported_reactive_energy
                                                    oled_reactive_power
     -------------------------------------------------------------------------
 DATA20_C
-  Relative segment, address: 9C69 - 9C7D (0x15 bytes), align: 0
+  Relative segment, address: 9C6F - 9C83 (0x15 bytes), align: 0
   Segment part 18.            Intra module refs:   ?Subroutine12
     -------------------------------------------------------------------------
 DATA20_C
-  Relative segment, address: 9C7E - 9C83 (0x6 bytes), align: 0
+  Relative segment, address: 9C84 - 9C89 (0x6 bytes), align: 0
   Segment part 19.            Intra module refs:   ?Subroutine1
                                                    oled_imported_reactive_energy
                                                    oled_reactive_power
     -------------------------------------------------------------------------
 DATA20_C
-  Relative segment, address: 9C84 - 9C94 (0x11 bytes), align: 0
+  Relative segment, address: 9C8A - 9C9A (0x11 bytes), align: 0
   Segment part 20.            Intra module refs:   oled_reactive_power
     -------------------------------------------------------------------------
 DATA20_C
-  Relative segment, address: 9C95 - 9C99 (0x5 bytes), align: 0
+  Relative segment, address: 9C9B - 9C9F (0x5 bytes), align: 0
   Segment part 21.            Intra module refs:   oled_reactive_power
     -------------------------------------------------------------------------
 DATA20_C
-  Relative segment, address: 9C9A - 9C9E (0x5 bytes), align: 0
+  Relative segment, address: 9CA0 - 9CA4 (0x5 bytes), align: 0
   Segment part 22.            Intra module refs:   oled_reactive_power
     -------------------------------------------------------------------------
 DATA20_C
-  Relative segment, address: 9C9F - 9CA2 (0x4 bytes), align: 0
+  Relative segment, address: 9CA5 - 9CA8 (0x4 bytes), align: 0
   Segment part 23.            Intra module refs:   oled_apparent_power
     -------------------------------------------------------------------------
 DATA20_C
-  Relative segment, address: 9CA3 - 9CB4 (0x12 bytes), align: 0
+  Relative segment, address: 9CA9 - 9CBA (0x12 bytes), align: 0
   Segment part 24.            Intra module refs:   oled_apparent_power
     -------------------------------------------------------------------------
 DATA20_C
-  Relative segment, address: 9CB5 - 9CC6 (0x12 bytes), align: 0
+  Relative segment, address: 9CBB - 9CCC (0x12 bytes), align: 0
   Segment part 25.            Intra module refs:   oled_power_factor
     -------------------------------------------------------------------------
 DATA20_C
-  Relative segment, address: 9CC7 - 9CC9 (0x3 bytes), align: 0
+  Relative segment, address: 9CCD - 9CCF (0x3 bytes), align: 0
   Segment part 26.            Intra module refs:   ?Subroutine17
     -------------------------------------------------------------------------
 DATA20_C
-  Relative segment, address: 9CCA - 9CCC (0x3 bytes), align: 0
+  Relative segment, address: 9CD0 - 9CD2 (0x3 bytes), align: 0
   Segment part 27.            Intra module refs:   ?Subroutine17
     -------------------------------------------------------------------------
 DATA20_C
-  Relative segment, address: 9CCD - 9CD0 (0x4 bytes), align: 0
+  Relative segment, address: 9CD3 - 9CD6 (0x4 bytes), align: 0
   Segment part 28.            Intra module refs:   oled_power_factor
                                                    oled_rms_current
                                                    oled_rms_voltage
     -------------------------------------------------------------------------
 DATA20_C
-  Relative segment, address: 9CD1 - 9CD4 (0x4 bytes), align: 0
+  Relative segment, address: 9CD7 - 9CDA (0x4 bytes), align: 0
   Segment part 29.            Intra module refs:   oled_power_factor
                                                    oled_rms_current
                                                    oled_rms_voltage
     -------------------------------------------------------------------------
 DATA20_C
-  Relative segment, address: 9CD5 - 9CD8 (0x4 bytes), align: 0
+  Relative segment, address: 9CDB - 9CDE (0x4 bytes), align: 0
   Segment part 30.            Intra module refs:   ?Subroutine2
                                                    oled_power_factor
     -------------------------------------------------------------------------
 DATA20_C
-  Relative segment, address: 9CD9 - 9CE3 (0xb bytes), align: 0
+  Relative segment, address: 9CDF - 9CE9 (0xb bytes), align: 0
   Segment part 31.            Intra module refs:   oled_rms_voltage
     -------------------------------------------------------------------------
 DATA20_C
-  Relative segment, address: 9CE4 - 9CF1 (0xe bytes), align: 0
+  Relative segment, address: 9CEA - 9CF7 (0xe bytes), align: 0
   Segment part 32.            Intra module refs:   oled_rms_voltage
     -------------------------------------------------------------------------
 DATA20_C
-  Relative segment, address: 9CF2 - 9CF4 (0x3 bytes), align: 0
+  Relative segment, address: 9CF8 - 9CFA (0x3 bytes), align: 0
   Segment part 33.            Intra module refs:   oled_rms_voltage
     -------------------------------------------------------------------------
 DATA20_C
-  Relative segment, address: 9CF5 - 9D02 (0xe bytes), align: 0
+  Relative segment, address: 9CFB - 9D08 (0xe bytes), align: 0
   Segment part 34.            Intra module refs:   oled_rms_voltage
     -------------------------------------------------------------------------
 DATA20_C
-  Relative segment, address: 9D03 - 9D10 (0xe bytes), align: 0
+  Relative segment, address: 9D09 - 9D16 (0xe bytes), align: 0
   Segment part 35.            Intra module refs:   oled_rms_voltage
     -------------------------------------------------------------------------
 DATA20_C
-  Relative segment, address: 9D11 - 9D1D (0xd bytes), align: 0
+  Relative segment, address: 9D17 - 9D23 (0xd bytes), align: 0
   Segment part 36.            Intra module refs:   oled_rms_current
     -------------------------------------------------------------------------
 DATA20_C
-  Relative segment, address: 9D1E - 9D2F (0x12 bytes), align: 0
+  Relative segment, address: 9D24 - 9D35 (0x12 bytes), align: 0
   Segment part 37.            Intra module refs:   oled_rms_current
     -------------------------------------------------------------------------
 DATA20_C
-  Relative segment, address: 9D30 - 9D32 (0x3 bytes), align: 0
+  Relative segment, address: 9D36 - 9D38 (0x3 bytes), align: 0
   Segment part 38.            Intra module refs:   oled_rms_current
     -------------------------------------------------------------------------
 DATA20_C
-  Relative segment, address: 9D33 - 9D44 (0x12 bytes), align: 0
+  Relative segment, address: 9D39 - 9D4A (0x12 bytes), align: 0
   Segment part 39.            Intra module refs:   oled_rms_current
     -------------------------------------------------------------------------
 DATA20_C
-  Relative segment, address: 9D45 - 9D56 (0x12 bytes), align: 0
+  Relative segment, address: 9D4B - 9D5C (0x12 bytes), align: 0
   Segment part 40.            Intra module refs:   oled_rms_current
     -------------------------------------------------------------------------
 DATA20_C
-  Relative segment, address: 9D57 - 9D61 (0xb bytes), align: 0
+  Relative segment, address: 9D5D - 9D67 (0xb bytes), align: 0
   Segment part 41.            Intra module refs:   oled_mains_frequency
     -------------------------------------------------------------------------
 DATA20_C
-  Relative segment, address: 9D62 - 9D66 (0x5 bytes), align: 0
+  Relative segment, address: 9D68 - 9D6C (0x5 bytes), align: 0
   Segment part 42.            Intra module refs:   oled_imported_active_energy
                                                    oled_mains_frequency
     -------------------------------------------------------------------------
 DATA20_C
-  Relative segment, address: 9D67 - 9D6A (0x4 bytes), align: 0
+  Relative segment, address: 9D6D - 9D70 (0x4 bytes), align: 0
   Segment part 43.            Intra module refs:   oled_mains_frequency
     -------------------------------------------------------------------------
 DATA20_C
-  Relative segment, address: 9D6B - 9D6F (0x5 bytes), align: 0
+  Relative segment, address: 9D71 - 9D75 (0x5 bytes), align: 0
   Segment part 44.            Intra module refs:   oled_imported_active_energy
                                                    oled_mains_frequency
     -------------------------------------------------------------------------
 DATA20_C
-  Relative segment, address: 9D70 - 9D74 (0x5 bytes), align: 0
+  Relative segment, address: 9D76 - 9D7A (0x5 bytes), align: 0
   Segment part 45.            Intra module refs:   oled_imported_active_energy
                                                    oled_mains_frequency
     -------------------------------------------------------------------------
 DATA20_C
-  Relative segment, address: 9D75 - 9D78 (0x4 bytes), align: 0
+  Relative segment, address: 9D7B - 9D7E (0x4 bytes), align: 0
   Segment part 46.            Intra module refs:   oled_imported_active_energy
     -------------------------------------------------------------------------
 DATA20_C
-  Relative segment, address: 9D79 - 9D86 (0xe bytes), align: 0
+  Relative segment, address: 9D7F - 9D8C (0xe bytes), align: 0
   Segment part 47.            Intra module refs:   oled_imported_active_energy
     -------------------------------------------------------------------------
 DATA20_C
-  Relative segment, address: 9D87 - 9D8C (0x6 bytes), align: 0
+  Relative segment, address: 9D8D - 9D92 (0x6 bytes), align: 0
   Segment part 48.            Intra module refs:   oled_imported_reactive_energy
     -------------------------------------------------------------------------
 DATA20_C
-  Relative segment, address: 9D8D - 9D9C (0x10 bytes), align: 0
+  Relative segment, address: 9D93 - 9DA2 (0x10 bytes), align: 0
   Segment part 49.            Intra module refs:   oled_imported_reactive_energy
     -------------------------------------------------------------------------
 DATA20_C
-  Relative segment, address: 9D9D - 9DA5 (0x9 bytes), align: 0
+  Relative segment, address: 9DA3 - 9DAB (0x9 bytes), align: 0
   Segment part 50.            Intra module refs:   oled_imported_reactive_energy
     -------------------------------------------------------------------------
 DATA20_C
-  Relative segment, address: 9DA6 - 9DAD (0x8 bytes), align: 0
+  Relative segment, address: 9DAC - 9DB3 (0x8 bytes), align: 0
   Segment part 51.            Intra module refs:   update_oled
     -------------------------------------------------------------------------
 DATA20_C
-  Relative segment, address: 9DAE - 9DB1 (0x4 bytes), align: 0
+  Relative segment, address: 9DB4 - 9DB7 (0x4 bytes), align: 0
   Segment part 52.            Intra module refs:   update_oled
 
     *************************************************************************
@@ -1111,33 +1111,33 @@ DATA20_Z
                                                    process_read_inp_reg (emeter-dlt645)
     -------------------------------------------------------------------------
 DATA20_C
-  Relative segment, address: 9DB2 - 9DB9 (0x8 bytes), align: 0
+  Relative segment, address: 9DB8 - 9DBF (0x8 bytes), align: 0
   Segment part 34.            Intra module refs:   serial_configure
            LOCAL                   ADDRESS         
            =====                   =======         
-           mod_patterns            9DB2 
+           mod_patterns            9DB8 
     -------------------------------------------------------------------------
 <CODE> 1 (was CODE)
-  Relative segment, address: 5D94 - 5FD9 (0x246 bytes), align: 1
+  Relative segment, address: 5D88 - 5FCD (0x246 bytes), align: 1
   Segment part 35.
            ENTRY                   ADDRESS         REF BY
            =====                   =======         ======
-           serial_configure        5D94            system_setup (emeter-setup)
+           serial_configure        5D88            system_setup (emeter-setup)
                calls direct
     -------------------------------------------------------------------------
 <CODE> 1 (was CODE)
-  Relative segment, address: 802E - 80A3 (0x76 bytes), align: 1
+  Relative segment, address: 8098 - 810D (0x76 bytes), align: 1
   Segment part 37.            Intra module refs:   RS485_sendBuf
            ENTRY                   ADDRESS         REF BY
            =====                   =======         ======
-           serial_write            802E 
+           serial_write            8098 
     -------------------------------------------------------------------------
 <CODE> 1 (was CODE)
-  Relative segment, address: 8116 - 8185 (0x70 bytes), align: 1
+  Relative segment, address: 8180 - 81EF (0x70 bytes), align: 1
   Segment part 38.
            ENTRY                   ADDRESS         REF BY
            =====                   =======         ======
-           RS485_sendBuf           8116            ?Subroutine0 (emeter-dlt645)
+           RS485_sendBuf           8180            ?Subroutine0 (emeter-dlt645)
                                                    process_preset_single_reg (emeter-dlt645)
                calls direct
     -------------------------------------------------------------------------
@@ -1275,29 +1275,29 @@ DATA20_Z
            port                    1E1E 
     -------------------------------------------------------------------------
 <CODE> 1 (was CODE)
-  Relative segment, address: 8E42 - 8E6D (0x2c bytes), align: 1
+  Relative segment, address: 8E14 - 8E3F (0x2c bytes), align: 1
   Segment part 5.             Intra module refs:   ?Subroutine0
                                                    dlt645_service
            ENTRY                   ADDRESS         REF BY
            =====                   =======         ======
-           CalculateCRC            8E42 
+           CalculateCRC            8E14 
     -------------------------------------------------------------------------
 <CODE> 1 (was CODE)
-  Relative segment, address: 81F6 - 8261 (0x6c bytes), align: 1
+  Relative segment, address: 8260 - 82CB (0x6c bytes), align: 1
   Segment part 6.             Intra module refs:   dlt645_service
            ENTRY                   ADDRESS         REF BY
            =====                   =======         ======
            update_holding_registers
-                                   81F6            main (emeter-main)
+                                   8260            main (emeter-main)
                calls direct
     -------------------------------------------------------------------------
 <CODE> 1 (was CODE)
-  Relative segment, address: 85DE - 8633 (0x56 bytes), align: 1
+  Relative segment, address: 8632 - 8687 (0x56 bytes), align: 1
   Segment part 7.             Intra module refs:   process_read_inp_reg
            LOCAL                   ADDRESS         
            =====                   =======         
            get_ptr_from_input_register_addr
-                                   85DE 
+                                   8632 
     -------------------------------------------------------------------------
 <CODE> 1 (was CODE)
   Relative segment, address: 959C - 95A9 (0xe bytes), align: 1
@@ -1307,66 +1307,66 @@ DATA20_Z
            ?Subroutine3            959C 
     -------------------------------------------------------------------------
 <CODE> 1 (was CODE)
-  Relative segment, address: 70D6 - 7205 (0x130 bytes), align: 1
+  Relative segment, address: 70CA - 71F9 (0x130 bytes), align: 1
   Segment part 9.             Intra module refs:   dlt645_service
            ENTRY                   ADDRESS         REF BY
            =====                   =======         ======
            process_preset_single_reg
-                                   70D6 
+                                   70CA 
                calls direct
     -------------------------------------------------------------------------
 <CODE> 1 (was CODE)
-  Relative segment, address: 84C8 - 84D3 (0xc bytes), align: 1
+  Relative segment, address: 8464 - 846F (0xc bytes), align: 1
   Segment part 14.            Intra module refs:   ?Subroutine1
                                                    process_read_hold_reg
                                                    process_read_inp_reg
            LOCAL                   ADDRESS         
            =====                   =======         
-           ?Subroutine9            84C8 
+           ?Subroutine9            8464 
     -------------------------------------------------------------------------
 <CODE> 1 (was CODE)
-  Relative segment, address: 84D4 - 84DF (0xc bytes), align: 1
+  Relative segment, address: 8470 - 847B (0xc bytes), align: 1
   Segment part 15.            Intra module refs:   ?Subroutine9
            LOCAL                   ADDRESS         
            =====                   =======         
-           ?Subroutine8            84D4 
+           ?Subroutine8            8470 
     -------------------------------------------------------------------------
 <CODE> 1 (was CODE)
-  Relative segment, address: 84E0 - 84EF (0x10 bytes), align: 1
+  Relative segment, address: 847C - 848B (0x10 bytes), align: 1
   Segment part 16.            Intra module refs:   ?Subroutine2
                                                    ?Subroutine8
                                                    dlt645_service
     -------------------------------------------------------------------------
 <CODE> 1 (was CODE)
-  Relative segment, address: 84F0 - 8521 (0x32 bytes), align: 1
+  Relative segment, address: 848C - 84BD (0x32 bytes), align: 1
   Segment part 17.            Intra module refs:   process_read_hold_reg
                                                    process_read_inp_reg
            LOCAL                   ADDRESS         
            =====                   =======         
-           ?Subroutine4            84F0 
+           ?Subroutine4            848C 
     -------------------------------------------------------------------------
 <CODE> 1 (was CODE)
-  Relative segment, address: 8522 - 8529 (0x8 bytes), align: 1
+  Relative segment, address: 84BE - 84C5 (0x8 bytes), align: 1
   Segment part 18.            Intra module refs:   process_read_hold_reg
                                                    process_read_inp_reg
            LOCAL                   ADDRESS         
            =====                   =======         
-           ?Subroutine1            8522 
+           ?Subroutine1            84BE 
     -------------------------------------------------------------------------
 <CODE> 1 (was CODE)
-  Relative segment, address: 936E - 9385 (0x18 bytes), align: 1
+  Relative segment, address: 936C - 9383 (0x18 bytes), align: 1
   Segment part 22.            Intra module refs:   dlt645_service
                                                    process_preset_single_reg
            LOCAL                   ADDRESS         
            =====                   =======         
-           ?Subroutine2            936E 
+           ?Subroutine2            936C 
     -------------------------------------------------------------------------
 <CODE> 1 (was CODE)
-  Relative segment, address: 8982 - 89C5 (0x44 bytes), align: 1
+  Relative segment, address: 88B4 - 88F7 (0x44 bytes), align: 1
   Segment part 10.            Intra module refs:   dlt645_service
            ENTRY                   ADDRESS         REF BY
            =====                   =======         ======
-           process_read_hold_reg   8982 
+           process_read_hold_reg   88B4 
                calls direct
     -------------------------------------------------------------------------
 <CODE> 1 (was CODE)
@@ -1378,35 +1378,35 @@ DATA20_Z
            ?Subroutine7            9572 
     -------------------------------------------------------------------------
 <CODE> 1 (was CODE)
-  Relative segment, address: 94F8 - 9507 (0x10 bytes), align: 1
+  Relative segment, address: 9546 - 9555 (0x10 bytes), align: 1
   Segment part 13.            Intra module refs:   process_read_hold_reg
                                                    process_read_inp_reg
            LOCAL                   ADDRESS         
            =====                   =======         
-           ?Subroutine6            94F8 
+           ?Subroutine6            9546 
     -------------------------------------------------------------------------
 <CODE> 1 (was CODE)
-  Relative segment, address: 88FA - 893D (0x44 bytes), align: 1
+  Relative segment, address: 893C - 897F (0x44 bytes), align: 1
   Segment part 19.            Intra module refs:   process_read_hold_reg
                                                    process_read_inp_reg
            LOCAL                   ADDRESS         
            =====                   =======         
-           ?Subroutine0            88FA 
+           ?Subroutine0            893C 
     -------------------------------------------------------------------------
 <CODE> 1 (was CODE)
-  Relative segment, address: 88B6 - 88F9 (0x44 bytes), align: 1
+  Relative segment, address: 8980 - 89C3 (0x44 bytes), align: 1
   Segment part 11.            Intra module refs:   dlt645_service
            ENTRY                   ADDRESS         REF BY
            =====                   =======         ======
-           process_read_inp_reg    88B6 
+           process_read_inp_reg    8980 
                calls direct
     -------------------------------------------------------------------------
 <CODE> 1 (was CODE)
-  Relative segment, address: 6A6E - 6BD1 (0x164 bytes), align: 1
+  Relative segment, address: 6A62 - 6BC5 (0x164 bytes), align: 1
   Segment part 20.
            ENTRY                   ADDRESS         REF BY
            =====                   =======         ======
-           dlt645_service          6A6E            main (emeter-main)
+           dlt645_service          6A62            main (emeter-main)
                calls direct
 
     *************************************************************************
@@ -1672,36 +1672,36 @@ DATA20_Z
                                                    update_holding_registers (emeter-dlt645)
     -------------------------------------------------------------------------
 <CODE> 1 (was CODE)
-  Relative segment, address: 7206 - 731B (0x116 bytes), align: 1
+  Relative segment, address: 71FA - 730F (0x116 bytes), align: 1
   Segment part 33.            Intra module refs:   update_input_registers
            LOCAL                   ADDRESS         
            =====                   =======         
-           check_voltage_ranges    7206 
+           check_voltage_ranges    71FA 
                calls direct
     -------------------------------------------------------------------------
 <CODE> 1 (was CODE)
-  Relative segment, address: 95FA - 9605 (0xc bytes), align: 1
+  Relative segment, address: 9608 - 9613 (0xc bytes), align: 1
   Segment part 34.            Intra module refs:   check_voltage_ranges
            LOCAL                   ADDRESS         
            =====                   =======         
-           ?Subroutine2            95FA 
+           ?Subroutine3            9608 
     -------------------------------------------------------------------------
 <CODE> 1 (was CODE)
-  Relative segment, address: 96D0 - 96D9 (0xa bytes), align: 1
+  Relative segment, address: 96DE - 96E7 (0xa bytes), align: 1
   Segment part 35.            Intra module refs:   check_voltage_ranges
            LOCAL                   ADDRESS         
            =====                   =======         
-           ?Subroutine1            96D0 
+           ?Subroutine1            96DE 
     -------------------------------------------------------------------------
 <CODE> 1 (was CODE)
-  Relative segment, address: 962A - 9635 (0xc bytes), align: 1
+  Relative segment, address: 9638 - 9643 (0xc bytes), align: 1
   Segment part 36.            Intra module refs:   check_voltage_ranges
            LOCAL                   ADDRESS         
            =====                   =======         
-           ?Subroutine0            962A 
+           ?Subroutine0            9638 
     -------------------------------------------------------------------------
 <CODE> 1 (was CODE)
-  Relative segment, address: 5B20 - 5D93 (0x274 bytes), align: 1
+  Relative segment, address: 5B20 - 5D87 (0x268 bytes), align: 1
   Segment part 37.            Intra module refs:   main
            LOCAL                   ADDRESS         
            =====                   =======         
@@ -1710,96 +1710,113 @@ DATA20_Z
                calls direct
     -------------------------------------------------------------------------
 <CODE> 1 (was CODE)
-  Relative segment, address: 96A8 - 96B1 (0xa bytes), align: 1
-  Segment part 38.            Intra module refs:   update_input_registers
+  Relative segment, address: 9644 - 964F (0xc bytes), align: 1
+  Segment part 38.            Intra module refs:   ?Subroutine11
+                                                   ?Subroutine2
+                                                   update_input_registers
            LOCAL                   ADDRESS         
            =====                   =======         
-           ?Subroutine10           96A8 
+           ?Subroutine15           9644 
     -------------------------------------------------------------------------
 <CODE> 1 (was CODE)
-  Relative segment, address: 9672 - 967D (0xc bytes), align: 1
+  Relative segment, address: 96E8 - 96F1 (0xa bytes), align: 1
   Segment part 39.            Intra module refs:   update_input_registers
            LOCAL                   ADDRESS         
            =====                   =======         
-           ?Subroutine9            9672 
+           ?Subroutine11           96E8 
     -------------------------------------------------------------------------
 <CODE> 1 (was CODE)
-  Relative segment, address: 967E - 9689 (0xc bytes), align: 1
+  Relative segment, address: 9516 - 9519 (0x4 bytes), align: 1
   Segment part 40.            Intra module refs:   update_input_registers
            LOCAL                   ADDRESS         
            =====                   =======         
-           ?Subroutine8            967E 
+           ?Subroutine10           9516 
     -------------------------------------------------------------------------
 <CODE> 1 (was CODE)
-  Relative segment, address: 96E4 - 96EB (0x8 bytes), align: 1
-  Segment part 41.            Intra module refs:   update_input_registers
-           LOCAL                   ADDRESS         
-           =====                   =======         
-           ?Subroutine7            96E4 
+  Relative segment, address: 951A - 9525 (0xc bytes), align: 1
+  Segment part 41.            Intra module refs:   ?Subroutine10
+                                                   update_input_registers
     -------------------------------------------------------------------------
 <CODE> 1 (was CODE)
-  Relative segment, address: 9704 - 970B (0x8 bytes), align: 1
+  Relative segment, address: 9702 - 9709 (0x8 bytes), align: 1
   Segment part 42.            Intra module refs:   update_input_registers
            LOCAL                   ADDRESS         
            =====                   =======         
-           ?Subroutine6            9704 
+           ?Subroutine9            9702 
     -------------------------------------------------------------------------
 <CODE> 1 (was CODE)
-  Relative segment, address: 91B2 - 91B5 (0x4 bytes), align: 1
+  Relative segment, address: 9170 - 9173 (0x4 bytes), align: 1
   Segment part 43.            Intra module refs:   update_input_registers
            LOCAL                   ADDRESS         
            =====                   =======         
-           ?Subroutine5            91B2 
+           ?Subroutine8            9170 
     -------------------------------------------------------------------------
 <CODE> 1 (was CODE)
-  Relative segment, address: 91B6 - 91BB (0x6 bytes), align: 1
-  Segment part 44.            Intra module refs:   ?Subroutine3
-                                                   ?Subroutine5
-                                                   update_input_registers
+  Relative segment, address: 9174 - 917B (0x8 bytes), align: 1
+  Segment part 44.            Intra module refs:   update_input_registers
            LOCAL                   ADDRESS         
            =====                   =======         
-           ?Subroutine13           91B6 
+           ?Subroutine7            9174 
     -------------------------------------------------------------------------
 <CODE> 1 (was CODE)
-  Relative segment, address: 91BC - 91BF (0x4 bytes), align: 1
+  Relative segment, address: 917C - 917F (0x4 bytes), align: 1
   Segment part 45.            Intra module refs:   update_input_registers
            LOCAL                   ADDRESS         
            =====                   =======         
-           ?Subroutine4            91BC 
+           ?Subroutine6            917C 
     -------------------------------------------------------------------------
 <CODE> 1 (was CODE)
-  Relative segment, address: 91C0 - 91CB (0xc bytes), align: 1
-  Segment part 46.            Intra module refs:   ?Subroutine4
-                                                   update_input_registers
-    -------------------------------------------------------------------------
-<CODE> 1 (was CODE)
-  Relative segment, address: 91CC - 91D1 (0x6 bytes), align: 1
-  Segment part 47.            Intra module refs:   update_input_registers
+  Relative segment, address: 9180 - 9181 (0x2 bytes), align: 1
+  Segment part 46.            Intra module refs:   update_input_registers
            LOCAL                   ADDRESS         
            =====                   =======         
-           ?Subroutine3            91CC 
+           ?Subroutine5            9180 
     -------------------------------------------------------------------------
 <CODE> 1 (was CODE)
-  Relative segment, address: 6214 - 63E9 (0x1d6 bytes), align: 1
-  Segment part 48.
+  Relative segment, address: 9182 - 9187 (0x6 bytes), align: 1
+  Segment part 47.            Intra module refs:   ?Subroutine4
+                                                   ?Subroutine5
+                                                   ?Subroutine6
+                                                   ?Subroutine8
+           LOCAL                   ADDRESS         
+           =====                   =======         
+           ?Subroutine16           9182 
+    -------------------------------------------------------------------------
+<CODE> 1 (was CODE)
+  Relative segment, address: 9188 - 918F (0x8 bytes), align: 1
+  Segment part 48.            Intra module refs:   update_input_registers
+           LOCAL                   ADDRESS         
+           =====                   =======         
+           ?Subroutine4            9188 
+    -------------------------------------------------------------------------
+<CODE> 1 (was CODE)
+  Relative segment, address: 968C - 9697 (0xc bytes), align: 1
+  Segment part 49.            Intra module refs:   update_input_registers
+           LOCAL                   ADDRESS         
+           =====                   =======         
+           ?Subroutine2            968C 
+    -------------------------------------------------------------------------
+<CODE> 1 (was CODE)
+  Relative segment, address: 6208 - 63DD (0x1d6 bytes), align: 1
+  Segment part 50.
            ENTRY                   ADDRESS         REF BY
            =====                   =======         ======
-           main                    6214            Segment part 27 (?cstart)
+           main                    6208            Segment part 27 (?cstart)
                calls direct
     -------------------------------------------------------------------------
 <CODE> 1 (was CODE)
-  Relative segment, address: 9636 - 9641 (0xc bytes), align: 1
-  Segment part 49.            Intra module refs:   main
+  Relative segment, address: 95E2 - 95EF (0xe bytes), align: 1
+  Segment part 51.            Intra module refs:   main
            LOCAL                   ADDRESS         
            =====                   =======         
-           ?Subroutine12           9636 
+           ?Subroutine14           95E2 
     -------------------------------------------------------------------------
 <CODE> 1 (was CODE)
-  Relative segment, address: 95AA - 95B7 (0xe bytes), align: 1
-  Segment part 50.            Intra module refs:   main
+  Relative segment, address: 9650 - 965B (0xc bytes), align: 1
+  Segment part 52.            Intra module refs:   main
            LOCAL                   ADDRESS         
            =====                   =======         
-           ?Subroutine11           95AA 
+           ?Subroutine13           9650 
     -------------------------------------------------------------------------
 DATA20_Z
   Relative segment, address: 20B8 - 20BB (0x4 bytes), align: 1
@@ -1809,72 +1826,72 @@ DATA20_Z
            main::x                 20B8 
     -------------------------------------------------------------------------
 <CODE> 1 (was CODE)
-  Relative segment, address: 9724 - 9725 (0x2 bytes), align: 1
-  Segment part 51.
-           ENTRY                   ADDRESS         REF BY
-           =====                   =======         ======
-           switch_to_normal_mode   9724            metrology_switch_to_normal_mode (metrology-setup)
-    -------------------------------------------------------------------------
-<CODE> 1 (was CODE)
-  Relative segment, address: 9726 - 9727 (0x2 bytes), align: 1
+  Relative segment, address: 972A - 972B (0x2 bytes), align: 1
   Segment part 53.
            ENTRY                   ADDRESS         REF BY
            =====                   =======         ======
-           active_energy_pulse_start
-                                   9726            per_sample_energy_pulse_processing (metrology-background)
+           switch_to_normal_mode   972A            metrology_switch_to_normal_mode (metrology-setup)
     -------------------------------------------------------------------------
 <CODE> 1 (was CODE)
-  Relative segment, address: 9728 - 9729 (0x2 bytes), align: 1
-  Segment part 54.
-           ENTRY                   ADDRESS         REF BY
-           =====                   =======         ======
-           active_energy_pulse_end
-                                   9728            per_sample_energy_pulse_processing (metrology-background)
-                                                   system_setup (emeter-setup)
-    -------------------------------------------------------------------------
-<CODE> 1 (was CODE)
-  Relative segment, address: 9666 - 9671 (0xc bytes), align: 1
+  Relative segment, address: 972C - 972D (0x2 bytes), align: 1
   Segment part 55.
            ENTRY                   ADDRESS         REF BY
            =====                   =======         ======
-           reactive_energy_pulse_start
-                                   9666            per_sample_energy_pulse_processing (metrology-background)
+           active_energy_pulse_start
+                                   972C            per_sample_energy_pulse_processing (metrology-background)
     -------------------------------------------------------------------------
 <CODE> 1 (was CODE)
-  Relative segment, address: 9606 - 9611 (0xc bytes), align: 1
+  Relative segment, address: 972E - 972F (0x2 bytes), align: 1
   Segment part 56.
            ENTRY                   ADDRESS         REF BY
            =====                   =======         ======
-           reactive_energy_pulse_end
-                                   9606            per_sample_energy_pulse_processing (metrology-background)
+           active_energy_pulse_end
+                                   972E            per_sample_energy_pulse_processing (metrology-background)
                                                    system_setup (emeter-setup)
     -------------------------------------------------------------------------
 <CODE> 1 (was CODE)
-  Relative segment, address: 893E - 8981 (0x44 bytes), align: 1
+  Relative segment, address: 9674 - 967F (0xc bytes), align: 1
   Segment part 57.
            ENTRY                   ADDRESS         REF BY
            =====                   =======         ======
-           energy_update           893E            ?Subroutine10 (metrology-foreground)
+           reactive_energy_pulse_start
+                                   9674            per_sample_energy_pulse_processing (metrology-background)
+    -------------------------------------------------------------------------
+<CODE> 1 (was CODE)
+  Relative segment, address: 9620 - 962B (0xc bytes), align: 1
+  Segment part 58.
+           ENTRY                   ADDRESS         REF BY
+           =====                   =======         ======
+           reactive_energy_pulse_end
+                                   9620            per_sample_energy_pulse_processing (metrology-background)
+                                                   system_setup (emeter-setup)
+    -------------------------------------------------------------------------
+<CODE> 1 (was CODE)
+  Relative segment, address: 88F8 - 893B (0x44 bytes), align: 1
+  Segment part 59.
+           ENTRY                   ADDRESS         REF BY
+           =====                   =======         ======
+           energy_update           88F8            ?Subroutine10 (metrology-foreground)
                                                    ?Subroutine11 (metrology-foreground)
                calls direct
     -------------------------------------------------------------------------
 DATA20_C
-  Relative segment, address: 972C - 974B (0x20 bytes), align: 1
+  Relative segment, address: 9732 - 9751 (0x20 bytes), align: 1
   Segment part 32.            Intra module refs:   energy_update
            LOCAL                   ADDRESS         
            =====                   =======         
-           energy_update::map      972C 
+           energy_update::map      9732 
     -------------------------------------------------------------------------
 <CODE> 1 (was CODE)
-  Relative segment, address: 8186 - 81F5 (0x70 bytes), align: 1
-  Segment part 58.
+  Relative segment, address: 81F0 - 825F (0x70 bytes), align: 1
+  Segment part 60.
            ENTRY                   ADDRESS         REF BY
            =====                   =======         ======
-           sag_swell_event         8186            per_sample_dsp (metrology-background)
+           sag_swell_event         81F0            per_sample_dsp (metrology-background)
     -------------------------------------------------------------------------
 ISR_CODE
   Relative segment, address: 42A8 - 42AD (0x6 bytes), align: 1
-  Segment part 60.            Intra module refs:   ISR_trap::??INTVEC 108
+  Segment part 62.            Intra module refs:   ISR_trap::??INTVEC 108
                                                    ISR_trap::??INTVEC 116
                                                    ISR_trap::??INTVEC 122
                                                    ISR_trap::??INTVEC 124
@@ -2000,25 +2017,25 @@ Absolute parts
   SEGMENTS IN THE MODULE
   ======================
 <CODE> 1 (was CODE)
-  Relative segment, address: 8B06 - 8B1F (0x1a bytes), align: 1
+  Relative segment, address: 8AC6 - 8ADF (0x1a bytes), align: 1
   Segment part 0. ROOT 
            ENTRY                   ADDRESS         REF BY
            =====                   =======         ======
-           accum48                 8B06 
+           accum48                 8AC6 
     -------------------------------------------------------------------------
 <CODE> 1 (was CODE)
-  Relative segment, address: 8B20 - 8B31 (0x12 bytes), align: 1
+  Relative segment, address: 8AE0 - 8AF1 (0x12 bytes), align: 1
   Segment part 1. ROOT 
            ENTRY                   ADDRESS         REF BY
            =====                   =======         ======
-           accum48_48              8B20            per_sample_dsp (metrology-background)
+           accum48_48              8AE0            per_sample_dsp (metrology-background)
     -------------------------------------------------------------------------
 <CODE> 1 (was CODE)
-  Relative segment, address: 8B32 - 8B43 (0x12 bytes), align: 1
+  Relative segment, address: 8AF2 - 8B03 (0x12 bytes), align: 1
   Segment part 2. ROOT 
            ENTRY                   ADDRESS         REF BY
            =====                   =======         ======
-           decum48_48              8B32            per_sample_dsp (metrology-background)
+           decum48_48              8AF2            per_sample_dsp (metrology-background)
 
     -------------------------------------------------------------------------
   PROGRAM MODULE, NAME : bin2bcd16
@@ -2031,14 +2048,14 @@ Absolute parts
   SEGMENTS IN THE MODULE
   ======================
 <CODE> 1 (was CODE)
-  Relative segment, address: 902A - 904F (0x26 bytes), align: 1
+  Relative segment, address: 904E - 9073 (0x26 bytes), align: 1
   Segment part 0. ROOT 
            ENTRY                   ADDRESS         REF BY
            =====                   =======         ======
-           bin2bcd16               902A 
+           bin2bcd16               904E 
            LOCAL                   ADDRESS         
            =====                   =======         
-           bin2bcd16_1             9034 
+           bin2bcd16_1             9058 
 
     -------------------------------------------------------------------------
   PROGRAM MODULE, NAME : bin2bcd32
@@ -2051,15 +2068,15 @@ Absolute parts
   SEGMENTS IN THE MODULE
   ======================
 <CODE> 1 (was CODE)
-  Relative segment, address: 89C6 - 8A07 (0x42 bytes), align: 1
+  Relative segment, address: 89C4 - 8A05 (0x42 bytes), align: 1
   Segment part 0. ROOT 
            ENTRY                   ADDRESS         REF BY
            =====                   =======         ======
-           bin2bcd32               89C6 
+           bin2bcd32               89C4 
            LOCAL                   ADDRESS         
            =====                   =======         
-           bin2bcd32_1             89D2 
-           bin2bcd32_2             89E0 
+           bin2bcd32_1             89D0 
+           bin2bcd32_2             89DE 
 
     -------------------------------------------------------------------------
   PROGRAM MODULE, NAME : bin2bcd64
@@ -2072,17 +2089,17 @@ Absolute parts
   SEGMENTS IN THE MODULE
   ======================
 <CODE> 1 (was CODE)
-  Relative segment, address: 7EA6 - 7F2B (0x86 bytes), align: 1
+  Relative segment, address: 7E9A - 7F1F (0x86 bytes), align: 1
   Segment part 0. ROOT 
            ENTRY                   ADDRESS         REF BY
            =====                   =======         ======
-           bin2bcd64               7EA6 
+           bin2bcd64               7E9A 
            LOCAL                   ADDRESS         
            =====                   =======         
-           bin2bcd64_1             7EB6 
-           bin2bcd64_2             7EC4 
-           bin2bcd64_3             7ED4 
-           bin2bcd64_4             7EE6 
+           bin2bcd64_1             7EAA 
+           bin2bcd64_2             7EB8 
+           bin2bcd64_3             7EC8 
+           bin2bcd64_4             7EDA 
 
     -------------------------------------------------------------------------
   PROGRAM MODULE, NAME : dc_filter16
@@ -2095,32 +2112,32 @@ Absolute parts
   SEGMENTS IN THE MODULE
   ======================
 <CODE> 1 (was CODE)
-  Relative segment, address: 86DE - 8707 (0x2a bytes), align: 1
+  Relative segment, address: 86DC - 8705 (0x2a bytes), align: 1
   Segment part 0. ROOT 
            ENTRY                   ADDRESS         REF BY
            =====                   =======         ======
-           dc_filter16             86DE            per_sample_dsp (metrology-background)
+           dc_filter16             86DC            per_sample_dsp (metrology-background)
     -------------------------------------------------------------------------
 <CODE> 1 (was CODE)
-  Relative segment, address: 8708 - 870F (0x8 bytes), align: 1
+  Relative segment, address: 8706 - 870D (0x8 bytes), align: 1
   Segment part 1. ROOT 
            ENTRY                   ADDRESS         REF BY
            =====                   =======         ======
-           dc_filter16_no_update   8708 
+           dc_filter16_no_update   8706 
     -------------------------------------------------------------------------
 <CODE> 1 (was CODE)
-  Relative segment, address: 8710 - 8719 (0xa bytes), align: 1
+  Relative segment, address: 870E - 8717 (0xa bytes), align: 1
   Segment part 2. ROOT 
            ENTRY                   ADDRESS         REF BY
            =====                   =======         ======
-           dc_filter16_init        8710            metrology_init_from_nv_data (metrology-setup)
+           dc_filter16_init        870E            metrology_init_from_nv_data (metrology-setup)
     -------------------------------------------------------------------------
 <CODE> 1 (was CODE)
-  Relative segment, address: 871A - 8731 (0x18 bytes), align: 1
+  Relative segment, address: 8718 - 872F (0x18 bytes), align: 1
   Segment part 3. ROOT 
            ENTRY                   ADDRESS         REF BY
            =====                   =======         ======
-           dc_filter16_estimate    871A            per_sample_dsp (metrology-background)
+           dc_filter16_estimate    8718            per_sample_dsp (metrology-background)
 
     -------------------------------------------------------------------------
   PROGRAM MODULE, NAME : dc_filter24
@@ -2133,32 +2150,32 @@ Absolute parts
   SEGMENTS IN THE MODULE
   ======================
 <CODE> 1 (was CODE)
-  Relative segment, address: 7FB0 - 7FE9 (0x3a bytes), align: 1
+  Relative segment, address: 7FA4 - 7FDD (0x3a bytes), align: 1
   Segment part 0. ROOT 
            ENTRY                   ADDRESS         REF BY
            =====                   =======         ======
-           dc_filter24             7FB0            per_sample_dsp (metrology-background)
+           dc_filter24             7FA4            per_sample_dsp (metrology-background)
     -------------------------------------------------------------------------
 <CODE> 1 (was CODE)
-  Relative segment, address: 7FEA - 7FF7 (0xe bytes), align: 1
+  Relative segment, address: 7FDE - 7FEB (0xe bytes), align: 1
   Segment part 1. ROOT 
            ENTRY                   ADDRESS         REF BY
            =====                   =======         ======
-           dc_filter24_no_update   7FEA 
+           dc_filter24_no_update   7FDE 
     -------------------------------------------------------------------------
 <CODE> 1 (was CODE)
-  Relative segment, address: 7FF8 - 8011 (0x1a bytes), align: 1
+  Relative segment, address: 7FEC - 8005 (0x1a bytes), align: 1
   Segment part 2. ROOT 
            ENTRY                   ADDRESS         REF BY
            =====                   =======         ======
-           dc_filter24_init        7FF8            metrology_init_from_nv_data (metrology-setup)
+           dc_filter24_init        7FEC            metrology_init_from_nv_data (metrology-setup)
     -------------------------------------------------------------------------
 <CODE> 1 (was CODE)
-  Relative segment, address: 8012 - 802D (0x1c bytes), align: 1
+  Relative segment, address: 8006 - 8021 (0x1c bytes), align: 1
   Segment part 3. ROOT 
            ENTRY                   ADDRESS         REF BY
            =====                   =======         ======
-           dc_filter24_estimate    8012            per_sample_dsp (metrology-background)
+           dc_filter24_estimate    8006            per_sample_dsp (metrology-background)
 
     -------------------------------------------------------------------------
   LIBRARY MODULE, NAME : div48
@@ -2166,11 +2183,11 @@ Absolute parts
   SEGMENTS IN THE MODULE
   ======================
 <CODE> 1 (was CODE)
-  Relative segment, address: 868A - 86DD (0x54 bytes), align: 1
+  Relative segment, address: 8688 - 86DB (0x54 bytes), align: 1
   Segment part 2.
            ENTRY                   ADDRESS         REF BY
            =====                   =======         ======
-           div48                   868A            evaluate_rms_voltage (metrology-foreground)
+           div48                   8688            evaluate_rms_voltage (metrology-foreground)
                calls direct
 
     -------------------------------------------------------------------------
@@ -2218,61 +2235,61 @@ DATA16_AN
            PMMRIE_L                012E 
     -------------------------------------------------------------------------
 <CODE> 1 (was CODE)
-  Relative segment, address: 7C64 - 7CF5 (0x92 bytes), align: 1
+  Relative segment, address: 7CEA - 7D7B (0x92 bytes), align: 1
   Segment part 7.             Intra module refs:   SetVCore
            ENTRY                   ADDRESS         REF BY
            =====                   =======         ======
-           SetVCoreUp              7C64 
+           SetVCoreUp              7CEA 
     -------------------------------------------------------------------------
 <CODE> 1 (was CODE)
-  Relative segment, address: 96C6 - 96CF (0xa bytes), align: 1
+  Relative segment, address: 96D4 - 96DD (0xa bytes), align: 1
   Segment part 10.            Intra module refs:   ?Subroutine2
                                                    SetVCoreUp
            LOCAL                   ADDRESS         
            =====                   =======         
-           ?Subroutine3            96C6 
+           ?Subroutine3            96D4 
     -------------------------------------------------------------------------
 <CODE> 1 (was CODE)
-  Relative segment, address: 94C2 - 94D3 (0x12 bytes), align: 1
+  Relative segment, address: 94AE - 94BF (0x12 bytes), align: 1
   Segment part 11.            Intra module refs:   SetVCoreDown
                                                    SetVCoreUp
            LOCAL                   ADDRESS         
            =====                   =======         
-           ?Subroutine1            94C2 
+           ?Subroutine1            94AE 
     -------------------------------------------------------------------------
 <CODE> 1 (was CODE)
-  Relative segment, address: 93F6 - 93FB (0x6 bytes), align: 1
+  Relative segment, address: 93F4 - 93F9 (0x6 bytes), align: 1
   Segment part 12.            Intra module refs:   SetVCoreDown
                                                    SetVCoreUp
            LOCAL                   ADDRESS         
            =====                   =======         
-           ?Subroutine0            93F6 
+           ?Subroutine0            93F4 
     -------------------------------------------------------------------------
 <CODE> 1 (was CODE)
-  Relative segment, address: 93FC - 940B (0x10 bytes), align: 1
+  Relative segment, address: 93FA - 9409 (0x10 bytes), align: 1
   Segment part 13.            Intra module refs:   ?Subroutine0
                                                    SetVCoreUp
     -------------------------------------------------------------------------
 <CODE> 1 (was CODE)
-  Relative segment, address: 852A - 8585 (0x5c bytes), align: 1
+  Relative segment, address: 8528 - 8583 (0x5c bytes), align: 1
   Segment part 8.             Intra module refs:   SetVCore
            ENTRY                   ADDRESS         REF BY
            =====                   =======         ======
-           SetVCoreDown            852A 
+           SetVCoreDown            8528 
     -------------------------------------------------------------------------
 <CODE> 1 (was CODE)
-  Relative segment, address: 961E - 9629 (0xc bytes), align: 1
+  Relative segment, address: 962C - 9637 (0xc bytes), align: 1
   Segment part 9.             Intra module refs:   SetVCoreDown
            LOCAL                   ADDRESS         
            =====                   =======         
-           ?Subroutine2            961E 
+           ?Subroutine2            962C 
     -------------------------------------------------------------------------
 <CODE> 1 (was CODE)
-  Relative segment, address: 8AC8 - 8B05 (0x3e bytes), align: 1
+  Relative segment, address: 8B04 - 8B41 (0x3e bytes), align: 1
   Segment part 14.
            ENTRY                   ADDRESS         REF BY
            =====                   =======         ======
-           SetVCore                8AC8            set_clock_slow (emeter-setup)
+           SetVCore                8B04            set_clock_slow (emeter-setup)
                calls direct
 
     -------------------------------------------------------------------------
@@ -2286,11 +2303,11 @@ Absolute parts
   SEGMENTS IN THE MODULE
   ======================
 <CODE> 1 (was CODE)
-  Relative segment, address: 92EE - 9307 (0x1a bytes), align: 1
+  Relative segment, address: 933A - 9353 (0x1a bytes), align: 1
   Segment part 0. ROOT 
            ENTRY                   ADDRESS         REF BY
            =====                   =======         ======
-           imul16                  92EE 
+           imul16                  933A 
 
     -------------------------------------------------------------------------
   PROGRAM MODULE, NAME : imul16u
@@ -2303,11 +2320,11 @@ Absolute parts
   SEGMENTS IN THE MODULE
   ======================
 <CODE> 1 (was CODE)
-  Relative segment, address: 933C - 9355 (0x1a bytes), align: 1
+  Relative segment, address: 92B8 - 92D1 (0x1a bytes), align: 1
   Segment part 0. ROOT 
            ENTRY                   ADDRESS         REF BY
            =====                   =======         ======
-           imul16u                 933C 
+           imul16u                 92B8 
 
     -------------------------------------------------------------------------
   PROGRAM MODULE, NAME : isqrt16
@@ -2320,15 +2337,15 @@ Absolute parts
   SEGMENTS IN THE MODULE
   ======================
 <CODE> 1 (was CODE)
-  Relative segment, address: 8F92 - 8FB7 (0x26 bytes), align: 1
+  Relative segment, address: 8FDC - 9001 (0x26 bytes), align: 1
   Segment part 0. ROOT 
            ENTRY                   ADDRESS         REF BY
            =====                   =======         ======
-           isqrt16                 8F92 
+           isqrt16                 8FDC 
            LOCAL                   ADDRESS         
            =====                   =======         
-           isqrt16_1               8F9A 
-           isqrt16_2               8FA6 
+           isqrt16_1               8FE4 
+           isqrt16_2               8FF0 
 
     -------------------------------------------------------------------------
   PROGRAM MODULE, NAME : isqrt32
@@ -2341,17 +2358,17 @@ Absolute parts
   SEGMENTS IN THE MODULE
   ======================
 <CODE> 1 (was CODE)
-  Relative segment, address: 8466 - 84C7 (0x62 bytes), align: 1
+  Relative segment, address: 84C6 - 8527 (0x62 bytes), align: 1
   Segment part 0. ROOT 
            ENTRY                   ADDRESS         REF BY
            =====                   =======         ======
-           isqrt32                 8466            evaluate_rms_voltage (metrology-foreground)
+           isqrt32                 84C6            evaluate_rms_voltage (metrology-foreground)
            LOCAL                   ADDRESS         
            =====                   =======         
-           isqrt32_1               8474 
-           isqrt32_2               8486 
-           isqrt32_3               84A0 
-           isqrt32_4               84B2 
+           isqrt32_1               84D4 
+           isqrt32_2               84E6 
+           isqrt32_3               8500 
+           isqrt32_4               8512 
 
     -------------------------------------------------------------------------
   PROGRAM MODULE, NAME : isqrt64
@@ -2364,18 +2381,18 @@ Absolute parts
   SEGMENTS IN THE MODULE
   ======================
 <CODE> 1 (was CODE)
-  Relative segment, address: 7946 - 79ED (0xa8 bytes), align: 1
+  Relative segment, address: 793A - 79E1 (0xa8 bytes), align: 1
   Segment part 0. ROOT 
            ENTRY                   ADDRESS         REF BY
            =====                   =======         ======
-           isqrt64                 7946            evaluate_rms_current (metrology-foreground)
+           isqrt64                 793A            evaluate_rms_current (metrology-foreground)
                                                    isqrt64i (isqrt64i)
            LOCAL                   ADDRESS         
            =====                   =======         
-           isqrt64_1               795E 
-           isqrt64_2               797C 
-           isqrt64_3               79AA 
-           isqrt64_4               79C8 
+           isqrt64_1               7952 
+           isqrt64_2               7970 
+           isqrt64_3               799E 
+           isqrt64_4               79BC 
 
     -------------------------------------------------------------------------
   LIBRARY MODULE, NAME : isqrt64i
@@ -2383,19 +2400,19 @@ Absolute parts
   SEGMENTS IN THE MODULE
   ======================
 <CODE> 1 (was CODE)
-  Relative segment, address: 9282 - 9297 (0x16 bytes), align: 1
+  Relative segment, address: 929C - 92B1 (0x16 bytes), align: 1
   Segment part 2.
            ENTRY                   ADDRESS         REF BY
            =====                   =======         ======
-           isqrt64i                9282            calculate_phase_readings (metrology-foreground)
+           isqrt64i                929C            calculate_phase_readings (metrology-foreground)
                calls direct
     -------------------------------------------------------------------------
 <CODE> 1 (was CODE)
-  Relative segment, address: 9298 - 929D (0x6 bytes), align: 1
+  Relative segment, address: 92B2 - 92B7 (0x6 bytes), align: 1
   Segment part 3.             Intra module refs:   isqrt64i
            LOCAL                   ADDRESS         
            =====                   =======         
-           ?Subroutine0            9298 
+           ?Subroutine0            92B2 
 
     -------------------------------------------------------------------------
   PROGRAM MODULE, NAME : mac48
@@ -2408,11 +2425,11 @@ Absolute parts
   SEGMENTS IN THE MODULE
   ======================
 <CODE> 1 (was CODE)
-  Relative segment, address: 92BA - 92D3 (0x1a bytes), align: 1
+  Relative segment, address: 9320 - 9339 (0x1a bytes), align: 1
   Segment part 0. ROOT 
            ENTRY                   ADDRESS         REF BY
            =====                   =======         ======
-           mac48_16                92BA 
+           mac48_16                9320 
 
     -------------------------------------------------------------------------
   PROGRAM MODULE, NAME : mac64_16_24
@@ -2425,16 +2442,16 @@ Absolute parts
   SEGMENTS IN THE MODULE
   ======================
 <CODE> 1 (was CODE)
-  Relative segment, address: 909C - 90C1 (0x26 bytes), align: 1
+  Relative segment, address: 9028 - 904D (0x26 bytes), align: 1
   Segment part 0. ROOT 
            ENTRY                   ADDRESS         REF BY
            =====                   =======         ======
-           mac64_16_24             909C 
+           mac64_16_24             9028 
            LOCAL                   ADDRESS         
            =====                   =======         
-           __MSP430_HAS_MPY__      909C 
+           __MSP430_HAS_MPY__      9028 
            __TOOLKIT_USE_SOFT_MPY__
-                                   909C 
+                                   9028 
 
     -------------------------------------------------------------------------
   PROGRAM MODULE, NAME : mul48_32_16
@@ -2447,16 +2464,16 @@ Absolute parts
   SEGMENTS IN THE MODULE
   ======================
 <CODE> 1 (was CODE)
-  Relative segment, address: 8FB8 - 8FDD (0x26 bytes), align: 1
+  Relative segment, address: 8FB6 - 8FDB (0x26 bytes), align: 1
   Segment part 0. ROOT 
            ENTRY                   ADDRESS         REF BY
            =====                   =======         ======
-           mul48_32_16             8FB8 
+           mul48_32_16             8FB6 
            LOCAL                   ADDRESS         
            =====                   =======         
-           __MSP430_HAS_MPY__      8FB8 
+           __MSP430_HAS_MPY__      8FB6 
            __TOOLKIT_USE_SOFT_MPY__
-                                   8FB8 
+                                   8FB6 
 
     -------------------------------------------------------------------------
   PROGRAM MODULE, NAME : mul48u_32_16
@@ -2469,16 +2486,16 @@ Absolute parts
   SEGMENTS IN THE MODULE
   ======================
 <CODE> 1 (was CODE)
-  Relative segment, address: 912E - 914F (0x22 bytes), align: 1
+  Relative segment, address: 912C - 914D (0x22 bytes), align: 1
   Segment part 0. ROOT 
            ENTRY                   ADDRESS         REF BY
            =====                   =======         ======
-           mul48u_32_16            912E 
+           mul48u_32_16            912C 
            LOCAL                   ADDRESS         
            =====                   =======         
-           __MSP430_HAS_MPY__      912E 
+           __MSP430_HAS_MPY__      912C 
            __TOOLKIT_USE_SOFT_MPY__
-                                   912E 
+                                   912C 
 
     -------------------------------------------------------------------------
   PROGRAM MODULE, NAME : q1_15_mul
@@ -2491,11 +2508,11 @@ Absolute parts
   SEGMENTS IN THE MODULE
   ======================
 <CODE> 1 (was CODE)
-  Relative segment, address: 91D2 - 91F1 (0x20 bytes), align: 1
+  Relative segment, address: 91D0 - 91EF (0x20 bytes), align: 1
   Segment part 0. ROOT 
            ENTRY                   ADDRESS         REF BY
            =====                   =======         ======
-           q1_15_mul               91D2 
+           q1_15_mul               91D0 
 
     -------------------------------------------------------------------------
   PROGRAM MODULE, NAME : q1_15_mulr
@@ -2508,11 +2525,11 @@ Absolute parts
   SEGMENTS IN THE MODULE
   ======================
 <CODE> 1 (was CODE)
-  Relative segment, address: 9004 - 9029 (0x26 bytes), align: 1
+  Relative segment, address: 9074 - 9099 (0x26 bytes), align: 1
   Segment part 0. ROOT 
            ENTRY                   ADDRESS         REF BY
            =====                   =======         ======
-           q1_15_mulr              9004 
+           q1_15_mulr              9074 
 
     -------------------------------------------------------------------------
   PROGRAM MODULE, NAME : shift48
@@ -2525,16 +2542,16 @@ Absolute parts
   SEGMENTS IN THE MODULE
   ======================
 <CODE> 1 (was CODE)
-  Relative segment, address: 8E6E - 8E99 (0x2c bytes), align: 1
+  Relative segment, address: 8E6C - 8E97 (0x2c bytes), align: 1
   Segment part 0. ROOT 
            ENTRY                   ADDRESS         REF BY
            =====                   =======         ======
-           shift48                 8E6E 
+           shift48                 8E6C 
            LOCAL                   ADDRESS         
            =====                   =======         
-           shift48_1               8E88 
-           shift48_3               8E8A 
-           shift48_2               8E74 
+           shift48_1               8E86 
+           shift48_3               8E88 
+           shift48_2               8E72 
 
     -------------------------------------------------------------------------
   PROGRAM MODULE, NAME : sqac48_16
@@ -2547,11 +2564,11 @@ Absolute parts
   SEGMENTS IN THE MODULE
   ======================
 <CODE> 1 (was CODE)
-  Relative segment, address: 92D4 - 92ED (0x1a bytes), align: 1
+  Relative segment, address: 92EC - 9305 (0x1a bytes), align: 1
   Segment part 0. ROOT 
            ENTRY                   ADDRESS         REF BY
            =====                   =======         ======
-           sqac48_16               92D4            per_sample_dsp (metrology-background)
+           sqac48_16               92EC            per_sample_dsp (metrology-background)
 
     -------------------------------------------------------------------------
   PROGRAM MODULE, NAME : sqac64_24
@@ -2564,16 +2581,16 @@ Absolute parts
   SEGMENTS IN THE MODULE
   ======================
 <CODE> 1 (was CODE)
-  Relative segment, address: 8FDE - 9003 (0x26 bytes), align: 1
+  Relative segment, address: 909A - 90BF (0x26 bytes), align: 1
   Segment part 0. ROOT 
            ENTRY                   ADDRESS         REF BY
            =====                   =======         ======
-           sqac64_24               8FDE 
+           sqac64_24               909A 
            LOCAL                   ADDRESS         
            =====                   =======         
-           __MSP430_HAS_MPY__      8FDE 
+           __MSP430_HAS_MPY__      909A 
            __TOOLKIT_USE_SOFT_MPY__
-                                   8FDE 
+                                   909A 
 
     -------------------------------------------------------------------------
   LIBRARY MODULE, NAME : metrology-background
@@ -2939,12 +2956,12 @@ DATA20_Z
                calls direct
     -------------------------------------------------------------------------
 <CODE> 1 (was CODE)
-  Relative segment, address: 65BA - 6767 (0x1ae bytes), align: 1
+  Relative segment, address: 65AE - 675B (0x1ae bytes), align: 1
   Segment part 40.            Intra module refs:   adc_interrupt
            LOCAL                   ADDRESS         
            =====                   =======         
            per_sample_energy_pulse_processing
-                                   65BA 
+                                   65AE 
                calls direct
     -------------------------------------------------------------------------
 ISR_CODE
@@ -2997,7 +3014,7 @@ INTVEC
                                    FFF2 
     -------------------------------------------------------------------------
 DATA20_ID
-  Relative segment, address: A01E - A01F (0x2 bytes), align: 1
+  Relative segment, address: A024 - A025 (0x2 bytes), align: 1
   Segment part 27.            Intra module refs:   ENDSTOP_HITS_FOR_OVERLOAD
 
     -------------------------------------------------------------------------
@@ -3022,74 +3039,74 @@ INFO
                                                    system_setup (emeter-setup)
     -------------------------------------------------------------------------
 DATA20_C
-  Relative segment, address: 974C - 978D (0x42 bytes), align: 1
+  Relative segment, address: 9752 - 9793 (0x42 bytes), align: 1
   Segment part 3.
            ENTRY                   ADDRESS         REF BY
            =====                   =======         ======
-           calibration_defaults    974C            ?Subroutine3 (emeter-dlt645)
+           calibration_defaults    9752            ?Subroutine3 (emeter-dlt645)
                                                    metrology_init (metrology-setup)
     -------------------------------------------------------------------------
 DATA20_C
-  Relative segment, address: 978E - 9791 (0x4 bytes), align: 1
+  Relative segment, address: 9794 - 9797 (0x4 bytes), align: 1
   Segment part 4.
            ENTRY                   ADDRESS         REF BY
            =====                   =======         ======
            configuration_defaults
-                                   978E            ?Subroutine3 (emeter-dlt645)
+                                   9794            ?Subroutine3 (emeter-dlt645)
                                                    metrology_init (metrology-setup)
     -------------------------------------------------------------------------
 <CODE> 1 (was CODE)
-  Relative segment, address: 924A - 9251 (0x8 bytes), align: 1
+  Relative segment, address: 9280 - 9287 (0x8 bytes), align: 1
   Segment part 6.
            ENTRY                   ADDRESS         REF BY
            =====                   =======         ======
-           get_cfg_baud_rate       924A            update_holding_registers (emeter-dlt645)
+           get_cfg_baud_rate       9280            update_holding_registers (emeter-dlt645)
     -------------------------------------------------------------------------
 <CODE> 1 (was CODE)
-  Relative segment, address: 9252 - 9259 (0x8 bytes), align: 1
+  Relative segment, address: 9288 - 928F (0x8 bytes), align: 1
   Segment part 7.
            ENTRY                   ADDRESS         REF BY
            =====                   =======         ======
-           get_cfg_mb_address      9252            ?Subroutine1 (emeter-dlt645)
+           get_cfg_mb_address      9288            ?Subroutine1 (emeter-dlt645)
                                                    USCI_A0_isr (emeter-communication)
                                                    USCI_A1_isr (emeter-communication)
                                                    USCI_A2_isr (emeter-communication)
                                                    update_holding_registers (emeter-dlt645)
     -------------------------------------------------------------------------
 <CODE> 1 (was CODE)
-  Relative segment, address: 925A - 9265 (0xc bytes), align: 1
+  Relative segment, address: 9290 - 929B (0xc bytes), align: 1
   Segment part 36.
            ENTRY                   ADDRESS         REF BY
            =====                   =======         ======
            clear_calibration_data
-                                   925A            ?Subroutine3 (emeter-dlt645)
+                                   9290            ?Subroutine3 (emeter-dlt645)
                                                    process_preset_single_reg (emeter-dlt645)
                calls direct
     -------------------------------------------------------------------------
 <CODE> 1 (was CODE)
-  Relative segment, address: 9050 - 9075 (0x26 bytes), align: 1
+  Relative segment, address: 8F90 - 8FB5 (0x26 bytes), align: 1
   Segment part 37.
            ENTRY                   ADDRESS         REF BY
            =====                   =======         ======
            write_calibration_data
-                                   9050            dlt645_service (emeter-dlt645)
+                                   8F90            dlt645_service (emeter-dlt645)
                                                    process_preset_single_reg (emeter-dlt645)
                calls direct
     -------------------------------------------------------------------------
 <CODE> 1 (was CODE)
-  Relative segment, address: 970C - 9711 (0x6 bytes), align: 1
+  Relative segment, address: 9712 - 9717 (0x6 bytes), align: 1
   Segment part 38.
            ENTRY                   ADDRESS         REF BY
            =====                   =======         ======
-           get_cal_info            970C            process_preset_single_reg (emeter-dlt645)
+           get_cal_info            9712            process_preset_single_reg (emeter-dlt645)
                                                    update_holding_registers (emeter-dlt645)
     -------------------------------------------------------------------------
 <CODE> 1 (was CODE)
-  Relative segment, address: 9712 - 9717 (0x6 bytes), align: 1
+  Relative segment, address: 9718 - 971D (0x6 bytes), align: 1
   Segment part 39.
            ENTRY                   ADDRESS         REF BY
            =====                   =======         ======
-           get_cfg_info            9712            process_preset_single_reg (emeter-dlt645)
+           get_cfg_info            9718            process_preset_single_reg (emeter-dlt645)
                                                    update_holding_registers (emeter-dlt645)
 
     -------------------------------------------------------------------------
@@ -3098,12 +3115,12 @@ DATA20_C
   SEGMENTS IN THE MODULE
   ======================
 DATA20_C
-  Relative segment, address: 9792 - 9B91 (0x400 bytes), align: 1
+  Relative segment, address: 9798 - 9B97 (0x400 bytes), align: 1
   Segment part 2.
            ENTRY                   ADDRESS         REF BY
            =====                   =======         ======
            phase_shift_fir_coeffs
-                                   9792            set_phase_correction (metrology-foreground)
+                                   9798            set_phase_correction (metrology-foreground)
 
     -------------------------------------------------------------------------
   LIBRARY MODULE, NAME : metrology-flash
@@ -3139,41 +3156,41 @@ DATA16_AN
            FCTL3_L                 0144 
     -------------------------------------------------------------------------
 <CODE> 1 (was CODE)
-  Relative segment, address: 9474 - 9487 (0x14 bytes), align: 1
+  Relative segment, address: 9436 - 9449 (0x14 bytes), align: 1
   Segment part 4.
            ENTRY                   ADDRESS         REF BY
            =====                   =======         ======
-           flash_clr               9474            clear_calibration_data (metrology-calibration-defaults)
+           flash_clr               9436            clear_calibration_data (metrology-calibration-defaults)
     -------------------------------------------------------------------------
 <CODE> 1 (was CODE)
-  Relative segment, address: 9642 - 964D (0xc bytes), align: 1
+  Relative segment, address: 965C - 9667 (0xc bytes), align: 1
   Segment part 6.             Intra module refs:   ?Subroutine0
                                                    flash_clr
            LOCAL                   ADDRESS         
            =====                   =======         
-           ?Subroutine1            9642 
+           ?Subroutine1            965C 
     -------------------------------------------------------------------------
 <CODE> 1 (was CODE)
-  Relative segment, address: 964E - 9659 (0xc bytes), align: 1
+  Relative segment, address: 9668 - 9673 (0xc bytes), align: 1
   Segment part 9.             Intra module refs:   flash_memcpy
            LOCAL                   ADDRESS         
            =====                   =======         
-           ?Subroutine0            964E 
+           ?Subroutine0            9668 
     -------------------------------------------------------------------------
 <CODE> 1 (was CODE)
-  Relative segment, address: 940C - 9421 (0x16 bytes), align: 1
+  Relative segment, address: 93B2 - 93C7 (0x16 bytes), align: 1
   Segment part 10.
            ENTRY                   ADDRESS         REF BY
            =====                   =======         ======
-           flash_memcpy            940C            metrology_init (metrology-setup)
+           flash_memcpy            93B2            metrology_init (metrology-setup)
                                                    write_calibration_data (metrology-calibration-defaults)
     -------------------------------------------------------------------------
 <CODE> 1 (was CODE)
-  Relative segment, address: 93CA - 93DF (0x16 bytes), align: 1
+  Relative segment, address: 93DE - 93F3 (0x16 bytes), align: 1
   Segment part 11.
            ENTRY                   ADDRESS         REF BY
            =====                   =======         ======
-           flash_secure            93CA            metrology_init (metrology-setup)
+           flash_secure            93DE            metrology_init (metrology-setup)
                                                    write_calibration_data (metrology-calibration-defaults)
 
     -------------------------------------------------------------------------
@@ -3236,28 +3253,28 @@ DATA16_AN
            MPY8                    04D0 
     -------------------------------------------------------------------------
 <CODE> 1 (was CODE)
-  Relative segment, address: 8A88 - 8A9D (0x16 bytes), align: 1
+  Relative segment, address: 8A46 - 8A5B (0x16 bytes), align: 1
   Segment part 17.            Intra module refs:   evaluate_active_power
                                                    evaluate_reactive_power
            LOCAL                   ADDRESS         
            =====                   =======         
-           mul48_32_16             8A88 
+           mul48_32_16             8A46 
     -------------------------------------------------------------------------
 <CODE> 1 (was CODE)
-  Relative segment, address: 8A9E - 8AB1 (0x14 bytes), align: 1
+  Relative segment, address: 8A5C - 8A6F (0x14 bytes), align: 1
   Segment part 18.            Intra module refs:   mul48_32_16
                                                    mul48u_32_16
            LOCAL                   ADDRESS         
            =====                   =======         
-           ?Subroutine0            8A9E 
+           ?Subroutine0            8A5C 
     -------------------------------------------------------------------------
 <CODE> 1 (was CODE)
-  Relative segment, address: 8AB2 - 8AC7 (0x16 bytes), align: 1
+  Relative segment, address: 8A70 - 8A85 (0x16 bytes), align: 1
   Segment part 19.            Intra module refs:   evaluate_rms_current
                                                    evaluate_rms_voltage
            LOCAL                   ADDRESS         
            =====                   =======         
-           mul48u_32_16            8AB2 
+           mul48u_32_16            8A70 
     -------------------------------------------------------------------------
 DATA20_Z
   Relative segment, address: 20FA - 20FB (0x2 bytes), align: 1
@@ -3306,205 +3323,205 @@ DATA20_Z
                                                    rms_voltage (metrology-readings)
     -------------------------------------------------------------------------
 <CODE> 1 (was CODE)
-  Relative segment, address: 8DBC - 8DE9 (0x2e bytes), align: 1
+  Relative segment, address: 8DBA - 8DE7 (0x2e bytes), align: 1
   Segment part 20.            Intra module refs:   calculate_phase_readings
            ENTRY                   ADDRESS         REF BY
            =====                   =======         ======
-           set_phase_correction    8DBC 
+           set_phase_correction    8DBA 
     -------------------------------------------------------------------------
 <CODE> 1 (was CODE)
-  Relative segment, address: 8C9A - 8CCB (0x32 bytes), align: 1
+  Relative segment, address: 8C66 - 8C97 (0x32 bytes), align: 1
   Segment part 21.
            ENTRY                   ADDRESS         REF BY
            =====                   =======         ======
            set_sd_phase_correction
-                                   8C9A            metrology_switch_to_normal_mode (metrology-setup)
+                                   8C66            metrology_switch_to_normal_mode (metrology-setup)
     -------------------------------------------------------------------------
 DATA20_C
-  Relative segment, address: 9B92 - 9B9D (0xc bytes), align: 1
+  Relative segment, address: 9B98 - 9BA3 (0xc bytes), align: 1
   Segment part 14.            Intra module refs:   set_sd_phase_correction
            LOCAL                   ADDRESS         
            =====                   =======         
            set_sd_phase_correction::sd_locations
-                                   9B92 
+                                   9B98 
     -------------------------------------------------------------------------
 <CODE> 1 (was CODE)
-  Relative segment, address: 80A4 - 8115 (0x72 bytes), align: 1
+  Relative segment, address: 810E - 817F (0x72 bytes), align: 1
   Segment part 22.            Intra module refs:   calculate_phase_readings
            LOCAL                   ADDRESS         
            =====                   =======         
-           evaluate_rms_voltage    80A4 
+           evaluate_rms_voltage    810E 
                calls direct
     -------------------------------------------------------------------------
 <CODE> 1 (was CODE)
-  Relative segment, address: 7896 - 7945 (0xb0 bytes), align: 1
+  Relative segment, address: 788A - 7939 (0xb0 bytes), align: 1
   Segment part 23.            Intra module refs:   calculate_phase_readings
            LOCAL                   ADDRESS         
            =====                   =======         
-           evaluate_rms_current    7896 
+           evaluate_rms_current    788A 
                calls direct
     -------------------------------------------------------------------------
 <CODE> 1 (was CODE)
-  Relative segment, address: 9210 - 922D (0x1e bytes), align: 1
+  Relative segment, address: 920E - 922B (0x1e bytes), align: 1
   Segment part 25.            Intra module refs:   evaluate_active_power
                                                    evaluate_reactive_power
                                                    evaluate_rms_current
            LOCAL                   ADDRESS         
            =====                   =======         
-           ?Subroutine1            9210 
+           ?Subroutine1            920E 
     -------------------------------------------------------------------------
 <CODE> 1 (was CODE)
-  Relative segment, address: 8338 - 839D (0x66 bytes), align: 1
+  Relative segment, address: 8336 - 839B (0x66 bytes), align: 1
   Segment part 24.            Intra module refs:   calculate_phase_readings
            LOCAL                   ADDRESS         
            =====                   =======         
-           evaluate_active_power   8338 
+           evaluate_active_power   8336 
                calls direct
     -------------------------------------------------------------------------
 <CODE> 1 (was CODE)
-  Relative segment, address: 82CE - 8337 (0x6a bytes), align: 1
+  Relative segment, address: 82CC - 8335 (0x6a bytes), align: 1
   Segment part 26.            Intra module refs:   calculate_phase_readings
            LOCAL                   ADDRESS         
            =====                   =======         
            evaluate_reactive_power
-                                   82CE 
+                                   82CC 
                calls direct
     -------------------------------------------------------------------------
 <CODE> 1 (was CODE)
-  Relative segment, address: 7E18 - 7EA5 (0x8e bytes), align: 1
+  Relative segment, address: 7E0C - 7E99 (0x8e bytes), align: 1
   Segment part 27.            Intra module refs:   calculate_phase_readings
            LOCAL                   ADDRESS         
            =====                   =======         
-           evaluate_power_factor   7E18 
+           evaluate_power_factor   7E0C 
                calls direct
     -------------------------------------------------------------------------
 <CODE> 1 (was CODE)
-  Relative segment, address: 965A - 9665 (0xc bytes), align: 1
+  Relative segment, address: 9680 - 968B (0xc bytes), align: 1
   Segment part 43.            Intra module refs:   calculate_phase_readings
                                                    evaluate_power_factor
            LOCAL                   ADDRESS         
            =====                   =======         
-           ?Subroutine3            965A 
+           ?Subroutine3            9680 
     -------------------------------------------------------------------------
 <CODE> 1 (was CODE)
-  Relative segment, address: 8262 - 82CD (0x6c bytes), align: 1
+  Relative segment, address: 8022 - 8097 (0x76 bytes), align: 1
   Segment part 28.            Intra module refs:   ?Subroutine4
            LOCAL                   ADDRESS         
            =====                   =======         
            integrate_power_to_energy
-                                   8262 
+                                   8022 
                calls direct
     -------------------------------------------------------------------------
 <CODE> 1 (was CODE)
-  Relative segment, address: 96B2 - 96BB (0xa bytes), align: 1
+  Relative segment, address: 96C0 - 96C9 (0xa bytes), align: 1
   Segment part 40.            Intra module refs:   calculate_phase_readings
                                                    integrate_power_to_energy
                                                    sag_swell_control
            LOCAL                   ADDRESS         
            =====                   =======         
-           ?Subroutine9            96B2 
+           ?Subroutine9            96C0 
     -------------------------------------------------------------------------
 <CODE> 1 (was CODE)
-  Relative segment, address: 752C - 7625 (0xfa bytes), align: 1
+  Relative segment, address: 7426 - 751F (0xfa bytes), align: 1
   Segment part 29.            Intra module refs:   calculate_phase_readings
            LOCAL                   ADDRESS         
            =====                   =======         
            accumulate_phase_energies
-                                   752C 
+                                   7426 
                calls direct
     -------------------------------------------------------------------------
 <CODE> 1 (was CODE)
-  Relative segment, address: 96F4 - 96FB (0x8 bytes), align: 1
+  Relative segment, address: 96F2 - 96F9 (0x8 bytes), align: 1
   Segment part 30.            Intra module refs:   accumulate_phase_energies
            LOCAL                   ADDRESS         
            =====                   =======         
-           ?Subroutine10           96F4 
+           ?Subroutine10           96F2 
     -------------------------------------------------------------------------
 <CODE> 1 (was CODE)
-  Relative segment, address: 96DA - 96E3 (0xa bytes), align: 1
+  Relative segment, address: 9698 - 96A1 (0xa bytes), align: 1
   Segment part 31.            Intra module refs:   accumulate_phase_energies
            LOCAL                   ADDRESS         
            =====                   =======         
-           ?Subroutine8            96DA 
+           ?Subroutine8            9698 
     -------------------------------------------------------------------------
 <CODE> 1 (was CODE)
-  Relative segment, address: 9518 - 9527 (0x10 bytes), align: 1
+  Relative segment, address: 9536 - 9545 (0x10 bytes), align: 1
   Segment part 32.            Intra module refs:   ?Subroutine8
                                                    accumulate_phase_energies
            LOCAL                   ADDRESS         
            =====                   =======         
-           ?Subroutine12           9518 
+           ?Subroutine12           9536 
     -------------------------------------------------------------------------
 <CODE> 1 (was CODE)
-  Relative segment, address: 968A - 9693 (0xa bytes), align: 1
+  Relative segment, address: 96A2 - 96AB (0xa bytes), align: 1
   Segment part 33.            Intra module refs:   accumulate_phase_energies
                                                    accumulate_total_energies
                                                    evaluate_power_factor
            LOCAL                   ADDRESS         
            =====                   =======         
-           ?Subroutine5            968A 
+           ?Subroutine5            96A2 
     -------------------------------------------------------------------------
 <CODE> 1 (was CODE)
-  Relative segment, address: 9694 - 969D (0xa bytes), align: 1
+  Relative segment, address: 96AC - 96B5 (0xa bytes), align: 1
   Segment part 36.            Intra module refs:   accumulate_phase_energies
                                                    accumulate_total_energies
            LOCAL                   ADDRESS         
            =====                   =======         
-           ?Subroutine7            9694 
+           ?Subroutine7            96AC 
     -------------------------------------------------------------------------
 <CODE> 1 (was CODE)
-  Relative segment, address: 9548 - 9555 (0xe bytes), align: 1
+  Relative segment, address: 9580 - 958D (0xe bytes), align: 1
   Segment part 38.            Intra module refs:   accumulate_phase_energies
                                                    accumulate_total_energies
            LOCAL                   ADDRESS         
            =====                   =======         
-           ?Subroutine4            9548 
+           ?Subroutine4            9580 
     -------------------------------------------------------------------------
 <CODE> 1 (was CODE)
-  Relative segment, address: 7432 - 752B (0xfa bytes), align: 1
+  Relative segment, address: 7520 - 7619 (0xfa bytes), align: 1
   Segment part 34.            Intra module refs:   calculate_phase_readings
            LOCAL                   ADDRESS         
            =====                   =======         
            accumulate_total_energies
-                                   7432 
+                                   7520 
                calls direct
     -------------------------------------------------------------------------
 <CODE> 1 (was CODE)
-  Relative segment, address: 969E - 96A7 (0xa bytes), align: 1
+  Relative segment, address: 96B6 - 96BF (0xa bytes), align: 1
   Segment part 35.            Intra module refs:   accumulate_total_energies
            LOCAL                   ADDRESS         
            =====                   =======         
-           ?Subroutine11           969E 
+           ?Subroutine11           96B6 
     -------------------------------------------------------------------------
 <CODE> 1 (was CODE)
-  Relative segment, address: 9528 - 9537 (0x10 bytes), align: 1
+  Relative segment, address: 9526 - 9535 (0x10 bytes), align: 1
   Segment part 37.            Intra module refs:   accumulate_total_energies
            LOCAL                   ADDRESS         
            =====                   =======         
-           ?Subroutine6            9528 
+           ?Subroutine6            9526 
     -------------------------------------------------------------------------
 <CODE> 1 (was CODE)
-  Relative segment, address: 7BCE - 7C63 (0x96 bytes), align: 1
+  Relative segment, address: 7BC2 - 7C57 (0x96 bytes), align: 1
   Segment part 39.            Intra module refs:   calculate_phase_readings
            LOCAL                   ADDRESS         
            =====                   =======         
-           sag_swell_control       7BCE 
+           sag_swell_control       7BC2 
                calls direct
     -------------------------------------------------------------------------
 <CODE> 1 (was CODE)
-  Relative segment, address: 8D8C - 8DBB (0x30 bytes), align: 1
+  Relative segment, address: 8D8A - 8DB9 (0x30 bytes), align: 1
   Segment part 41.            Intra module refs:   sag_swell_control
            LOCAL                   ADDRESS         
            =====                   =======         
-           ?Subroutine2            8D8C 
+           ?Subroutine2            8D8A 
     -------------------------------------------------------------------------
 <CODE> 1 (was CODE)
-  Relative segment, address: 5FDA - 6213 (0x23a bytes), align: 1
+  Relative segment, address: 5FCE - 6207 (0x23a bytes), align: 1
   Segment part 42.
            ENTRY                   ADDRESS         REF BY
            =====                   =======         ======
            calculate_phase_readings
-                                   5FDA            main (emeter-main)
+                                   5FCE            main (emeter-main)
                calls direct
 
     -------------------------------------------------------------------------
@@ -3513,17 +3530,17 @@ DATA20_C
   SEGMENTS IN THE MODULE
   ======================
 <CODE> 1 (was CODE)
-  Relative segment, address: 8EC4 - 8EED (0x2a bytes), align: 1
+  Relative segment, address: 8E98 - 8EC1 (0x2a bytes), align: 1
   Segment part 2.
            ENTRY                   ADDRESS         REF BY
            =====                   =======         ======
-           active_power            8EC4            main (emeter-main)
+           active_power            8E98            main (emeter-main)
                                                    oled_active_power (emeter-basic-oled)
                                                    update_input_registers (emeter-main)
                calls direct
     -------------------------------------------------------------------------
 <CODE> 1 (was CODE)
-  Relative segment, address: 96EC - 96F3 (0x8 bytes), align: 1
+  Relative segment, address: 96FA - 9701 (0x8 bytes), align: 1
   Segment part 8.             Intra module refs:   active_power
                                                    apparent_power
                                                    mains_frequency
@@ -3534,76 +3551,76 @@ DATA20_C
                                                    rms_voltage
            LOCAL                   ADDRESS         
            =====                   =======         
-           ?Subroutine0            96EC 
+           ?Subroutine0            96FA 
     -------------------------------------------------------------------------
 <CODE> 1 (was CODE)
-  Relative segment, address: 8F18 - 8F41 (0x2a bytes), align: 1
+  Relative segment, address: 8F16 - 8F3F (0x2a bytes), align: 1
   Segment part 3.
            ENTRY                   ADDRESS         REF BY
            =====                   =======         ======
-           reactive_power          8F18            oled_reactive_power (emeter-basic-oled)
+           reactive_power          8F16            oled_reactive_power (emeter-basic-oled)
                                                    update_input_registers (emeter-main)
                calls direct
     -------------------------------------------------------------------------
 <CODE> 1 (was CODE)
-  Relative segment, address: 8E9A - 8EC3 (0x2a bytes), align: 1
+  Relative segment, address: 8EEC - 8F15 (0x2a bytes), align: 1
   Segment part 4.
            ENTRY                   ADDRESS         REF BY
            =====                   =======         ======
-           apparent_power          8E9A            oled_apparent_power (emeter-basic-oled)
+           apparent_power          8EEC            oled_apparent_power (emeter-basic-oled)
                                                    update_input_registers (emeter-main)
                calls direct
     -------------------------------------------------------------------------
 <CODE> 1 (was CODE)
-  Relative segment, address: 9538 - 9547 (0x10 bytes), align: 1
+  Relative segment, address: 94F6 - 9505 (0x10 bytes), align: 1
   Segment part 5.
            ENTRY                   ADDRESS         REF BY
            =====                   =======         ======
-           power_factor            9538            ?Subroutine4 (emeter-main)
+           power_factor            94F6            ?Subroutine10 (emeter-main)
                                                    oled_power_factor (emeter-basic-oled)
                calls direct
     -------------------------------------------------------------------------
 <CODE> 1 (was CODE)
-  Relative segment, address: 93E0 - 93F5 (0x16 bytes), align: 1
+  Relative segment, address: 940A - 941F (0x16 bytes), align: 1
   Segment part 6.
            ENTRY                   ADDRESS         REF BY
            =====                   =======         ======
-           rms_voltage             93E0            ?Subroutine18 (emeter-basic-oled)
-                                                   ?Subroutine6 (emeter-main)
-               calls direct
-    -------------------------------------------------------------------------
-<CODE> 1 (was CODE)
-  Relative segment, address: 939E - 93B3 (0x16 bytes), align: 1
-  Segment part 7.
-           ENTRY                   ADDRESS         REF BY
-           =====                   =======         ======
-           rms_current             939E            ?Subroutine19 (emeter-basic-oled)
+           rms_voltage             940A            ?Subroutine18 (emeter-basic-oled)
                                                    ?Subroutine7 (emeter-main)
                calls direct
     -------------------------------------------------------------------------
 <CODE> 1 (was CODE)
-  Relative segment, address: 9508 - 9517 (0x10 bytes), align: 1
+  Relative segment, address: 9420 - 9435 (0x16 bytes), align: 1
+  Segment part 7.
+           ENTRY                   ADDRESS         REF BY
+           =====                   =======         ======
+           rms_current             9420            ?Subroutine19 (emeter-basic-oled)
+                                                   ?Subroutine9 (emeter-main)
+               calls direct
+    -------------------------------------------------------------------------
+<CODE> 1 (was CODE)
+  Relative segment, address: 9506 - 9515 (0x10 bytes), align: 1
   Segment part 9.
            ENTRY                   ADDRESS         REF BY
            =====                   =======         ======
-           mains_frequency         9508            oled_mains_frequency (emeter-basic-oled)
+           mains_frequency         9506            oled_mains_frequency (emeter-basic-oled)
                                                    update_input_registers (emeter-main)
                calls direct
     -------------------------------------------------------------------------
 <CODE> 1 (was CODE)
-  Relative segment, address: 96FC - 9703 (0x8 bytes), align: 1
+  Relative segment, address: 970A - 9711 (0x8 bytes), align: 1
   Segment part 13.
            ENTRY                   ADDRESS         REF BY
            =====                   =======         ======
-           temperature             96FC            estimate_current_rtc_correction (emeter-rtc-c)
+           temperature             970A            estimate_current_rtc_correction (emeter-rtc-c)
                                                    oled_date_temp (emeter-basic-oled)
     -------------------------------------------------------------------------
 <CODE> 1 (was CODE)
-  Relative segment, address: 9422 - 9437 (0x16 bytes), align: 1
+  Relative segment, address: 939C - 93B1 (0x16 bytes), align: 1
   Segment part 14.
            ENTRY                   ADDRESS         REF BY
            =====                   =======         ======
-           phase_status            9422            check_voltage_ranges (emeter-main)
+           phase_status            939C            check_voltage_ranges (emeter-main)
                                                    main (emeter-main)
                calls direct
 
@@ -3838,78 +3855,78 @@ DATA16_AN
            SD24BOSR2_L             0824 
     -------------------------------------------------------------------------
 <CODE> 1 (was CODE)
-  Relative segment, address: 6D2E - 6DF7 (0xca bytes), align: 1
+  Relative segment, address: 6E5E - 6F27 (0xca bytes), align: 1
   Segment part 33.            Intra module refs:   metrology_switch_to_normal_mode
            ENTRY                   ADDRESS         REF BY
            =====                   =======         ======
            metrology_init_analog_front_end_normal_mode
-                                   6D2E 
+                                   6E5E 
                calls direct
     -------------------------------------------------------------------------
 <CODE> 1 (was CODE)
-  Relative segment, address: 6DF8 - 6E01 (0xa bytes), align: 1
+  Relative segment, address: 6F28 - 6F31 (0xa bytes), align: 1
   Segment part 34.            Intra module refs:   metrology_disable_analog_front_end
                                                    metrology_init_analog_front_end_normal_mode
            LOCAL                   ADDRESS         
            =====                   =======         
-           ?Subroutine0            6DF8 
+           ?Subroutine0            6F28 
     -------------------------------------------------------------------------
 <CODE> 1 (was CODE)
-  Relative segment, address: 6E02 - 6E69 (0x68 bytes), align: 1
+  Relative segment, address: 6F32 - 6F99 (0x68 bytes), align: 1
   Segment part 35.
            ENTRY                   ADDRESS         REF BY
            =====                   =======         ======
            metrology_disable_analog_front_end
-                                   6E02            system_setup (emeter-setup)
+                                   6F32            system_setup (emeter-setup)
                calls direct
     -------------------------------------------------------------------------
 <CODE> 1 (was CODE)
-  Relative segment, address: 958E - 959B (0xe bytes), align: 1
+  Relative segment, address: 9556 - 9563 (0xe bytes), align: 1
   Segment part 36.            Intra module refs:   metrology_disable_analog_front_end
                                                    metrology_init_analog_front_end_normal_mode
            LOCAL                   ADDRESS         
            =====                   =======         
-           ?Subroutine3            958E 
+           ?Subroutine3            9556 
     -------------------------------------------------------------------------
 <CODE> 1 (was CODE)
-  Relative segment, address: 96BC - 96C5 (0xa bytes), align: 1
+  Relative segment, address: 96CA - 96D3 (0xa bytes), align: 1
   Segment part 37.            Intra module refs:   metrology_disable_analog_front_end
                                                    metrology_init_analog_front_end_normal_mode
            LOCAL                   ADDRESS         
            =====                   =======         
-           ?Subroutine2            96BC 
+           ?Subroutine2            96CA 
     -------------------------------------------------------------------------
 <CODE> 1 (was CODE)
-  Relative segment, address: 79EE - 7A41 (0x54 bytes), align: 1
+  Relative segment, address: 79E2 - 7A35 (0x54 bytes), align: 1
   Segment part 38.
            ENTRY                   ADDRESS         REF BY
            =====                   =======         ======
            metrology_init_from_nv_data
-                                   79EE            system_setup (emeter-setup)
+                                   79E2            system_setup (emeter-setup)
                calls direct
     -------------------------------------------------------------------------
 <CODE> 1 (was CODE)
-  Relative segment, address: 7A42 - 7A47 (0x6 bytes), align: 1
+  Relative segment, address: 7A36 - 7A3B (0x6 bytes), align: 1
   Segment part 39.            Intra module refs:   metrology_init_from_nv_data
            LOCAL                   ADDRESS         
            =====                   =======         
-           ?Subroutine1            7A42 
+           ?Subroutine1            7A36 
     -------------------------------------------------------------------------
 <CODE> 1 (was CODE)
-  Relative segment, address: 7A48 - 7A95 (0x4e bytes), align: 1
+  Relative segment, address: 7A3C - 7A89 (0x4e bytes), align: 1
   Segment part 41.
            ENTRY                   ADDRESS         REF BY
            =====                   =======         ======
            metrology_switch_to_normal_mode
-                                   7A48            system_setup (emeter-setup)
+                                   7A3C            system_setup (emeter-setup)
                calls direct
     -------------------------------------------------------------------------
 <CODE> 1 (was CODE)
-  Relative segment, address: 8A48 - 8A87 (0x40 bytes), align: 1
+  Relative segment, address: 8A06 - 8A45 (0x40 bytes), align: 1
   Segment part 43.
            ENTRY                   ADDRESS         REF BY
            =====                   =======         ======
-           metrology_init          8A48            system_setup (emeter-setup)
+           metrology_init          8A06            system_setup (emeter-setup)
                calls direct
 
     *************************************************************************
@@ -4020,47 +4037,47 @@ DATA16_AN
            UCB0IFG_L               066C 
     -------------------------------------------------------------------------
 DATA20_C
-  Relative segment, address: 9DBA - 9DD9 (0x20 bytes), align: 0
+  Relative segment, address: 9DC0 - 9DDF (0x20 bytes), align: 0
   Segment part 17.            Intra module refs:   Oled_display_valor
     -------------------------------------------------------------------------
 DATA20_C
-  Relative segment, address: 9DDA - 9DE3 (0xa bytes), align: 0
+  Relative segment, address: 9DE0 - 9DE9 (0xa bytes), align: 0
   Segment part 18.            Intra module refs:   Oled_display_valor
     -------------------------------------------------------------------------
 DATA20_C
-  Relative segment, address: 9DE4 - 9DED (0xa bytes), align: 0
+  Relative segment, address: 9DEA - 9DF3 (0xa bytes), align: 0
   Segment part 19.            Intra module refs:   Oled_display_valor
     -------------------------------------------------------------------------
 DATA20_C
-  Relative segment, address: 9DEE - 9DF7 (0xa bytes), align: 0
+  Relative segment, address: 9DF4 - 9DFD (0xa bytes), align: 0
   Segment part 20.            Intra module refs:   Oled_display_valor
     -------------------------------------------------------------------------
 DATA20_C
-  Relative segment, address: 9DF8 - 9E01 (0xa bytes), align: 0
+  Relative segment, address: 9DFE - 9E07 (0xa bytes), align: 0
   Segment part 21.            Intra module refs:   Oled_display_valor
     -------------------------------------------------------------------------
 DATA20_C
-  Relative segment, address: 9E02 - 9E0B (0xa bytes), align: 0
+  Relative segment, address: 9E08 - 9E11 (0xa bytes), align: 0
   Segment part 22.            Intra module refs:   Oled_display_valor
     -------------------------------------------------------------------------
 DATA20_C
-  Relative segment, address: 9E0C - 9E21 (0x16 bytes), align: 0
+  Relative segment, address: 9E12 - 9E27 (0x16 bytes), align: 0
   Segment part 23.            Intra module refs:   Oled_titulo
     -------------------------------------------------------------------------
 DATA20_C
-  Relative segment, address: 9E22 - A001 (0x1e0 bytes), align: 0
+  Relative segment, address: 9E28 - A007 (0x1e0 bytes), align: 0
   Segment part 24.            Intra module refs:   ssd1306_printText
                                                    ssd1306_printText_peq
            ENTRY                   ADDRESS         REF BY
            =====                   =======         ======
-           font_5x7                9E22 
+           font_5x7                9E28 
     -------------------------------------------------------------------------
 <CODE> 1 (was CODE)
-  Relative segment, address: 8F42 - 8F69 (0x28 bytes), align: 1
+  Relative segment, address: 8F68 - 8F8F (0x28 bytes), align: 1
   Segment part 25.
            ENTRY                   ADDRESS         REF BY
            =====                   =======         ======
-           i2c_init                8F42            system_setup (emeter-setup)
+           i2c_init                8F68            system_setup (emeter-setup)
     -------------------------------------------------------------------------
 <CODE> 1 (was CODE)
   Relative segment, address: 95C6 - 95D3 (0xe bytes), align: 1
@@ -4191,22 +4208,22 @@ DATA20_C
                                                    ssd1306_clearDisplay
     -------------------------------------------------------------------------
 <CODE> 1 (was CODE)
-  Relative segment, address: 7700 - 77D5 (0xd6 bytes), align: 1
+  Relative segment, address: 76F4 - 77C9 (0xd6 bytes), align: 1
   Segment part 46.
            ENTRY                   ADDRESS         REF BY
            =====                   =======         ======
-           Oled_display_valor      7700            ?Subroutine13 (emeter-basic-oled)
+           Oled_display_valor      76F4            ?Subroutine13 (emeter-basic-oled)
                                                    ?Subroutine16 (emeter-basic-oled)
                                                    Segment part 87 (emeter-basic-oled)
                                                    oled_date_temp (emeter-basic-oled)
                calls direct
     -------------------------------------------------------------------------
 <CODE> 1 (was CODE)
-  Relative segment, address: 8EEE - 8F17 (0x2a bytes), align: 1
+  Relative segment, address: 8EC2 - 8EEB (0x2a bytes), align: 1
   Segment part 47.
            ENTRY                   ADDRESS         REF BY
            =====                   =======         ======
-           Oled_titulo             8EEE            ?Subroutine13 (emeter-basic-oled)
+           Oled_titulo             8EC2            ?Subroutine13 (emeter-basic-oled)
                                                    oled_active_power (emeter-basic-oled)
                                                    oled_apparent_power (emeter-basic-oled)
                                                    oled_date_temp (emeter-basic-oled)
@@ -4371,34 +4388,34 @@ DATA20_Z
            rtc_offset_direction    24F7 
     -------------------------------------------------------------------------
 <CODE> 1 (was CODE)
-  Relative segment, address: 8E16 - 8E41 (0x2c bytes), align: 1
+  Relative segment, address: 8E40 - 8E6B (0x2c bytes), align: 1
   Segment part 21.
            ENTRY                   ADDRESS         REF BY
            =====                   =======         ======
-           get_rtc                 8E16            oled_date_temp (emeter-basic-oled)
+           get_rtc                 8E40            oled_date_temp (emeter-basic-oled)
     -------------------------------------------------------------------------
 <CODE> 1 (was CODE)
-  Relative segment, address: 8402 - 8465 (0x64 bytes), align: 1
+  Relative segment, address: 8400 - 8463 (0x64 bytes), align: 1
   Segment part 23.
            ENTRY                   ADDRESS         REF BY
            =====                   =======         ======
-           rtc_init                8402            system_setup (emeter-setup)
+           rtc_init                8400            system_setup (emeter-setup)
     -------------------------------------------------------------------------
 <CODE> 1 (was CODE)
-  Relative segment, address: 8F6A - 8F91 (0x28 bytes), align: 1
+  Relative segment, address: 8F40 - 8F67 (0x28 bytes), align: 1
   Segment part 25.            Intra module refs:   rtc_isr
            ENTRY                   ADDRESS         REF BY
            =====                   =======         ======
            update_rtc_temperature_correction
-                                   8F6A 
+                                   8F40 
     -------------------------------------------------------------------------
 <CODE> 1 (was CODE)
-  Relative segment, address: 7F2C - 7FAF (0x84 bytes), align: 1
+  Relative segment, address: 7F20 - 7FA3 (0x84 bytes), align: 1
   Segment part 27.            Intra module refs:   rtc_isr
            ENTRY                   ADDRESS         REF BY
            =====                   =======         ======
            estimate_current_rtc_correction
-                                   7F2C 
+                                   7F20 
                calls direct
     -------------------------------------------------------------------------
 ISR_CODE
@@ -4874,19 +4891,19 @@ DATA16_AN
            UCSCTL7_L               016E 
     -------------------------------------------------------------------------
 <CODE> 1 (was CODE)
-  Relative segment, address: 87D6 - 8821 (0x4c bytes), align: 1
+  Relative segment, address: 8820 - 886B (0x4c bytes), align: 1
   Segment part 46.            Intra module refs:   system_setup
            LOCAL                   ADDRESS         
            =====                   =======         
-           set_clock_slow          87D6 
+           set_clock_slow          8820 
                calls direct
     -------------------------------------------------------------------------
 <CODE> 1 (was CODE)
-  Relative segment, address: 6BD2 - 6D2D (0x15c bytes), align: 1
+  Relative segment, address: 6BC6 - 6D21 (0x15c bytes), align: 1
   Segment part 47.
            ENTRY                   ADDRESS         REF BY
            =====                   =======         ======
-           system_setup            6BD2            main (emeter-main)
+           system_setup            6BC6            main (emeter-main)
                calls direct
     -------------------------------------------------------------------------
 DATA20_Z
@@ -4934,11 +4951,11 @@ INTVEC
   SEGMENTS IN THE MODULE
   ======================
 <CODE> 1 (was CODE)
-  Relative segment, address: 972A - 972B (0x2 bytes), align: 1
+  Relative segment, address: 9730 - 9731 (0x2 bytes), align: 1
   Segment part 2.
            ENTRY                   ADDRESS         REF BY
            =====                   =======         ======
-           __DebugBreak            972A            __exit (?__exit)
+           __DebugBreak            9730            __exit (?__exit)
 
     -------------------------------------------------------------------------
   LIBRARY MODULE, NAME : ?__exit
@@ -4946,11 +4963,11 @@ INTVEC
   SEGMENTS IN THE MODULE
   ======================
 <CODE> 1 (was CODE)
-  Relative segment, address: 9488 - 949B (0x14 bytes), align: 1
+  Relative segment, address: 949A - 94AD (0x14 bytes), align: 1
   Segment part 2.
            ENTRY                   ADDRESS         REF BY
            =====                   =======         ======
-           __exit                  9488            Segment part 6 (?_exit)
+           __exit                  949A            Segment part 6 (?_exit)
                                                    _exit (?_exit)
                calls direct
 
@@ -4960,14 +4977,14 @@ INTVEC
   SEGMENTS IN THE MODULE
   ======================
 <CODE> 1 (was CODE)
-  Relative segment, address: 9720, align: 1
+  Relative segment, address: 9726, align: 1
   Segment part 0.
            ENTRY                   ADDRESS         REF BY
            =====                   =======         ======
-           _exit                   9720            exit (?exit)
+           _exit                   9726            exit (?exit)
     -------------------------------------------------------------------------
 <CODE> 1 (was CODE)
-  Relative segment, address: 9720 - 9723 (0x4 bytes), align: 1
+  Relative segment, address: 9726 - 9729 (0x4 bytes), align: 1
   Segment part 6.             Intra module refs:   _exit
 
     -------------------------------------------------------------------------
@@ -4984,7 +5001,7 @@ CODE_I
   Segment part 5.
     -------------------------------------------------------------------------
 CODE_ID
-  Relative segment, address: A020, align: 1
+  Relative segment, address: A026, align: 1
   Segment part 6.
     -------------------------------------------------------------------------
 DATA20_Z
@@ -4996,11 +5013,11 @@ DATA20_I
   Segment part 8.
     -------------------------------------------------------------------------
 DATA20_ID
-  Relative segment, address: A020, align: 1
+  Relative segment, address: A026, align: 1
   Segment part 9.
     -------------------------------------------------------------------------
 DATA20_C
-  Relative segment, address: 9B9E, align: 1
+  Relative segment, address: 9BA4, align: 1
   Segment part 10.
     -------------------------------------------------------------------------
 DATA20_N
@@ -5077,7 +5094,7 @@ CSTART
            ?cstart_end             4030 
     -------------------------------------------------------------------------
 CODE_ID
-  Relative segment, address: A020, align: 1
+  Relative segment, address: A026, align: 1
   Segment part 28.            Intra module refs:   Segment part 5
 
     -------------------------------------------------------------------------
@@ -5098,35 +5115,35 @@ RESET
   SEGMENTS IN THE MODULE
   ======================
 <CODE> 1 (was CODE)
-  Relative segment, address: 7A96 - 7B37 (0xa2 bytes), align: 1
+  Relative segment, address: 7A8A - 7B2B (0xa2 bytes), align: 1
   Segment part 2.             Intra module refs:   _Div64s
            ENTRY                   ADDRESS         REF BY
            =====                   =======         ======
-           _Div64u                 7A96            _LitobLarge (?xprintflarge)
+           _Div64u                 7A8A            _LitobLarge (?xprintflarge)
     -------------------------------------------------------------------------
 <CODE> 1 (was CODE)
-  Relative segment, address: 8BBC - 8BD9 (0x1e bytes), align: 1
+  Relative segment, address: 8BBA - 8BD7 (0x1e bytes), align: 1
   Segment part 5.
            ENTRY                   ADDRESS         REF BY
            =====                   =======         ======
-           _Div64s                 8BBC            ?Subroutine1 (metrology-foreground)
+           _Div64s                 8BBA            ?Subroutine1 (metrology-foreground)
                calls direct
     -------------------------------------------------------------------------
 <CODE> 1 (was CODE)
-  Relative segment, address: 8BDA - 8BE3 (0xa bytes), align: 1
+  Relative segment, address: 8BD8 - 8BE1 (0xa bytes), align: 1
   Segment part 6.             Intra module refs:   _Div64s
     -------------------------------------------------------------------------
 <CODE> 1 (was CODE)
-  Relative segment, address: 8BE4 - 8BF5 (0x12 bytes), align: 1
+  Relative segment, address: 8BE2 - 8BF3 (0x12 bytes), align: 1
   Segment part 8.             Intra module refs:   _Div64s
     -------------------------------------------------------------------------
 <CODE> 1 (was CODE)
-  Relative segment, address: 94E6 - 94F7 (0x12 bytes), align: 1
+  Relative segment, address: 94D2 - 94E3 (0x12 bytes), align: 1
   Segment part 9.             Intra module refs:   Segment part 6
                                                    _Div64s
     -------------------------------------------------------------------------
 <CODE> 1 (was CODE)
-  Relative segment, address: 9308 - 9321 (0x1a bytes), align: 1
+  Relative segment, address: 9306 - 931F (0x1a bytes), align: 1
   Segment part 4.             Intra module refs:   _Div64u
 
     -------------------------------------------------------------------------
@@ -5135,11 +5152,11 @@ RESET
   SEGMENTS IN THE MODULE
   ======================
 <CODE> 1 (was CODE)
-  Relative segment, address: 93B4 - 93C9 (0x16 bytes), align: 1
+  Relative segment, address: 93C8 - 93DD (0x16 bytes), align: 1
   Segment part 0.
            ENTRY                   ADDRESS         REF BY
            =====                   =======         ======
-           div                     93B4            _GenldLarge (?xprintflarge)
+           div                     93C8            _GenldLarge (?xprintflarge)
 
     -------------------------------------------------------------------------
   LIBRARY MODULE, NAME : ?exit
@@ -5147,11 +5164,11 @@ RESET
   SEGMENTS IN THE MODULE
   ======================
 <CODE> 1 (was CODE)
-  Relative segment, address: 9718 - 971B (0x4 bytes), align: 1
+  Relative segment, address: 971E - 9721 (0x4 bytes), align: 1
   Segment part 2.
            ENTRY                   ADDRESS         REF BY
            =====                   =======         ======
-           exit                    9718            Segment part 27 (?cstart)
+           exit                    971E            Segment part 27 (?cstart)
                calls direct
 
     -------------------------------------------------------------------------
@@ -5160,11 +5177,11 @@ RESET
   SEGMENTS IN THE MODULE
   ======================
 <CODE> 1 (was CODE)
-  Relative segment, address: 8C68 - 8C99 (0x32 bytes), align: 1
+  Relative segment, address: 8C98 - 8CC9 (0x32 bytes), align: 1
   Segment part 2.
            ENTRY                   ADDRESS         REF BY
            =====                   =======         ======
-           fabs                    8C68            ?Subroutine0 (emeter-main)
+           fabs                    8C98            ?Subroutine0 (emeter-main)
                calls direct
 
     -------------------------------------------------------------------------
@@ -5173,11 +5190,11 @@ RESET
   SEGMENTS IN THE MODULE
   ======================
 <CODE> 1 (was CODE)
-  Relative segment, address: 731C - 7431 (0x116 bytes), align: 1
+  Relative segment, address: 7310 - 7425 (0x116 bytes), align: 1
   Segment part 0.
            ENTRY                   ADDRESS         REF BY
            =====                   =======         ======
-           ?Mul32fHw32             731C            _LdtobLarge (?xprintflarge)
+           ?Mul32fHw32             7310            _LdtobLarge (?xprintflarge)
                                                    scale (?xprintflarge)
 
     -------------------------------------------------------------------------
@@ -5186,11 +5203,11 @@ RESET
   SEGMENTS IN THE MODULE
   ======================
 <CODE> 1 (was CODE)
-  Relative segment, address: 8784 - 87D5 (0x52 bytes), align: 1
+  Relative segment, address: 8782 - 87D3 (0x52 bytes), align: 1
   Segment part 2.
            ENTRY                   ADDRESS         REF BY
            =====                   =======         ======
-           fmax                    8784            check_voltage_ranges (emeter-main)
+           fmax                    8782            check_voltage_ranges (emeter-main)
                calls direct
 
     -------------------------------------------------------------------------
@@ -5199,22 +5216,22 @@ RESET
   SEGMENTS IN THE MODULE
   ======================
 <CODE> 1 (was CODE)
-  Relative segment, address: 7CF6 - 7D09 (0x14 bytes), align: 1
+  Relative segment, address: 7C58 - 7C6B (0x14 bytes), align: 1
   Segment part 0.
            ENTRY                   ADDRESS         REF BY
            =====                   =======         ======
-           _Cast32sto32f           7CF6            ?Subroutine13 (emeter-main)
-                                                   ?Subroutine6 (emeter-main)
+           _Cast32sto32f           7C58            ?Subroutine16 (emeter-main)
                                                    ?Subroutine7 (emeter-main)
+                                                   ?Subroutine9 (emeter-main)
                                                    Oled_display_valor (emeter-oled)
-                                                   Segment part 46 (emeter-main)
+                                                   Segment part 41 (emeter-main)
     -------------------------------------------------------------------------
 <CODE> 1 (was CODE)
-  Relative segment, address: 7D0A - 7D87 (0x7e bytes), align: 1
+  Relative segment, address: 7C6C - 7CE9 (0x7e bytes), align: 1
   Segment part 1.             Intra module refs:   _Cast32sto32f
            ENTRY                   ADDRESS         REF BY
            =====                   =======         ======
-           _Cast32uto32f           7D0A            _LdtobLarge (?xprintflarge)
+           _Cast32uto32f           7C6C            _LdtobLarge (?xprintflarge)
 
     -------------------------------------------------------------------------
   LIBRARY MODULE, NAME : _Cast32fto32u
@@ -5222,11 +5239,11 @@ RESET
   SEGMENTS IN THE MODULE
   ======================
 <CODE> 1 (was CODE)
-  Relative segment, address: 95E2 - 95ED (0xc bytes), align: 1
+  Relative segment, address: 95F0 - 95FB (0xc bytes), align: 1
   Segment part 0.
            ENTRY                   ADDRESS         REF BY
            =====                   =======         ======
-           _Cast32fto32u           95E2            _LdtobLarge (?xprintflarge)
+           _Cast32fto32u           95F0            _LdtobLarge (?xprintflarge)
 
     -------------------------------------------------------------------------
   LIBRARY MODULE, NAME : ?FLT_Extract
@@ -5234,11 +5251,11 @@ RESET
   SEGMENTS IN THE MODULE
   ======================
 <CODE> 1 (was CODE)
-  Relative segment, address: 8822 - 886D (0x4c bytes), align: 1
+  Relative segment, address: 87D4 - 881F (0x4c bytes), align: 1
   Segment part 0.
            ENTRY                   ADDRESS         REF BY
            =====                   =======         ======
-           ?FLT_Extract            8822            _Cast32fto32u (_Cast32fto32u)
+           ?FLT_Extract            87D4            _Cast32fto32u (_Cast32fto32u)
 
     -------------------------------------------------------------------------
   LIBRARY MODULE, NAME : ?Cast32f64i
@@ -5246,19 +5263,18 @@ RESET
   SEGMENTS IN THE MODULE
   ======================
 <CODE> 1 (was CODE)
-  Relative segment, address: 7626 - 7641 (0x1c bytes), align: 1
+  Relative segment, address: 761A - 7635 (0x1c bytes), align: 1
   Segment part 0.
            ENTRY                   ADDRESS         REF BY
            =====                   =======         ======
-           _Cast64sto32f           7626            ?Subroutine8 (emeter-main)
-                                                   ?Subroutine9 (emeter-main)
+           _Cast64sto32f           761A            ?Subroutine15 (emeter-main)
     -------------------------------------------------------------------------
 <CODE> 1 (was CODE)
-  Relative segment, address: 7642 - 76FF (0xbe bytes), align: 1
+  Relative segment, address: 7636 - 76F3 (0xbe bytes), align: 1
   Segment part 1.             Intra module refs:   _Cast64sto32f
            ENTRY                   ADDRESS         REF BY
            =====                   =======         ======
-           _Cast64uto32f           7642 
+           _Cast64uto32f           7636 
 
     -------------------------------------------------------------------------
   LIBRARY MODULE, NAME : ?FLT_EQ
@@ -5266,11 +5282,11 @@ RESET
   SEGMENTS IN THE MODULE
   ======================
 <CODE> 1 (was CODE)
-  Relative segment, address: 8D5C - 8D8B (0x30 bytes), align: 1
+  Relative segment, address: 8D2A - 8D59 (0x30 bytes), align: 1
   Segment part 0.
            ENTRY                   ADDRESS         REF BY
            =====                   =======         ======
-           ?FLT_EQ                 8D5C            fmax (?fmax)
+           ?FLT_EQ                 8D2A            fmax (?fmax)
 
     -------------------------------------------------------------------------
   LIBRARY MODULE, NAME : ?FLT_GE
@@ -5278,11 +5294,11 @@ RESET
   SEGMENTS IN THE MODULE
   ======================
 <CODE> 1 (was CODE)
-  Relative segment, address: 8634 - 8689 (0x56 bytes), align: 1
+  Relative segment, address: 85DC - 8631 (0x56 bytes), align: 1
   Segment part 0.
            ENTRY                   ADDRESS         REF BY
            =====                   =======         ======
-           ?FLT_GE                 8634            ?Subroutine2 (emeter-main)
+           ?FLT_GE                 85DC            ?Subroutine3 (emeter-main)
                                                    check_voltage_ranges (emeter-main)
 
     -------------------------------------------------------------------------
@@ -5291,11 +5307,11 @@ RESET
   SEGMENTS IN THE MODULE
   ======================
 <CODE> 1 (was CODE)
-  Relative segment, address: 8732 - 8783 (0x52 bytes), align: 1
+  Relative segment, address: 8730 - 8781 (0x52 bytes), align: 1
   Segment part 0.
            ENTRY                   ADDRESS         REF BY
            =====                   =======         ======
-           ?FLT_LT                 8732            _LdtobLarge (?xprintflarge)
+           ?FLT_LT                 8730            _LdtobLarge (?xprintflarge)
                                                    check_voltage_ranges (emeter-main)
                                                    fabs (?fabs)
                                                    fmax (?fmax)
@@ -5306,11 +5322,11 @@ RESET
   SEGMENTS IN THE MODULE
   ======================
 <CODE> 1 (was CODE)
-  Relative segment, address: 6FA6 - 70D5 (0x130 bytes), align: 1
+  Relative segment, address: 6F9A - 70C9 (0x130 bytes), align: 1
   Segment part 0.
            ENTRY                   ADDRESS         REF BY
            =====                   =======         ======
-           _Div32f                 6FA6            ?Subroutine1 (emeter-main)
+           _Div32f                 6F9A            ?Subroutine1 (emeter-main)
                                                    Oled_display_valor (emeter-oled)
                                                    _LdtobLarge (?xprintflarge)
                                                    check_voltage_ranges (emeter-main)
@@ -5321,19 +5337,20 @@ RESET
   SEGMENTS IN THE MODULE
   ======================
 <CODE> 1 (was CODE)
-  Relative segment, address: 690A - 690D (0x4 bytes), align: 1
+  Relative segment, address: 68FE - 6901 (0x4 bytes), align: 1
   Segment part 0.
            ENTRY                   ADDRESS         REF BY
            =====                   =======         ======
-           _Sub32f                 690A            ?Subroutine0 (emeter-main)
+           _Sub32f                 68FE            ?Subroutine0 (emeter-main)
                                                    _LdtobLarge (?xprintflarge)
     -------------------------------------------------------------------------
 <CODE> 1 (was CODE)
-  Relative segment, address: 690E - 6A6D (0x160 bytes), align: 1
+  Relative segment, address: 6902 - 6A61 (0x160 bytes), align: 1
   Segment part 1.             Intra module refs:   _Sub32f
            ENTRY                   ADDRESS         REF BY
            =====                   =======         ======
-           _Add32f                 690E            check_voltage_ranges (emeter-main)
+           _Add32f                 6902            ?Subroutine2 (emeter-main)
+                                                   check_voltage_ranges (emeter-main)
 
     -------------------------------------------------------------------------
   LIBRARY MODULE, NAME : ?DivMod816u
@@ -5341,11 +5358,11 @@ RESET
   SEGMENTS IN THE MODULE
   ======================
 <CODE> 1 (was CODE)
-  Relative segment, address: 9386 - 939D (0x18 bytes), align: 1
+  Relative segment, address: 9354 - 936B (0x18 bytes), align: 1
   Segment part 1.
            ENTRY                   ADDRESS         REF BY
            =====                   =======         ======
-           ?DivMod16u              9386            ?DivMod16s (?DivMod816s)
+           ?DivMod16u              9354            ?DivMod16s (?DivMod816s)
 
     -------------------------------------------------------------------------
   LIBRARY MODULE, NAME : ?DivMod816s
@@ -5353,11 +5370,11 @@ RESET
   SEGMENTS IN THE MODULE
   ======================
 <CODE> 1 (was CODE)
-  Relative segment, address: 8CFC - 8D2B (0x30 bytes), align: 1
+  Relative segment, address: 8CCA - 8CF9 (0x30 bytes), align: 1
   Segment part 1.
            ENTRY                   ADDRESS         REF BY
            =====                   =======         ======
-           ?DivMod16s              8CFC            div (?div)
+           ?DivMod16s              8CCA            div (?div)
                                                    div48 (div48)
 
     -------------------------------------------------------------------------
@@ -5366,11 +5383,11 @@ RESET
   SEGMENTS IN THE MODULE
   ======================
 <CODE> 1 (was CODE)
-  Relative segment, address: 8D2C - 8D5B (0x30 bytes), align: 1
+  Relative segment, address: 8CFA - 8D29 (0x30 bytes), align: 1
   Segment part 0.
            ENTRY                   ADDRESS         REF BY
            =====                   =======         ======
-           ?DivMod32u              8D2C            ?DivMod32s (?DivMod32s)
+           ?DivMod32u              8CFA            ?DivMod32s (?DivMod32s)
                                                    _LdtobLarge (?xprintflarge)
                                                    sag_swell_control (metrology-foreground)
                                                    serial_configure (emeter-communication)
@@ -5381,11 +5398,11 @@ RESET
   SEGMENTS IN THE MODULE
   ======================
 <CODE> 1 (was CODE)
-  Relative segment, address: 8A08 - 8A47 (0x40 bytes), align: 1
+  Relative segment, address: 8A86 - 8AC5 (0x40 bytes), align: 1
   Segment part 0.
            ENTRY                   ADDRESS         REF BY
            =====                   =======         ======
-           ?DivMod32s              8A08            ?Subroutine3 (metrology-foreground)
+           ?DivMod32s              8A86            ?Subroutine3 (metrology-foreground)
                                                    _LdtobLarge (?xprintflarge)
                                                    calculate_phase_readings (metrology-foreground)
                                                    div48 (div48)
@@ -5397,32 +5414,32 @@ RESET
   SEGMENTS IN THE MODULE
   ======================
 <CODE> 1 (was CODE)
-  Relative segment, address: 9322 - 9325 (0x4 bytes), align: 1
+  Relative segment, address: 92D2 - 92D5 (0x4 bytes), align: 1
   Segment part 2.
            ENTRY                   ADDRESS         REF BY
            =====                   =======         ======
-           ?ShiftLeft32_6          9322            energy_update (emeter-main)
+           ?ShiftLeft32_6          92D2            energy_update (emeter-main)
     -------------------------------------------------------------------------
 <CODE> 1 (was CODE)
-  Relative segment, address: 9326 - 9329 (0x4 bytes), align: 1
+  Relative segment, address: 92D6 - 92D9 (0x4 bytes), align: 1
   Segment part 3.             Intra module refs:   ?ShiftLeft32_6
            ENTRY                   ADDRESS         REF BY
            =====                   =======         ======
-           ?ShiftLeft32_5          9326 
+           ?ShiftLeft32_5          92D6 
     -------------------------------------------------------------------------
 <CODE> 1 (was CODE)
-  Relative segment, address: 932A - 932D (0x4 bytes), align: 1
+  Relative segment, address: 92DA - 92DD (0x4 bytes), align: 1
   Segment part 4.             Intra module refs:   ?ShiftLeft32_5
            ENTRY                   ADDRESS         REF BY
            =====                   =======         ======
-           ?ShiftLeft32_4          932A 
+           ?ShiftLeft32_4          92DA 
     -------------------------------------------------------------------------
 <CODE> 1 (was CODE)
-  Relative segment, address: 932E - 933B (0xe bytes), align: 1
+  Relative segment, address: 92DE - 92EB (0xe bytes), align: 1
   Segment part 5.             Intra module refs:   ?ShiftLeft32_4
            ENTRY                   ADDRESS         REF BY
            =====                   =======         ======
-           ?ShiftLeft32_3          932E            calculate_phase_readings (metrology-foreground)
+           ?ShiftLeft32_3          92DE            calculate_phase_readings (metrology-foreground)
                                                    evaluate_rms_voltage (metrology-foreground)
 
     -------------------------------------------------------------------------
@@ -5431,11 +5448,11 @@ RESET
   SEGMENTS IN THE MODULE
   ======================
 <CODE> 1 (was CODE)
-  Relative segment, address: 9612 - 961D (0xc bytes), align: 1
+  Relative segment, address: 9614 - 961F (0xc bytes), align: 1
   Segment part 6.
            ENTRY                   ADDRESS         REF BY
            =====                   =======         ======
-           ?ShiftRight32s_8        9612            sag_swell_control (metrology-foreground)
+           ?ShiftRight32s_8        9614            sag_swell_control (metrology-foreground)
 
     -------------------------------------------------------------------------
   LIBRARY MODULE, NAME : ?ShiftRight32u_8n
@@ -5443,25 +5460,25 @@ RESET
   SEGMENTS IN THE MODULE
   ======================
 <CODE> 1 (was CODE)
-  Relative segment, address: 944C - 944F (0x4 bytes), align: 1
+  Relative segment, address: 9486 - 9489 (0x4 bytes), align: 1
   Segment part 4.
            ENTRY                   ADDRESS         REF BY
            =====                   =======         ======
-           ?ShiftRight32u_10       944C            evaluate_rms_voltage (metrology-foreground)
+           ?ShiftRight32u_10       9486            evaluate_rms_voltage (metrology-foreground)
     -------------------------------------------------------------------------
 <CODE> 1 (was CODE)
-  Relative segment, address: 9450 - 9453 (0x4 bytes), align: 1
+  Relative segment, address: 948A - 948D (0x4 bytes), align: 1
   Segment part 5.             Intra module refs:   ?ShiftRight32u_10
            ENTRY                   ADDRESS         REF BY
            =====                   =======         ======
-           ?ShiftRight32u_9        9450 
+           ?ShiftRight32u_9        948A 
     -------------------------------------------------------------------------
 <CODE> 1 (was CODE)
-  Relative segment, address: 9454 - 945F (0xc bytes), align: 1
+  Relative segment, address: 948E - 9499 (0xc bytes), align: 1
   Segment part 6.             Intra module refs:   ?ShiftRight32u_9
            ENTRY                   ADDRESS         REF BY
            =====                   =======         ======
-           ?ShiftRight32u_8        9454 
+           ?ShiftRight32u_8        948E 
 
     -------------------------------------------------------------------------
   LIBRARY MODULE, NAME : ?ShiftRight64s_n
@@ -5469,46 +5486,46 @@ RESET
   SEGMENTS IN THE MODULE
   ======================
 <CODE> 1 (was CODE)
-  Relative segment, address: 8BF6 - 8BFD (0x8 bytes), align: 1
+  Relative segment, address: 8BF4 - 8BFB (0x8 bytes), align: 1
   Segment part 0.
            ENTRY                   ADDRESS         REF BY
            =====                   =======         ======
-           ?ShiftRight64s_7        8BF6            evaluate_reactive_power (metrology-foreground)
+           ?ShiftRight64s_7        8BF4            evaluate_reactive_power (metrology-foreground)
     -------------------------------------------------------------------------
 <CODE> 1 (was CODE)
-  Relative segment, address: 8BFE - 8C05 (0x8 bytes), align: 1
+  Relative segment, address: 8BFC - 8C03 (0x8 bytes), align: 1
   Segment part 1.             Intra module refs:   ?ShiftRight64s_7
            ENTRY                   ADDRESS         REF BY
            =====                   =======         ======
-           ?ShiftRight64s_6        8BFE 
+           ?ShiftRight64s_6        8BFC 
     -------------------------------------------------------------------------
 <CODE> 1 (was CODE)
-  Relative segment, address: 8C06 - 8C0D (0x8 bytes), align: 1
+  Relative segment, address: 8C04 - 8C0B (0x8 bytes), align: 1
   Segment part 2.             Intra module refs:   ?ShiftRight64s_6
            ENTRY                   ADDRESS         REF BY
            =====                   =======         ======
-           ?ShiftRight64s_5        8C06 
+           ?ShiftRight64s_5        8C04 
     -------------------------------------------------------------------------
 <CODE> 1 (was CODE)
-  Relative segment, address: 8C0E - 8C15 (0x8 bytes), align: 1
+  Relative segment, address: 8C0C - 8C13 (0x8 bytes), align: 1
   Segment part 3.             Intra module refs:   ?ShiftRight64s_5
            ENTRY                   ADDRESS         REF BY
            =====                   =======         ======
-           ?ShiftRight64s_4        8C0E 
+           ?ShiftRight64s_4        8C0C 
     -------------------------------------------------------------------------
 <CODE> 1 (was CODE)
-  Relative segment, address: 8C16 - 8C1D (0x8 bytes), align: 1
+  Relative segment, address: 8C14 - 8C1B (0x8 bytes), align: 1
   Segment part 4.             Intra module refs:   ?ShiftRight64s_4
            ENTRY                   ADDRESS         REF BY
            =====                   =======         ======
-           ?ShiftRight64s_3        8C16 
+           ?ShiftRight64s_3        8C14 
     -------------------------------------------------------------------------
 <CODE> 1 (was CODE)
-  Relative segment, address: 8C1E - 8C2F (0x12 bytes), align: 1
+  Relative segment, address: 8C1C - 8C2D (0x12 bytes), align: 1
   Segment part 5.             Intra module refs:   ?ShiftRight64s_3
            ENTRY                   ADDRESS         REF BY
            =====                   =======         ======
-           ?ShiftRight64s_2        8C1E 
+           ?ShiftRight64s_2        8C1C 
 
     -------------------------------------------------------------------------
   LIBRARY MODULE, NAME : ?memchr
@@ -5516,11 +5533,11 @@ RESET
   SEGMENTS IN THE MODULE
   ======================
 <CODE> 1 (was CODE)
-  Relative segment, address: 91F2 - 920F (0x1e bytes), align: 1
+  Relative segment, address: 91F0 - 920D (0x1e bytes), align: 1
   Segment part 2.
            ENTRY                   ADDRESS         REF BY
            =====                   =======         ======
-           __iar_Memchr            91F2            _PrintfLarge (?xprintflarge)
+           __iar_Memchr            91F0            _PrintfLarge (?xprintflarge)
 
     -------------------------------------------------------------------------
   LIBRARY MODULE, NAME : ?memcpy
@@ -5528,11 +5545,11 @@ RESET
   SEGMENTS IN THE MODULE
   ======================
 <CODE> 1 (was CODE)
-  Relative segment, address: 9266 - 9281 (0x1c bytes), align: 1
+  Relative segment, address: 922C - 9247 (0x1c bytes), align: 1
   Segment part 2.
            ENTRY                   ADDRESS         REF BY
            =====                   =======         ======
-           memcpy                  9266            ?Subroutine0 (emeter-dlt645)
+           memcpy                  922C            ?Subroutine0 (emeter-dlt645)
                                                    _GenldLarge (?xprintflarge)
                                                    _LdtobLarge (?xprintflarge)
                                                    __data20_memcpy (?memzero)
@@ -5544,11 +5561,11 @@ RESET
   SEGMENTS IN THE MODULE
   ======================
 <CODE> 1 (was CODE)
-  Relative segment, address: 9438 - 944B (0x14 bytes), align: 1
+  Relative segment, address: 945E - 9471 (0x14 bytes), align: 1
   Segment part 0.
            ENTRY                   ADDRESS         REF BY
            =====                   =======         ======
-           ?CopyMemoryBytes20      9438            Oled_display_valor (emeter-oled)
+           ?CopyMemoryBytes20      945E            Oled_display_valor (emeter-oled)
 
     -------------------------------------------------------------------------
   LIBRARY MODULE, NAME : ?memset
@@ -5556,11 +5573,11 @@ RESET
   SEGMENTS IN THE MODULE
   ======================
 <CODE> 1 (was CODE)
-  Relative segment, address: 922E - 9249 (0x1c bytes), align: 1
+  Relative segment, address: 9248 - 9263 (0x1c bytes), align: 1
   Segment part 2.
            ENTRY                   ADDRESS         REF BY
            =====                   =======         ======
-           memset                  922E            calculate_phase_readings (metrology-foreground)
+           memset                  9248            calculate_phase_readings (metrology-foreground)
                                                    dlt645_service (emeter-dlt645)
 
     -------------------------------------------------------------------------
@@ -5569,18 +5586,18 @@ RESET
   SEGMENTS IN THE MODULE
   ======================
 <CODE> 1 (was CODE)
-  Relative segment, address: 9356 - 936D (0x18 bytes), align: 1
+  Relative segment, address: 9384 - 939B (0x18 bytes), align: 1
   Segment part 5.
            ENTRY                   ADDRESS         REF BY
            =====                   =======         ======
-           __data20_memzero        9356            ?cstart_init_zero20 (?cstart)
+           __data20_memzero        9384            ?cstart_init_zero20 (?cstart)
     -------------------------------------------------------------------------
 <CODE> 1 (was CODE)
-  Relative segment, address: 971C - 971F (0x4 bytes), align: 1
+  Relative segment, address: 9722 - 9725 (0x4 bytes), align: 1
   Segment part 6.
            ENTRY                   ADDRESS         REF BY
            =====                   =======         ======
-           __data20_memcpy         971C            ?cstart_init_copy20 (?cstart)
+           __data20_memcpy         9722            ?cstart_init_copy20 (?cstart)
                calls direct
 
     -------------------------------------------------------------------------
@@ -5589,11 +5606,11 @@ RESET
   SEGMENTS IN THE MODULE
   ======================
 <CODE> 1 (was CODE)
-  Relative segment, address: 9150 - 9171 (0x22 bytes), align: 1
+  Relative segment, address: 914E - 916F (0x22 bytes), align: 1
   Segment part 2.
            ENTRY                   ADDRESS         REF BY
            =====                   =======         ======
-           _Mul32s32sto64i         9150            calculate_phase_readings (metrology-foreground)
+           _Mul32s32sto64i         914E            calculate_phase_readings (metrology-foreground)
                                                    integrate_power_to_energy (metrology-foreground)
                calls direct
 
@@ -5603,19 +5620,19 @@ RESET
   SEGMENTS IN THE MODULE
   ======================
 <CODE> 1 (was CODE)
-  Relative segment, address: 9172 - 9175 (0x4 bytes), align: 1
+  Relative segment, address: 91B0 - 91B3 (0x4 bytes), align: 1
   Segment part 0.
            ENTRY                   ADDRESS         REF BY
            =====                   =======         ======
-           ?Mul8Hw                 9172            _LitobLarge (?xprintflarge)
+           ?Mul8Hw                 91B0            _LitobLarge (?xprintflarge)
     -------------------------------------------------------------------------
 <CODE> 1 (was CODE)
-  Relative segment, address: 9176 - 9191 (0x1c bytes), align: 1
+  Relative segment, address: 91B4 - 91CF (0x1c bytes), align: 1
   Segment part 1.             Intra module refs:   ?Mul8Hw
            ENTRY                   ADDRESS         REF BY
            =====                   =======         ======
-           ?Mul16Hw                9176 
-           ?Mul16to32uHw           9176 
+           ?Mul16Hw                91B4 
+           ?Mul16to32uHw           91B4 
 
     -------------------------------------------------------------------------
   LIBRARY MODULE, NAME : ?Mul16to32sHw
@@ -5623,11 +5640,11 @@ RESET
   SEGMENTS IN THE MODULE
   ======================
 <CODE> 1 (was CODE)
-  Relative segment, address: 929E - 92B9 (0x1c bytes), align: 1
+  Relative segment, address: 9264 - 927F (0x1c bytes), align: 1
   Segment part 0.
            ENTRY                   ADDRESS         REF BY
            =====                   =======         ======
-           ?Mul16to32sHw           929E            ?Subroutine0 (metrology-readings)
+           ?Mul16to32sHw           9264            ?Subroutine0 (metrology-readings)
                                                    ?Subroutine2 (metrology-setup)
                                                    _LdtobLarge (?xprintflarge)
                                                    calculate_phase_readings (metrology-foreground)
@@ -5638,11 +5655,11 @@ RESET
   SEGMENTS IN THE MODULE
   ======================
 <CODE> 1 (was CODE)
-  Relative segment, address: 910A - 912D (0x24 bytes), align: 1
+  Relative segment, address: 9108 - 912B (0x24 bytes), align: 1
   Segment part 0.
            ENTRY                   ADDRESS         REF BY
            =====                   =======         ======
-           ?Mul32Hw32              910A            calculate_phase_readings (metrology-foreground)
+           ?Mul32Hw32              9108            calculate_phase_readings (metrology-foreground)
                                                    div48 (div48)
                                                    estimate_current_rtc_correction (emeter-rtc-c)
                                                    evaluate_power_factor (metrology-foreground)
@@ -5654,11 +5671,11 @@ RESET
   SEGMENTS IN THE MODULE
   ======================
 <CODE> 1 (was CODE)
-  Relative segment, address: 8DEA - 8E15 (0x2c bytes), align: 1
+  Relative segment, address: 8DE8 - 8E13 (0x2c bytes), align: 1
   Segment part 0.
            ENTRY                   ADDRESS         REF BY
            =====                   =======         ======
-           ?Mul32u32uto64iHw32     8DEA            _Mul32s32sto64i (?mul32s32sto64i)
+           ?Mul32u32uto64iHw32     8DE8            _Mul32s32sto64i (?mul32s32sto64i)
 
     -------------------------------------------------------------------------
   LIBRARY MODULE, NAME : ?Mul64Hw32
@@ -5666,11 +5683,12 @@ RESET
   SEGMENTS IN THE MODULE
   ======================
 <CODE> 1 (was CODE)
-  Relative segment, address: 8586 - 85DD (0x58 bytes), align: 1
+  Relative segment, address: 8584 - 85DB (0x58 bytes), align: 1
   Segment part 0.
            ENTRY                   ADDRESS         REF BY
            =====                   =======         ======
-           ?Mul64Hw32              8586            ?Subroutine2 (metrology-foreground)
+           ?Mul64Hw32              8584            ?Subroutine2 (metrology-foreground)
+                                                   integrate_power_to_energy (metrology-foreground)
                                                    sag_swell_control (metrology-foreground)
 
     -------------------------------------------------------------------------
@@ -5679,11 +5697,11 @@ RESET
   SEGMENTS IN THE MODULE
   ======================
 <CODE> 1 (was CODE)
-  Relative segment, address: 8B44 - 8B7F (0x3c bytes), align: 1
+  Relative segment, address: 8B7E - 8BB9 (0x3c bytes), align: 1
   Segment part 2.
            ENTRY                   ADDRESS         REF BY
            =====                   =======         ======
-           sprintf                 8B44            Oled_display_valor (emeter-oled)
+           sprintf                 8B7E            Oled_display_valor (emeter-oled)
                                                    oled_date_temp (emeter-basic-oled)
                                                    update_oled (emeter-basic-oled)
                calls direct
@@ -5694,11 +5712,11 @@ RESET
   SEGMENTS IN THE MODULE
   ======================
 <CODE> 1 (was CODE)
-  Relative segment, address: 9580 - 958D (0xe bytes), align: 1
+  Relative segment, address: 95D4 - 95E1 (0xe bytes), align: 1
   Segment part 2.
            ENTRY                   ADDRESS         REF BY
            =====                   =======         ======
-           __iar_Strchr            9580            _PrintfLarge (?xprintflarge)
+           __iar_Strchr            95D4            _PrintfLarge (?xprintflarge)
 
     -------------------------------------------------------------------------
   LIBRARY MODULE, NAME : ?strlen
@@ -5706,11 +5724,11 @@ RESET
   SEGMENTS IN THE MODULE
   ======================
 <CODE> 1 (was CODE)
-  Relative segment, address: 9192 - 91B1 (0x20 bytes), align: 1
+  Relative segment, address: 9190 - 91AF (0x20 bytes), align: 1
   Segment part 2.
            ENTRY                   ADDRESS         REF BY
            =====                   =======         ======
-           strlen                  9192            Oled_titulo (emeter-oled)
+           strlen                  9190            Oled_titulo (emeter-oled)
                                                    _PrintfLarge (?xprintflarge)
 
     -------------------------------------------------------------------------
@@ -5719,11 +5737,11 @@ RESET
   SEGMENTS IN THE MODULE
   ======================
 <CODE> 1 (was CODE)
-  Relative segment, address: 90E6 - 9109 (0x24 bytes), align: 1
+  Relative segment, address: 90C0 - 90E3 (0x24 bytes), align: 1
   Segment part 2.
            ENTRY                   ADDRESS         REF BY
            =====                   =======         ======
-           __iar_Dtest             90E6            fmax (?fmax)
+           __iar_Dtest             90C0            fmax (?fmax)
 
     -------------------------------------------------------------------------
   LIBRARY MODULE, NAME : ?xdunscal
@@ -5731,11 +5749,11 @@ RESET
   SEGMENTS IN THE MODULE
   ======================
 <CODE> 1 (was CODE)
-  Relative segment, address: 886E - 88B5 (0x48 bytes), align: 1
+  Relative segment, address: 886C - 88B3 (0x48 bytes), align: 1
   Segment part 2.
            ENTRY                   ADDRESS         REF BY
            =====                   =======         ======
-           __iar_Dunscale          886E            _LdtobLarge (?xprintflarge)
+           __iar_Dunscale          886C            _LdtobLarge (?xprintflarge)
 
     -------------------------------------------------------------------------
   LIBRARY MODULE, NAME : ?xprintflarge
@@ -5751,15 +5769,15 @@ RESET
                calls direct
     -------------------------------------------------------------------------
 <CODE> 1 (was CODE)
-  Relative segment, address: 95D4 - 95E1 (0xe bytes), align: 1
+  Relative segment, address: 958E - 959B (0xe bytes), align: 1
   Segment part 25.            Intra module refs:   _PrintfLarge
     -------------------------------------------------------------------------
 <CODE> 1 (was CODE)
-  Relative segment, address: 9460 - 9465 (0x6 bytes), align: 1
+  Relative segment, address: 9472 - 9477 (0x6 bytes), align: 1
   Segment part 26.            Intra module refs:   _PrintfLarge
     -------------------------------------------------------------------------
 <CODE> 1 (was CODE)
-  Relative segment, address: 9466 - 9473 (0xe bytes), align: 1
+  Relative segment, address: 9478 - 9485 (0xe bytes), align: 1
   Segment part 27.            Intra module refs:   Segment part 26
                                                    _PrintfLarge
     -------------------------------------------------------------------------
@@ -5846,73 +5864,73 @@ RESET
                                                    _PrintfLarge
     -------------------------------------------------------------------------
 <CODE> 1 (was CODE)
-  Relative segment, address: 8CCC - 8CFB (0x30 bytes), align: 1
+  Relative segment, address: 8D5A - 8D89 (0x30 bytes), align: 1
   Segment part 32.            Intra module refs:   Segment part 27
            LOCAL                   ADDRESS         
            =====                   =======         
-           pad                     8CCC 
+           pad                     8D5A 
                calls direct
     -------------------------------------------------------------------------
 <CODE> 1 (was CODE)
-  Relative segment, address: 90C2 - 90E5 (0x24 bytes), align: 1
+  Relative segment, address: 90E4 - 9107 (0x24 bytes), align: 1
   Segment part 33.            Intra module refs:   _PrintfLarge
                                                    _PutcharsLarge
            LOCAL                   ADDRESS         
            =====                   =======         
-           _PutcharLarge           90C2 
+           _PutcharLarge           90E4 
                calls indirect
     -------------------------------------------------------------------------
 <CODE> 1 (was CODE)
-  Relative segment, address: 9076 - 909B (0x26 bytes), align: 1
+  Relative segment, address: 9002 - 9027 (0x26 bytes), align: 1
   Segment part 34.            Intra module refs:   Segment part 25
                                                    pad
            LOCAL                   ADDRESS         
            =====                   =======         
-           _PutcharsLarge          9076 
+           _PutcharsLarge          9002 
                calls direct
     -------------------------------------------------------------------------
 <CODE> 1 (was CODE)
-  Relative segment, address: 9556 - 9563 (0xe bytes), align: 1
+  Relative segment, address: 9564 - 9571 (0xe bytes), align: 1
   Segment part 24.            Intra module refs:   _PrintfLarge
     -------------------------------------------------------------------------
 <CODE> 1 (was CODE)
-  Relative segment, address: 94B0 - 94C1 (0x12 bytes), align: 1
+  Relative segment, address: 94C0 - 94D1 (0x12 bytes), align: 1
   Segment part 28.            Intra module refs:   _PrintfLarge
     -------------------------------------------------------------------------
 <CODE> 1 (was CODE)
-  Relative segment, address: 949C - 94AF (0x14 bytes), align: 1
+  Relative segment, address: 944A - 945D (0x14 bytes), align: 1
   Segment part 29.            Intra module refs:   _PrintfLarge
     -------------------------------------------------------------------------
 <CODE> 1 (was CODE)
-  Relative segment, address: 8C30 - 8C67 (0x38 bytes), align: 1
+  Relative segment, address: 8C2E - 8C65 (0x38 bytes), align: 1
   Segment part 30.            Intra module refs:   _PrintfLarge
     -------------------------------------------------------------------------
 <CODE> 1 (was CODE)
-  Relative segment, address: 95EE - 95F9 (0xc bytes), align: 1
+  Relative segment, address: 95FC - 9607 (0xc bytes), align: 1
   Segment part 31.            Intra module refs:   Segment part 30
     -------------------------------------------------------------------------
 DATA20_C
-  Relative segment, address: A002 - A008 (0x7 bytes), align: 0
+  Relative segment, address: A008 - A00E (0x7 bytes), align: 0
   Segment part 2.             Intra module refs:   _PrintfLarge
     -------------------------------------------------------------------------
 DATA20_C
-  Relative segment, address: A009 - A00C (0x4 bytes), align: 0
+  Relative segment, address: A00F - A012 (0x4 bytes), align: 0
   Segment part 3.             Intra module refs:   _LdtobLarge
     -------------------------------------------------------------------------
 DATA20_C
-  Relative segment, address: A00D - A010 (0x4 bytes), align: 0
+  Relative segment, address: A013 - A016 (0x4 bytes), align: 0
   Segment part 4.             Intra module refs:   _LdtobLarge
     -------------------------------------------------------------------------
 DATA20_C
-  Relative segment, address: A011 - A014 (0x4 bytes), align: 0
+  Relative segment, address: A017 - A01A (0x4 bytes), align: 0
   Segment part 5.             Intra module refs:   _LdtobLarge
     -------------------------------------------------------------------------
 DATA20_C
-  Relative segment, address: A015 - A018 (0x4 bytes), align: 0
+  Relative segment, address: A01B - A01E (0x4 bytes), align: 0
   Segment part 6.             Intra module refs:   _LdtobLarge
     -------------------------------------------------------------------------
 DATA20_C
-  Relative segment, address: A019 - A01A (0x2 bytes), align: 0
+  Relative segment, address: A01F - A020 (0x2 bytes), align: 0
   Segment part 7.             Intra module refs:   _GenldLarge
 
     -------------------------------------------------------------------------
@@ -5921,11 +5939,11 @@ DATA20_C
   SEGMENTS IN THE MODULE
   ======================
 <CODE> 1 (was CODE)
-  Relative segment, address: 9564 - 9571 (0xe bytes), align: 1
+  Relative segment, address: 95AA - 95B7 (0xe bytes), align: 1
   Segment part 2.
            ENTRY                   ADDRESS         REF BY
            =====                   =======         ======
-           _SProut                 9564            sprintf (?sprintf)
+           _SProut                 95AA            sprintf (?sprintf)
 
 
 
@@ -6008,10 +6026,10 @@ DATA20_N                                  24FA                       rel    1
 CSTACK                                 3B6A - 3BFF              96   rel    1
 CSTART                                 4000 - 402F              30   rel    1
 ISR_CODE                               4030 - 453B             50C   rel    1
-<CODE> 1                               453C - 972B            51F0   rel    1
-DATA20_C                               972C - A01A             8EF   rel    1
-DATA20_ID                              A01C - A01F               4   rel    1
-CODE_ID                                   A020                       rel    1
+<CODE> 1                               453C - 9731            51F6   rel    1
+DATA20_C                               9732 - A020             8EF   rel    1
+DATA20_ID                              A022 - A025               4   rel    1
+CODE_ID                                   A026                       rel    1
 INTVEC                                 FF80 - FFFD              7E   com    1
 RESET                                  FFFE - FFFF               2   rel    1
 
@@ -6021,7 +6039,7 @@ RESET                                  FFFE - FFFF               2   rel    1
                 *                                      *
                 ****************************************
 
- 22 444 bytes of CODE  memory
+ 22 450 bytes of CODE  memory
   2 448 bytes of DATA  memory (+ 305 absolute )
   2 419 bytes of CONST memory
 

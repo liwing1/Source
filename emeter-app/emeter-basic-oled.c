@@ -80,7 +80,7 @@ void OLED_display_startup_message(void)
     //ssd1306_printText_peq(0,2,"012345678901234567890");    
     ssd1306_printText_peq(0,3,"   MEDIDOR MECALOR");
     ssd1306_printText_peq(0,5,"    Z Tecnologia");
-    ssd1306_printText_peq(0,7,"     Versao 1.0.2");   
+    ssd1306_printText_peq(0,7,"     Versao 1.0.3");   
 }
 
 static __inline__ void oled_date_temp()
@@ -88,7 +88,7 @@ static __inline__ void oled_date_temp()
     char oled[17];   
     uint8_t date[6];
 
-    Oled_titulo("MECALOR v1.0.2");  
+    Oled_titulo("MECALOR v1.0.3");  
 
     #if defined(RTC_SUPPORT)
         get_rtc(date);
