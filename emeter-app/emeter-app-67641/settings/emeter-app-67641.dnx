@@ -134,8 +134,7 @@
         <Fmt29>{W}1:reg_addr	3	0</Fmt29>
     </watch_formats>
     <Breakpoints>
-        <Bp0>_ "STD_CODE" "{$PROJ_DIR$\..\emeter-dlt645.c}.153.12" 1 0 0 0 "" 0 ""</Bp0>
-        <Count>1</Count>
+        <Count>0</Count>
     </Breakpoints>
     <FET>
         <Clock_mode>46</Clock_mode>
