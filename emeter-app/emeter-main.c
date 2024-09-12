@@ -205,28 +205,28 @@ static __inline__ void update_input_registers(void)
   input_registers.grandezas.freq_2 = mains_frequency(1);
   input_registers.grandezas.freq_3 = mains_frequency(2);
 
-  input_registers.grandezas.energia_atv_pos = (float)energy_consumed[FAKE_PHASE_TOTAL][APP_ACTIVE_ENERGY_IMPORTED];
-  input_registers.grandezas.energia_rtv_pos = (float)energy_consumed[FAKE_PHASE_TOTAL][APP_REACTIVE_ENERGY_QUADRANT_I] + (float)energy_consumed[FAKE_PHASE_TOTAL][APP_REACTIVE_ENERGY_QUADRANT_IV];
-  input_registers.grandezas.energia_apr     = (float)energy_consumed[FAKE_PHASE_TOTAL][APP_APPARENT_ENERGY_IMPORTED];
+  input_registers.grandezas.energia_atv_pos = ((float)energy_consumed[FAKE_PHASE_TOTAL][APP_ACTIVE_ENERGY_IMPORTED])/ ENERGY_SCALING_FACTOR;
+  input_registers.grandezas.energia_rtv_pos = ((float)energy_consumed[FAKE_PHASE_TOTAL][APP_REACTIVE_ENERGY_QUADRANT_I] + (float)energy_consumed[FAKE_PHASE_TOTAL][APP_REACTIVE_ENERGY_QUADRANT_IV])/ ENERGY_SCALING_FACTOR;
+  input_registers.grandezas.energia_apr     = ((float)energy_consumed[FAKE_PHASE_TOTAL][APP_APPARENT_ENERGY_IMPORTED])/ ENERGY_SCALING_FACTOR;
 
-  input_registers.grandezas.energia_atv_pos_fase_1 = (float)energy_consumed[0][APP_ACTIVE_ENERGY_IMPORTED];
-  input_registers.grandezas.energia_rtv_pos_fase_1 = (float)energy_consumed[0][APP_REACTIVE_ENERGY_QUADRANT_I] + (float)energy_consumed[0][APP_REACTIVE_ENERGY_QUADRANT_IV];
-  input_registers.grandezas.energia_atv_neg_fase_1 = (float)energy_consumed[0][APP_ACTIVE_ENERGY_EXPORTED];
-  input_registers.grandezas.energia_rtv_neg_fase_1 = (float)energy_consumed[0][APP_REACTIVE_ENERGY_QUADRANT_II] + (float)energy_consumed[0][APP_REACTIVE_ENERGY_QUADRANT_III];
+  input_registers.grandezas.energia_atv_pos_fase_1 = ((float)energy_consumed[0][APP_ACTIVE_ENERGY_IMPORTED])/ ENERGY_SCALING_FACTOR;
+  input_registers.grandezas.energia_rtv_pos_fase_1 = ((float)energy_consumed[0][APP_REACTIVE_ENERGY_QUADRANT_I] + (float)energy_consumed[0][APP_REACTIVE_ENERGY_QUADRANT_IV])/ ENERGY_SCALING_FACTOR;
+  input_registers.grandezas.energia_atv_neg_fase_1 = ((float)energy_consumed[0][APP_ACTIVE_ENERGY_EXPORTED])/ ENERGY_SCALING_FACTOR;
+  input_registers.grandezas.energia_rtv_neg_fase_1 = ((float)energy_consumed[0][APP_REACTIVE_ENERGY_QUADRANT_II] + (float)energy_consumed[0][APP_REACTIVE_ENERGY_QUADRANT_III])/ ENERGY_SCALING_FACTOR;
   
-  input_registers.grandezas.energia_atv_pos_fase_2 = (float)energy_consumed[1][APP_ACTIVE_ENERGY_IMPORTED];
-  input_registers.grandezas.energia_rtv_pos_fase_2 = (float)energy_consumed[1][APP_REACTIVE_ENERGY_QUADRANT_I] + (float)energy_consumed[0][APP_REACTIVE_ENERGY_QUADRANT_IV];
-  input_registers.grandezas.energia_atv_neg_fase_2 = (float)energy_consumed[1][APP_ACTIVE_ENERGY_EXPORTED];
-  input_registers.grandezas.energia_rtv_neg_fase_2 = (float)energy_consumed[1][APP_REACTIVE_ENERGY_QUADRANT_II] + (float)energy_consumed[0][APP_REACTIVE_ENERGY_QUADRANT_III];
+  input_registers.grandezas.energia_atv_pos_fase_2 = ((float)energy_consumed[1][APP_ACTIVE_ENERGY_IMPORTED])/ ENERGY_SCALING_FACTOR;
+  input_registers.grandezas.energia_rtv_pos_fase_2 = ((float)energy_consumed[1][APP_REACTIVE_ENERGY_QUADRANT_I] + (float)energy_consumed[0][APP_REACTIVE_ENERGY_QUADRANT_IV])/ ENERGY_SCALING_FACTOR;
+  input_registers.grandezas.energia_atv_neg_fase_2 = ((float)energy_consumed[1][APP_ACTIVE_ENERGY_EXPORTED])/ ENERGY_SCALING_FACTOR;
+  input_registers.grandezas.energia_rtv_neg_fase_2 = ((float)energy_consumed[1][APP_REACTIVE_ENERGY_QUADRANT_II] + (float)energy_consumed[0][APP_REACTIVE_ENERGY_QUADRANT_III])/ ENERGY_SCALING_FACTOR;
 
-  input_registers.grandezas.energia_atv_pos_fase_3 = (float)energy_consumed[2][APP_ACTIVE_ENERGY_IMPORTED];
-  input_registers.grandezas.energia_rtv_pos_fase_3 = (float)energy_consumed[2][APP_REACTIVE_ENERGY_QUADRANT_I] + (float)energy_consumed[0][APP_REACTIVE_ENERGY_QUADRANT_IV];
-  input_registers.grandezas.energia_atv_neg_fase_3 = (float)energy_consumed[2][APP_ACTIVE_ENERGY_EXPORTED];
-  input_registers.grandezas.energia_rtv_neg_fase_3 = (float)energy_consumed[2][APP_REACTIVE_ENERGY_QUADRANT_II] + (float)energy_consumed[0][APP_REACTIVE_ENERGY_QUADRANT_III];
+  input_registers.grandezas.energia_atv_pos_fase_3 = ((float)energy_consumed[2][APP_ACTIVE_ENERGY_IMPORTED])/ ENERGY_SCALING_FACTOR;
+  input_registers.grandezas.energia_rtv_pos_fase_3 = ((float)energy_consumed[2][APP_REACTIVE_ENERGY_QUADRANT_I] + (float)energy_consumed[0][APP_REACTIVE_ENERGY_QUADRANT_IV])/ ENERGY_SCALING_FACTOR;
+  input_registers.grandezas.energia_atv_neg_fase_3 = ((float)energy_consumed[2][APP_ACTIVE_ENERGY_EXPORTED])/ ENERGY_SCALING_FACTOR;
+  input_registers.grandezas.energia_rtv_neg_fase_3 = ((float)energy_consumed[2][APP_REACTIVE_ENERGY_QUADRANT_II] + (float)energy_consumed[0][APP_REACTIVE_ENERGY_QUADRANT_III])/ ENERGY_SCALING_FACTOR;
 
-  input_registers.grandezas.energia_apr_fas_fase_1 = (float)energy_consumed[0][APP_APPARENT_ENERGY_IMPORTED];
-  input_registers.grandezas.energia_apr_fas_fase_2 = (float)energy_consumed[1][APP_APPARENT_ENERGY_IMPORTED];
-  input_registers.grandezas.energia_apr_fas_fase_3 = (float)energy_consumed[2][APP_APPARENT_ENERGY_IMPORTED];
+  input_registers.grandezas.energia_apr_fas_fase_1 = ((float)energy_consumed[0][APP_APPARENT_ENERGY_IMPORTED])/ ENERGY_SCALING_FACTOR;
+  input_registers.grandezas.energia_apr_fas_fase_2 = ((float)energy_consumed[1][APP_APPARENT_ENERGY_IMPORTED])/ ENERGY_SCALING_FACTOR;
+  input_registers.grandezas.energia_apr_fas_fase_3 = ((float)energy_consumed[2][APP_APPARENT_ENERGY_IMPORTED])/ ENERGY_SCALING_FACTOR;
 
   input_registers.grandezas.status = check_voltage_ranges();
 }

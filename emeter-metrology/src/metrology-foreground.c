@@ -1054,7 +1054,7 @@ static energy_t integrate_power_to_energy(struct energy_integrator_t *en, power_
         energy_step++;
     }
     en->energy_residual = energy;
-    return energy_step * ENERGY_SCALING_FACTOR; // LI: ADD SCALE FACTOR TO CONVERT FROM mWH TO WH
+    return energy_step; // LI: ADD SCALE FACTOR TO CONVERT FROM mWH TO WH
 }
 
     #if NUM_PHASES == 1
